@@ -108,14 +108,17 @@ const services = [
 <Layout title="Services">
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
-    <!-- Background Layer -->
-    <div class="absolute inset-0 hero-bg-services"></div>
+    <!-- Background Layer with Parallax -->
+    <div class="absolute inset-0 hero-bg-services parallax-bg" data-speed="0.5"></div>
     
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+    
+    <!-- Animated Blob -->
+    <div class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-[#FFDEE2]/20 to-[#D3E4FD]/20 rounded-full morph-blob blur-3xl"></div>
     
     <div class="container-custom relative z-10">
-      <div class="max-w-2xl">
+      <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl font-bold text-white leading-tight">
           Our Premium Hair Services
         </h1>
@@ -132,7 +135,7 @@ const services = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div
-            class="bg-[#F8F9FA] rounded-lg p-8 card-shadow animate-slide-up hover:scale-105 transition-all duration-300 cursor-pointer service-card"
+            class="glass-card rounded-lg p-8 animate-slide-up card-hover-3d cursor-pointer service-card"
             style={`animation-delay: ${index * 50}ms`}
             data-service-id={service.id}
           >
@@ -160,7 +163,7 @@ const services = [
             <h3 class="text-xl font-semibold">{service.name}</h3>
             <p class="text-2xl text-[#1EAEDB] mt-2">{service.price}</p>
             <p class="text-gray-600 mt-4">{service.description}</p>
-            <div class="mt-4 text-[#1EAEDB] font-medium">
+            <div class="mt-4 text-[#1EAEDB] font-medium hover-underline inline-block">
               Click for details
             </div>
           </div>

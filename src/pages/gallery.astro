@@ -90,17 +90,21 @@ const categories = [
 <Layout title="Gallery">
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
-    <!-- Background Layer -->
+    <!-- Background Layer with Parallax -->
     <div 
-      class="absolute inset-0"
+      class="absolute inset-0 parallax-bg"
       style="background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a015f66ed24378.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      data-speed="0.5"
     ></div>
     
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+    
+    <!-- Animated Blob -->
+    <div class="absolute top-10 right-20 w-72 h-72 bg-gradient-to-br from-[#1EAEDB]/20 to-[#FFDEE2]/20 rounded-full morph-blob blur-3xl"></div>
     
     <div class="container-custom relative z-10">
-      <div class="max-w-2xl">
+      <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl font-bold text-white leading-tight">
           Our Work Gallery
         </h1>
@@ -119,9 +123,9 @@ const categories = [
         {categories.map((category) => (
           <button
             data-filter={category.id}
-            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+            class="filter-btn px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 magnetic-hover"
             class:list={[
-              category.id === 'all' ? 'bg-[#1EAEDB] text-white' : 'bg-[#F8F9FA] text-gray-700 hover:bg-[#D3E4FD]'
+              category.id === 'all' ? 'bg-[#1EAEDB] text-white glow-hover' : 'glass-card text-gray-700 hover:bg-[#D3E4FD]'
             ]}
           >
             {category.name}
@@ -133,7 +137,7 @@ const categories = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="gallery-grid">
         {galleryImages.map((image, index) => (
           <div 
-            class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer animate-fade-in"
+            class="gallery-item group relative overflow-hidden rounded-lg cursor-pointer animate-scale glass-card"
             data-category={image.category}
             style={`animation-delay: ${index * 50}ms`}
           >

@@ -28,17 +28,21 @@ const features = [
 <Layout title="About">
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
-    <!-- Background Layer -->
+    <!-- Background Layer with Parallax -->
     <div 
-      class="absolute inset-0"
-      style="background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d3eeb95d20baada3c7ca.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      class="absolute inset-0 parallax-bg"
+      style="background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d5e612053dfc63d2b5f6.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      data-speed="0.5"
     ></div>
     
-    <!-- Dark Overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60"></div>
+    
+    <!-- Animated Blob -->
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-br from-[#D3E4FD]/20 to-[#FFDEE2]/20 rounded-full morph-blob blur-3xl"></div>
     
     <div class="container-custom relative z-10">
-      <div class="max-w-2xl">
+      <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl font-bold text-white leading-tight">
           About Hair By Melissa
         </h1>
@@ -69,14 +73,17 @@ const features = [
             <a href="/services" class="btn-secondary">Explore Services</a>
           </div>
         </div>
-        <div class="relative">
-          <img 
-            src="https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a71384ba9e2aef5ee.png" 
-            alt="Melissa at work in the salon"
-            class="rounded-lg shadow-xl"
-          />
-          <div class="absolute -bottom-6 -right-6 bg-[#D3E4FD] rounded-lg p-6 shadow-lg">
-            <p class="text-2xl font-bold">5+ Years</p>
+        <div class="relative animate-scale">
+          <div class="relative overflow-hidden rounded-lg shadow-2xl group">
+            <img 
+              src="https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a71384ba9e2aef5ee.png" 
+              alt="Melissa at work in the salon"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-gradient-to-br from-[#D3E4FD] to-[#FFDEE2] rounded-lg p-6 shadow-xl transform hover:scale-105 transition-transform duration-300">
+            <p class="text-2xl font-bold text-gray-800">5+ Years</p>
             <p class="text-gray-700">of Excellence</p>
           </div>
         </div>
