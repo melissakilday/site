@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqCategories = [
+  {
+    category: "Hair Coloring",
+    questions: [
+      {
+        question: "How often should I color my hair?",
+        answer: "The frequency depends on your hair type and the coloring method. For permanent color touch-ups, every 4-6 weeks is typical for covering gray roots. For highlights or balayage, every 8-12 weeks is usually sufficient. I'll create a personalized maintenance schedule based on your hair growth rate and desired look."
+      },
+      {
+        question: "What's the difference between highlights and balayage?",
+        answer: "Highlights involve sectioning hair and applying lightener from roots to ends using foils, creating a more uniform, structured look. Balayage is a freehand painting technique that creates a natural, sun-kissed effect with softer grow-out. Balayage typically requires less maintenance and gives a more natural, dimensional result."
+      }
+    ]
+  },
+  {
+    category: "Keratin Treatments",
+    questions: [
+      {
+        question: "How long do keratin treatments last?",
+        answer: "Our professional keratin treatments typically last 3-6 months, depending on your hair type, maintenance routine, and how often you wash your hair. With proper care and sulfate-free products, you can maximize the longevity of your treatment. Most clients schedule touch-ups every 4-5 months."
+      },
+      {
+        question: "What aftercare is needed for keratin treatments?",
+        answer: "For the first 72 hours, avoid washing your hair, using clips or ties, or creating any dents in your hair. After that, use sulfate-free shampoo and conditioner, avoid chlorine and salt water when possible, and use a silk pillowcase to reduce friction. I'll provide you with a complete aftercare guide and product recommendations."
+      }
+    ]
+  },
+  {
+    category: "Appointments",
+    questions: [
+      {
+        question: "How should I prepare for my appointment?",
+        answer: "Come with clean, dry hair unless specified otherwise. Bring inspiration photos if you have them. Wear a shirt that's easy to remove or that you don't mind getting product on. For color services, avoid washing your hair for 24-48 hours before your appointment as natural oils protect your scalp."
+      },
+      {
+        question: "What's your cancellation policy?",
+        answer: "I understand that life happens! Please provide at least 24 hours notice for cancellations or rescheduling. Same-day cancellations or no-shows may result in a cancellation fee. For major services like full color corrections or keratin treatments, 48 hours notice is appreciated."
+      }
+    ]
+  },
+  {
+    category: "General",
+    questions: [
+      {
+        question: "Do you offer consultations?",
+        answer: "Yes! I offer complimentary 15-minute consultations for new clients or anyone considering a major change. During the consultation, we'll discuss your hair goals, assess your hair's current condition, and create a customized plan. This ensures we're both confident about the service before your appointment."
+      },
+      {
+        question: "What's your satisfaction guarantee?",
+        answer: "Your satisfaction is my top priority. If you're not completely happy with your service, please let me know within 7 days, and I'll do everything possible to make it right. This may include a complimentary adjustment appointment. I want you to love your hair and feel confident!"
+      }
+    ]
+  },
+  {
+    category: "Pricing",
+    questions: [
+      {
+        question: "Are your prices fixed or do they vary?",
+        answer: "My base prices are listed on the services page, but final pricing may vary based on hair length, thickness, and the complexity of the service. For major color corrections or extensive work, I'll provide a quote during your consultation. I believe in transparent pricing with no surprises."
+      },
+      {
+        question: "Do you offer any packages or discounts?",
+        answer: "Yes! I offer package deals for clients who book multiple services or maintain regular appointments. For example, booking a keratin treatment with color service receives a 10% discount. Regular clients (visiting every 4-6 weeks) enjoy loyalty pricing. Ask about our current promotions!"
+      }
+    ]
+  }
+];
+---
+
+<Layout title="FAQ">
+  <!-- Hero Section -->
+  <section class="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+      <img 
+        src="https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png" 
+        alt="Hair salon interior"
+        class="w-full h-full object-cover"
+      />
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center text-white container-custom">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-lg md:text-xl max-w-2xl mx-auto animate-slide-up">
+        Find answers to common questions about our services, appointments, and policies
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto">
+        {faqCategories.map((category, categoryIndex) => (
+          <div class="mb-12" key={categoryIndex}>
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
+              {category.category}
+            </h2>
+            <div class="space-y-4">
+              {category.questions.map((item, questionIndex) => (
+                <div 
+                  class="faq-item border border-gray-200 rounded-lg overflow-hidden"
+                  key={`${categoryIndex}-${questionIndex}`}
+                >
+                  <button
+                    class="faq-button w-full text-left p-6 flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+                    onclick={`this.parentElement.classList.toggle('active'); this.querySelector('.faq-icon').classList.toggle('rotate-180')`}
+                  >
+                    <h3 class="text-lg font-semibold text-gray-900 pr-4">
+                      {item.question}
+                    </h3>
+                    <svg 
+                      class="faq-icon w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="faq-content hidden">
+                    <div class="px-6 pb-6 text-gray-600">
+                      {item.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-[var(--salon-lightgray)]">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+        Still Have Questions?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Don't hesitate to reach out! I'm here to help you achieve your hair goals and answer any questions you may have.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary inline-block">
+          Book a Consultation
+        </a>
+        <a href="/services" class="btn-secondary inline-block">
+          View Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item.active .faq-content {
+      display: block;
+    }
+    
+    .faq-button:focus {
+      outline: 2px solid var(--salon-darkblue);
+      outline-offset: -2px;
+    }
+    
+    /* Animation for FAQ content */
+    .faq-content {
+      animation: slideDown 0.3s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

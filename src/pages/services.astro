@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    id: 1,
+    name: "Keratin Treatments",
+    price: "$180",
+    description: "Our keratin treatment reduces frizz, adds incredible shine, and makes styling your hair quick and easy. Results last up to 5 months.",
+    icon: "zap",
+    fullDescription: "Transform your frizzy, unmanageable hair into silky, smooth locks with our premium keratin treatment. This intensive conditioning process infuses keratin protein deep into your hair cuticle, eliminating frizz and reducing styling time by up to 50%. Perfect for all hair types, especially those with curly, coarse, or color-treated hair. Our treatment is formaldehyde-free and leaves your hair looking naturally smooth and healthy for up to 5 months.",
+    duration: "2-3 hours",
+    maintenance: "Wait 48 hours before washing. Use sulfate-free shampoo and conditioner to extend results."
+  },
+  {
+    id: 2,
+    name: "Women's Cut & Finish",
+    price: "$50",
+    description: "A personalized haircut service that includes a consultation, relaxing shampoo, precision cut, and professional styling.",
+    icon: "scissors",
+    fullDescription: "Experience a tailored haircut that perfectly complements your face shape, hair texture, and lifestyle. Your service begins with an in-depth consultation to understand your vision, followed by a relaxing shampoo with scalp massage. Melissa's precision cutting technique ensures a flawless finish, and we complete your look with professional styling using premium products.",
+    duration: "45-60 minutes",
+    maintenance: "Schedule a trim every 6-8 weeks to maintain your style and prevent split ends."
+  },
+  {
+    id: 3,
+    name: "Partial Foils",
+    price: "$90",
+    description: "Add dimension and brightness to your hair with strategically placed highlights around the face and crown.",
+    icon: "sparkles",
+    fullDescription: "Enhance your natural hair color with our partial foil service, focusing on areas that frame your face and add dimension. Perfect for those wanting a subtle change or low-maintenance color. We use premium, ammonia-free products to protect your hair while delivering vibrant, long-lasting results.",
+    duration: "1-1.5 hours",
+    maintenance: "Touch up every 4-6 weeks to maintain fresh-looking highlights."
+  },
+  {
+    id: 4,
+    name: "Half Head of Highlights",
+    price: "$140",
+    description: "Create depth and dimension with highlights applied to the top and sides of your hair for a natural sun-kissed look.",
+    icon: "sparkles",
+    fullDescription: "Our half head highlights service delivers gorgeous dimension throughout the top and sides of your hair, perfect for creating that natural sun-kissed look. Using foil techniques to precisely place color, we create a seamless blend that grows out beautifully. Includes toner to perfect your shade and a styling finish.",
+    duration: "2-2.5 hours",
+    maintenance: "Refresh every 6-8 weeks to maintain color vibrancy and blend."
+  },
+  {
+    id: 5,
+    name: "Full Head of Highlights",
+    price: "$180",
+    description: "Complete transformation with highlights applied throughout your entire head for maximum impact and dimension.",
+    icon: "sparkles",
+    fullDescription: "Transform your look with our full head highlighting service, adding dimension and brightness throughout your entire head of hair. This premium service includes carefully placed foils from root to tip for maximum impact, followed by a customized toner to achieve your perfect shade. Includes blow dry styling to showcase your new look.",
+    duration: "2.5-3 hours",
+    maintenance: "Schedule maintenance every 6-8 weeks to touch up roots and refresh color."
+  },
+  {
+    id: 6,
+    name: "Permanent Tint & Touch Up",
+    price: "$90",
+    description: "Perfect for covering roots or gray hair, this service refreshes your existing color at the roots.",
+    icon: "sparkles",
+    fullDescription: "Keep your color looking fresh with our root touch-up service, designed to seamlessly blend new growth with your existing color. Ideal for maintaining your shade or covering gray hair between full color appointments. We use premium, long-lasting color products that are gentle on your hair.",
+    duration: "1-1.5 hours",
+    maintenance: "Recommended every 4-6 weeks to maintain consistent color coverage."
+  },
+  {
+    id: 7,
+    name: "Permanent Tint & All Over Color",
+    price: "$140",
+    description: "Full color application from roots to ends, providing rich, vibrant, and even color throughout your hair.",
+    icon: "sparkles",
+    fullDescription: "Revitalize your look with our all-over color service, delivering rich, vibrant, and even color from roots to ends. Whether you're covering gray, changing your shade, or enhancing your natural color, our premium color products provide maximum coverage with minimal damage. Includes a conditioning treatment to keep your hair healthy and shiny.",
+    duration: "1.5-2 hours",
+    maintenance: "Refresh every 4-6 weeks to maintain color intensity and coverage."
+  },
+  {
+    id: 8,
+    name: "Balayage",
+    price: "$230",
+    description: "Hand-painted highlights that create a naturally sun-kissed look with softer, less noticeable regrowth.",
+    icon: "sparkles",
+    fullDescription: "Our signature balayage technique delivers stunning, hand-painted highlights for a naturally sun-kissed look that grows out beautifully. This low-maintenance color option creates dimension and movement through strategic placement of lighter tones. Includes toner and style to showcase your new multi-dimensional color.",
+    duration: "3-4 hours",
+    maintenance: "Refresh every 8-12 weeks, longer than traditional highlights."
+  },
+  {
+    id: 9,
+    name: "Toner",
+    price: "$40",
+    description: "Refine and perfect your color by neutralizing unwanted tones or adding a subtle tint to your hair.",
+    icon: "sparkles",
+    fullDescription: "Refine and perfect your color with our professional toning service. Ideal for neutralizing brassiness, adding depth, or refreshing faded color between major color appointments. Our ammonia-free toners deposit semi-permanent color to enhance your existing shade without damage.",
+    duration: "30-45 minutes",
+    maintenance: "As needed, typically every 3-4 weeks depending on hair condition and desired tone."
+  },
+  {
+    id: 10,
+    name: "Blow Wave",
+    price: "$50",
+    description: "Professional blow dry styling that creates smooth, voluminous hair with incredible shine and movement.",
+    icon: "sparkles",
+    fullDescription: "Transform your look with our professional blow wave service. Using premium styling products and expert techniques, we create smooth, voluminous hair with incredible shine and movement. Perfect for special occasions or whenever you want to feel extra polished. Includes a consultation to determine your desired finish and style.",
+    duration: "45-60 minutes",
+    maintenance: "Results typically last 3-5 days depending on hair type and lifestyle."
+  },
+];
+---
+
+<Layout title="Services">
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Background Layer -->
+    <div class="absolute inset-0 hero-bg-services"></div>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl font-bold text-white leading-tight">
+          Our Premium Hair Services
+        </h1>
+        <p class="text-xl text-white mt-6">
+          Discover our comprehensive range of hair services, each designed to transform, enhance, and maintain your beautiful locks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-white py-20">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div
+            class="bg-[#F8F9FA] rounded-lg p-8 card-shadow animate-slide-up hover:scale-105 transition-all duration-300 cursor-pointer service-card"
+            style={`animation-delay: ${index * 50}ms`}
+            data-service-id={service.id}
+          >
+            {service.icon === "zap" ? (
+              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            ) : service.icon === "scissors" ? (
+              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+              </svg>
+            ) : (
+              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                <path d="M5 3v4"></path>
+                <path d="M19 17v4"></path>
+                <path d="M3 5h4"></path>
+                <path d="M17 19h4"></path>
+              </svg>
+            )}
+            <h3 class="text-xl font-semibold">{service.name}</h3>
+            <p class="text-2xl text-[#1EAEDB] mt-2">{service.price}</p>
+            <p class="text-gray-600 mt-4">{service.description}</p>
+            <div class="mt-4 text-[#1EAEDB] font-medium">
+              Click for details
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Detail Modal -->
+  <div id="service-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full p-8 relative">
+      <button id="close-modal" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Booking CTA -->
+  <section class="bg-[#D3E4FD] bg-opacity-20 py-16">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold">Ready to Experience Our Services?</h2>
+        <p class="text-gray-700 mt-4">
+          Book your appointment today and let Melissa transform your hair into a work of art.
+        </p>
+        <div class="mt-8">
+          <a href="/booking" class="btn-primary">
+            Book an Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-card:hover {
+    background-color: rgba(211, 228, 253, 0.3);
+  }
+</style>
+
+<script define:vars={{ services }}>
+  const serviceCards = document.querySelectorAll('.service-card');
+  const modal = document.getElementById('service-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeModal = document.getElementById('close-modal');
+
+  serviceCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const serviceId = parseInt(card.dataset.serviceId);
+      const service = services.find(s => s.id === serviceId);
+      
+      if (service) {
+        modalContent.innerHTML = `
+          <h2 class="text-2xl font-bold mb-2">${service.name}</h2>
+          <p class="text-xl text-[#1EAEDB] font-semibold mb-4">${service.price}</p>
+          <div class="space-y-4">
+            <p class="text-gray-700">${service.fullDescription}</p>
+            <div class="flex items-center gap-2 text-gray-700">
+              <span class="font-semibold">Duration:</span> ${service.duration}
+            </div>
+            <div class="flex items-start gap-2 text-gray-700">
+              <span class="font-semibold">Maintenance:</span> 
+              <span>${service.maintenance}</span>
+            </div>
+            <div class="pt-4">
+              <a href="/booking" class="btn-primary w-full text-center inline-block">
+                Book This Service
+              </a>
+            </div>
+          </div>
+        `;
+        modal.classList.remove('hidden');
+      }
+    });
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+</script>

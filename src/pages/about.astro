@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    title: "Expert Colorist",
+    description: "Melissa brings over 5 years of expertise in hair coloring, specializing in natural-looking highlights, balayage, and color corrections.",
+    icon: "sparkles"
+  },
+  {
+    title: "Premium Products",
+    description: "We use only the highest quality professional hair care products to ensure the best results and maintain your hair's health.",
+    icon: "star"
+  },
+  {
+    title: "Personalized Service",
+    description: "Every client receives individualized attention and customized treatments tailored to their unique hair type and lifestyle.",
+    icon: "heart"
+  },
+  {
+    title: "Boutique Experience",
+    description: "Enjoy a tranquil, intimate salon atmosphere where you can truly relax and feel pampered during your visit.",
+    icon: "flower"
+  }
+];
+---
+
+<Layout title="About">
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <!-- Background Layer -->
+    <div 
+      class="absolute inset-0"
+      style="background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d3eeb95d20baada3c7ca.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    ></div>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl font-bold text-white leading-tight">
+          About Hair By Melissa
+        </h1>
+        <p class="text-xl text-white mt-6">
+          Your tranquil escape for premium hair services in the heart of rural Auckland
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="bg-white py-20">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">Our Story</h2>
+          <p class="text-gray-700 mb-4">
+            Nestled in the charming Peak Village of Kaukapakapa, Hair By Melissa is more than just a salon – it's your personal sanctuary for hair transformation and relaxation. Located in rural Auckland, our boutique salon offers a peaceful escape from the hustle and bustle of city life.
+          </p>
+          <p class="text-gray-700 mb-4">
+            With over 5 years of experience in the hair industry, Melissa has built a reputation for excellence in hair coloring, styling, and treatments. Her passion for creating beautiful, healthy hair shines through in every service, from subtle highlights to complete color transformations.
+          </p>
+          <p class="text-gray-700 mb-6">
+            At Hair By Melissa, we believe that great hair isn't just about the latest trends – it's about finding the perfect style that makes you feel confident and beautiful every day. Our intimate salon setting ensures you receive the personal attention you deserve, with services tailored specifically to your hair's unique needs and your lifestyle.
+          </p>
+          <div class="flex gap-4">
+            <a href="/booking" class="btn-primary">Book Your Visit</a>
+            <a href="/services" class="btn-secondary">Explore Services</a>
+          </div>
+        </div>
+        <div class="relative">
+          <img 
+            src="https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a71384ba9e2aef5ee.png" 
+            alt="Melissa at work in the salon"
+            class="rounded-lg shadow-xl"
+          />
+          <div class="absolute -bottom-6 -right-6 bg-[#D3E4FD] rounded-lg p-6 shadow-lg">
+            <p class="text-2xl font-bold">5+ Years</p>
+            <p class="text-gray-700">of Excellence</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="bg-[#F8F9FA] py-20">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl font-bold mb-4">What Sets Us Apart</h2>
+        <p class="text-gray-700">
+          Experience the difference of a truly personalized salon experience in a tranquil rural setting.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            class="bg-white rounded-lg p-8 text-center card-shadow animate-slide-up"
+            style={`animation-delay: ${index * 100}ms`}
+          >
+            {feature.icon === "sparkles" && (
+              <svg class="h-12 w-12 text-[#1EAEDB] mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+                <path d="M5 3v4"></path>
+                <path d="M19 17v4"></path>
+                <path d="M3 5h4"></path>
+                <path d="M17 19h4"></path>
+              </svg>
+            )}
+            {feature.icon === "star" && (
+              <svg class="h-12 w-12 text-[#1EAEDB] mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            )}
+            {feature.icon === "heart" && (
+              <svg class="h-12 w-12 text-[#1EAEDB] mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"></path>
+              </svg>
+            )}
+            {feature.icon === "flower" && (
+              <svg class="h-12 w-12 text-[#1EAEDB] mb-4 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1m0 7a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v-1"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 19a3 3 0 1 1 3-3m-3 3a3 3 0 1 0-3-3m3 3v1"></path>
+              </svg>
+            )}
+            <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
+            <p class="text-gray-700">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="bg-white py-20">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Our Philosophy</h2>
+        <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-12">
+          <p class="text-xl text-gray-800 italic leading-relaxed">
+            "Beautiful hair isn't just about following trends – it's about understanding each client's unique features, lifestyle, and personality. My goal is to create a look that not only makes you feel amazing when you leave the salon but continues to work for you every day. In our peaceful rural setting, away from the rush of city life, we take the time to truly listen, consult, and craft the perfect style just for you."
+          </p>
+          <p class="text-lg font-semibold mt-6">- Melissa</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="bg-[#F8F9FA] py-20">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">Find Us in Beautiful Kaukapakapa</h2>
+          <p class="text-gray-700 mb-4">
+            Located in the scenic Peak Village, our salon offers a peaceful retreat where you can enjoy premium hair services in a relaxed, unhurried atmosphere. The rural setting provides the perfect backdrop for your transformation journey.
+          </p>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start">
+              <svg class="h-6 w-6 text-[#1EAEDB] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-gray-700">Magnolia Lane, Kaukapakapa, Rural Auckland, NZ</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="h-6 w-6 text-[#1EAEDB] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
+              <div>
+                <p class="font-semibold">Appointments</p>
+                <p class="text-gray-700">By appointment only - Book online or call</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="h-6 w-6 text-[#1EAEDB] mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <path d="M12 18h.01"></path>
+              </svg>
+              <div>
+                <p class="font-semibold">Parking</p>
+                <p class="text-gray-700">Ample free parking available on-site</p>
+              </div>
+            </div>
+          </div>
+          <a href="/contact" class="btn-primary">Get Directions</a>
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-xl">
+          <img 
+            src="https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20eb48a3c859.png" 
+            alt="Peak Village Kaukapakapa"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[#FFDEE2] bg-opacity-30 py-20">
+    <div class="container-custom text-center">
+      <h2 class="text-4xl font-bold mb-6">Ready to Experience the Difference?</h2>
+      <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+        Join our family of satisfied clients who trust us with their hair care needs. Book your appointment today and discover why Hair By Melissa is the preferred choice for premium hair services in rural Auckland.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a href="/booking" class="btn-primary">Book Now</a>
+        <a href="/services" class="bg-white text-black font-medium py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 ease-in-out">View Services</a>
+      </div>
+    </div>
+  </section>
+</Layout>

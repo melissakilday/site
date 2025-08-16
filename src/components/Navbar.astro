@@ -1,0 +1,261 @@
+---
+const navLinks = [
+  { name: "Home", path: "/" },
+  { 
+    name: "Services", 
+    path: "/services",
+    dropdown: [
+      { name: "Keratin Treatments", path: "/services/keratin-treatments" },
+      { name: "Women's Cut & Finish", path: "/services/womens-cut-finish" },
+      { name: "Partial Foils", path: "/services/partial-foils" },
+      { name: "Half Head of Highlights", path: "/services/half-head-highlights" },
+      { name: "Full Head of Highlights", path: "/services/full-head-highlights" },
+      { name: "Permanent Tint & Touch Up", path: "/services/permanent-tint-touch-up" },
+      { name: "Permanent Tint & All Over", path: "/services/permanent-tint-all-over" },
+      { name: "Balayage", path: "/services/balayage" },
+      { name: "Toner", path: "/services/toner" },
+      { name: "Blow Wave", path: "/services/blow-wave" },
+    ]
+  },
+  { name: "About", path: "/about" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "Contact", path: "/contact" },
+  { name: "FAQ", path: "/faq" },
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="container-custom flex justify-between items-center">
+    <a href="/" class="flex items-center">
+      <div class="flex items-center space-x-2">
+        <!-- Scissors icon -->
+        <svg class="nav-icon h-10 w-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="6" r="3"></circle>
+          <circle cx="6" cy="18" r="3"></circle>
+          <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+          <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+          <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+        </svg>
+        <!-- Flower icon -->
+        <svg class="nav-icon h-8 w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1m0 7a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v-1"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 19a3 3 0 1 1 3-3m-3 3a3 3 0 1 0-3-3m3 3v1"></path>
+        </svg>
+        <span class="nav-text font-bold text-xl">
+          Hair By Melissa
+        </span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-8">
+      {navLinks.map((link) => (
+        link.dropdown ? (
+          <div class="relative group">
+            <a
+              href={link.path}
+              class="nav-link font-medium transition-colors flex items-center"
+            >
+              {link.name}
+              <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div class="py-2">
+                {link.dropdown.map((item) => (
+                  <a
+                    href={item.path}
+                    class="block px-4 py-2 text-gray-800 hover:bg-[#D3E4FD] hover:bg-opacity-30 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={link.path}
+            class="nav-link font-medium transition-colors"
+          >
+            {link.name}
+          </a>
+        )
+      ))}
+      <a href="/booking" class="btn-primary">
+        Book Now
+      </a>
+      <a href="/keratin" class="btn-secondary flex items-center">
+        <!-- Snowflake icon -->
+        <svg class="mr-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <line x1="12" y1="2" x2="12" y2="22"></line>
+          <path d="m20 16-4-4 4-4"></path>
+          <path d="m4 8 4 4-4 4"></path>
+          <path d="m16 4-4 4-4-4"></path>
+          <path d="m8 20 4-4 4 4"></path>
+        </svg>
+        Winter Special
+      </a>
+    </div>
+
+    <!-- Mobile Navigation Toggle -->
+    <div class="md:hidden">
+      <button
+        id="mobile-menu-toggle"
+        class="nav-icon focus:outline-none"
+      >
+        <svg id="menu-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white">
+    <div class="container-custom py-4 flex flex-col space-y-4">
+      {navLinks.map((link) => (
+        link.dropdown ? (
+          <div>
+            <a
+              href={link.path}
+              class="text-gray-800 font-medium hover:text-[#1EAEDB] block"
+            >
+              {link.name}
+            </a>
+            <div class="ml-4 mt-2 space-y-2">
+              {link.dropdown.map((item) => (
+                <a
+                  href={item.path}
+                  class="text-gray-600 hover:text-[#1EAEDB] block text-sm"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={link.path}
+            class="text-gray-800 font-medium hover:text-[#1EAEDB]"
+          >
+            {link.name}
+          </a>
+        )
+      ))}
+      <a
+        href="/booking"
+        class="btn-primary inline-block text-center"
+      >
+        Book Now
+      </a>
+      <a
+        href="/keratin"
+        class="btn-secondary inline-block text-center"
+      >
+        Winter Keratin Special
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  #navbar {
+    background-color: transparent;
+    padding: 1rem 0;
+  }
+
+  #navbar.scrolled {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+  }
+
+  .nav-icon {
+    color: white;
+  }
+
+  .scrolled .nav-icon {
+    color: #1EAEDB;
+  }
+
+  .nav-icon.text-pink {
+    color: white;
+  }
+
+  .scrolled .nav-icon.text-pink {
+    color: #FFDEE2;
+  }
+
+  .nav-text {
+    color: white;
+  }
+
+  .scrolled .nav-text {
+    color: #111827;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .scrolled .nav-link {
+    color: #111827;
+  }
+
+  .nav-link:hover {
+    color: #1EAEDB;
+  }
+
+  .dropdown-menu {
+    top: 100%;
+    transform: translateY(10px);
+  }
+
+  .group:hover .dropdown-menu {
+    transform: translateY(0);
+  }
+
+  .scrolled .dropdown-menu {
+    border: 1px solid #e5e7eb;
+  }
+</style>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOpen = document.getElementById('menu-open');
+  const menuClose = document.getElementById('menu-close');
+
+  // Handle scroll effect
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Handle mobile menu toggle
+  mobileMenuToggle?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) {
+      mobileMenu?.classList.add('hidden');
+      menuOpen?.classList.remove('hidden');
+      menuClose?.classList.add('hidden');
+    } else {
+      mobileMenu?.classList.remove('hidden');
+      menuOpen?.classList.add('hidden');
+      menuClose?.classList.remove('hidden');
+    }
+  });
+</script>
