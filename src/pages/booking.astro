@@ -1,8 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Book Hair Appointment Kaukapakapa | Online Booking";
+const pageDescription = "Book your hair appointment online at Hair By Melissa Kaukapakapa. Instant booking for keratin treatments, balayage, highlights & cuts. Serving Helensville, Wainui & Waitoki.";
+const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville, online booking wainui, salon booking waitoki, book keratin treatment north auckland";
 ---
 
-<Layout title="Book an Appointment" description="Schedule your appointment with Hair By Melissa. Easy online booking for all our premium hair services.">
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+>
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
     <!-- Background Layer -->
@@ -14,10 +22,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="container-custom relative z-10">
       <div class="max-w-2xl">
         <h1 class="text-5xl font-bold text-white leading-tight">
-          Book Your Appointment
+          Book Hair Appointment in Kaukapakapa
         </h1>
         <p class="text-xl text-white mt-6">
-          Schedule your next visit and let us help you achieve your hair goals. Select your preferred service and time below.
+          Schedule your hair appointment online at our Kaukapakapa salon. We serve clients from Helensville, Wainui, Waitoki and surrounding North Auckland areas.
         </p>
       </div>
     </div>

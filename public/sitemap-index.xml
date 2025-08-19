@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main Website Sitemap -->
+  <sitemap>
+    <loc>https://hairbymelissa.co.nz/sitemap.xml</loc>
+    <lastmod>2025-01-19</lastmod>
+  </sitemap>
+  
+  <!-- Image Sitemap for Gallery and Service Images -->
+  <sitemap>
+    <loc>https://hairbymelissa.co.nz/sitemap-images.xml</loc>
+    <lastmod>2025-01-19</lastmod>
+  </sitemap>
+  
+  <!-- Services Specific Sitemap for Enhanced Local SEO -->
+  <sitemap>
+    <loc>https://hairbymelissa.co.nz/sitemap-services.xml</loc>
+    <lastmod>2025-01-19</lastmod>
+  </sitemap>
+  
+  <!-- Local Business Sitemap for Geographic SEO -->
+  <sitemap>
+    <loc>https://hairbymelissa.co.nz/sitemap-local.xml</loc>
+    <lastmod>2025-01-19</lastmod>
+  </sitemap>
+  
+</sitemapindex>

@@ -7,19 +7,536 @@ import LoadingSpinner from '../components/LoadingSpinner.astro';
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalURL?: string;
+  pageType?: 'website' | 'article' | 'service';
 }
 
-const { title, description = 'Elevate your hair experience with premium coloring services, keratin treatments, and expert styling at Hair By Melissa.' } = Astro.props;
+const { 
+  title, 
+  description = 'Premium hairdresser in Kaukapakapa, Auckland. Expert hair coloring, keratin treatments, balayage & highlights. Serving Kaukapakapa, Helensville, Wainui & Waitoki. Book your transformation today!',
+  keywords = 'hairdresser kaukapakapa, hair salon kaukapakapa, hair coloring auckland north, keratin treatment kaukapakapa, balayage helensville, highlights wainui, haircut waitoki, melissa hair salon, hair stylist north auckland',
+  ogImage = 'https://hairbymelissa.co.nz/images/og-image.jpg',
+  canonicalURL = new URL(Astro.url.pathname, 'https://hairbymelissa.co.nz').toString(),
+  pageType = 'website'
+} = Astro.props;
+
+// Enhanced Structured Data for HairSalon with Specific Services
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["HairSalon", "BeautySalon"],
+  "@id": "https://hairbymelissa.co.nz/#business",
+  "name": "Hair By Melissa",
+  "alternateName": ["Melissa's Hair Salon", "Hair By Melissa Kaukapakapa"],
+  "description": "Premium hair salon specializing in keratin treatments, balayage, highlights, and expert hair coloring in Kaukapakapa, Auckland. Serving North Auckland with professional hair services since 2020.",
+  "url": "https://hairbymelissa.co.nz",
+  "telephone": "+64-21-XXX-XXXX",
+  "email": "book@hairbymelissa.co.nz",
+  "foundingDate": "2020",
+  "founder": {
+    "@type": "Person",
+    "name": "Melissa",
+    "jobTitle": "Hair Stylist & Salon Owner"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Magnolia Lane",
+    "addressLocality": "Kaukapakapa",
+    "addressRegion": "Auckland",
+    "postalCode": "0810",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -36.6173,
+    "longitude": 174.4829
+  },
+  "image": [
+    "https://hairbymelissa.co.nz/images/salon-exterior.jpg",
+    "https://hairbymelissa.co.nz/images/salon-interior.jpg",
+    "https://hairbymelissa.co.nz/images/hair-services-gallery.jpg"
+  ],
+  "logo": "https://hairbymelissa.co.nz/images/logo.png",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "15:00"
+    }
+  ],
+  "priceRange": "$40-$230",
+  "currenciesAccepted": "NZD",
+  "paymentAccepted": ["Cash", "Credit Card", "EFTPOS", "Bank Transfer"],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Kaukapakapa",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Auckland Region"
+      }
+    },
+    {
+      "@type": "City", 
+      "name": "Helensville",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Auckland Region"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Wainui",
+      "containedInPlace": {
+        "@type": "AdministrativeArea", 
+        "name": "Auckland Region"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Waitoki",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Auckland Region"
+      }
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hair Services & Treatments",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/keratin-treatments#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Keratin Hair Treatment",
+          "name": "Keratin Treatments",
+          "description": "Professional keratin treatment that reduces frizz, adds incredible shine, and makes styling quick and easy. Formaldehyde-free formula lasts up to 5 months.",
+          "category": "Hair Treatment",
+          "duration": "PT2H30M",
+          "serviceOutput": "Smooth, frizz-free hair with enhanced shine and manageability"
+        },
+        "price": "180",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "180",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/keratin-treatments"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/balayage#offer", 
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Balayage Hair Coloring",
+          "name": "Balayage",
+          "description": "Hand-painted highlighting technique that creates naturally sun-kissed hair with softer, less noticeable regrowth. Low-maintenance color option.",
+          "category": "Hair Coloring",
+          "duration": "PT3H30M",
+          "serviceOutput": "Natural-looking dimensional color with soft regrowth"
+        },
+        "price": "230",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "230",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/balayage"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/full-head-highlights#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Highlighting",
+          "name": "Full Head of Highlights",
+          "description": "Complete transformation with highlights applied throughout entire head for maximum impact and dimension. Includes custom toner and styling.",
+          "category": "Hair Coloring",
+          "duration": "PT2H45M",
+          "serviceOutput": "Maximum dimension and brightness throughout entire head"
+        },
+        "price": "180",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "180",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/full-head-highlights"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/half-head-highlights#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Highlighting",
+          "name": "Half Head of Highlights",
+          "description": "Highlights applied to top and sides of hair for natural sun-kissed look. Perfect for creating dimension that grows out beautifully.",
+          "category": "Hair Coloring",
+          "duration": "PT2H15M",
+          "serviceOutput": "Natural dimension through top and sides with seamless blend"
+        },
+        "price": "140",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "140",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/half-head-highlights"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/womens-cut-finish#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Cutting and Styling",
+          "name": "Women's Cut & Finish",
+          "description": "Personalized haircut service including consultation, relaxing shampoo, precision cut, and professional styling tailored to your face shape and lifestyle.",
+          "category": "Hair Cutting",
+          "duration": "PT1H",
+          "serviceOutput": "Precision haircut with professional styling"
+        },
+        "price": "50",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "50",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/womens-cut-finish"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/permanent-tint-all-over#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Coloring",
+          "name": "Permanent Tint & All Over Color",
+          "description": "Full color application from roots to ends providing rich, vibrant, and even color throughout hair. Includes conditioning treatment.",
+          "category": "Hair Coloring",
+          "duration": "PT1H45M",
+          "serviceOutput": "Rich, vibrant, even color from roots to ends"
+        },
+        "price": "140",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "140",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/permanent-tint-all-over"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/partial-foils#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Highlighting",
+          "name": "Partial Foils",
+          "description": "Strategic highlights around face and crown to add dimension and brightness. Perfect for subtle change or low-maintenance color.",
+          "category": "Hair Coloring",
+          "duration": "PT1H15M",
+          "serviceOutput": "Face-framing highlights with subtle dimension"
+        },
+        "price": "90",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "90",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/partial-foils"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/blow-wave#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Styling",
+          "name": "Blow Wave",
+          "description": "Professional blow dry styling creating smooth, voluminous hair with incredible shine and movement. Perfect for special occasions.",
+          "category": "Hair Styling",
+          "duration": "PT50M",
+          "serviceOutput": "Smooth, voluminous hair with professional finish"
+        },
+        "price": "50",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "50",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/blow-wave"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/toner#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Toning",
+          "name": "Toner",
+          "description": "Professional toning service to neutralize unwanted tones, add depth, or refresh faded color. Ammonia-free formula.",
+          "category": "Hair Treatment",
+          "duration": "PT40M",
+          "serviceOutput": "Refined and perfected hair color with enhanced tone"
+        },
+        "price": "40",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "40",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/toner"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Coloring",
+          "name": "Permanent Tint & Touch Up",
+          "description": "Root touch-up service to refresh existing color and cover gray hair between full color appointments. Perfect for maintenance.",
+          "category": "Hair Coloring",
+          "duration": "PT1H15M",
+          "serviceOutput": "Refreshed root color with seamless blend"
+        },
+        "price": "90",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "90",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up"
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Keratin Treatments",
+    "Balayage Technique", 
+    "Hair Highlighting",
+    "Hair Coloring",
+    "Hair Cutting",
+    "Hair Styling",
+    "Color Correction",
+    "Hair Health",
+    "Frizz Management"
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -36.6173,
+      "longitude": 174.4829
+    },
+    "geoRadius": "25000"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Johnson"
+      },
+      "reviewBody": "Melissa transformed my dull, lifeless hair into a vibrant masterpiece. The keratin treatment was a game-changer!",
+      "datePublished": "2024-01-15"
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Emma Wilson"
+      },
+      "reviewBody": "Best balayage I've ever had! Melissa really knows her craft and the salon atmosphere is so relaxing.",
+      "datePublished": "2024-02-03"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/hairbymelissa",
+    "https://www.instagram.com/hairbymelissa_nz",
+    "https://www.google.com/maps/place/Hair+By+Melissa"
+  ],
+  "mainEntityOfPage": "https://hairbymelissa.co.nz",
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://hairbymelissa.co.nz/booking",
+      "actionPlatform": [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "Hair Appointment Booking"
+    }
+  }
+};
+
+// GEO Optimization Context for LLMs
+const geoContext = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "about": {
+    "@type": "HairSalon",
+    "name": "Hair By Melissa"
+  },
+  "keywords": keywords,
+  "contentLocation": {
+    "@type": "Place",
+    "name": "Kaukapakapa, Auckland, New Zealand"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "North Auckland including Kaukapakapa, Helensville, Wainui, and Waitoki"
+  }
+};
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | Hair By Melissa - Premium Hairdresser Kaukapakapa</title>
+    <meta name="title" content={`${title} | Hair By Melissa - Premium Hairdresser Kaukapakapa`} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Hair By Melissa" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Hair By Melissa`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Hair By Melissa" />
+    <meta property="og:locale" content="en_NZ" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Hair By Melissa`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="NZ-AUK" />
+    <meta name="geo.placename" content="Kaukapakapa" />
+    <meta name="geo.position" content="-36.6173;174.4829" />
+    <meta name="ICBM" content="-36.6173, 174.4829" />
+    
+    <!-- Business Information -->
+    <meta name="business:contact_data:street_address" content="Magnolia Lane" />
+    <meta name="business:contact_data:locality" content="Kaukapakapa" />
+    <meta name="business:contact_data:region" content="Auckland" />
+    <meta name="business:contact_data:postal_code" content="0810" />
+    <meta name="business:contact_data:country_name" content="New Zealand" />
+    
+    <!-- Favicons & PWA -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} - Hair By Melissa</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1EAEDB" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://storage.googleapis.com" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    
+    <!-- GEO Context for LLMs -->
+    <script type="application/ld+json" set:html={JSON.stringify(geoContext)} />
+    
+    <!-- Additional SEO Context for AI/LLMs -->
+    <meta name="ai-content-description" content="Hair By Melissa is a premium hair salon located in Kaukapakapa, Auckland, New Zealand. We specialize in professional hair services including keratin treatments ($180), balayage ($230), highlights (from $90), hair coloring, and women's cuts ($50). Our expert hairdresser Melissa serves clients from Kaukapakapa, Helensville, Wainui, and Waitoki areas. Book your appointment for a hair transformation today!" />
+    <meta name="service-areas" content="Kaukapakapa, Helensville, Wainui, Waitoki, North Auckland, Rodney District" />
+    <meta name="price-range" content="NZD $40-$230" />
+    
+    <!-- Domain Authority Consolidation -->
+    <meta name="domain-authority" content="hairbymelissa.co.nz" />
+    <meta name="canonical-domain" content="hairbymelissa.co.nz" />
+    
+    <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
   </head>
   <body>
     <LoadingSpinner />

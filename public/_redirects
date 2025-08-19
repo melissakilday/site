@@ -1,0 +1,39 @@
+# Domain Consolidation - Force apex domain for SEO authority consolidation
+# Redirect www subdomain to apex domain (301 permanent redirects)
+https://www.hairbymelissa.co.nz/* https://hairbymelissa.co.nz/:splat 301!
+http://www.hairbymelissa.co.nz/* https://hairbymelissa.co.nz/:splat 301!
+
+# Force HTTPS on apex domain
+http://hairbymelissa.co.nz/* https://hairbymelissa.co.nz/:splat 301!
+
+# Alternative domain variations (if any)
+https://hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
+https://www.hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
+http://hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
+http://www.hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
+
+# Ensure trailing slash consistency for better SEO
+/services /services/ 301
+/about /about/ 301
+/contact /contact/ 301
+/booking /booking/ 301
+/gallery /gallery/ 301
+/faq /faq/ 301
+
+# Legacy URL redirects (if migrating from other structure)
+/book /booking/ 301
+/appointment /booking/ 301
+/prices /services/ 301
+/treatments /services/ 301
+
+# Specific service redirects for common searches
+/keratin /services/keratin-treatments/ 301
+/highlights /services/full-head-highlights/ 301
+/balayage /services/balayage/ 301
+/cut /services/womens-cut-finish/ 301
+/haircut /services/womens-cut-finish/ 301
+/color /services/ 301
+/colour /services/ 301
+
+# 404 page
+/* /404.html 404

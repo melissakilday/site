@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const pageTitle = "Hair Services Kaukapakapa | Prices & Treatments";
+const pageDescription = "Complete hair services menu & prices at Hair By Melissa Kaukapakapa. Keratin treatments $180, Balayage $230, Highlights from $90, Women's cuts $50. Serving North Auckland areas.";
+const pageKeywords = "hair services kaukapakapa, hair prices kaukapakapa, keratin treatment cost auckland, balayage price helensville, highlights cost wainui, hair salon menu waitoki";
+
 const services = [
   {
     id: 1,
@@ -105,7 +109,11 @@ const services = [
 ];
 ---
 
-<Layout title="Services">
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+>
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
     <!-- Background Layer with Parallax -->
@@ -120,10 +128,10 @@ const services = [
     <div class="container-custom relative z-10">
       <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl font-bold text-white leading-tight">
-          Our Premium Hair Services
+          Hair Services & Prices in Kaukapakapa
         </h1>
         <p class="text-xl text-white mt-6">
-          Discover our comprehensive range of hair services, each designed to transform, enhance, and maintain your beautiful locks.
+          Professional hair services for North Auckland residents. From keratin treatments to balayage, serving Kaukapakapa, Helensville, Wainui & Waitoki with premium hair care.
         </p>
       </div>
     </div>

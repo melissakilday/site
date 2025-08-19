@@ -1,0 +1,87 @@
+# Apache .htaccess for domain consolidation and SEO optimization
+# Force apex domain (hairbymelissa.co.nz) for consolidated SEO authority
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Force HTTPS and apex domain (no www)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# Force apex domain specifically for hairbymelissa
+RewriteCond %{HTTP_HOST} ^www\.hairbymelissa\.co\.nz$ [NC]
+RewriteRule ^(.*)$ https://hairbymelissa.co.nz/$1 [R=301,L]
+
+# Alternative domain redirects (if you own other variations)
+RewriteCond %{HTTP_HOST} ^(www\.)?hairbymelissa\.com$ [NC]
+RewriteRule ^(.*)$ https://hairbymelissa.co.nz/$1 [R=301,L]
+
+# Trailing slash normalization for consistency
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !\.[^/]+$
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+# Legacy URL redirects for common searches
+RewriteRule ^book/?$ /booking/ [R=301,L]
+RewriteRule ^appointment/?$ /booking/ [R=301,L]
+RewriteRule ^prices/?$ /services/ [R=301,L]
+RewriteRule ^treatments/?$ /services/ [R=301,L]
+
+# Service-specific redirects
+RewriteRule ^keratin/?$ /services/keratin-treatments/ [R=301,L]
+RewriteRule ^highlights/?$ /services/full-head-highlights/ [R=301,L]
+RewriteRule ^balayage/?$ /services/balayage/ [R=301,L]
+RewriteRule ^(cut|haircut)/?$ /services/womens-cut-finish/ [R=301,L]
+RewriteRule ^colou?r/?$ /services/ [R=301,L]
+
+# Security headers for better SEO signals
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always append X-Frame-Options SAMEORIGIN
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Content Type Options
+    Header set X-Content-Type-Options nosniff
+    
+    # Referrer Policy for better analytics
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # HSTS for HTTPS enforcement (only if using HTTPS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Compression for better page speed (SEO factor)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# Browser caching for better performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
