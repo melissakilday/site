@@ -42,6 +42,20 @@
     </image:image>
   </url>
   
+  <!-- PILLAR CONTENT PAGE - New Addition for Broad Keywords -->
+  <url>
+    <loc>https://hairbymelissa.co.nz/hair-dressing</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65ac7a0155bc1d24545.png</image:loc>
+      <image:caption>Professional Hair Dressing Guide - Techniques, Trends & Tips</image:caption>
+      <image:title>Hair Dressing Comprehensive Guide</image:title>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://hairbymelissa.co.nz/services</loc>
     <lastmod>2025-01-19</lastmod>

@@ -1,0 +1,671 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Professional Hair Dressing Guide | Expert Techniques & Trends 2025";
+const pageDescription = "Complete guide to professional hair dressing: techniques, trends, treatments, and expert tips. From classic cuts to modern coloring, discover everything about hair dressing at Hair By Melissa.";
+const pageKeywords = "hair dressing, professional hairdressing, hair styling techniques, hair coloring methods, hair treatments, hair care guide, hairdressing trends 2025, salon services";
+
+// Comprehensive sections for pillar content
+const hairDressingTopics = [
+  {
+    id: "cutting-techniques",
+    title: "Hair Cutting Techniques",
+    icon: "scissors",
+    description: "Master the art of precision cutting",
+    subtopics: ["Layer Cutting", "Graduation", "Texturizing", "Point Cutting", "Razor Cutting"]
+  },
+  {
+    id: "coloring-methods",
+    title: "Hair Coloring Methods",
+    icon: "palette",
+    description: "Explore modern coloring techniques",
+    subtopics: ["Balayage", "Highlights", "Color Correction", "Fashion Colors", "Grey Coverage"]
+  },
+  {
+    id: "styling-treatments",
+    title: "Styling & Treatments",
+    icon: "sparkles",
+    description: "Transform hair with treatments",
+    subtopics: ["Keratin Treatments", "Deep Conditioning", "Scalp Treatments", "Hair Botox", "Olaplex"]
+  },
+  {
+    id: "hair-care",
+    title: "Professional Hair Care",
+    icon: "heart",
+    description: "Maintain healthy, beautiful hair",
+    subtopics: ["Daily Care", "Product Selection", "Damage Prevention", "Home Maintenance", "Seasonal Care"]
+  }
+];
+
+// FAQ Schema for voice search optimization
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is professional hair dressing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Professional hair dressing encompasses the art and science of cutting, coloring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I visit a hair dresser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most people should visit a hair dresser every 6-8 weeks for maintenance. However, this varies based on hair type, style, and whether you have color treatments that need touching up every 4-6 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between hair dressing and hair styling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hair dressing is the broader profession encompassing cutting, coloring, and chemical treatments, while hair styling specifically refers to arranging hair into a particular look using tools and products."
+      }
+    }
+  ]
+};
+
+// Breadcrumb Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://hairbymelissa.co.nz"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hair Dressing Guide",
+      "item": "https://hairbymelissa.co.nz/hair-dressing"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="article"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-[#1EAEDB]/10 to-[#FFDEE2]/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Hair Dressing Guide</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          The Complete Guide to <span class="gradient-text">Professional Hair Dressing</span>
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Discover the art and science of professional hair dressing. From classic techniques to modern innovations, explore comprehensive insights into cutting, coloring, styling, and hair care that define excellence in hairdressing.
+        </p>
+        
+        <!-- Quick Navigation -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#cutting-techniques" class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition">
+            <svg class="w-5 h-5 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path>
+            </svg>
+            Cutting
+          </a>
+          <a href="#coloring-methods" class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition">
+            <svg class="w-5 h-5 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+            Coloring
+          </a>
+          <a href="#styling-treatments" class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition">
+            <svg class="w-5 h-5 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            Treatments
+          </a>
+          <a href="#hair-care" class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition">
+            <svg class="w-5 h-5 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            Hair Care
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-6">What is Professional Hair Dressing?</h2>
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p>
+            Professional hair dressing is both an art and a science that combines technical expertise with creative vision. It encompasses everything from precision cutting and advanced coloring techniques to specialized treatments and styling methods. At its core, hair dressing is about enhancing natural beauty while maintaining the health and integrity of the hair.
+          </p>
+          <p>
+            The modern hair dresser is a skilled professional who understands hair structure, chemistry, and design principles. They stay current with trends while mastering timeless techniques, ensuring each client receives personalized service that suits their lifestyle, face shape, and hair type.
+          </p>
+          <p>
+            Whether you're seeking a dramatic transformation or subtle enhancement, professional hair dressing offers solutions that go beyond simple haircuts. It's about creating confidence, expressing personality, and achieving looks that are both beautiful and manageable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Topics Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Core Areas of Hair Dressing</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore the fundamental aspects of professional hair dressing, from technical skills to creative applications.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {hairDressingTopics.map((topic) => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class="p-8">
+              <div class="flex items-start mb-4">
+                {topic.icon === "scissors" && (
+                  <svg class="w-8 h-8 text-[#1EAEDB] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path>
+                  </svg>
+                )}
+                {topic.icon === "palette" && (
+                  <svg class="w-8 h-8 text-[#1EAEDB] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                  </svg>
+                )}
+                {topic.icon === "sparkles" && (
+                  <svg class="w-8 h-8 text-[#1EAEDB] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                )}
+                {topic.icon === "heart" && (
+                  <svg class="w-8 h-8 text-[#1EAEDB] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                  </svg>
+                )}
+                <div>
+                  <h3 class="text-2xl font-bold mb-2">{topic.title}</h3>
+                  <p class="text-gray-600 mb-4">{topic.description}</p>
+                </div>
+              </div>
+              <div class="space-y-2">
+                {topic.subtopics.map((subtopic) => (
+                  <div class="flex items-center text-gray-700">
+                    <svg class="w-4 h-4 text-[#1EAEDB] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>{subtopic}</span>
+                  </div>
+                ))}
+              </div>
+              <a href={`#${topic.id}`} class="inline-flex items-center mt-6 text-[#1EAEDB] font-medium hover:underline">
+                Learn more
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Sections -->
+  
+  <!-- Cutting Techniques Section -->
+  <section id="cutting-techniques" class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Cutting Techniques</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            Hair cutting is the foundation of hair dressing, requiring precision, understanding of hair growth patterns, and artistic vision. Professional hair dressers master various cutting techniques to create shapes that complement facial features and lifestyle needs.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Essential Cutting Methods</h3>
+          
+          <div class="space-y-6 mb-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-xl font-semibold mb-2">Layer Cutting</h4>
+              <p class="text-gray-700">Creates movement and volume by cutting hair at different lengths. Layers can be subtle for natural movement or dramatic for bold styles. This technique works with all hair types and is essential for modern hairdressing.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-xl font-semibold mb-2">Graduation Technique</h4>
+              <p class="text-gray-700">Builds weight and shape by cutting hair at specific angles. Graduated cuts create structured looks, from classic bobs to contemporary asymmetrical styles. This technique requires precise sectioning and angle control.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="text-xl font-semibold mb-2">Texturizing Methods</h4>
+              <p class="text-gray-700">Removes bulk and creates texture using various tools like thinning shears, razors, or point cutting. Texturizing enhances natural hair movement and is crucial for achieving modern, lived-in looks.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Advanced Cutting Principles</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Understanding face shapes and how cuts can enhance or balance features</li>
+            <li>Working with natural hair growth patterns and cowlicks</li>
+            <li>Adapting techniques for different hair textures and densities</li>
+            <li>Creating cuts that grow out beautifully between appointments</li>
+            <li>Incorporating current trends while maintaining timeless appeal</li>
+          </ul>
+        </div>
+        
+        <!-- CTA to services -->
+        <div class="mt-8 p-6 bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] rounded-lg">
+          <h3 class="text-xl font-semibold mb-2">Experience Expert Cutting at Hair By Melissa</h3>
+          <p class="text-gray-700 mb-4">Our precision cutting services start from just $50, tailored to your unique style and features.</p>
+          <a href="/services/womens-cut-finish" class="inline-flex items-center btn-primary">
+            Book Your Cut
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coloring Methods Section -->
+  <section id="coloring-methods" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Coloring Methods</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            Hair coloring is where science meets artistry in hair dressing. Modern colorists understand color theory, chemical processes, and application techniques to achieve everything from natural coverage to bold fashion statements.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Popular Coloring Techniques</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-[#1EAEDB]">Balayage</h4>
+              <p class="text-gray-700">Hand-painted highlights creating sun-kissed, natural-looking dimension. This low-maintenance technique grows out beautifully.</p>
+              <p class="mt-2 font-semibold">Price: From $230</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-[#1EAEDB]">Foil Highlights</h4>
+              <p class="text-gray-700">Precise color placement using foils for maximum lift and dramatic results. Perfect for creating contrast and brightness.</p>
+              <p class="mt-2 font-semibold">Price: From $90</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-[#1EAEDB]">All-Over Color</h4>
+              <p class="text-gray-700">Complete color transformation or grey coverage from roots to ends. Achieves uniform, vibrant results.</p>
+              <p class="mt-2 font-semibold">Price: From $140</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h4 class="text-xl font-semibold mb-2 text-[#1EAEDB]">Color Correction</h4>
+              <p class="text-gray-700">Advanced techniques to fix color mistakes or achieve dramatic changes. Requires expertise in color theory and chemistry.</p>
+              <p class="mt-2 font-semibold">Consultation Required</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Color Science & Safety</h3>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>Understanding the color wheel and complementary colors</li>
+            <li>Analyzing natural hair pigments and undertones</li>
+            <li>Selecting appropriate developers and processing times</li>
+            <li>Protecting hair integrity during chemical processes</li>
+            <li>Using bond-building treatments to minimize damage</li>
+            <li>Formulating custom colors for individual clients</li>
+          </ul>
+        </div>
+        
+        <!-- Link to services -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href="/services/balayage" class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <span class="block font-semibold text-[#1EAEDB]">Balayage</span>
+            <span class="text-sm text-gray-600">Learn More →</span>
+          </a>
+          <a href="/services/full-head-highlights" class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <span class="block font-semibold text-[#1EAEDB]">Highlights</span>
+            <span class="text-sm text-gray-600">Learn More →</span>
+          </a>
+          <a href="/services/permanent-tint-all-over" class="text-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+            <span class="block font-semibold text-[#1EAEDB]">Full Color</span>
+            <span class="text-sm text-gray-600">Learn More →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Styling & Treatments Section -->
+  <section id="styling-treatments" class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Styling & Treatments</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            Professional hair treatments go beyond basic styling, offering transformative solutions for hair health, texture, and manageability. Modern hair dressing incorporates advanced treatments that repair, protect, and enhance hair at a molecular level.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Revolutionary Hair Treatments</h3>
+          
+          <div class="space-y-6 mb-8">
+            <div class="border-l-4 border-[#1EAEDB] pl-6">
+              <h4 class="text-xl font-semibold mb-2">Keratin Treatments</h4>
+              <p class="text-gray-700 mb-2">Our signature keratin treatment is a game-changer for frizzy, unmanageable hair. This professional treatment infuses keratin protein deep into the hair cuticle, creating smooth, shiny hair that's easy to style.</p>
+              <ul class="list-disc pl-6 text-gray-700">
+                <li>Reduces frizz by up to 95%</li>
+                <li>Cuts styling time in half</li>
+                <li>Lasts up to 5 months</li>
+                <li>Safe, formaldehyde-free formula</li>
+              </ul>
+              <a href="/services/keratin-treatments" class="inline-block mt-3 text-[#1EAEDB] font-medium hover:underline">
+                Explore Keratin Treatment ($180) →
+              </a>
+            </div>
+            
+            <div class="border-l-4 border-[#FFDEE2] pl-6">
+              <h4 class="text-xl font-semibold mb-2">Deep Conditioning Therapies</h4>
+              <p class="text-gray-700">Intensive moisture treatments that restore hair's natural elasticity and shine. Essential for colored, chemically treated, or environmentally damaged hair.</p>
+            </div>
+            
+            <div class="border-l-4 border-[#D3E4FD] pl-6">
+              <h4 class="text-xl font-semibold mb-2">Scalp Treatments</h4>
+              <p class="text-gray-700">Healthy hair starts with a healthy scalp. Professional scalp treatments address issues like dryness, oiliness, and sensitivity while promoting optimal hair growth.</p>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Professional Styling Techniques</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-2">Blow Drying Mastery</h4>
+              <p class="text-gray-700">Professional blow drying creates volume, smoothness, and lasting style. Our blow wave service delivers salon-perfect results.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Heat Styling Excellence</h4>
+              <p class="text-gray-700">Using professional tools and heat protectants to create curls, waves, or sleek straight styles without damage.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Updos & Special Occasions</h4>
+              <p class="text-gray-700">Creating elegant updos and special occasion styles that last throughout your event.</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Texture Enhancement</h4>
+              <p class="text-gray-700">Working with natural texture to enhance curls, waves, or create lived-in styles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hair Care Section -->
+  <section id="hair-care" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Professional Hair Care</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            Professional hair care extends beyond the salon chair. Understanding proper maintenance, product selection, and daily care routines ensures your hair remains healthy and beautiful between appointments.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Essential Hair Care Principles</h3>
+          
+          <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h4 class="text-xl font-semibold mb-4">Daily Hair Care Routine</h4>
+            <ol class="list-decimal pl-6 space-y-3 text-gray-700">
+              <li><strong>Gentle Cleansing:</strong> Use sulfate-free shampoos that clean without stripping natural oils</li>
+              <li><strong>Proper Conditioning:</strong> Apply conditioner from mid-length to ends, avoiding roots</li>
+              <li><strong>Heat Protection:</strong> Always use heat protectant before styling tools</li>
+              <li><strong>Regular Treatments:</strong> Weekly deep conditioning masks for optimal health</li>
+              <li><strong>Gentle Drying:</strong> Pat hair dry with microfiber towels to reduce friction</li>
+            </ol>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Hair Care</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h4 class="font-semibold mb-2 text-[#1EAEDB]">Summer Care</h4>
+              <ul class="text-gray-700 space-y-1">
+                <li>• UV protection products</li>
+                <li>• Extra hydration for sun exposure</li>
+                <li>• Chlorine protection for swimmers</li>
+                <li>• Light, breathable styles</li>
+              </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <h4 class="font-semibold mb-2 text-[#1EAEDB]">Winter Care</h4>
+              <ul class="text-gray-700 space-y-1">
+                <li>• Moisture-rich treatments</li>
+                <li>• Static control products</li>
+                <li>• Scalp care for dryness</li>
+                <li>• Protective styles for harsh weather</li>
+              </ul>
+            </div>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Product Selection Guide</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold">For Fine Hair</h4>
+                <p class="text-gray-700">Volumizing products, lightweight conditioners, root lift sprays</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold">For Thick Hair</h4>
+                <p class="text-gray-700">Smoothing serums, heavy conditioners, anti-frizz treatments</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold">For Colored Hair</h4>
+                <p class="text-gray-700">Color-safe shampoos, UV protectants, bond-building treatments</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <h4 class="font-semibold">For Damaged Hair</h4>
+                <p class="text-gray-700">Protein treatments, keratin masks, repairing oils</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Trends Section -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Dressing Trends 2025</h2>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="text-gray-700 mb-6">
+            Stay ahead with the latest hair dressing trends that are defining 2025. From innovative techniques to revival of classic styles, discover what's trending in professional hair dressing.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Color Trends</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-[#1EAEDB] mr-2">▸</span>
+                  <span><strong>Lived-in Blonde:</strong> Natural, low-maintenance blonde with darker roots</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#1EAEDB] mr-2">▸</span>
+                  <span><strong>Copper Renaissance:</strong> Rich copper and auburn tones making a comeback</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#1EAEDB] mr-2">▸</span>
+                  <span><strong>Money Piece:</strong> Face-framing highlights for instant brightness</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 class="text-xl font-semibold mb-3">Cut & Style Trends</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-[#FFDEE2] mr-2">▸</span>
+                  <span><strong>Modern Shag:</strong> Textured layers with curtain bangs</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FFDEE2] mr-2">▸</span>
+                  <span><strong>Blunt Bob:</strong> Sharp, one-length bobs at jaw or collarbone</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[#FFDEE2] mr-2">▸</span>
+                  <span><strong>Pixie Evolution:</strong> Longer, more versatile pixie cuts</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Frequently Asked Questions About Hair Dressing</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-3">What is professional hair dressing?</h3>
+            <p class="text-gray-700">
+              Professional hair dressing encompasses the art and science of cutting, coloring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health. Professional hair dressers undergo extensive training to master techniques, understand hair chemistry, and create personalized looks for each client.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-3">How often should I visit a hair dresser?</h3>
+            <p class="text-gray-700">
+              Most people should visit a hair dresser every 6-8 weeks for maintenance. However, this varies based on several factors: hair growth rate, style complexity, and whether you have color treatments. Color touch-ups typically need attention every 4-6 weeks, while some low-maintenance styles can go 10-12 weeks between visits.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-3">What's the difference between hair dressing and hair styling?</h3>
+            <p class="text-gray-700">
+              Hair dressing is the broader profession encompassing cutting, coloring, chemical treatments, and overall hair care. Hair styling specifically refers to arranging hair into a particular look using tools and products. While all hair dressers can style hair, hair dressing includes the technical skills of cutting and coloring that require professional licensing.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-3">How do I choose the right hair dresser?</h3>
+            <p class="text-gray-700">
+              Look for a hair dresser with proper qualifications, experience in your desired services, and a portfolio that matches your style preferences. Read reviews, ask for consultations, and ensure they listen to your needs. A good hair dresser will consider your lifestyle, maintenance preferences, and hair type when recommending styles.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-3">What should I expect during a hair dressing appointment?</h3>
+            <p class="text-gray-700">
+              A professional appointment begins with a consultation to discuss your goals and assess your hair. The hair dresser will recommend suitable options, explain the process, and provide pricing. Services typically include shampooing, the main service (cut/color/treatment), styling, and home care advice. Quality salons also offer refreshments and a relaxing atmosphere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2]">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Experience Professional Hair Dressing in Kaukapakapa</h2>
+        <p class="text-xl text-gray-700 mb-8">
+          At Hair By Melissa, we bring professional hair dressing excellence to North Auckland. Serving Kaukapakapa, Helensville, Wainui, and Waitoki with premium hair services that combine traditional techniques with modern innovation.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">5+ Years Experience</h3>
+            <p class="text-gray-600">Expert hair dressing with proven results</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">Local Convenience</h3>
+            <p class="text-gray-600">Serving North Auckland communities</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">Competitive Prices</h3>
+            <p class="text-gray-600">Premium services from $40</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Your Appointment
+          </a>
+          <a href="/services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            View All Services
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Scripts -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>
