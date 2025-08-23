@@ -1,0 +1,699 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Hair Salon Waitoki | Professional Hairdresser Near Waitoki | Hair By Melissa";
+const pageDescription = "Expert hair salon serving Waitoki residents with professional keratin treatments, balayage, and hair coloring. Located in nearby Kaukapakapa, specializing in rural lifestyle hair care.";
+const pageKeywords = "hair salon waitoki, hairdresser waitoki, hair coloring waitoki, keratin treatment waitoki, balayage waitoki, highlights waitoki, hair salon near waitoki, rural hair care";
+
+// Local business schema for Waitoki service area
+const waitokiSchema = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Hair By Melissa - Serving Waitoki",
+  "description": "Professional hair salon serving Waitoki residents with expert hair care tailored for rural living and equestrian lifestyles. Located in nearby Kaukapakapa.",
+  "url": "https://hairbymelissa.co.nz/locations/waitoki",
+  "telephone": "+64-21-XXX-XXXX",
+  "email": "book@hairbymelissa.co.nz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Magnolia Lane",
+    "addressLocality": "Kaukapakapa",
+    "addressRegion": "Auckland",
+    "postalCode": "0810",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -36.6173,
+    "longitude": 174.4829
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Waitoki",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Auckland Region"
+      }
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "15:00"
+    }
+  ],
+  "priceRange": "$40-$230",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -36.6173,
+      "longitude": 174.4829
+    },
+    "geoRadius": "25000"
+  }
+};
+
+// FAQ Schema specific to Waitoki
+const waitokiFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a hair salon near Waitoki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hair By Melissa in Kaukapakapa is the closest professional hair salon to Waitoki, located just 10 minutes away. We understand rural lifestyles and offer services perfect for equestrian enthusiasts and country living."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cater to equestrian and rural lifestyles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! We specialize in practical, beautiful hairstyles that work with helmet wear, outdoor activities, and rural living. Our keratin treatments are particularly popular with horse riders for creating helmet-friendly, low-maintenance styles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Hair By Melissa from Waitoki?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're just 10 minutes from Waitoki center via local rural roads. The short drive through beautiful countryside makes for a relaxing journey to your appointment."
+      }
+    }
+  ]
+};
+
+// Services popular with rural/equestrian clientele
+const waitokiServices = [
+  {
+    name: "Keratin Treatments",
+    price: "$180",
+    description: "Perfect for helmet-wearing equestrians and outdoor lifestyles",
+    duration: "2-3 hours",
+    ruralBenefit: "Creates smooth, manageable hair that works well under riding helmets",
+    popular: true
+  },
+  {
+    name: "Low-Maintenance Cuts",
+    price: "$50", 
+    description: "Practical styles that look great with minimal daily styling",
+    duration: "45-60 min",
+    ruralBenefit: "Designed for busy rural lifestyles and early morning routines",
+    popular: true
+  },
+  {
+    name: "Balayage",
+    price: "$230",
+    description: "Natural highlights that grow out beautifully",
+    duration: "3-4 hours",
+    ruralBenefit: "Low-maintenance color perfect for infrequent salon visits",
+    popular: false
+  },
+  {
+    name: "Protective Styling",
+    price: "$80",
+    description: "Styles designed to withstand outdoor work and activities",
+    duration: "1 hour",
+    ruralBenefit: "Long-lasting styles for farming, equestrian, and outdoor work",
+    popular: true
+  }
+];
+
+// Rural lifestyle considerations
+const ruralConsiderations = [
+  {
+    category: "Equestrian",
+    challenge: "Helmet hair and constant hat wearing",
+    solution: "Keratin treatments and strategic cuts that work with protective headwear"
+  },
+  {
+    category: "Farming",
+    challenge: "Exposure to dust, wind, and variable weather",
+    solution: "Protective treatments and practical styles that maintain shape"
+  },
+  {
+    category: "Lifestyle Blocks",
+    challenge: "Limited time for daily hair maintenance",
+    solution: "Low-maintenance cuts and long-lasting color treatments"
+  },
+  {
+    category: "Outdoor Work",
+    challenge: "Sun exposure and physical activity demands",
+    solution: "UV protection and sweat-resistant styling products"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/locations" class="text-gray-600 hover:text-[#1EAEDB]">Locations</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Waitoki</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Hair Salon <span class="gradient-text">Waitoki</span>
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Professional hair care designed for Waitoki's rural lifestyle. Just 10 minutes from Waitoki, Hair By Melissa specializes in practical, beautiful hairstyles perfect for equestrian enthusiasts, lifestyle block owners, and country living.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Your Appointment
+          </a>
+          <a href="#rural-services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Rural Lifestyle Services
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Waitoki Rural Lifestyle -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Care for Waitoki's Rural Community</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p class="text-xl mb-6">
+            Waitoki represents the heart of Auckland's rural lifestyle, where rolling hills, lifestyle blocks, and equestrian properties create a unique community with distinct hair care needs. This picturesque area, known for its horse studs, vineyards, and rural enterprises, requires a salon that understands the practical demands of country living while delivering the sophisticated results that today's rural residents expect.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Understanding Waitoki's Unique Rural Environment</h3>
+          <p class="mb-6">
+            Nestled in the gently rolling hills between Kaukapakapa and Helensville, Waitoki encompasses some of Auckland's most beautiful rural landscape. The area's elevation and open spaces create specific environmental conditions that affect hair care needs. The combination of exposure to wind, dust, and varying weather conditions, along with the active outdoor lifestyle that rural living encourages, creates unique challenges for maintaining beautiful, manageable hair.
+          </p>
+          
+          <p class="mb-6">
+            Waitoki's rural roads and open spaces mean residents often face longer commutes and more limited access to services than their urban counterparts. This reality influences hair care preferences, with many clients seeking styles and treatments that look professional while requiring minimal daily maintenance. The area's elevation also means slightly different humidity levels and wind patterns compared to coastal areas, requiring specialized knowledge for optimal hair care results.
+          </p>
+          
+          <p class="mb-6">
+            The community's strong connection to the land and agricultural heritage creates a culture that values authenticity, practicality, and quality craftsmanship. These values extend to hair care choices, where residents prefer services that enhance their natural beauty while fitting seamlessly into their active, outdoor-oriented lifestyles.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">The Equestrian Community's Specific Needs</h3>
+          <p class="mb-6">
+            Waitoki is renowned throughout Auckland for its equestrian facilities, including numerous horse studs, riding schools, and competition venues. The area attracts serious equestrians who often ride daily and compete regularly, creating specific hair care challenges that we've become expert at addressing. Helmet hair is a real concern for riders who spend hours each day wearing protective headgear, requiring specialized cutting techniques and treatments.
+          </p>
+          
+          <p class="mb-6">
+            Our keratin treatments have become incredibly popular with the equestrian community because they create smooth, manageable hair that doesn't become unruly when compressed under a helmet. The treatment also reduces the time needed for daily styling – crucial for riders who often have early morning training sessions and limited time between barn work and professional commitments.
+          </p>
+          
+          <p class="mb-6">
+            Competition riders face additional challenges, needing hairstyles that look polished in the show ring while being practical enough for daily training. We specialize in cuts that can be quickly transformed from casual everyday styles to competition-ready looks with minimal effort. Our understanding of hairnet requirements, helmet fit considerations, and the physical demands of riding allows us to create styles that truly work for the equestrian lifestyle.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Lifestyle Block Living and Hair Care</h3>
+          <p class="mb-6">
+            Many Waitoki residents live on lifestyle blocks, combining rural tranquility with professional careers in Auckland. This lifestyle presents unique scheduling challenges and hair care needs. Early morning animal care routines, outdoor maintenance work, and weekend projects all impact hair styling requirements and appointment timing preferences.
+          </p>
+          
+          <p class="mb-6">
+            Lifestyle block owners often work outdoors more than they initially expected, dealing with dust, wind, and physical activity that can stress hair. Our protective treatments and styling recommendations help maintain professional appearance standards while accommodating the realities of property maintenance, gardening, and animal care that lifestyle block living involves.
+          </p>
+          
+          <p class="mb-6">
+            The seasonal nature of many rural activities also influences hair care timing. Spring brings lambing and foaling season, requiring low-maintenance styles that can withstand long days outdoors. Summer means hay making and extended outdoor work periods, while autumn involves harvesting and property preparation for winter. Understanding these rhythms allows us to recommend treatment timing that works with, rather than against, the natural cycles of rural life.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">The Rural Professional Balance</h3>
+          <p class="mb-6">
+            Many Waitoki residents commute to professional roles in Auckland while maintaining rural properties, creating unique styling needs that bridge country and city requirements. Hair must look appropriately professional for urban work environments while being practical enough for rural morning and evening routines. This balancing act requires sophisticated understanding of versatile styling techniques.
+          </p>
+          
+          <p class="mb-6">
+            Our clients often need styles that can transition seamlessly from feeding horses at dawn to boardroom meetings by 9 AM, then back to evening property maintenance. This requires careful consideration of cut geometry, product selection, and styling techniques that maintain shape and professional appearance throughout demanding daily schedules.
+          </p>
+          
+          <p class="mb-6">
+            The time constraints of rural commuting also influence appointment preferences and maintenance schedules. We work with clients to create service schedules that accommodate longer travel times and busier rural lifestyles, often booking longer appointment blocks to maximize efficiency when clients can make the journey to our salon.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Considerations in Waitoki</h3>
+          <p class="mb-6">
+            <strong>Spring (September-November):</strong> Spring in Waitoki brings foaling season, property cleanup, and preparation for the growing season. This busy time often sees increased demand for low-maintenance cuts and protective treatments that can withstand increased outdoor activity. The variable spring weather requires versatile styles that work in both warm and cool conditions.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Summer (December-February):</strong> Summer brings hay making, extended outdoor work, and competition season for equestrians. UV protection becomes crucial for hair health, while dust and dry conditions require extra moisture protection. This is our peak season for keratin treatments and protective styling services designed for intense outdoor exposure.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Autumn (March-May):</strong> Autumn preparation work includes property maintenance, crop harvesting, and winter preparation. The cooler weather allows for more intensive treatments that might be uncomfortable in summer heat. Many clients use this season for color services and major cut changes before winter.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Winter (June-August):</strong> Winter in Waitoki can be muddy and demanding, requiring hairstyles that can withstand wet weather gear and frequent hat wearing. Indoor heating systems can cause dryness, making this an ideal time for deep conditioning treatments and moisture-rich color services.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Community Events and Occasions</h3>
+          <p class="mb-6">
+            Waitoki's rural calendar includes numerous events that influence our booking patterns. The annual Waitoki Country Music Festival brings the community together and often creates demand for special occasion styling. Horse shows and equestrian competitions throughout the year require specialized knowledge of show ring presentation standards.
+          </p>
+          
+          <p class="mb-6">
+            Rural weddings, often held on family properties or in rustic venues, require styling that photographs beautifully while withstanding outdoor conditions. We specialize in romantic, natural styles that complement rural wedding settings while maintaining their shape throughout long outdoor celebrations.
+          </p>
+          
+          <p class="mb-6">
+            The close-knit nature of rural communities also means that word-of-mouth recommendations are incredibly important. Our reputation in Waitoki has been built through years of understanding and meeting the specific needs of rural lifestyles, creating styles that work in real-world country conditions.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Convenience and Accessibility</h3>
+          <p class="mb-6">
+            Despite being located in Kaukapakapa rather than Waitoki itself, our salon offers several advantages for Waitoki residents. The 10-minute drive along rural roads provides a peaceful transition from daily responsibilities to self-care time. Many clients appreciate that the journey gives them time to mentally prepare for their appointment and unwind from rural work demands.
+          </p>
+          
+          <p class="mb-6">
+            Our rural Kaukapakapa location also means we understand the rhythms and demands of country living in ways that urban salons simply cannot. We schedule appointments with realistic timing that accounts for unpredictable rural demands like animal emergencies or weather delays. Our flexible approach to scheduling recognizes that rural life doesn't always follow urban clock precision.
+          </p>
+          
+          <p class="mb-6">
+            The proximity also allows for emergency appointments when special occasions arise unexpectedly – something that's particularly valuable in a close-knit rural community where last-minute invitations and events are common. Our understanding of rural priorities means we can often accommodate urgent requests that urban salons might not consider reasonable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rural Lifestyle Services -->
+  <section id="rural-services" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Services Designed for Rural Living</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Hair care solutions tailored for equestrian enthusiasts, lifestyle block owners, and the demands of country living.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {waitokiServices.map((service) => (
+            <div class={`bg-white rounded-lg shadow-lg p-8 ${service.popular ? 'border-2 border-green-400' : ''}`}>
+              {service.popular && (
+                <div class="mb-4">
+                  <span class="bg-green-400 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    🐎 Rural Favorite
+                  </span>
+                </div>
+              )}
+              <h3 class="text-2xl font-bold mb-3">{service.name}</h3>
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+                <span class="text-gray-600">{service.duration}</span>
+              </div>
+              <p class="text-gray-700 mb-4">{service.description}</p>
+              <div class="bg-green-50 p-4 rounded-lg mb-6">
+                <h4 class="font-semibold text-green-800 mb-2">Rural Benefit:</h4>
+                <p class="text-green-700 text-sm">{service.ruralBenefit}</p>
+              </div>
+              <a 
+                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+              >
+                Learn more about {service.name}
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rural Challenges & Solutions -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Rural Hair Care Challenges & Our Solutions</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {ruralConsiderations.map((item) => (
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+              <h3 class="text-xl font-bold mb-3 text-green-800">{item.category} Lifestyle</h3>
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-700 mb-2">Challenge:</h4>
+                <p class="text-gray-600 text-sm">{item.challenge}</p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-green-700 mb-2">Our Solution:</h4>
+                <p class="text-green-600 text-sm">{item.solution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-12 bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-gray-800">Hair Care for Rural Work</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg">
+              <h4 class="font-bold mb-3 text-[#1EAEDB]">Before Outdoor Work</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Apply UV protection products</li>
+                <li>• Secure hair to prevent tangles</li>
+                <li>• Use moisture-sealing treatments</li>
+                <li>• Consider protective headwear</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg">
+              <h4 class="font-bold mb-3 text-[#1EAEDB]">During Activities</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Keep hair protected under hats</li>
+                <li>• Avoid touching dusty hair</li>
+                <li>• Rinse with clean water when possible</li>
+                <li>• Use sweat-resistant products</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg">
+              <h4 class="font-bold mb-3 text-[#1EAEDB]">After Work</h4>
+              <ul class="space-y-2 text-gray-700 text-sm">
+                <li>• Brush out debris gently</li>
+                <li>• Clarify with appropriate shampoo</li>
+                <li>• Deep condition weekly</li>
+                <li>• Style with protective products</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equestrian Hair Care Guide -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">The Equestrian's Guide to Hair Care</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p class="text-xl mb-6">
+            For Waitoki's extensive equestrian community, maintaining beautiful hair while meeting the demands of riding, training, and competition requires specialized knowledge and techniques.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Helmet-Friendly Hairstyles</h3>
+          <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+            <h4 class="text-xl font-semibold mb-4">What Works Best:</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span><strong>Layered cuts:</strong> Distribute volume evenly, preventing helmet pressure points</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span><strong>Medium lengths:</strong> Long enough to secure neatly, short enough to avoid bulk</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span><strong>Keratin-treated hair:</strong> Reduces friction and maintains smoothness under helmets</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span><strong>Graduated bobs:</strong> Professional appearance with practical helmet compatibility</span>
+              </li>
+            </ul>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Competition Preparation</h3>
+          <div class="bg-blue-50 p-8 rounded-lg mb-8">
+            <h4 class="text-xl font-semibold mb-4">Show Day Hair Routine:</h4>
+            <ol class="space-y-3">
+              <li class="flex">
+                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
+                <span><strong>Pre-show wash:</strong> Use clarifying shampoo to remove product buildup</span>
+              </li>
+              <li class="flex">
+                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
+                <span><strong>Smooth styling:</strong> Apply smoothing serum and blow dry straight</span>
+              </li>
+              <li class="flex">
+                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
+                <span><strong>Secure styling:</strong> Low bun or plait suitable for helmet and hairnet</span>
+              </li>
+              <li class="flex">
+                <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
+                <span><strong>Final touch:</strong> Strong-hold spray to maintain style through competition</span>
+              </li>
+            </ol>
+          </div>
+          
+          <h3 class="text-2xl font-semibold mb-4">Daily Riding Hair Care</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h4 class="font-bold mb-3 text-green-800">Morning Routine</h4>
+              <ul class="space-y-2 text-green-700 text-sm">
+                <li>• Quick brush to remove tangles</li>
+                <li>• Apply leave-in conditioner to ends</li>
+                <li>• Secure hair smoothly against head</li>
+                <li>• Use silk scarf under helmet if needed</li>
+              </ul>
+            </div>
+            
+            <div class="bg-green-50 p-6 rounded-lg">
+              <h4 class="font-bold mb-3 text-green-800">Post-Ride Care</h4>
+              <ul class="space-y-2 text-green-700 text-sm">
+                <li>• Gently release secured hair</li>
+                <li>• Massage scalp to restore circulation</li>
+                <li>• Apply dry shampoo if sweaty</li>
+                <li>• Reshape style with light products</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Information for Waitoki -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Getting Here from Waitoki</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Travel Information</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="font-medium">Distance:</span>
+                <span>10 minutes</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Route:</span>
+                <span>Local rural roads</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Traffic:</span>
+                <span>Minimal rural traffic</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Parking:</span>
+                <span>Free and plentiful</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg p-6 border border-gray-200">
+            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Simple Directions</h3>
+            <ol class="space-y-2 text-gray-700">
+              <li class="flex">
+                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
+                <span>Head toward Kaukapakapa village</span>
+              </li>
+              <li class="flex">
+                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
+                <span>Follow local signage</span>
+              </li>
+              <li class="flex">
+                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
+                <span>Turn at village center</span>
+              </li>
+              <li class="flex">
+                <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
+                <span>Follow to Magnolia Lane</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="bg-green-50 p-8 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Rural Travel Benefits</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Peaceful country drive helps you unwind before appointments</li>
+            <li>• No urban traffic stress or parking fees</li>
+            <li>• Easy to combine with other rural errands</li>
+            <li>• Beautiful countryside views enhance the salon experience</li>
+            <li>• Flexible timing accommodates rural schedules and animal care</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials from Waitoki Clients -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">What Waitoki Equestrians & Rural Residents Say</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} class="h-5 w-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "As a competitive rider from Waitoki, I've struggled with helmet hair for years. Melissa's keratin treatment and cutting technique have been life-changing. My hair looks great both in and out of the saddle, and I can go from barn work to business meetings without stress!"
+            </p>
+            <p class="font-medium">- Kate R., Waitoki Equestrian</p>
+          </div>
+          
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} class="h-5 w-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "Living on a lifestyle block means I need hair that can handle everything from feeding animals at dawn to client meetings in the city. Hair By Melissa understands rural life and creates styles that actually work with my demanding schedule. The short drive is so worth it!"
+            </p>
+            <p class="font-medium">- Rebecca M., Waitoki Lifestyle Block</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Frequently Asked Questions - Waitoki</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Is there a hair salon near Waitoki?</h3>
+            <p class="text-gray-700">
+              Hair By Melissa in Kaukapakapa is the closest professional hair salon to Waitoki, located just 10 minutes away via local rural roads. We understand rural lifestyles and offer services perfect for equestrian enthusiasts and country living.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Do you cater to equestrian and rural lifestyles?</h3>
+            <p class="text-gray-700">
+              Absolutely! We specialize in practical, beautiful hairstyles that work with helmet wear, outdoor activities, and rural living. Our keratin treatments are particularly popular with horse riders for creating helmet-friendly, low-maintenance styles that look professional and practical.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">What services are best for equestrians?</h3>
+            <p class="text-gray-700">
+              For Waitoki's equestrian community, we recommend keratin treatments ($180) for helmet-compatible hair, low-maintenance cuts ($50) for busy riding schedules, and protective styling ($80) for outdoor work. These services are specifically designed for active equestrian lifestyles.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Can you accommodate rural schedules?</h3>
+            <p class="text-gray-700">
+              Yes, we understand that rural life doesn't always follow urban schedules. We offer flexible appointment timing to accommodate animal care routines, seasonal work demands, and unexpected rural responsibilities. Early and late appointments are available by arrangement.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Do you understand competition grooming standards?</h3>
+            <p class="text-gray-700">
+              Absolutely! We work with many competitive riders and understand show grooming requirements. We can create competition-ready styles, provide show day preparation tips, and recommend products that maintain professional appearance under show conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-green-500 to-emerald-500 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready for Rural-Friendly Hair Care?</h2>
+        <p class="text-xl mb-8">
+          Join the Waitoki equestrian and rural community who trust Hair By Melissa for practical, beautiful hair care. From helmet-friendly cuts to competition styling, we understand the demands of country living.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-green-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Rural Hair Care
+          </a>
+          <a href="/services/keratin-treatments" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-green-600 transition">
+            Explore Keratin for Riders
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            🐎 10 minutes from Waitoki | 🌾 Rural Lifestyle Specialists | 🏆 Competition Ready
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Scripts -->
+  <script type="application/ld+json" set:html={JSON.stringify(waitokiSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(waitokiFAQ)} />
+</Layout>

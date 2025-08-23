@@ -1,0 +1,535 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Hair Salon Helensville | Professional Hairdresser Serving Helensville | Hair By Melissa";
+const pageDescription = "Premier hair salon serving Helensville with expert keratin treatments, balayage, and hair coloring. Located in nearby Kaukapakapa, we're your trusted local hairdresser for Helensville residents.";
+const pageKeywords = "hair salon helensville, hairdresser helensville, hair coloring helensville, keratin treatment helensville, balayage helensville, highlights helensville, hair salon near helensville";
+
+// Local business schema for Helensville service area
+const helensvilleSchema = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Hair By Melissa - Serving Helensville",
+  "description": "Professional hair salon serving Helensville residents from our Kaukapakapa location. Expert hair coloring, keratin treatments, and styling services.",
+  "url": "https://hairbymelissa.co.nz/locations/helensville",
+  "telephone": "+64-21-XXX-XXXX",
+  "email": "book@hairbymelissa.co.nz",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Magnolia Lane",
+    "addressLocality": "Kaukapakapa",
+    "addressRegion": "Auckland",
+    "postalCode": "0810",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -36.6173,
+    "longitude": 174.4829
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Helensville",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Auckland Region"
+      }
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "15:00"
+    }
+  ],
+  "priceRange": "$40-$230",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": -36.6173,
+      "longitude": 174.4829
+    },
+    "geoRadius": "25000"
+  }
+};
+
+// FAQ Schema specific to Helensville
+const helensvilleFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a hair salon in Helensville?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hair By Melissa serves Helensville residents from our salon in nearby Kaukapakapa, just a short 15-minute drive from Helensville center. We're the closest professional hair salon offering expert keratin treatments, balayage, and full coloring services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Hair By Melissa from Helensville?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hair By Melissa is located approximately 15 minutes drive from Helensville center via Kaipara Coast Highway (SH16). We're conveniently located in Kaukapakapa, making us easily accessible for Helensville residents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer keratin treatments for Helensville clients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we specialize in keratin treatments for Helensville clients. Our $180 keratin treatment is particularly popular with Helensville residents dealing with humidity from the nearby Kaipara Harbour and changing weather patterns."
+      }
+    }
+  ]
+};
+
+// Services popular with Helensville clients
+const helensvilleServices = [
+  {
+    name: "Keratin Treatments",
+    price: "$180",
+    description: "Perfect for Helensville's humid coastal climate",
+    duration: "2-3 hours",
+    popular: true
+  },
+  {
+    name: "Balayage",
+    price: "$230", 
+    description: "Natural sun-kissed looks popular in coastal areas",
+    duration: "3-4 hours",
+    popular: true
+  },
+  {
+    name: "Full Head Highlights",
+    price: "$180",
+    description: "Brightening treatments for the changing seasons",
+    duration: "2.5-3 hours",
+    popular: false
+  },
+  {
+    name: "Women's Cut & Finish",
+    price: "$50",
+    description: "Precision cuts that work with coastal weather",
+    duration: "45-60 min",
+    popular: true
+  }
+];
+
+// Travel information for Helensville clients
+const travelInfo = {
+  distance: "15 minutes",
+  route: "Via Kaipara Coast Highway (SH16)",
+  parking: "Free on-site parking available",
+  publicTransport: "Limited - car recommended",
+  landmarks: "Turn at Kaukapakapa Village Store"
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-[#1EAEDB]/10 to-[#FFDEE2]/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/locations" class="text-gray-600 hover:text-[#1EAEDB]">Locations</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Helensville</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Hair Salon <span class="gradient-text">Helensville</span>
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Professional hair salon serving Helensville residents from our convenient Kaukapakapa location. Just 15 minutes from Helensville center, Hair By Melissa offers expert keratin treatments, balayage, and full hair services perfect for the coastal climate.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Your Appointment
+          </a>
+          <a href="#services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            View Services & Prices
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Helensville -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Why Helensville Residents Choose Hair By Melissa</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p class="text-xl mb-6">
+            Helensville, with its rich history and stunning coastal location on the Kaipara Harbour, deserves a hair salon that understands the unique needs of this vibrant community. While located in nearby Kaukapakapa, Hair By Melissa has become the go-to destination for Helensville residents seeking professional hair services that work with the area's distinctive climate and lifestyle.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Understanding Helensville's Unique Environment</h3>
+          <p class="mb-6">
+            Helensville's position on the Kaipara Harbour creates a unique microclimate that presents specific challenges for hair care. The coastal humidity, combined with the area's variable weather patterns, can wreak havoc on traditional hairstyles. This is why our keratin treatments have become incredibly popular with Helensville clients – they provide the frizz control and manageability needed to combat the humid conditions that roll in from the harbour.
+          </p>
+          
+          <p class="mb-6">
+            The town's elevation changes, from the harbour's edge to the rolling hills surrounding the area, create varying humidity levels throughout the day. Residents often find their hair reacts differently depending on where they are in town – whether they're shopping along Commercial Road, visiting the Helensville Museum, or enjoying the waterfront areas. Our specialized treatments are designed to provide consistent results regardless of these environmental fluctuations.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Serving Helensville's Diverse Community</h3>
+          <p class="mb-6">
+            Helensville's population of approximately 2,500 residents represents a diverse mix of long-time locals, lifestyle block owners, and newcomers drawn to the area's rural charm and proximity to Auckland. This diversity is reflected in the hair services we provide. From traditional cuts for the farming community to modern color techniques for young professionals working remotely, we tailor our services to match the varied lifestyles within Helensville.
+          </p>
+          
+          <p class="mb-6">
+            Many of our Helensville clients work outdoors or spend significant time in the elements – whether they're involved in the local agricultural industry, work at the nearby Woodhill Forest, or simply enjoy the outdoor lifestyle that Helensville offers. This exposure to sun, wind, and varying weather conditions requires specialized hair care approaches that protect and strengthen hair while maintaining professional appearance standards.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Convenient Access from Helensville</h3>
+          <p class="mb-6">
+            Despite being located in Kaukapakapa, we're incredibly convenient for Helensville residents. The 15-minute drive via Kaipara Coast Highway (State Highway 16) actually offers several advantages over in-town alternatives. First, the drive itself is scenic and relaxing, helping clients unwind before their appointment. Second, our location provides ample free parking – something that can be challenging to find in busier urban centers.
+          </p>
+          
+          <p class="mb-6">
+            Many Helensville clients appreciate that they can combine their hair appointment with other errands in the Kaukapakapa area, or continue on to Kumeu or other destinations without backtracking. The journey also takes you through some of Auckland's most beautiful countryside, making the trip to the salon feel like a mini retreat rather than a chore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Popular with Helensville Clients -->
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Popular Services for Helensville Residents</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Services specially chosen for their effectiveness in Helensville's coastal climate and lifestyle needs.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {helensvilleServices.map((service) => (
+            <div class={`bg-white rounded-lg shadow-lg p-8 ${service.popular ? 'border-2 border-[#1EAEDB]' : ''}`}>
+              {service.popular && (
+                <div class="mb-4">
+                  <span class="bg-[#1EAEDB] text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Popular Choice
+                  </span>
+                </div>
+              )}
+              <h3 class="text-2xl font-bold mb-3">{service.name}</h3>
+              <div class="flex justify-between items-center mb-4">
+                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+                <span class="text-gray-600">{service.duration}</span>
+              </div>
+              <p class="text-gray-700 mb-6">{service.description}</p>
+              <a 
+                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+              >
+                Learn more about {service.name}
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Area Information -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">About Helensville: Local Knowledge That Informs Our Services</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <h3 class="text-2xl font-semibold mb-4">Climate Considerations for Hair Care</h3>
+          <p class="mb-6">
+            Helensville experiences a temperate oceanic climate significantly influenced by its position on the Kaipara Harbour. The town sits at the southern end of the harbour, where the tidal waters create humidity levels that can vary dramatically throughout the day. This unique positioning means that hair styling needs to account for:
+          </p>
+          
+          <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Morning mists rolling in from the harbour, creating high humidity conditions</li>
+            <li>Afternoon sea breezes that can dry out hair rapidly</li>
+            <li>Seasonal variations with particularly humid summers and drier winters</li>
+            <li>Salt air effects from the nearby Tasman Sea influence</li>
+          </ul>
+          
+          <p class="mb-6">
+            These conditions make our keratin treatments particularly beneficial for Helensville clients. The treatment's ability to seal the hair cuticle provides excellent protection against humidity absorption, ensuring styles last longer and require less daily maintenance – perfect for the busy lifestyles of Helensville residents.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Local Landmarks and Business Areas</h3>
+          <p class="mb-6">
+            Helensville's compact town center, focused around Commercial Road and Garfield Road, houses the essential services that make this community self-sufficient. The historic Helensville Museum, housed in the old post office building, tells the story of a town that was once a major port for the kauri logging industry. This rich history creates a community that values quality and tradition – values we share in our approach to hair styling.
+          </p>
+          
+          <p class="mb-6">
+            The nearby Parakai Springs, just 10 minutes from Helensville center, attracts visitors year-round to its hot pools and entertainment complex. Many of our Helensville clients appreciate having a salon nearby when they're planning special occasions or simply want to look their best for leisure activities in the area.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Transportation and Accessibility</h3>
+          <p class="mb-6">
+            State Highway 16 serves as Helensville's main connection to the wider Auckland region, but it also brings specific challenges. The highway's busy nature, particularly during tourist season when visitors head to Muriwai Beach or the Waitakere Ranges, means timing appointments can be important. We recommend booking morning appointments to avoid afternoon traffic, or scheduling during our extended weekday hours.
+          </p>
+          
+          <p class="mb-6">
+            The Helensville Railway Station, while historic and charming, only operates tourist trains rather than regular passenger service. This means most of our Helensville clients drive to appointments. Our location in Kaukapakapa offers the advantage of being slightly off the main highway traffic flow while remaining easily accessible.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Hair Care Needs</h3>
+          <p class="mb-6">
+            <strong>Summer (December-February):</strong> Helensville summers bring increased humidity from the harbour and more time spent outdoors. This is our busiest season for keratin treatments and protective styling services. The nearby beaches at Muriwai and Bethells become regular destinations for residents, requiring hair care that can withstand salt water and UV exposure.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Autumn (March-May):</strong> The changing season brings variable weather patterns. This is an excellent time for color services as the hair isn't stressed by summer sun exposure. Many clients choose this season for balayage treatments that will grow out beautifully through winter.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Winter (June-August):</strong> Helensville winters are generally mild but can be damp. The proximity to the harbour means persistent moisture in the air, making this an ideal time for treatments that add moisture and manageability to hair. It's also our peak season for dramatic color changes as people prepare for the coming spring.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Spring (September-November):</strong> Spring brings renewal and often requests for lighter, brighter colors. The changing weather patterns of spring in Helensville can be unpredictable, making this a perfect time for low-maintenance styles that look great regardless of weather conditions.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Community Events and Special Occasions</h3>
+          <p class="mb-6">
+            Helensville hosts several annual events that keep our appointment book busy. The Helensville A&P Show, typically held in November, brings together the rural community for a celebration of agriculture and local culture. We often see increased bookings in the weeks leading up to this event as families prepare for the social highlight of the year.
+          </p>
+          
+          <p class="mb-6">
+            The town's proximity to wedding venues in the Kumeu wine region and the Waitakere Ranges makes us a popular choice for bridal parties. Many brides choose Hair By Melissa for trial runs and wedding day styling because our location offers a peaceful, stress-free environment away from Auckland's bustle.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Why Location Matters for Hair Care</h3>
+          <p class="mb-6">
+            Understanding Helensville's unique characteristics allows us to provide better service to our clients from this area. We know that the drive from Helensville gives you time to relax and prepare for your appointment. We understand that the coastal climate affects how your hair behaves. We appreciate that as a smaller community, word-of-mouth recommendations are incredibly important – and we're proud that so many Helensville residents trust us with their hair care needs.
+          </p>
+          
+          <p class="mb-6">
+            Our clients from Helensville often tell us that they prefer the personalized service and peaceful environment we offer compared to larger salons in busier areas. The drive to Kaukapakapa becomes part of their self-care routine – a brief escape from daily responsibilities before enjoying professional hair care in a relaxed setting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Travel Information -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Getting Here from Helensville</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Travel Details</h3>
+            <div class="space-y-3">
+              <div class="flex justify-between">
+                <span class="font-medium">Distance:</span>
+                <span>{travelInfo.distance}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Route:</span>
+                <span>{travelInfo.route}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Parking:</span>
+                <span>{travelInfo.parking}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Public Transport:</span>
+                <span>{travelInfo.publicTransport}</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Directions</h3>
+            <ol class="space-y-2 text-gray-700">
+              <li class="flex">
+                <span class="bg-[#1EAEDB] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
+                <span>Head south on SH16 from Helensville center</span>
+              </li>
+              <li class="flex">
+                <span class="bg-[#1EAEDB] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
+                <span>Continue for approximately 12km</span>
+              </li>
+              <li class="flex">
+                <span class="bg-[#1EAEDB] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
+                <span>Turn right at Kaukapakapa Village Store</span>
+              </li>
+              <li class="flex">
+                <span class="bg-[#1EAEDB] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
+                <span>Follow signs to Magnolia Lane</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="bg-blue-50 p-8 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Travel Tips for Helensville Clients</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• Allow extra time during summer months when tourist traffic is heavier</li>
+            <li>• Morning appointments (9-11am) typically have the clearest roads</li>
+            <li>• The scenic drive through rural countryside is part of the relaxation experience</li>
+            <li>• Free parking is always available directly outside our salon</li>
+            <li>• Consider combining your appointment with shopping in Kumeu (15 minutes further)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials from Helensville Clients -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">What Helensville Clients Say</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} class="h-5 w-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "The drive from Helensville is so worth it! Melissa's keratin treatment has been a game-changer for dealing with the humidity we get from the harbour. My hair stays smooth and manageable all week, even on the most humid days."
+            </p>
+            <p class="font-medium">- Sarah K., Helensville</p>
+          </div>
+          
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <div class="flex mb-4">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} class="h-5 w-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-700 italic mb-4">
+              "I've been driving from Helensville to Hair By Melissa for over two years now. The personalized service and peaceful setting make it feel like a mini retreat. Plus, my balayage always looks amazing!"
+            </p>
+            <p class="font-medium">- Emma T., Helensville</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Frequently Asked Questions - Helensville</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Is there a hair salon in Helensville?</h3>
+            <p class="text-gray-700">
+              Hair By Melissa serves Helensville residents from our salon in nearby Kaukapakapa, just a short 15-minute drive from Helensville center. We're the closest professional hair salon offering expert keratin treatments, balayage, and full coloring services for the Helensville community.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">How far is Hair By Melissa from Helensville?</h3>
+            <p class="text-gray-700">
+              Hair By Melissa is located approximately 15 minutes drive from Helensville center via Kaipara Coast Highway (SH16). We're conveniently located in Kaukapakapa, making us easily accessible for Helensville residents. The scenic drive through rural countryside is actually part of the relaxation experience.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Do you offer keratin treatments for Helensville clients?</h3>
+            <p class="text-gray-700">
+              Yes, we specialize in keratin treatments for Helensville clients. Our $180 keratin treatment is particularly popular with Helensville residents dealing with humidity from the nearby Kaipara Harbour and changing weather patterns. The treatment provides excellent frizz control for the coastal climate.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">What hair services are most popular with Helensville residents?</h3>
+            <p class="text-gray-700">
+              Helensville clients particularly love our keratin treatments ($180) for humidity control, balayage ($230) for natural-looking color that works with the coastal lifestyle, and regular cuts ($50) designed to work with the area's variable weather patterns.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-3">Is parking available for Helensville clients?</h3>
+            <p class="text-gray-700">
+              Yes, we provide free on-site parking directly outside our salon. This is a major advantage over busier urban salon locations where parking can be expensive or difficult to find. Our rural Kaukapakapa location ensures convenient, stress-free parking for all appointments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-[#1EAEDB] to-[#0891B2] text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Experience Professional Hair Care?</h2>
+        <p class="text-xl mb-8">
+          Join the many Helensville residents who trust Hair By Melissa for their hair care needs. From keratin treatments perfect for coastal humidity to stunning color services, we're here to help you look and feel your best.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-[#1EAEDB] font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Your Appointment
+          </a>
+          <a href="/contact" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-[#1EAEDB] transition">
+            Get Directions & Contact Info
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            📍 15 minutes from Helensville via SH16 | 📞 Call for appointment
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Scripts -->
+  <script type="application/ld+json" set:html={JSON.stringify(helensvilleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(helensvilleFAQ)} />
+</Layout>

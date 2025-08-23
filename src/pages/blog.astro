@@ -1,0 +1,424 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Hair Care Blog | Expert Tips & Trends from Hair By Melissa";
+const pageDescription = "Professional hair care advice, styling tips, and latest trends from Kaukapakapa's premier hair salon. Learn from expert hairdresser Melissa's 5+ years of experience.";
+const pageKeywords = "hair care blog, hair styling tips, hairdressing advice, hair trends 2025, professional hair care, hair maintenance, hair treatment tips, kaukapakapa hairdresser";
+
+// Blog categories
+const blogCategories = [
+  {
+    id: "hair-care",
+    title: "Hair Care Tips",
+    description: "Essential advice for maintaining healthy, beautiful hair",
+    icon: "heart",
+    color: "from-pink-500 to-rose-400"
+  },
+  {
+    id: "styling-guides",
+    title: "Styling Guides",
+    description: "Step-by-step tutorials for achieving salon-quality styles at home",
+    icon: "sparkles",
+    color: "from-purple-500 to-indigo-400"
+  },
+  {
+    id: "color-insights",
+    title: "Color Insights",
+    description: "Expert advice on hair coloring, maintenance, and trends",
+    icon: "palette",
+    color: "from-blue-500 to-teal-400"
+  },
+  {
+    id: "seasonal-tips",
+    title: "Seasonal Care",
+    description: "Seasonal hair care advice for New Zealand climate",
+    icon: "calendar",
+    color: "from-green-500 to-emerald-400"
+  }
+];
+
+// Featured blog posts
+const featuredPosts = [
+  {
+    id: "keratin-aftercare",
+    title: "Complete Keratin Treatment Aftercare Guide",
+    excerpt: "Make your keratin treatment last 5+ months with these expert aftercare tips. Learn what to avoid, which products to use, and how to maintain smooth, frizz-free hair.",
+    category: "Hair Care Tips",
+    readTime: "6 min read",
+    date: "2025-01-20",
+    featured: true,
+    keywords: ["keratin aftercare", "keratin maintenance", "smooth hair tips"]
+  },
+  {
+    id: "balayage-vs-highlights",
+    title: "Balayage vs Highlights: Which is Right for You?",
+    excerpt: "Confused between balayage and traditional highlights? Our expert guide breaks down the differences, costs, maintenance, and which technique suits your lifestyle best.",
+    category: "Color Insights",
+    readTime: "8 min read",
+    date: "2025-01-18",
+    featured: true,
+    keywords: ["balayage vs highlights", "hair coloring options", "which highlighting technique"]
+  },
+  {
+    id: "winter-hair-care",
+    title: "Winter Hair Care: Protecting Your Hair in Auckland's Climate",
+    excerpt: "Auckland winters can be harsh on your hair. Learn how to combat dryness, static, and damage during the cooler months with professional tips.",
+    category: "Seasonal Care",
+    readTime: "5 min read",
+    date: "2025-01-15",
+    featured: true,
+    keywords: ["winter hair care", "auckland climate hair", "dry hair winter"]
+  }
+];
+
+const recentPosts = [
+  {
+    id: "frizzy-hair-solutions",
+    title: "5 Professional Solutions for Frizzy Hair",
+    excerpt: "From humidity control to the right products, discover professional techniques to tame frizzy hair permanently.",
+    category: "Hair Care Tips",
+    readTime: "4 min read",
+    date: "2025-01-12"
+  },
+  {
+    id: "hair-color-maintenance",
+    title: "How to Make Your Hair Color Last Longer",
+    excerpt: "Extend the life of your color with these expert tips for color-treated hair maintenance.",
+    category: "Color Insights",
+    readTime: "7 min read",
+    date: "2025-01-10"
+  },
+  {
+    id: "blow-dry-techniques",
+    title: "Professional Blow Drying Techniques at Home",
+    excerpt: "Achieve salon-quality blow dries at home with these step-by-step techniques from a professional hairdresser.",
+    category: "Styling Guides",
+    readTime: "6 min read",
+    date: "2025-01-08"
+  },
+  {
+    id: "hair-health-signs",
+    title: "7 Signs Your Hair Needs Professional Attention",
+    excerpt: "Learn to recognize when your hair needs expert care and which treatments can restore its health.",
+    category: "Hair Care Tips",
+    readTime: "5 min read",
+    date: "2025-01-05"
+  }
+];
+
+// Schema for blog
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Hair By Melissa Blog",
+  "description": "Professional hair care advice and styling tips from Kaukapakapa's premier hair salon",
+  "url": "https://hairbymelissa.co.nz/blog",
+  "author": {
+    "@type": "Person",
+    "name": "Melissa",
+    "jobTitle": "Professional Hairdresser",
+    "worksFor": {
+      "@type": "HairSalon",
+      "name": "Hair By Melissa"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hair By Melissa",
+    "url": "https://hairbymelissa.co.nz"
+  }
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute top-20 left-10 w-80 h-80 bg-gradient-to-br from-[#1EAEDB]/10 to-[#FFDEE2]/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Hair Care <span class="gradient-text">Blog & Tips</span>
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Expert advice, styling tips, and industry insights from Melissa, your trusted hairdresser in Kaukapakapa. Learn professional techniques to keep your hair healthy and beautiful between salon visits.
+        </p>
+        
+        <!-- Quick categories -->
+        <div class="flex flex-wrap gap-3">
+          {blogCategories.map((category) => (
+            <a 
+              href={`#${category.id}`} 
+              class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition text-sm font-medium"
+            >
+              {category.icon === "heart" && (
+                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+              )}
+              {category.icon === "sparkles" && (
+                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              )}
+              {category.icon === "palette" && (
+                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+              )}
+              {category.icon === "calendar" && (
+                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              )}
+              {category.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posts Section -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Featured Articles</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Our most popular and comprehensive guides to help you achieve salon-quality results at home.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {featuredPosts.map((post, index) => (
+          <article class={`${index === 0 ? 'lg:col-span-2 lg:row-span-2' : ''} bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow`}>
+            <div class={`${index === 0 ? 'h-64' : 'h-48'} bg-gradient-to-br ${index === 0 ? 'from-[#1EAEDB] to-[#0891B2]' : index === 1 ? 'from-purple-500 to-indigo-400' : 'from-green-500 to-emerald-400'} relative`}>
+              <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+              <div class="absolute top-4 left-4">
+                <span class="bg-white text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                  {post.category}
+                </span>
+              </div>
+              {index === 0 && (
+                <div class="absolute top-4 right-4">
+                  <span class="bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold">
+                    Featured
+                  </span>
+                </div>
+              )}
+              <div class="absolute bottom-4 left-4 right-4">
+                <div class="flex items-center text-white text-sm space-x-4">
+                  <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    {post.readTime}
+                  </span>
+                  <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                    {new Date(post.date).toLocaleDateString('en-NZ', { day: 'numeric', month: 'short' })}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class={`${index === 0 ? 'p-8' : 'p-6'}`}>
+              <h3 class={`${index === 0 ? 'text-2xl' : 'text-xl'} font-bold mb-3 leading-tight`}>
+                <a href={`/blog/${post.id}`} class="hover:text-[#1EAEDB] transition-colors">
+                  {post.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                {post.excerpt}
+              </p>
+              <a 
+                href={`/blog/${post.id}`} 
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+              >
+                Read full article
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Categories -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Explore Topics</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Dive deeper into specific areas of hair care with our organized content categories.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {blogCategories.map((category) => (
+          <div id={category.id} class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+            <div class={`h-32 bg-gradient-to-br ${category.color} relative`}>
+              <div class="absolute inset-0 flex items-center justify-center">
+                {category.icon === "heart" && (
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                  </svg>
+                )}
+                {category.icon === "sparkles" && (
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                )}
+                {category.icon === "palette" && (
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                  </svg>
+                )}
+                {category.icon === "calendar" && (
+                  <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                )}
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">{category.title}</h3>
+              <p class="text-gray-600 mb-4">{category.description}</p>
+              <a 
+                href={`/blog/category/${category.id}`} 
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+              >
+                Browse articles
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Posts -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="text-4xl font-bold mb-4">Recent Articles</h2>
+          <p class="text-xl text-gray-600">
+            Stay updated with our latest hair care insights and tips.
+          </p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {recentPosts.map((post) => (
+          <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="bg-[#D3E4FD] text-[#1EAEDB] px-3 py-1 rounded-full text-sm font-medium">
+                  {post.category}
+                </span>
+                <div class="flex items-center text-gray-500 text-sm space-x-3">
+                  <span class="flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    {post.readTime}
+                  </span>
+                  <span>{new Date(post.date).toLocaleDateString('en-NZ', { day: 'numeric', month: 'short' })}</span>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold mb-3 leading-tight">
+                <a href={`/blog/${post.id}`} class="hover:text-[#1EAEDB] transition-colors">
+                  {post.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4 leading-relaxed">
+                {post.excerpt}
+              </p>
+              <a 
+                href={`/blog/${post.id}`} 
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+              >
+                Read more
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Newsletter/CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2]">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Hair?</h2>
+        <p class="text-xl text-gray-700 mb-8">
+          Reading about hair care is great, but experiencing professional results is even better. Book your appointment with Melissa and see the difference expert care makes.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">Expert Consultation</h3>
+            <p class="text-gray-600">Personalized advice for your hair type</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">Premium Treatments</h3>
+            <p class="text-gray-600">Keratin, balayage, and more</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <h3 class="font-semibold mb-2">Local Convenience</h3>
+            <p class="text-gray-600">Serving North Auckland areas</p>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Your Appointment
+          </a>
+          <a href="/services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            View Our Services
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Script -->
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+</Layout>

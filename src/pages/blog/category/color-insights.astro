@@ -1,0 +1,434 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageTitle = "Hair Color Insights & Trends | Expert Color Tips Kaukapakapa | Hair By Melissa Blog";
+const pageDescription = "Professional hair color insights from Hair By Melissa in Kaukapakapa. Discover color trends, maintenance tips, and techniques perfect for North Auckland's lifestyle.";
+const pageKeywords = "hair color insights kaukapakapa, professional hair color tips, color maintenance north auckland, hair color trends rural auckland, balayage highlights tips";
+
+// Color insight posts data
+const colorPosts = [
+  {
+    title: "Hair Color Maintenance Guide",
+    excerpt: "Essential tips for maintaining vibrant hair color in North Auckland's variable climate conditions",
+    slug: "hair-color-maintenance",
+    date: "2025-01-22",
+    readTime: "8 min read",
+    category: "Color Insights",
+    image: "/images/optimized/balayage-transformation_800.webp"
+  },
+  {
+    title: "Balayage vs Traditional Highlights",
+    excerpt: "Understanding the differences and benefits of modern color techniques for rural lifestyles",
+    slug: "balayage-vs-highlights",
+    date: "2025-01-19",
+    readTime: "6 min read",
+    category: "Color Insights",
+    image: "/images/optimized/highlights-before-after_800.webp"
+  },
+];
+
+// Color service specialties
+const colorSpecialties = [
+  {
+    technique: "Hand-Painted Balayage",
+    description: "Natural-looking highlights that grow out beautifully",
+    benefit: "Low maintenance, natural movement, works with busy schedules",
+    ideal: "Perfect for rural clients wanting low-maintenance color",
+    timeframe: "Lasts 4-6 months between appointments"
+  },
+  {
+    technique: "Traditional Foil Highlights",
+    description: "Precise, controlled lightening for dramatic color changes",
+    benefit: "Maximum lightening, precise placement, dramatic results",
+    ideal: "Great for significant color changes or covering gray",
+    timeframe: "Touch-ups needed every 6-8 weeks"
+  },
+  {
+    technique: "Root Touch-Up & Tinting",
+    description: "Targeted color application for maintenance and coverage",
+    benefit: "Cost-effective maintenance, precise gray coverage",
+    ideal: "Regular maintenance for color-treated hair",
+    timeframe: "Every 4-6 weeks depending on growth rate"
+  },
+  {
+    technique: "Color Correction",
+    description: "Professional fixes for color mishaps or changes",
+    benefit: "Restores hair health while achieving desired color",
+    ideal: "Fixing DIY color mistakes or unwanted tones",
+    timeframe: "May require multiple appointments for best results"
+  }
+];
+
+// Color maintenance essentials
+const colorMaintenance = [
+  {
+    category: "UV Protection",
+    priority: "Critical",
+    products: "UV-protecting sprays, leave-in treatments with SPF",
+    frequency: "Daily during outdoor activities",
+    why: "North Auckland's intense sun can fade color rapidly"
+  },
+  {
+    category: "Color-Safe Shampoo",
+    priority: "Essential",
+    products: "Sulfate-free, color-protecting formulas",
+    frequency: "Every wash",
+    why: "Harsh detergents strip color and cause fading"
+  },
+  {
+    category: "Deep Conditioning",
+    priority: "Important",
+    products: "Color-depositing masks, protein treatments",
+    frequency: "Weekly",
+    why: "Maintains color vibrancy and hair health"
+  },
+  {
+    category: "Professional Toning",
+    priority: "Maintenance",
+    products: "Salon toners, gloss treatments",
+    frequency: "Every 6-8 weeks",
+    why: "Refreshes color and eliminates unwanted tones"
+  }
+];
+
+// Color services pricing
+const colorServices = [
+  {
+    name: "Balayage Hair Color",
+    price: "$230",
+    description: "Hand-painted highlights for natural, low-maintenance color",
+    duration: "3-4 hours",
+    includes: "Consultation, color application, toning, styling",
+    maintenance: "Touch-ups every 4-6 months"
+  },
+  {
+    name: "Full Head Highlights",
+    price: "$180",
+    description: "Traditional foil highlights for maximum coverage and lightening",
+    duration: "2.5-3 hours",
+    includes: "Consultation, full foil application, toning, styling",
+    maintenance: "Root touch-ups every 6-8 weeks"
+  },
+  {
+    name: "Half Head Highlights",
+    price: "$150",
+    description: "Strategic highlighting around face and crown areas",
+    duration: "2-2.5 hours",
+    includes: "Consultation, selective foil placement, toning, styling",
+    maintenance: "Touch-ups every 8-10 weeks"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-pink-400/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog" class="text-gray-600 hover:text-[#1EAEDB]">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Color Insights</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Hair <span class="gradient-text">Color Insights</span> & Trends
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Expert hair color insights from Hair By Melissa in Kaukapakapa. Discover the latest color trends, maintenance secrets, and professional techniques designed for North Auckland's unique environment and rural lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 21h10a2 2 0 002-2v-9a2 2 0 00-2-2H9a2 2 0 00-2 2v9a4 4 0 004 4z"></path>
+            </svg>
+            Book Color Consultation
+          </a>
+          <a href="/services/balayage" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Explore Balayage Services
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Insight Posts -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Latest Color Insights</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {colorPosts.map((post) => (
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">{post.title}</h3>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a 
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                >
+                  Read Color Guide
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Color for North Auckland -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Color for North Auckland Living</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <p class="text-xl mb-6">
+            Professional hair color in North Auckland requires specialized knowledge of our unique environmental challenges. From the intense UV exposure across our rural properties to the salt air affecting coastal areas like Wainui, our approach to hair color must account for factors that accelerate fading and damage. At Hair By Melissa in Kaukapakapa, we've developed color techniques and maintenance protocols specifically designed for our local conditions.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Environmental Challenges for Hair Color</h3>
+          <p class="mb-6">
+            North Auckland's combination of intense sunlight, variable humidity, and rural dust creates unique challenges for maintaining vibrant hair color. UV rays from our clear skies can fade color within weeks without proper protection. The dust from farming activities and unpaved roads can build up in hair, requiring special clarifying treatments that won't strip color. Coastal humidity affects color processing and longevity, requiring adjusted formulations and application techniques.
+          </p>
+          
+          <p class="mb-6">
+            Our color formulations account for these environmental factors. We use UV-resistant color molecules, recommend protective treatments, and schedule maintenance appointments based on environmental exposure rather than arbitrary timelines. This personalized approach ensures your color investment lasts longer and looks better in our specific conditions.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Low-Maintenance Color for Rural Lifestyles</h3>
+          <p class="mb-6">
+            Rural living demands color techniques that look beautiful with minimal maintenance. Traditional highlights requiring monthly touch-ups don't suit lifestyles involving early morning farm work, weekend property maintenance, and limited time for frequent salon visits. Balayage and hand-painted techniques provide natural-looking color that grows out gracefully, extending time between appointments to 4-6 months.
+          </p>
+          
+          <p class="mb-6">
+            Our balayage technique creates natural color variation that mimics how hair would naturally lighten from sun exposure. This organic approach means roots growing out enhance rather than detract from the overall look. For busy rural clients, this translates to beautiful color that fits their lifestyle rather than demanding schedule sacrifices.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Color Protection Strategies</h3>
+          <p class="mb-6">
+            Protecting color investment requires daily habits adapted to rural and coastal living. UV protection becomes critical for anyone spending time outdoors – whether on lifestyle blocks, at the beach, or working in farming operations. Color-protecting products must be lightweight enough for daily use but effective enough to withstand environmental challenges.
+          </p>
+          
+          <p class="mb-6">
+            We recommend layered protection: UV-blocking leave-in treatments for daily use, protective styles for extended outdoor work, and weekly deep conditioning treatments to repair environmental damage. This comprehensive approach maintains color vibrancy while supporting overall hair health in challenging conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Specialties & Techniques -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Professional Color Specialties</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Expert color techniques designed for lasting beauty and low maintenance.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {colorSpecialties.map((specialty) => (
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-3">{specialty.technique}</h3>
+              <p class="text-gray-700 mb-4">{specialty.description}</p>
+              <div class="space-y-3">
+                <div>
+                  <h4 class="font-semibold text-purple-800 text-sm mb-1">Key Benefits:</h4>
+                  <p class="text-purple-700 text-sm">{specialty.benefit}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-800 text-sm mb-1">Perfect For:</h4>
+                  <p class="text-blue-700 text-sm">{specialty.ideal}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-pink-800 text-sm mb-1">Maintenance:</h4>
+                  <p class="text-pink-700 text-sm">{specialty.timeframe}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Color Maintenance Guide -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Complete Color Maintenance Guide</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Daily Color Protection Routine</h3>
+          <p class="mb-6">
+            Maintaining vibrant hair color in North Auckland requires daily protection habits. Morning application of UV-protecting leave-in treatments should become as routine as sunscreen application. These products create an invisible barrier that deflects harmful rays while providing moisture and manageability.
+          </p>
+          
+          <p class="mb-6">
+            Protective styling becomes important for extended outdoor activities. Braids, buns, and covered styles reduce color exposure during farm work, gardening, or beach activities. These styles protect your color investment while remaining practical for active rural lifestyles.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Weekly Color Maintenance</h3>
+          <p class="mb-6">
+            Weekly deep conditioning treatments restore moisture and repair environmental damage before it becomes permanent. Color-depositing treatments refresh vibrancy between salon visits while providing essential nourishment. These at-home treatments extend professional color life and maintain salon-quality results.
+          </p>
+          
+          <p class="mb-6">
+            Clarifying treatments remove environmental buildup without stripping color. Rural dust, agricultural chemicals, and hard water minerals can accumulate in hair, making color appear dull or muddy. Proper clarifying maintains color clarity while removing damaging buildup.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Professional Color Maintenance</h3>
+          <p class="mb-6">
+            Professional toning services refresh color between major appointments. These quick treatments eliminate brassiness, adjust tone, and restore vibrancy. For color-treated hair in challenging environments, professional maintenance every 6-8 weeks maintains optimal color quality.
+          </p>
+          
+          <p class="mb-6">
+            Color consultations help adapt your color service to changing lifestyle needs. Seasonal work patterns, travel schedules, and environmental exposure can all affect color maintenance needs. Regular consultations ensure your color service evolves with your lifestyle.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {colorMaintenance.map((item) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-gray-800">{item.category}</h3>
+                <span class={`text-xs font-medium px-2 py-1 rounded-full ${
+                  item.priority === 'Critical' ? 'bg-red-100 text-red-800' :
+                  item.priority === 'Essential' ? 'bg-orange-100 text-orange-800' :
+                  item.priority === 'Important' ? 'bg-yellow-100 text-yellow-800' :
+                  'bg-green-100 text-green-800'
+                }`}>
+                  {item.priority}
+                </span>
+              </div>
+              <div class="space-y-2 text-sm">
+                <div>
+                  <strong class="text-gray-700">Products:</strong>
+                  <p class="text-gray-600">{item.products}</p>
+                </div>
+                <div>
+                  <strong class="text-gray-700">Frequency:</strong>
+                  <p class="text-gray-600">{item.frequency}</p>
+                </div>
+                <div>
+                  <strong class="text-gray-700">Why Important:</strong>
+                  <p class="text-gray-600">{item.why}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Color Services -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Professional Color Services</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Expert color services designed for North Auckland's lifestyle and environment.
+        </p>
+        
+        <div class="space-y-8">
+          {colorServices.map((service) => (
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">{service.name}</h3>
+                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+              </div>
+              <p class="text-gray-700 mb-4">{service.description}</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h4 class="font-semibold text-blue-800 mb-2">Duration:</h4>
+                  <p class="text-blue-700 text-sm">{service.duration}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-purple-800 mb-2">Includes:</h4>
+                  <p class="text-purple-700 text-sm">{service.includes}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-pink-800 mb-2">Maintenance:</h4>
+                  <p class="text-pink-700 text-sm">{service.maintenance}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/services" class="btn-primary inline-flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 21h10a2 2 0 002-2v-9a2 2 0 00-2-2H9a2 2 0 00-2 2v9a4 4 0 004 4z"></path>
+            </svg>
+            View All Color Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-purple-500 to-blue-500 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Transform Your Look with Expert Color</h2>
+        <p class="text-xl mb-8">
+          Book a color consultation at Hair By Melissa in Kaukapakapa and discover professional color techniques designed for North Auckland living. From low-maintenance balayage to vibrant highlights, we'll create the perfect color for your lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-purple-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM7 21h10a2 2 0 002-2v-9a2 2 0 00-2-2H9a2 2 0 00-2 2v9a4 4 0 004 4z"></path>
+            </svg>
+            Book Color Consultation
+          </a>
+          <a href="/services/balayage" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-purple-600 transition">
+            Explore Balayage Services
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            🎨 Expert Color Techniques | 🌞 UV Protection Specialists | 🏡 Rural Lifestyle Adapted
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

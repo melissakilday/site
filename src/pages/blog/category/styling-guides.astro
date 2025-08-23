@@ -1,0 +1,378 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageTitle = "Hair Styling Guides & Tutorials | Expert Styling Tips Kaukapakapa | Hair By Melissa Blog";
+const pageDescription = "Professional hair styling guides from Hair By Melissa in Kaukapakapa. Learn styling techniques, trends, and tutorials perfect for North Auckland's lifestyle and climate.";
+const pageKeywords = "hair styling guides kaukapakapa, professional styling tutorials, hair styling techniques north auckland, styling tips rural auckland, hair trends tutorials";
+
+// Styling guide posts data
+const stylingPosts = [
+  {
+    title: "Professional Blow-Dry Techniques",
+    excerpt: "Master salon-quality blow-dry techniques at home with professional tips for volume and longevity",
+    slug: "blow-dry-techniques",
+    date: "2025-01-20",
+    readTime: "7 min read",
+    category: "Styling Guides",
+    image: "/images/optimized/balayage-transformation_800.webp"
+  },
+];
+
+// Professional styling tools and techniques
+const stylingEssentials = [
+  {
+    tool: "Professional Round Brushes",
+    technique: "Volume and Smoothing",
+    description: "Essential for creating salon-quality blow-drys with maximum volume and smooth finish",
+    benefit: "Reduces styling time and improves longevity of styles"
+  },
+  {
+    tool: "Heat Protection Products",
+    technique: "Thermal Protection",
+    description: "Crucial for North Auckland's variable climate and frequent styling needs",
+    benefit: "Prevents heat damage and maintains hair health long-term"
+  },
+  {
+    tool: "Sectioning Clips",
+    technique: "Professional Sectioning",
+    description: "Key to achieving consistent, professional results at home",
+    benefit: "Ensures even styling and prevents missed sections"
+  },
+  {
+    tool: "Quality Hair Dryer",
+    technique: "Controlled Airflow",
+    description: "Ionic dryers reduce frizz and speed drying time in humid conditions",
+    benefit: "Better results in less time with reduced humidity effects"
+  }
+];
+
+// Styling services offered
+const stylingServices = [
+  {
+    name: "Professional Blow-Dry & Style",
+    price: "$60-80",
+    description: "Expert styling for special occasions or weekly maintenance",
+    duration: "45-60 minutes",
+    includes: "Wash, condition, blow-dry, and professional styling",
+    ideal: "Perfect for events, date nights, or treating yourself"
+  },
+  {
+    name: "Styling Consultation & Tutorial",
+    price: "$50",
+    description: "Learn professional techniques for your hair type and lifestyle",
+    duration: "60 minutes",
+    includes: "Personal styling lesson, product recommendations, take-home tips",
+    ideal: "Great for mastering at-home styling or trying new looks"
+  },
+  {
+    name: "Bridal & Event Styling",
+    price: "$120-150",
+    description: "Special occasion styling with trial run available",
+    duration: "90-120 minutes",
+    includes: "Trial styling, day-of service, hair accessories placement",
+    ideal: "Wedding days, formal events, photography sessions"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFDEE2] via-white to-[#D3E4FD] opacity-90"></div>
+    <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog" class="text-gray-600 hover:text-[#1EAEDB]">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Styling Guides</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Professional <span class="gradient-text">Styling Guides</span>
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Master professional hair styling techniques with expert tutorials from Hair By Melissa. Learn salon-quality styling methods, time-saving techniques, and styles perfect for North Auckland's rural and coastal lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+            </svg>
+            Book Styling Session
+          </a>
+          <a href="/services/blow-wave" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Learn About Blow-Dry Services
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Styling Guide Posts -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Latest Styling Tutorials</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {stylingPosts.map((post) => (
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">{post.title}</h3>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a 
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                >
+                  Read Tutorial
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Styling for North Auckland -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Styling for North Auckland Living</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <p class="text-xl mb-6">
+            Professional hair styling in North Auckland requires understanding our unique environment and lifestyle demands. From early morning farm work in Kaukapakapa to beach days in Wainui, coastal humidity in Helensville to equestrian activities in Waitoki, our styling techniques must work with local conditions while delivering salon-quality results.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Climate-Adapted Styling Techniques</h3>
+          <p class="mb-6">
+            North Auckland's variable climate requires flexible styling approaches. High humidity days call for anti-frizz techniques and humidity-resistant products. Dry, windy conditions need moisture-preserving styles and protective techniques. Our professional styling methods account for these daily variations, ensuring your hair looks polished regardless of weather conditions.
+          </p>
+          
+          <p class="mb-6">
+            The key to successful styling in our region is preparation. Using the right base products, understanding your hair's response to local humidity, and having backup techniques for unexpected weather changes. These professional insights make the difference between a style that lasts all day and one that falls flat by noon.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Rural Lifestyle Styling Solutions</h3>
+          <p class="mb-6">
+            Rural living demands practical yet polished styling solutions. Whether you're managing a lifestyle block, caring for horses, or heading to town for meetings, your hair needs to transition seamlessly between activities. Our styling techniques focus on longevity, manageability, and quick touch-up options that work with busy rural schedules.
+          </p>
+          
+          <p class="mb-6">
+            Professional blow-dry techniques become essential skills for rural residents. When salon visits aren't always convenient, knowing how to achieve salon-quality results at home makes a significant difference. This includes understanding proper sectioning, heat application, and product placement for maximum impact and longevity.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Time-Efficient Styling for Busy Mornings</h3>
+          <p class="mb-6">
+            Early morning farm schedules and lifestyle block responsibilities require styling routines that deliver maximum impact in minimum time. Five-minute styling solutions that look polished and professional are essential for our rural community. These techniques focus on working with your hair's natural texture while adding polish and control.
+          </p>
+          
+          <p class="mb-6">
+            The secret to quick styling success lies in the foundation. Proper cutting, regular professional treatments like keratin, and the right product selection create hair that styles easily and quickly. When your hair is properly maintained and treated, morning styling becomes efficient rather than stressful.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Styling Tools & Techniques -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Essential Styling Tools & Techniques</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Professional-grade tools and techniques that make salon-quality styling achievable at home.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {stylingEssentials.map((item) => (
+            <div class="bg-gradient-to-r from-pink-50 to-blue-50 rounded-lg p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-3">{item.tool}</h3>
+              <h4 class="font-semibold text-pink-700 mb-2">{item.technique}</h4>
+              <p class="text-gray-700 mb-3">{item.description}</p>
+              <div class="bg-white rounded-md p-3">
+                <h5 class="font-semibold text-green-800 text-sm mb-1">Professional Benefit:</h5>
+                <p class="text-green-700 text-sm">{item.benefit}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advanced Styling Guides -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Complete Styling Guide for Every Occasion</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <h3 class="text-2xl font-semibold mb-4">Daily Styling Fundamentals</h3>
+          <p class="mb-6">
+            <strong>Morning Preparation:</strong> Start with clean, towel-dried hair and apply heat protectant before any styling tools. The quality of your base preparation determines the success of your final style. In North Auckland's variable humidity, this step becomes even more critical for style longevity.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Sectioning Strategy:</strong> Professional stylists section hair methodically for consistent results. Divide hair into horizontal sections, working from bottom to top. This ensures every strand receives proper attention and heat distribution, resulting in smoother, longer-lasting styles.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Heat Application:</strong> Use moderate heat settings and move tools continuously to prevent damage. Higher heat isn't always better – consistent technique with appropriate temperature yields superior results while preserving hair health.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Occasion-Specific Styling</h3>
+          <p class="mb-6">
+            <strong>Professional/Business Styling:</strong> Sleek, controlled styles work best for business settings. Focus on smooth finishes, subtle volume, and styles that maintain their shape throughout long workdays. These styles should look polished from morning meetings to evening events.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Casual/Weekend Styling:</strong> Relaxed waves, textured styles, and natural movement suit weekend activities. These styles should look effortless while still being intentionally styled. Perfect for farmers markets, beach visits, or casual social gatherings.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Special Occasion Styling:</strong> Formal events require styles with lasting power and visual impact. Consider the occasion's length, activities planned, and photography requirements. These styles often benefit from professional application for best results.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Styling Adaptations</h3>
+          <p class="mb-6">
+            <strong>Summer Styling:</strong> Focus on heat protection and UV resistance. Styles that keep hair off the neck are both practical and comfortable. Beach waves and updos work well for hot weather while maintaining style integrity.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Winter Styling:</strong> Combat static and dryness with moisture-rich products and gentle styling techniques. Closed-toe styling (styles that protect ends) helps preserve hair health during harsh weather conditions.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Transitional Seasons:</strong> Spring and autumn require flexible styling approaches that adapt to changing weather patterns. Have backup techniques ready for unexpected humidity or weather changes.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Professional vs. DIY Styling</h3>
+          <p class="mb-6">
+            While home styling skills are valuable, certain occasions and techniques benefit from professional expertise. Complex updos, precision cutting, and chemical treatments should be left to professionals. However, daily styling, touch-ups, and maintenance styling can be successfully managed at home with proper guidance.
+          </p>
+          
+          <p class="mb-6">
+            We recommend professional styling lessons to master techniques specific to your hair type and lifestyle. These sessions teach you to achieve salon-quality results at home while identifying when professional services would be most beneficial.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Maintenance and Longevity</h3>
+          <p class="mb-6">
+            Extending style longevity reduces daily styling time and heat damage. Techniques include proper nighttime protection, strategic touch-up methods, and understanding which styles translate well from day to night or casual to formal settings.
+          </p>
+          
+          <p class="mb-6">
+            Invest in quality tools and products that match your hair type and styling goals. Professional-grade tools last longer, perform better, and often result in healthier hair over time. Consider this an investment in your daily routine efficiency and hair health.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Styling Services -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Professional Styling Services</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Expert styling services for every occasion and styling goal.
+        </p>
+        
+        <div class="space-y-8">
+          {stylingServices.map((service) => (
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-8">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">{service.name}</h3>
+                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+              </div>
+              <p class="text-gray-700 mb-4">{service.description}</p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <h4 class="font-semibold text-purple-800 mb-2">Duration:</h4>
+                  <p class="text-purple-700 text-sm">{service.duration}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-800 mb-2">Includes:</h4>
+                  <p class="text-blue-700 text-sm">{service.includes}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-pink-800 mb-2">Perfect For:</h4>
+                  <p class="text-pink-700 text-sm">{service.ideal}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/services" class="btn-primary inline-flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+            </svg>
+            View All Styling Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-pink-500 to-purple-500 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Master Professional Styling Techniques</h2>
+        <p class="text-xl mb-8">
+          Book a styling consultation at Hair By Melissa in Kaukapakapa and learn professional techniques perfect for your hair type and North Auckland lifestyle. From daily styling shortcuts to special occasion looks, we'll teach you salon-quality techniques.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-pink-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+            </svg>
+            Book Styling Tutorial
+          </a>
+          <a href="/services/blow-wave" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-pink-600 transition">
+            Learn About Professional Styling
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            💫 Professional Styling Tutorials | 🏆 Expert Techniques | 🌿 Rural Lifestyle Adapted
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

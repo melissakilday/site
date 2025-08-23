@@ -1,0 +1,139 @@
+/* Image Optimization CSS - Lazy Loading and Performance Enhancements */
+
+/* Base image loading styles */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy loading image placeholder */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([data-lazy]) {
+  opacity: 1;
+}
+
+/* Blur-up loading effect for hero images */
+.hero-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f5f5f5, #eeeeee);
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.hero-image-container.loaded::before {
+  opacity: 0;
+}
+
+.hero-image-container img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gallery image loading states */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img[loading="lazy"] {
+  transform: scale(1.05);
+  filter: blur(2px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.gallery-item img[loading="lazy"].loaded {
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* Aspect ratio containers for stable layouts */
+.aspect-ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-ratio-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.aspect-ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-ratio-3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+/* Loading skeleton animation */
+@keyframes skeleton-loading {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+.image-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+/* Modern browser optimization */
+@supports (aspect-ratio: 1 / 1) {
+  .image-container {
+    contain: layout style;
+  }
+}
+
+/* Critical images - load immediately */
+.critical-image,
+img[data-critical="true"] {
+  opacity: 1 !important;
+}
+
+/* Performance optimizations for animations */
+.smooth-transform {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  img[loading="lazy"],
+  .hero-image-container::before,
+  .gallery-item img[loading="lazy"] {
+    transition: none;
+  }
+  
+  .image-skeleton {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .image-skeleton {
+    background: #000;
+  }
+}

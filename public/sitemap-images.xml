@@ -6,32 +6,32 @@
   <url>
     <loc>https://hairbymelissa.co.nz/</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d3f671384b206baef377.png</image:loc>
+      <image:loc>/images/optimized/salon-exterior_800.webp</image:loc>
       <image:caption>Hair By Melissa - Premium Hairdresser in Kaukapakapa, Auckland serving Helensville, Wainui and Waitoki</image:caption>
       <image:title>Hair By Melissa Salon Homepage</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
       <image:license>https://hairbymelissa.co.nz/terms</image:license>
     </image:image>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png</image:loc>
+      <image:loc>/images/optimized/balayage-transformation_800.webp</image:loc>
       <image:caption>Beautiful hair transformation results at Hair By Melissa</image:caption>
       <image:title>Hair Transformation Gallery</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a015f66ed24378.png</image:loc>
+      <image:loc>/images/optimized/highlights-before-after_800.webp</image:loc>
       <image:caption>Professional hair coloring and highlights by expert hairdresser Melissa</image:caption>
       <image:title>Hair Coloring Results</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d201419a3c858.png</image:loc>
+      <image:loc>/images/optimized/professional-blowdry_800.webp</image:loc>
       <image:caption>Gallery of stunning hair transformations in North Auckland</image:caption>
       <image:title>Before and After Hair Gallery</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20c16aa3c857.png</image:loc>
+      <image:loc>/images/optimized/natural-balayage_800.webp</image:loc>
       <image:caption>Professional hair styling and finishing services</image:caption>
       <image:title>Hair Styling Services</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -42,7 +42,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/services/keratin-treatments</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67ff7f22c7a01596d4dd377a.png</image:loc>
+      <image:loc>/images/optimized/keratin-before-after_1200.webp</image:loc>
       <image:caption>Keratin treatment before and after results - $180 professional service in Kaukapakapa</image:caption>
       <image:title>Keratin Treatment Results - Frizz-Free Hair</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -53,7 +53,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/services/balayage</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png</image:loc>
+      <image:loc>/images/optimized/balayage-transformation_800.webp</image:loc>
       <image:caption>Hand-painted balayage hair coloring technique - $230 premium service by Melissa in North Auckland</image:caption>
       <image:title>Balayage Hair Coloring - Natural Sun-Kissed Look</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -64,7 +64,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/services/full-head-highlights</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a015f66ed24378.png</image:loc>
+      <image:loc>/images/optimized/highlights-before-after_800.webp</image:loc>
       <image:caption>Full head highlights transformation - $180 professional hair coloring in Kaukapakapa</image:caption>
       <image:title>Full Head Highlights - Complete Hair Transformation</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -75,7 +75,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/about</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65ac7a0155bc1d24545.png</image:loc>
+      <image:loc>/images/optimized/hair-care-general_800.webp</image:loc>
       <image:caption>Meet Melissa - Expert hairdresser in Kaukapakapa with 5+ years experience serving North Auckland</image:caption>
       <image:title>About Melissa - Your Local Hair Specialist</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -86,7 +86,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/contact</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a71384ba9e2aef5ee.png</image:loc>
+      <image:loc>/images/optimized/hero-background_1920.webp</image:loc>
       <image:caption>Hair By Melissa salon location on Magnolia Lane, Kaukapakapa - Contact us for appointments</image:caption>
       <image:title>Hair Salon Location and Contact Information</image:title>
       <image:geo_location>Magnolia Lane, Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -97,13 +97,13 @@
   <url>
     <loc>https://hairbymelissa.co.nz/gallery</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d201419a3c858.png</image:loc>
+      <image:loc>/images/optimized/professional-blowdry_800.webp</image:loc>
       <image:caption>Hair transformation gallery showcasing professional hair services in Kaukapakapa</image:caption>
       <image:title>Hair By Melissa Gallery - Before and After Transformations</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
     </image:image>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20c16aa3c857.png</image:loc>
+      <image:loc>/images/optimized/natural-balayage_800.webp</image:loc>
       <image:caption>Professional hair styling results and client transformations</image:caption>
       <image:title>Hair Styling and Coloring Results Gallery</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
@@ -114,7 +114,7 @@
   <url>
     <loc>https://hairbymelissa.co.nz/keratin</loc>
     <image:image>
-      <image:loc>https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a12053d06f9d2b9fc.png</image:loc>
+      <image:loc>/images/optimized/blonde-balayage_800.webp</image:loc>
       <image:caption>Winter Keratin Treatment Special - Premium hair smoothing service in North Auckland</image:caption>
       <image:title>Keratin Treatment Winter Special</image:title>
       <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>

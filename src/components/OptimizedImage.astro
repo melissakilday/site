@@ -1,0 +1,154 @@
+---
+// OptimizedImage.astro - Lazy loading image component with WebP support
+export interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  class?: string;
+  sizes?: string;
+  priority?: boolean;
+  quality?: number;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  class: className = '',
+  sizes,
+  priority = false,
+  quality = 80,
+  ...props
+} = Astro.props;
+
+// Generate responsive image sizes
+const generateSrcSet = (baseSrc: string, sizes: number[]) => {
+  return sizes.map(size => {
+    const webpSrc = baseSrc.replace('/original/', '/optimized/').replace('.png', `_${size}.webp`);
+    const fallbackSrc = baseSrc.replace('/original/', '/optimized/').replace('.png', `_${size}.jpg`);
+    return `${webpSrc} ${size}w`;
+  }).join(', ');
+};
+
+// Common responsive breakpoints
+const responsiveSizes = [320, 640, 768, 1024, 1280, 1920];
+
+// Generate WebP srcset for modern browsers
+const webpSrcSet = generateSrcSet(src, responsiveSizes);
+
+// Generate fallback srcset for older browsers  
+const fallbackSrcSet = generateSrcSet(src, responsiveSizes);
+
+// Default sizes attribute for responsive images
+const defaultSizes = sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
+
+// Optimized main image source
+const optimizedSrc = src.replace('/original/', '/optimized/').replace('.png', '_800.webp');
+const fallbackSrc = src.replace('/original/', '/optimized/').replace('.png', '_800.jpg');
+---
+
+<picture class={`optimized-image ${className}`}>
+  <!-- WebP sources for modern browsers -->
+  <source 
+    srcset={webpSrcSet}
+    sizes={defaultSizes}
+    type="image/webp"
+  />
+  
+  <!-- Fallback JPEG sources -->
+  <source 
+    srcset={fallbackSrcSet}
+    sizes={defaultSizes}
+    type="image/jpeg"
+  />
+  
+  <!-- Final fallback img tag -->
+  <img 
+    src={fallbackSrc}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={priority ? 'eager' : loading}
+    decoding="async"
+    class={className}
+    {...props}
+  />
+</picture>
+
+<style>
+  .optimized-image {
+    display: block;
+  }
+  
+  .optimized-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Lazy loading enhancement with CSS */
+  .optimized-image img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .optimized-image img[loading="lazy"].loaded {
+    opacity: 1;
+  }
+  
+  /* Blur-up loading effect */
+  .optimized-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f5f5f5, #eeeeee);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .optimized-image.loaded::before {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  // Enhanced lazy loading with intersection observer
+  if ('IntersectionObserver' in window) {
+    const images = document.querySelectorAll('.optimized-image img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target as HTMLImageElement;
+          const picture = img.closest('.optimized-image') as HTMLElement;
+          
+          img.addEventListener('load', () => {
+            img.classList.add('loaded');
+            picture.classList.add('loaded');
+          });
+          
+          // Force load if not already loaded
+          if (!img.complete) {
+            img.src = img.src;
+          } else {
+            img.classList.add('loaded');
+            picture.classList.add('loaded');
+          }
+          
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.1
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+  }
+</script>

@@ -250,14 +250,14 @@ p {
 
 /* Hero background images */
 .hero-bg-home {
-  background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d3f671384b206baef377.png');
+  background-image: url('/images/optimized/salon-exterior_800.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .hero-bg-services {
-  background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d3eec7a01575d2d242f5.png');
+  background-image: url('/images/optimized/salon-interior_800.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

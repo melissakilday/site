@@ -4,75 +4,87 @@ import Layout from '../layouts/Layout.astro';
 const galleryImages = [
   {
     id: 1,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png",
-    alt: "Beautiful blonde balayage",
+    src: "/images/optimized/blonde-balayage_800.webp",
+    alt: "Beautiful blonde balayage transformation",
     category: "balayage"
   },
   {
     id: 2,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a015f66ed24378.png",
-    alt: "Stunning highlights",
+    src: "/images/optimized/dimensional-highlights_800.webp",
+    alt: "Stunning highlights with dimension",
     category: "highlights"
   },
   {
     id: 3,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d201419a3c858.png",
-    alt: "Rich brunette color",
+    src: "/images/optimized/hair-care-general_800.webp",
+    alt: "Rich brunette color with shine",
     category: "color"
   },
   {
     id: 4,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20c16aa3c857.png",
-    alt: "Elegant updo styling",
+    src: "/images/optimized/updo-styling_800.webp",
+    alt: "Elegant updo styling for special occasions",
     category: "styling"
   },
   {
     id: 5,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45d12053d0241d2b806.png",
-    alt: "Perfect toner results",
+    src: "/images/optimized/professional-blowdry_800.webp",
+    alt: "Perfect toner results removing brassiness",
     category: "color"
   },
   {
     id: 6,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56dc7a0158170d2446c.png",
-    alt: "Natural balayage",
+    src: "/images/optimized/natural-balayage_800.webp",
+    alt: "Natural sun-kissed balayage",
     category: "balayage"
   },
   {
     id: 7,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d652c7a015cdb3d2453d.png",
+    src: "/images/optimized/color-transformation_800.webp",
     alt: "Vibrant color transformation",
     category: "color"
   },
   {
     id: 8,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a12053d06f9d2b9fc.png",
-    alt: "Professional blow wave",
+    src: "/images/optimized/blow-wave-styling_800.webp",
+    alt: "Professional blow wave with volume",
     category: "styling"
   },
   {
     id: 9,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d6521a14e8c4f06e23ba.png",
-    alt: "Gorgeous highlights",
+    src: "/images/optimized/foil-highlights_800.webp",
+    alt: "Gorgeous foil highlights throughout",
     category: "highlights"
   },
   {
     id: 10,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d5e612053dfc63d2b5f6.png",
-    alt: "Keratin treatment results",
+    src: "/images/optimized/keratin-treatment_800.webp",
+    alt: "Keratin treatment smooth results",
     category: "treatments"
   },
   {
     id: 11,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65271384b206daef5ed.png",
-    alt: "Beautiful color correction",
+    src: "/images/optimized/balayage-transformation_800.webp",
+    alt: "Beautiful color correction and repair",
     category: "color"
   },
   {
     id: 12,
-    src: "https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d65a71384ba9e2aef5ee.png",
-    alt: "Salon atmosphere",
+    src: "/images/optimized/highlights-before-after_800.webp",
+    alt: "Full head highlights with depth",
+    category: "highlights"
+  },
+  {
+    id: 13,
+    src: "/images/optimized/melissa-professional_800.webp",
+    alt: "Melissa at work creating beautiful hair",
     category: "salon"
+  },
+  {
+    id: 14,
+    src: "/images/optimized/salon-interior_800.webp",
+    alt: "Stunning bridal hair styling",
+    category: "styling"
   }
 ];
 
@@ -93,7 +105,7 @@ const categories = [
     <!-- Background Layer with Parallax -->
     <div 
       class="absolute inset-0 parallax-bg"
-      style="background-image: url('https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a015f66ed24378.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      style="background-image: url('/images/optimized/highlights-before-after_800.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;"
       data-speed="0.5"
     ></div>
     

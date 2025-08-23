@@ -1,0 +1,424 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageTitle = "Seasonal Hair Care Tips | Expert Seasonal Advice Kaukapakapa | Hair By Melissa Blog";
+const pageDescription = "Professional seasonal hair care tips from Hair By Melissa in Kaukapakapa. Discover year-round hair care strategies perfect for North Auckland's changing seasons.";
+const pageKeywords = "seasonal hair care tips kaukapakapa, winter hair care north auckland, summer hair protection rural auckland, seasonal hair maintenance";
+
+// Seasonal tip posts data
+const seasonalPosts = [
+  {
+    title: "Winter Hair Care Essentials",
+    excerpt: "Protect and nourish your hair during North Auckland's cooler months with professional tips",
+    slug: "winter-hair-care",
+    date: "2025-01-15",
+    readTime: "6 min read",
+    category: "Seasonal Tips",
+    image: "/images/optimized/hair-care-general_800.webp"
+  },
+];
+
+// Seasonal care strategies by season
+const seasonalStrategies = [
+  {
+    season: "Summer (Dec-Feb)",
+    priority: "UV Protection & Hydration",
+    challenges: ["Intense UV exposure", "Heat damage", "Pool/beach exposure", "Increased outdoor activities"],
+    solutions: ["Daily UV protection", "Deep hydrating treatments", "Protective styling", "Clarifying treatments"],
+    idealTreatments: ["Keratin treatments for heat protection", "Deep conditioning masks", "UV-protecting leave-in treatments"],
+    lifestyle: "Perfect time for protective styles and treatments that reduce daily styling needs"
+  },
+  {
+    season: "Autumn (Mar-May)",
+    priority: "Repair & Preparation", 
+    challenges: ["Summer damage recovery", "Changing humidity", "Color fade from UV exposure", "Seasonal shedding"],
+    solutions: ["Restorative treatments", "Color refreshing", "Scalp care", "Strengthening protocols"],
+    idealTreatments: ["Color correction services", "Protein treatments", "Scalp rejuvenation", "Trim and reshape"],
+    lifestyle: "Ideal time for major color changes and corrective treatments before winter"
+  },
+  {
+    season: "Winter (Jun-Aug)",
+    priority: "Moisture & Protection",
+    challenges: ["Dry indoor heating", "Cold wind exposure", "Reduced natural oils", "Static and dryness"],
+    solutions: ["Intensive moisturizing", "Gentle cleansing", "Static control", "Protective styling"],
+    idealTreatments: ["Keratin treatments (best results)", "Deep conditioning series", "Scalp nourishment", "Color services"],
+    lifestyle: "Perfect season for salon visits and intensive treatments when outdoor activities are limited"
+  },
+  {
+    season: "Spring (Sep-Nov)",
+    priority: "Renewal & Growth",
+    challenges: ["Seasonal allergies", "Increased pollen", "Variable weather", "Hair growth changes"],
+    solutions: ["Scalp cleansing", "Growth stimulation", "Allergy management", "Style updates"],
+    idealTreatments: ["Clarifying treatments", "Scalp therapies", "New cuts and styles", "Color refreshing"],
+    lifestyle: "Great time for style changes and preparing hair for the active summer season ahead"
+  }
+];
+
+// Seasonal product recommendations
+const seasonalProducts = [
+  {
+    season: "Summer",
+    category: "Protection",
+    products: ["UV-blocking sprays", "Leave-in conditioners with SPF", "Clarifying shampoos", "Deep hydrating masks"],
+    frequency: "Daily UV protection, weekly deep treatments"
+  },
+  {
+    season: "Autumn", 
+    category: "Repair",
+    products: ["Protein treatments", "Color-depositing masks", "Scalp serums", "Strengthening shampoos"],
+    frequency: "Weekly protein treatments, bi-weekly color refresh"
+  },
+  {
+    season: "Winter",
+    category: "Moisture",
+    products: ["Rich moisturizing shampoos", "Intensive conditioners", "Hair oils", "Anti-static sprays"],
+    frequency: "Gentle daily cleansing, weekly intensive moisture"
+  },
+  {
+    season: "Spring",
+    category: "Renewal",
+    products: ["Clarifying treatments", "Growth serums", "Lightweight leave-ins", "Scalp exfoliants"],
+    frequency: "Weekly clarifying, daily scalp care"
+  }
+];
+
+// Seasonal service recommendations
+const seasonalServices = [
+  {
+    season: "Summer",
+    recommended: ["Keratin Treatments", "Protective Styling", "UV Damage Repair"],
+    pricing: "$180 keratin, $60-80 protective styling",
+    timing: "Early summer for maximum protection benefits",
+    duration: "Keratin lasts 4-5 months, perfect for summer protection"
+  },
+  {
+    season: "Autumn",
+    recommended: ["Color Correction", "Deep Conditioning Series", "Scalp Treatments"],
+    pricing: "$150-230 color services, $60-80 conditioning treatments",
+    timing: "Best time for major color changes and corrections",
+    duration: "Color services provide fresh look for winter months"
+  },
+  {
+    season: "Winter",
+    recommended: ["Keratin Treatments", "Color Services", "Moisturizing Treatments"],
+    pricing: "$180 keratin, $150-230 color, $40-60 conditioning",
+    timing: "Ideal conditions for chemical services",
+    duration: "Treatments last longer in stable winter conditions"
+  },
+  {
+    season: "Spring",
+    recommended: ["Style Updates", "Clarifying Treatments", "Scalp Therapy"],
+    pricing: "$80-120 cuts, $40-60 clarifying, $50-80 scalp therapy",
+    timing: "Perfect for fresh looks and preparation for summer",
+    duration: "Sets foundation for healthy summer hair"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#FFDEE2] via-white to-[#D3E4FD] opacity-90"></div>
+    <div class="absolute top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog" class="text-gray-600 hover:text-[#1EAEDB]">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Seasonal Tips</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          <span class="gradient-text">Seasonal Hair Care</span> Tips & Guides
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Expert seasonal hair care advice from Hair By Melissa in Kaukapakapa. Discover year-round strategies to keep your hair healthy, beautiful, and manageable through North Auckland's changing seasons and unique climate challenges.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            Book Seasonal Consultation
+          </a>
+          <a href="/services/keratin-treatments" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Winter Keratin Special
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Tip Posts -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Latest Seasonal Guides</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {seasonalPosts.map((post) => (
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">{post.title}</h3>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a 
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                >
+                  Read Seasonal Guide
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Hair Care for North Auckland -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Year-Round Hair Care for North Auckland</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <p class="text-xl mb-6">
+            North Auckland's unique climate creates distinct seasonal challenges for hair care. From the intense summer UV exposure across our rural properties to winter's drying effects on hair in heated indoor environments, each season demands specific strategies. At Hair By Melissa in Kaukapakapa, we've developed comprehensive seasonal protocols that help our clients maintain healthy, beautiful hair year-round despite environmental challenges.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Understanding North Auckland's Seasonal Impact</h3>
+          <p class="mb-6">
+            Our region's seasonal variations create unique hair care demands. Summer brings intense UV radiation that can fade color and damage hair structure within weeks. The combination of heat, humidity, and increased outdoor activities requires protective strategies. Autumn reveals summer's cumulative damage while preparing hair for winter's different challenges. Winter's indoor heating and reduced humidity can leave hair dry and static-prone. Spring brings renewal opportunities but also increased allergens and environmental stressors.
+          </p>
+          
+          <p class="mb-6">
+            Rural lifestyles intensify these seasonal effects. Farm work, outdoor property maintenance, and lifestyle block activities increase environmental exposure. Coastal areas like Wainui add salt air and wind exposure. These factors require seasonal adaptations beyond typical urban hair care routines.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Professional Seasonal Planning</h3>
+          <p class="mb-6">
+            Strategic seasonal planning maximizes hair health and minimizes damage. Winter becomes the ideal time for intensive treatments like keratin applications, which process better in controlled indoor environments and provide months of protection. Summer focuses on protective services and damage prevention. Autumn offers opportunities for corrective treatments and preparation for winter services.
+          </p>
+          
+          <p class="mb-6">
+            This seasonal approach aligns professional treatments with natural hair cycles and environmental demands. Rather than random appointment scheduling, strategic timing provides maximum benefit from professional services while reducing overall maintenance needs.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Transition Strategies</h3>
+          <p class="mb-6">
+            Successful seasonal hair care involves gradual transitions rather than abrupt changes. As seasons shift, hair needs adjust gradually. Spring preparation might begin in late winter with scalp treatments. Summer protection starts in early spring with UV-protective treatments. Autumn recovery begins before damage becomes severe. Winter moisture preparation starts in late autumn.
+          </p>
+          
+          <p class="mb-6">
+            This proactive approach prevents seasonal damage rather than reacting to it. Prevention requires less time, money, and intervention than correction, making it ideal for busy rural lifestyles where time for hair care appointments is limited.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Strategies Guide -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Complete Seasonal Strategy Guide</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Expert strategies for maintaining beautiful hair through every season in North Auckland.
+        </p>
+        
+        <div class="space-y-8">
+          {seasonalStrategies.map((strategy) => (
+            <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">{strategy.season}</h3>
+                <span class="text-lg font-semibold text-[#1EAEDB] bg-white px-4 py-2 rounded-full">
+                  {strategy.priority}
+                </span>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 class="font-semibold text-red-800 mb-3">Seasonal Challenges:</h4>
+                  <ul class="space-y-1">
+                    {strategy.challenges.map((challenge) => (
+                      <li class="text-red-700 text-sm flex items-center">
+                        <svg class="w-3 h-3 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                        </svg>
+                        {challenge}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-green-800 mb-3">Professional Solutions:</h4>
+                  <ul class="space-y-1">
+                    {strategy.solutions.map((solution) => (
+                      <li class="text-green-700 text-sm flex items-center">
+                        <svg class="w-3 h-3 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        {solution}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-purple-800 mb-2">Ideal Professional Treatments:</h4>
+                  <ul class="text-purple-700 text-sm space-y-1">
+                    {strategy.idealTreatments.map((treatment) => (
+                      <li>• {treatment}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold text-blue-800 mb-2">Lifestyle Benefits:</h4>
+                  <p class="text-blue-700 text-sm">{strategy.lifestyle}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Product Guide -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Seasonal Product & Service Recommendations</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <h3 class="text-2xl font-semibold mb-4">Product Selection by Season</h3>
+          <p class="mb-6">
+            Effective seasonal hair care requires adapting product selection to environmental demands. Summer products focus on UV protection and humidity control. Winter formulations emphasize moisture and static reduction. Spring products address allergen buildup and preparation for summer protection. Autumn treatments focus on damage repair and winter preparation.
+          </p>
+          
+          <p class="mb-6">
+            Professional product recommendations consider North Auckland's specific environmental factors. Rural dust exposure requires clarifying products that don't strip beneficial oils. Coastal salt air demands specific protection and clarification. UV intensity requires stronger protection than urban environments typically need.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {seasonalProducts.map((guide) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-3">{guide.season} Products</h3>
+              <div class="mb-4">
+                <h4 class="font-semibold text-[#1EAEDB] mb-2">Focus: {guide.category}</h4>
+                <div class="space-y-2">
+                  {guide.products.map((product) => (
+                    <div class="text-sm text-gray-700 flex items-center">
+                      <svg class="w-3 h-3 mr-2 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                      </svg>
+                      {product}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="bg-gray-50 rounded-md p-3">
+                <h5 class="font-semibold text-gray-800 text-sm mb-1">Usage Frequency:</h5>
+                <p class="text-gray-700 text-sm">{guide.frequency}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <h3 class="text-2xl font-semibold mb-6">Professional Service Timing</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {seasonalServices.map((service) => (
+            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
+              <h4 class="text-lg font-bold text-gray-800 mb-3">{service.season} Services</h4>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <strong class="text-green-800">Recommended:</strong>
+                  <ul class="text-green-700 mt-1">
+                    {service.recommended.map((rec) => (
+                      <li>• {rec}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <strong class="text-blue-800">Investment:</strong>
+                  <p class="text-blue-700">{service.pricing}</p>
+                </div>
+                <div>
+                  <strong class="text-purple-800">Optimal Timing:</strong>
+                  <p class="text-purple-700">{service.timing}</p>
+                </div>
+                <div>
+                  <strong class="text-pink-800">Duration Benefits:</strong>
+                  <p class="text-pink-700">{service.duration}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-green-500 to-blue-500 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready for Seasonal Hair Care Excellence?</h2>
+        <p class="text-xl mb-8">
+          Book a seasonal consultation at Hair By Melissa in Kaukapakapa and discover personalized year-round hair care strategies. From winter keratin treatments to summer protection plans, we'll create the perfect seasonal routine for your North Auckland lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-green-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            Book Seasonal Consultation
+          </a>
+          <a href="/services/keratin-treatments" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-green-600 transition">
+            Winter Keratin Special
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            🌱 Year-Round Hair Health | ❄️ Winter Specialists | ☀️ Summer Protection Experts
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

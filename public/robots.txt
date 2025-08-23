@@ -43,5 +43,12 @@ Allow: /
 # Sitemap location
 Sitemap: https://hairbymelissa.co.nz/sitemap.xml
 
+# Allow optimized images directory
+Allow: /images/optimized/
+Allow: /images/original/
+
+# Additional image sitemaps
+Sitemap: https://hairbymelissa.co.nz/sitemap-images.xml
+
 # Additional directives for optimization
 Host: hairbymelissa.co.nz

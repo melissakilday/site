@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(git log:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run dev:*)",
+      "Bash(chmod:*)",
+      "Bash(./download_images.sh:*)",
+      "Bash(bash:*)",
+      "Bash(curl:*)",
+      "Bash(node:*)",
+      "Bash(touch:*)"
     ],
     "deny": [],
     "ask": []

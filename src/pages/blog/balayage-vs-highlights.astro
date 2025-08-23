@@ -1,0 +1,569 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Balayage vs Highlights: Which is Right for You? | Hair By Melissa";
+const pageDescription = "Confused between balayage and traditional highlights? Expert comparison of techniques, costs, maintenance, and which option suits your lifestyle best. Professional advice from Kaukapakapa hairdresser.";
+const pageKeywords = "balayage vs highlights, difference between balayage and highlights, hair coloring techniques, which highlighting technique, balayage or foils, hair color comparison";
+
+// Article schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Balayage vs Highlights: Which is Right for You?",
+  "description": pageDescription,
+  "author": {
+    "@type": "Person",
+    "name": "Melissa",
+    "jobTitle": "Professional Hairdresser",
+    "worksFor": {
+      "@type": "HairSalon",
+      "name": "Hair By Melissa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kaukapakapa",
+        "addressRegion": "Auckland"
+      }
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hair By Melissa",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hairbymelissa.co.nz/images/logo.png"
+    }
+  },
+  "datePublished": "2025-01-18",
+  "dateModified": "2025-01-18",
+  "url": "https://hairbymelissa.co.nz/blog/balayage-vs-highlights",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hairbymelissa.co.nz/blog/balayage-vs-highlights"
+  },
+  "articleSection": "Color Insights",
+  "keywords": ["balayage", "highlights", "hair coloring", "color techniques"]
+};
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="article"
+>
+  <!-- Article Header -->
+  <article class="pt-32 pb-16">
+    <header class="container-custom mb-12">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog" class="text-gray-600 hover:text-[#1EAEDB]">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Balayage vs Highlights</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <div class="flex items-center space-x-4 mb-4">
+          <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
+            Color Insights
+          </span>
+          <div class="flex items-center text-gray-500 text-sm space-x-4">
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              8 min read
+            </span>
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              18 Jan 2025
+            </span>
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+              By Melissa
+            </span>
+          </div>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          Balayage vs Highlights: Which is Right for You?
+        </h1>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          Choosing between balayage and traditional highlights can be overwhelming. As a professional colorist in Kaukapakapa, I'll break down the key differences, costs, and maintenance requirements to help you make the perfect choice for your lifestyle and hair goals.
+        </p>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          
+          <!-- Quick Comparison -->
+          <div class="bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Quick Comparison Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-3 text-purple-600">Balayage</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Hand-painted technique</li>
+                  <li>• Natural, sun-kissed look</li>
+                  <li>• Low maintenance</li>
+                  <li>• Grows out beautifully</li>
+                  <li>• Price: $230 at Hair By Melissa</li>
+                </ul>
+              </div>
+              <div class="bg-white p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-3 text-blue-600">Traditional Highlights</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Foil-based technique</li>
+                  <li>• Precise, dramatic contrast</li>
+                  <li>• Regular touch-ups needed</li>
+                  <li>• Maximum brightness</li>
+                  <li>• Price: $90-$180 at Hair By Melissa</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- What is Balayage -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">What is Balayage?</h2>
+            
+            <p class="text-gray-700 mb-6">
+              Balayage (pronounced "bah-lee-AHZH") is a French word meaning "to sweep." This hand-painting technique creates natural-looking highlights that mimic how the sun would naturally lighten your hair. Unlike traditional foiling methods, balayage allows for complete creative control and customization.
+            </p>
+
+            <div class="bg-purple-50 border-l-4 border-purple-400 p-6 mb-6">
+              <h3 class="text-xl font-semibold mb-3">The Balayage Process at Hair By Melissa</h3>
+              <ol class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
+                  <div>
+                    <strong>Consultation:</strong> We analyze your natural color, hair texture, and desired outcome to create a personalized color plan.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
+                  <div>
+                    <strong>Strategic Sectioning:</strong> Hair is divided into sections that follow your natural hair movement and face shape.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
+                  <div>
+                    <strong>Hand-Painting:</strong> Color is painted onto specific strands using a sweeping motion, concentrating on areas where natural lightening would occur.
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
+                  <div>
+                    <strong>Processing & Toning:</strong> Color develops naturally, followed by a custom toner to achieve your perfect shade.
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4">Balayage Benefits</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-green-600">Advantages</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Natural, lived-in appearance</li>
+                  <li>• Low maintenance (touch-ups every 8-12 weeks)</li>
+                  <li>• Flatters all hair types and lengths</li>
+                  <li>• Customizable to any skin tone</li>
+                  <li>• Grows out gracefully without harsh lines</li>
+                  <li>• Less damage than traditional highlighting</li>
+                </ul>
+              </div>
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-red-600">Considerations</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Higher initial cost ($230)</li>
+                  <li>• Longer appointment time (3-4 hours)</li>
+                  <li>• Results may be subtle for dramatic changes</li>
+                  <li>• Requires skilled colorist for best results</li>
+                  <li>• May need multiple sessions for major transformations</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Traditional Highlights -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Understanding Traditional Highlights</h2>
+            
+            <p class="text-gray-700 mb-6">
+              Traditional highlighting uses foils to isolate sections of hair for precise color application. This method has been the gold standard in hair coloring for decades and remains popular for clients seeking maximum contrast and brightness.
+            </p>
+
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
+              <h3 class="text-xl font-semibold mb-3">Traditional Highlight Options at Hair By Melissa</h3>
+              <div class="space-y-4">
+                <div class="bg-white p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">Partial Foils - $90</h4>
+                  <p class="text-gray-700">Highlights around the face and crown area. Perfect for first-time highlighting or maintenance between full services.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">Half Head Highlights - $140</h4>
+                  <p class="text-gray-700">Covers the top and sides of your head for natural-looking dimension without full commitment.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">Full Head Highlights - $180</h4>
+                  <p class="text-gray-700">Complete highlighting throughout your entire head for maximum impact and all-over brightness.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold mb-4">Traditional Highlights Benefits</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-green-600">Advantages</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• Precise, consistent results</li>
+                  <li>• Maximum lightening ability</li>
+                  <li>• Dramatic contrast possible</li>
+                  <li>• Faster processing time</li>
+                  <li>• More affordable starting point ($90)</li>
+                  <li>• Great for covering gray hair</li>
+                </ul>
+              </div>
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="font-semibold mb-3 text-red-600">Considerations</h4>
+                <ul class="space-y-2 text-gray-700">
+                  <li>• More frequent touch-ups needed (6-8 weeks)</li>
+                  <li>• Can create harsh regrowth lines</li>
+                  <li>• Higher maintenance costs over time</li>
+                  <li>• More potential for damage with frequent processing</li>
+                  <li>• Less natural-looking result</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Side by Side Comparison -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Detailed Comparison: Balayage vs Highlights</h2>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <thead>
+                  <tr class="bg-gray-50">
+                    <th class="text-left p-4 font-semibold">Factor</th>
+                    <th class="text-left p-4 font-semibold text-purple-600">Balayage</th>
+                    <th class="text-left p-4 font-semibold text-blue-600">Traditional Highlights</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr>
+                    <td class="p-4 font-medium">Technique</td>
+                    <td class="p-4">Hand-painted, freehand application</td>
+                    <td class="p-4">Foil sectioning, precise placement</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-4 font-medium">Appearance</td>
+                    <td class="p-4">Natural, sun-kissed, graduated</td>
+                    <td class="p-4">Uniform, contrasted, structured</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Processing Time</td>
+                    <td class="p-4">3-4 hours</td>
+                    <td class="p-4">1.5-3 hours</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-4 font-medium">Initial Cost</td>
+                    <td class="p-4">$230</td>
+                    <td class="p-4">$90-$180</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Maintenance Frequency</td>
+                    <td class="p-4">Every 8-12 weeks</td>
+                    <td class="p-4">Every 6-8 weeks</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-4 font-medium">Regrowth Visibility</td>
+                    <td class="p-4">Grows out naturally, no harsh lines</td>
+                    <td class="p-4">Visible regrowth lines</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Hair Damage Risk</td>
+                    <td class="p-4">Lower (no foil heat)</td>
+                    <td class="p-4">Moderate (foil intensifies processing)</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="p-4 font-medium">Customization Level</td>
+                    <td class="p-4">Highly customizable</td>
+                    <td class="p-4">More standardized</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Best For</td>
+                    <td class="p-4">Low-maintenance, natural looks</td>
+                    <td class="p-4">Maximum contrast, gray coverage</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Cost Analysis -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Cost Analysis: Long-Term Investment</h2>
+            
+            <div class="bg-yellow-50 border border-yellow-200 p-8 rounded-lg mb-8">
+              <h3 class="text-xl font-semibold mb-4 text-yellow-800">12-Month Cost Comparison</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg border border-purple-200">
+                  <h4 class="text-lg font-semibold mb-3 text-purple-600">Balayage</h4>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex justify-between">
+                      <span>Initial Treatment:</span>
+                      <span class="font-semibold">$230</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Touch-ups (3 × $180):</span>
+                      <span class="font-semibold">$540</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="flex justify-between text-lg font-bold">
+                      <span>Total Annual Cost:</span>
+                      <span class="text-purple-600">$770</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg border border-blue-200">
+                  <h4 class="text-lg font-semibold mb-3 text-blue-600">Full Head Highlights</h4>
+                  <div class="space-y-2 text-gray-700">
+                    <div class="flex justify-between">
+                      <span>Initial Treatment:</span>
+                      <span class="font-semibold">$180</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span>Touch-ups (5 × $140):</span>
+                      <span class="font-semibold">$700</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="flex justify-between text-lg font-bold">
+                      <span>Total Annual Cost:</span>
+                      <span class="text-blue-600">$880</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-6 p-4 bg-green-100 rounded-lg">
+                <p class="text-green-800 font-medium">
+                  💡 Cost Insight: While balayage has a higher upfront cost, it can be more economical long-term due to less frequent maintenance requirements.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Who Should Choose What -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Which Technique is Right for You?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-purple-50 p-8 rounded-lg border border-purple-200">
+                <h3 class="text-2xl font-bold mb-4 text-purple-600">Choose Balayage If:</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You want a natural, low-maintenance look</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You prefer fewer salon visits</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You have virgin or lightly processed hair</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You want subtle, graduated color changes</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You have wavy or curly hair</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-purple-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You're trying highlights for the first time</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="bg-blue-50 p-8 rounded-lg border border-blue-200">
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">Choose Highlights If:</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You want maximum contrast and brightness</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You need significant gray coverage</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You have fine or straight hair</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You want dramatic color transformation</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You prefer predictable, uniform results</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg class="w-5 h-5 text-blue-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>You have a lower initial budget</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Maintenance Tips -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Maintenance Tips for Both Techniques</h2>
+            
+            <div class="bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg">
+              <h3 class="text-xl font-semibold mb-6 text-gray-800">Extending Your Color Investment</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold mb-3">For Balayage:</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li>• Use color-safe, sulfate-free shampoo</li>
+                    <li>• Deep condition weekly</li>
+                    <li>• Limit heat styling</li>
+                    <li>• Touch up roots every 10-12 weeks</li>
+                    <li>• Use toning shampoo to maintain blonde tones</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 class="font-semibold mb-3">For Highlights:</h4>
+                  <ul class="space-y-2 text-gray-700">
+                    <li>• Schedule regular root touch-ups (6-8 weeks)</li>
+                    <li>• Use purple shampoo for blonde highlights</li>
+                    <li>• Protect from sun exposure</li>
+                    <li>• Regular toning appointments</li>
+                    <li>• Consider partial foils between full services</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Expert Consultation -->
+          <section class="bg-gradient-to-r from-[#1EAEDB] to-[#0891B2] p-8 rounded-lg text-white text-center mb-12">
+            <h2 class="text-2xl font-bold mb-4">Still Unsure? Book a Professional Consultation</h2>
+            <p class="text-lg mb-6">
+              As your local Kaukapakapa colorist, I'll assess your hair type, lifestyle, and goals to recommend the perfect highlighting technique for you. Every consultation includes a personalized color plan and maintenance schedule.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/services/balayage" class="bg-white text-[#1EAEDB] font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition">
+                Learn About Balayage ($230)
+              </a>
+              <a href="/services/full-head-highlights" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-6 rounded-md hover:bg-white hover:text-[#1EAEDB] transition">
+                Explore Highlight Options
+              </a>
+            </div>
+            <div class="mt-4">
+              <a href="/booking" class="text-white underline hover:no-underline">
+                Book your consultation today →
+              </a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Articles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-[#1EAEDB] to-[#0891B2]"></div>
+          <div class="p-6">
+            <span class="text-sm text-[#1EAEDB] font-medium">Hair Care Tips</span>
+            <h3 class="text-xl font-bold mt-2 mb-3">
+              <a href="/blog/keratin-aftercare" class="hover:text-[#1EAEDB] transition-colors">
+                Complete Keratin Treatment Aftercare Guide
+              </a>
+            </h3>
+            <p class="text-gray-600">Make your keratin treatment last 5+ months with expert aftercare tips and product recommendations.</p>
+          </div>
+        </article>
+        
+        <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-400"></div>
+          <div class="p-6">
+            <span class="text-sm text-[#1EAEDB] font-medium">Seasonal Care</span>
+            <h3 class="text-xl font-bold mt-2 mb-3">
+              <a href="/blog/winter-hair-care" class="hover:text-[#1EAEDB] transition-colors">
+                Winter Hair Care for Auckland Climate
+              </a>
+            </h3>
+            <p class="text-gray-600">Protect your hair during Auckland's cooler months with professional tips and product recommendations.</p>
+          </div>
+        </article>
+        
+        <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-orange-500 to-red-400"></div>
+          <div class="p-6">
+            <span class="text-sm text-[#1EAEDB] font-medium">Color Insights</span>
+            <h3 class="text-xl font-bold mt-2 mb-3">
+              <a href="/blog/hair-color-maintenance" class="hover:text-[#1EAEDB] transition-colors">
+                How to Make Your Hair Color Last Longer
+              </a>
+            </h3>
+            <p class="text-gray-600">Extend the life of your color with professional tips for color-treated hair maintenance.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Script -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+</Layout>

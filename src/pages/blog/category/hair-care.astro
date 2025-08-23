@@ -1,0 +1,356 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const pageTitle = "Hair Care Tips & Advice | Professional Hair Care Kaukapakapa | Hair By Melissa Blog";
+const pageDescription = "Expert hair care tips from Hair By Melissa in Kaukapakapa. Learn professional techniques for healthy hair, keratin aftercare, and treatments perfect for North Auckland's climate.";
+const pageKeywords = "hair care tips kaukapakapa, professional hair care advice, keratin aftercare north auckland, healthy hair maintenance, hair care rural auckland, hair treatment tips";
+
+// Hair care posts data
+const hairCarePosts = [
+  {
+    title: "Keratin Aftercare Guide",
+    excerpt: "Complete guide to maintaining your keratin treatment in North Auckland's variable climate",
+    slug: "keratin-aftercare",
+    date: "2025-01-21",
+    readTime: "6 min read",
+    category: "Hair Care",
+    image: "/images/optimized/hair-care-general_800.webp"
+  },
+  {
+    title: "Frizzy Hair Solutions for Coastal Living",
+    excerpt: "Combat humidity and frizz with professional techniques designed for Auckland's coastal climate",
+    slug: "frizzy-hair-solutions", 
+    date: "2025-01-22",
+    readTime: "8 min read",
+    category: "Hair Care",
+    image: "/images/optimized/balayage-transformation_800.webp"
+  },
+  {
+    title: "Hair Health Warning Signs",
+    excerpt: "Identify early signs of hair damage and when to seek professional treatment",
+    slug: "hair-health-signs",
+    date: "2025-01-20",
+    readTime: "5 min read", 
+    category: "Hair Care",
+    image: "/images/optimized/professional-blowdry_800.webp"
+  }
+];
+
+// Hair care tips specific to the Kaukapakapa area
+const localHairCareTips = [
+  {
+    season: "Year-Round",
+    tip: "Protect against rural dust and pollen",
+    description: "Living in rural Kaukapakapa means exposure to agricultural dust and seasonal pollen that can build up in hair"
+  },
+  {
+    season: "Summer",
+    tip: "Combat heat and UV exposure",
+    description: "North Auckland summers require extra protection for hair exposed to intense UV and heat"
+  },
+  {
+    season: "Winter",
+    tip: "Maintain moisture in dry conditions", 
+    description: "Indoor heating and winter weather can dry out hair, requiring intensive conditioning"
+  },
+  {
+    season: "Spring/Autumn",
+    tip: "Adjust routine for seasonal changes",
+    description: "Variable weather patterns in rural areas require flexible hair care approaches"
+  }
+];
+
+// Professional treatments offered
+const hairCareServices = [
+  {
+    name: "Keratin Treatments",
+    price: "$180",
+    description: "Professional smoothing treatment perfect for frizz control in humid conditions",
+    benefit: "Reduces styling time by 50% and provides 4-5 months of smooth, manageable hair",
+    ideal: "Perfect for busy rural lifestyles and humidity control"
+  },
+  {
+    name: "Deep Conditioning Treatments",
+    price: "$40-60",
+    description: "Intensive moisture restoration for damaged or dry hair",
+    benefit: "Repairs damage from environmental factors and chemical processing",
+    ideal: "Essential for hair exposed to rural dust, sun, and agricultural environments"
+  },
+  {
+    name: "Hair Health Consultations",
+    price: "Free with service",
+    description: "Professional assessment of hair condition and personalized care recommendations",
+    benefit: "Identifies problems early and creates custom treatment plans",
+    ideal: "Recommended for all new clients and seasonal hair care planning"
+  }
+];
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  pageType="website"
+>
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#D3E4FD] via-white to-[#FFDEE2] opacity-90"></div>
+    <div class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full morph-blob blur-3xl"></div>
+    
+    <div class="container-custom relative z-10">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog" class="text-gray-600 hover:text-[#1EAEDB]">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">Hair Care</li>
+        </ol>
+      </nav>
+      
+      <div class="max-w-4xl">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          Professional <span class="gradient-text">Hair Care</span> Tips
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Expert hair care advice from Hair By Melissa in Kaukapakapa. Learn professional techniques, maintenance tips, and treatments specifically designed for North Auckland's unique climate and rural lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Hair Assessment
+          </a>
+          <a href="/services/keratin-treatments" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Learn About Keratin Treatments
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hair Care Posts -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Latest Hair Care Articles</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {hairCarePosts.map((post) => (
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-3">
+                  <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                    {post.category}
+                  </span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">{post.title}</h3>
+                <p class="text-gray-600 mb-4">{post.excerpt}</p>
+                <a 
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                >
+                  Read Full Article
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Hair Care Tips -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Hair Care for North Auckland Living</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+          <p class="text-xl mb-6">
+            Living in rural North Auckland presents unique challenges for hair care. From the agricultural dust of Kaukapakapa to the coastal humidity affecting Helensville, Wainui, and Waitoki, our local environment requires specialized knowledge and adapted techniques to maintain healthy, beautiful hair year-round.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Understanding North Auckland's Hair Care Challenges</h3>
+          <p class="mb-6">
+            The diverse microclimates of our region create varying conditions that can affect hair health. Kaukapakapa's rural setting exposes hair to agricultural dust, pollen, and seasonal variations in humidity. Meanwhile, our coastal service areas like Helensville experience the effects of harbour moisture, Wainui deals with salt air and UV exposure, and Waitoki's rural elevation creates its own unique environmental factors.
+          </p>
+          
+          <p class="mb-6">
+            Professional hair care in this environment requires understanding these local conditions and adapting treatments accordingly. At Hair By Melissa, we've developed expertise in caring for hair that faces these specific North Auckland challenges, creating treatment plans that work with, rather than against, our local environment.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">The Keratin Solution for Local Conditions</h3>
+          <p class="mb-6">
+            Keratin treatments have become our most popular service for good reason – they address many of the hair challenges specific to our area. The treatment creates a protective barrier that resists humidity absorption, making it perfect for managing frizz in coastal conditions. It also provides protection against environmental pollutants and reduces the daily styling stress that can damage hair over time.
+          </p>
+          
+          <p class="mb-6">
+            For our rural clients, keratin treatments offer the additional benefit of reducing the time needed for daily styling. Whether you're heading out to tend horses in Waitoki, managing a lifestyle block in Kaukapakapa, or dealing with the beach lifestyle in Wainui, keratin-treated hair maintains its smooth, manageable texture with minimal effort.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {localHairCareTips.map((tip) => (
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold mb-3 text-[#1EAEDB]">{tip.season} Care</h3>
+              <h4 class="font-semibold mb-2">{tip.tip}</h4>
+              <p class="text-gray-600 text-sm">{tip.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Hair Care Services -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Professional Hair Care Services</h2>
+        <p class="text-xl text-gray-600 text-center mb-12">
+          Specialized treatments designed for North Auckland's unique environmental challenges.
+        </p>
+        
+        <div class="space-y-8">
+          {hairCareServices.map((service) => (
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h3 class="text-2xl font-bold text-gray-800">{service.name}</h3>
+                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+              </div>
+              <p class="text-gray-700 mb-4">{service.description}</p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-semibold text-green-800 mb-2">Key Benefits:</h4>
+                  <p class="text-green-700 text-sm">{service.benefit}</p>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-blue-800 mb-2">Perfect For:</h4>
+                  <p class="text-blue-700 text-sm">{service.ideal}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <a href="/services" class="btn-primary inline-flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            View All Services & Prices
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Hair Care Guide -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8">Complete Hair Care Guide for Rural Living</h2>
+        
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <h3 class="text-2xl font-semibold mb-4">Daily Hair Care Routine</h3>
+          <p class="mb-6">
+            Living in rural North Auckland requires a hair care routine that accounts for environmental factors unique to our area. Start each day by assessing the weather conditions and planned activities. If you'll be outdoors on the farm, working with horses, or spending time in dusty conditions, consider protective styling that keeps hair contained and protected.
+          </p>
+          
+          <p class="mb-6">
+            For those with keratin treatments, morning routines become significantly simpler. A quick brush and minimal styling product application is often sufficient, even in humid conditions. This time-saving benefit is particularly appreciated by our rural clients who have early morning responsibilities and need efficient beauty routines.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Weekly Deep Care Rituals</h3>
+          <p class="mb-6">
+            Plan weekly intensive care sessions to counteract environmental damage. For rural residents, this might mean scheduling Sunday evening treatments to prepare for the week ahead. Deep conditioning masks, scalp treatments, and careful inspection for any environmental damage should be part of this routine.
+          </p>
+          
+          <p class="mb-6">
+            Professional treatments can be scheduled monthly or seasonally, depending on hair condition and environmental exposure. Our Kaukapakapa location makes it convenient to combine salon visits with other rural errands, maximizing the efficiency of your time.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Seasonal Hair Care Adjustments</h3>
+          <p class="mb-6">
+            <strong>Spring Preparation:</strong> As rural properties come alive with spring activities, hair needs protection from increased pollen and dust. This is an ideal time for clarifying treatments and protective services that will carry you through the busy growing season.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Summer Protection:</strong> Intense North Auckland sun requires UV protection for hair, especially for those working outdoors. Regular conditioning treatments become essential, and styles that keep hair off the neck and protected are practical choices.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Autumn Recovery:</strong> After a summer of sun and activity, autumn is the perfect time for restorative treatments. Consider this season for major color services or corrective treatments that will prepare hair for the quieter winter months.
+          </p>
+          
+          <p class="mb-6">
+            <strong>Winter Maintenance:</strong> Indoor heating and winter weather can dry out hair. Focus on moisture-rich treatments and consider this the ideal time for keratin services that will provide protection and manageability through the season.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Professional vs. Home Care Balance</h3>
+          <p class="mb-6">
+            While home care is essential, professional treatments provide benefits that cannot be replicated at home. The controlled environment of our Kaukapakapa salon, with stable temperature and humidity levels, allows for optimal treatment results. Professional products and techniques also ensure treatments penetrate effectively and last longer.
+          </p>
+          
+          <p class="mb-6">
+            We recommend professional treatments every 6-8 weeks for maintenance, with seasonal intensive treatments for preparation and recovery. Emergency appointments are always available for damage from unexpected environmental exposure or special occasion styling needs.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">Hair Care Product Selection for Rural Life</h3>
+          <p class="mb-6">
+            Product selection should account for storage conditions in rural settings and the practical demands of country living. Heat-protectant products are essential for those styling hair in environments without air conditioning. Leave-in treatments that don't require rinsing are practical for busy mornings.
+          </p>
+          
+          <p class="mb-6">
+            We provide personalized product recommendations based on your specific rural lifestyle, hair type, and professional treatments received. Our goal is to create a realistic, effective routine that fits seamlessly into country living while maintaining beautiful, healthy hair.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-purple-500 to-pink-500 text-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready for Professional Hair Care?</h2>
+        <p class="text-xl mb-8">
+          Book your consultation at Hair By Melissa in Kaukapakapa and discover hair care solutions designed for North Auckland living. From keratin treatments to seasonal maintenance, we'll create the perfect routine for your lifestyle.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/booking" class="bg-white text-purple-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            Book Hair Care Consultation
+          </a>
+          <a href="/services/keratin-treatments" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-purple-600 transition">
+            Explore Keratin Treatments
+          </a>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-lg">
+            🌿 Rural Hair Care Specialists | 💧 Keratin Treatment Experts | 🏡 Kaukapakapa Village Location
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

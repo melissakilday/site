@@ -1,0 +1,22 @@
+{
+  "generated": "2025-08-23T05:08:09.475Z",
+  "images": 19,
+  "sizes": [
+    320,
+    480,
+    640,
+    768,
+    1024,
+    1280,
+    1920
+  ],
+  "formats": [
+    "webp",
+    "jpg"
+  ],
+  "quality": {
+    "webp": 80,
+    "jpeg": 85
+  },
+  "totalFiles": 304
+}
