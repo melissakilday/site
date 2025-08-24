@@ -109,19 +109,57 @@ const galleryImages = [
       
       <!-- RESPONSIVE GALLERY GRID -->
       <div class="gallery-responsive">
-        {galleryImages.map((image) => (
-          <div class="gallery-item-responsive">
+        {galleryImages.map((image, index) => (
+          <div class="gallery-item-responsive" data-index={index}>
             <img 
               src={image.src}
               alt={image.alt}
               class="gallery-img-responsive"
               loading="eager"
+              style="cursor: pointer;"
             />
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox-overlay">
+    <div class="lightbox-container">
+      <!-- Close Button -->
+      <button id="close-lightbox" class="lightbox-close" aria-label="Close lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <!-- Previous Button -->
+      <button id="prev-image" class="lightbox-nav lightbox-prev" aria-label="Previous image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+      </button>
+      
+      <!-- Next Button -->
+      <button id="next-image" class="lightbox-nav lightbox-next" aria-label="Next image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+      </button>
+      
+      <!-- Image Container -->
+      <div class="lightbox-image-container">
+        <img id="lightbox-img" src="" alt="" class="lightbox-image" />
+      </div>
+      
+      <!-- Image Counter -->
+      <div class="lightbox-counter">
+        <span id="current-image">1</span> / <span id="total-images">16</span>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <style>
@@ -240,9 +278,288 @@ const galleryImages = [
       transition: transform 0.1s ease;
     }
   }
+  
+  /* LIGHTBOX STYLES */
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .lightbox-container {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  
+  .lightbox-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* LIGHTBOX CONTROLS */
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    z-index: 10001;
+  }
+  
+  .lightbox-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    z-index: 10001;
+  }
+  
+  .lightbox-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+  
+  .lightbox-prev {
+    left: 20px;
+  }
+  
+  .lightbox-next {
+    right: 20px;
+  }
+  
+  .lightbox-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 10001;
+  }
+  
+  /* MOBILE LIGHTBOX OPTIMIZATIONS */
+  @media (max-width: 768px) {
+    .lightbox-image {
+      max-height: 80vh;
+    }
+    
+    .lightbox-close {
+      top: 10px;
+      right: 10px;
+      width: 44px;
+      height: 44px;
+    }
+    
+    .lightbox-nav {
+      width: 44px;
+      height: 44px;
+    }
+    
+    .lightbox-prev {
+      left: 10px;
+    }
+    
+    .lightbox-next {
+      right: 10px;
+    }
+    
+    .lightbox-counter {
+      bottom: 10px;
+    }
+  }
 </style>
 
 <script>
-  // NO JAVASCRIPT FOR NOW - KEEP IT SIMPLE
-  console.log('Gallery page loaded - testing image display');
+  document.addEventListener('DOMContentLoaded', function() {
+    // Gallery images data (from Astro frontend)
+    const galleryData = [
+      {src: "/images/forgallery/balayage-transformation.webp", alt: "Beautiful balayage transformation with natural-looking highlights"},
+      {src: "/images/forgallery/blonde-balayage.webp", alt: "Stunning blonde balayage with dimensional highlights"},
+      {src: "/images/forgallery/natural-balayage.webp", alt: "Natural sun-kissed balayage technique"},
+      {src: "/images/forgallery/dimensional-highlights.webp", alt: "Dimensional highlights creating depth and movement"},
+      {src: "/images/forgallery/foil-highlights.webp", alt: "Perfect foil highlights with professional technique"},
+      {src: "/images/forgallery/highlights-before-after.webp", alt: "Highlights before and after transformation"},
+      {src: "/images/forgallery/color-transformation.webp", alt: "Dramatic color transformation with rich tones"},
+      {src: "/images/forgallery/blow-wave-styling.webp", alt: "Professional blow wave styling with volume"},
+      {src: "/images/forgallery/updo-styling.webp", alt: "Elegant updo styling for special occasions"},
+      {src: "/images/forgallery/professional-blowdry.webp", alt: "Professional blowdry finish with shine"},
+      {src: "/images/forgallery/keratin-treatment.webp", alt: "Keratin treatment for smooth, frizz-free hair"},
+      {src: "/images/forgallery/keratin-before-after.webp", alt: "Keratin treatment before and after results"},
+      {src: "/images/forgallery/hair-care-general.webp", alt: "Professional hair care and styling"},
+      {src: "/images/forgallery/melissa-professional.webp", alt: "Melissa working her magic in the salon"},
+      {src: "/images/forgallery/salon-interior.webp", alt: "Beautiful modern salon interior design"},
+      {src: "/images/forgallery/salon-exterior.webp", alt: "Welcoming salon exterior in Kaukapakapa"}
+    ];
+    
+    // Lightbox elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const currentImageSpan = document.getElementById('current-image');
+    const totalImagesSpan = document.getElementById('total-images');
+    const closeBtn = document.getElementById('close-lightbox');
+    const prevBtn = document.getElementById('prev-image');
+    const nextBtn = document.getElementById('next-image');
+    
+    // Gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item-responsive');
+    
+    let currentImageIndex = 0;
+    
+    // Set total images count
+    totalImagesSpan.textContent = galleryData.length;
+    
+    // Open lightbox function
+    function openLightbox(index) {
+      currentImageIndex = index;
+      lightboxImg.src = galleryData[index].src;
+      lightboxImg.alt = galleryData[index].alt;
+      currentImageSpan.textContent = index + 1;
+      
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+    
+    // Close lightbox function
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Navigate to previous image
+    function previousImage() {
+      currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : galleryData.length - 1;
+      openLightbox(currentImageIndex);
+    }
+    
+    // Navigate to next image
+    function nextImage() {
+      currentImageIndex = currentImageIndex < galleryData.length - 1 ? currentImageIndex + 1 : 0;
+      openLightbox(currentImageIndex);
+    }
+    
+    // Add click listeners to gallery items
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        openLightbox(index);
+      });
+    });
+    
+    // Lightbox controls
+    closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', previousImage);
+    nextBtn.addEventListener('click', nextImage);
+    
+    // Click outside image to close
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      switch(e.key) {
+        case 'Escape':
+          closeLightbox();
+          break;
+        case 'ArrowLeft':
+          previousImage();
+          break;
+        case 'ArrowRight':
+          nextImage();
+          break;
+      }
+    });
+    
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let startY = 0;
+    
+    lightbox.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+    
+    lightbox.addEventListener('touchend', (e) => {
+      if (!startX || !startY) return;
+      
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+      
+      // Only handle horizontal swipes (ignore vertical scrolling)
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        if (diffX > 0) {
+          // Swipe left - next image
+          nextImage();
+        } else {
+          // Swipe right - previous image
+          previousImage();
+        }
+      }
+      
+      startX = 0;
+      startY = 0;
+    });
+    
+    console.log('Gallery with lightbox loaded - 16 WebP images ready');
+  });
 </script>

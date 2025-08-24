@@ -121,7 +121,7 @@ npm run preview
 ### ✅ Implemented Pages (38 total)
 - **Home** (`/`) - Landing page with hero section, services preview, testimonials
 - **About** (`/about`) - About Melissa and the salon story
-- **Gallery** (`/gallery`) - Portfolio with lightbox, category filtering, 14 optimized images
+- **Gallery** (`/gallery`) - Portfolio with lightbox navigation, 16 WebP optimized images
 - **Contact** (`/contact`) - Contact information, location, and inquiry form
 - **FAQ** (`/faq`) - Frequently asked questions about services
 - **Booking** (`/booking`) - Online booking system integration
@@ -241,15 +241,18 @@ All images have been migrated from Google Storage to local optimization:
 - Mapping system: `src/utils/imageMap.ts` with metadata
 
 ### Gallery System
-Advanced gallery with category filtering and lightbox:
-- **14 Portfolio Images**: Balayage, highlights, color transformations
-- **Category Filtering**: Dynamic JavaScript filtering
-- **Lightbox**: Click-to-enlarge functionality
-- **Performance Fix**: Eager loading for immediate thumbnail display
+Advanced gallery with lightbox navigation:
+- **16 Portfolio Images**: Balayage, highlights, color transformations, styling work
+- **Lightbox Navigation**: Full-screen viewing with keyboard and touch controls
+- **Mobile Optimized**: Swipe gestures and responsive design
+- **Performance**: WebP format with eager loading for immediate display
+- **SEO Optimized**: Descriptive alt text for all gallery images
 
 ### Known Issues (Resolved)
-- ✅ **Gallery Black Screen**: Fixed opacity conflicts in lazy loading
-- ✅ **Image Loading**: Comprehensive WebP/JPEG fallback system
+- ✅ **Gallery Black Screen**: Fixed PNG files incorrectly named as WebP causing display issues
+- ✅ **Homepage 404 Error**: Fixed hero background image path mismatch
+- ✅ **SEO Alt Text**: Updated all images with descriptive, SEO-optimized alt text
+- ✅ **Image Format Issues**: Converted all gallery images to true WebP format using Sharp
 
 ## 📝 Memory & Documentation
 

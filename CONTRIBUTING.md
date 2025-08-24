@@ -99,11 +99,12 @@ npm run preview
 
 ### Images
 
-- Optimize images before adding
-- Use appropriate formats (WebP, AVIF when possible)
-- Include descriptive alt text
-- Ensure images are responsive
-- Host large images on CDN (currently Google Cloud Storage)
+- **Optimization System**: Use local WebP format with JPEG fallbacks
+- **Format**: WebP primary (60%+ size reduction), JPEG for compatibility
+- **Alt Text**: Descriptive, SEO-optimized alt text required for all images
+- **Responsive**: 7 breakpoint sizes (320px-1920px)
+- **Tools**: Sharp library for conversion, custom optimization scripts
+- **Gallery**: WebP format in `/images/forgallery/` with eager loading
 
 ## 🧪 Testing
 

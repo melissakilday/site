@@ -32,10 +32,22 @@ const reviews = [
 ];
 
 const galleryImages = [
-  "/images/optimized/balayage-transformation_800.webp",
-  "/images/optimized/highlights-before-after_800.webp",
-  "/images/optimized/professional-blowdry_800.webp",
-  "/images/optimized/natural-balayage_800.webp",
+  {
+    src: "/images/optimized/balayage-transformation_800.webp",
+    alt: "Professional balayage hair transformation showing natural-looking highlights and color depth"
+  },
+  {
+    src: "/images/optimized/highlights-before-after_800.webp",
+    alt: "Before and after hair highlights transformation by Hair By Melissa showing dimensional color"
+  },
+  {
+    src: "/images/optimized/professional-blowdry_800.webp",
+    alt: "Professional blow dry hair styling with volume and smooth finish at Hair By Melissa salon"
+  },
+  {
+    src: "/images/optimized/natural-balayage_800.webp",
+    alt: "Natural sun-kissed balayage hair coloring technique with seamless color blending"
+  }
 ];
 ---
 
@@ -135,7 +147,7 @@ const galleryImages = [
   <section class="relative section-padding overflow-hidden">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('/images/optimized/hero-background_1920.webp'); background-size: cover; background-position: center; filter: blur(3px);"></div>
+      <div class="absolute inset-0" style="background-image: url('/images/optimized/hero-background_1920q80.webp'); background-size: cover; background-position: center; filter: blur(3px);"></div>
     </div>
     <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#D3E4FD]/90 via-white/95 to-[#FFDEE2]/90"></div>
@@ -230,8 +242,8 @@ const galleryImages = [
         {galleryImages.map((image, index) => (
           <div class="relative overflow-hidden rounded-lg group animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
             <img 
-              src={image}
-              alt="Hair transformation" 
+              src={image.src}
+              alt={image.alt}
               class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -255,7 +267,7 @@ const galleryImages = [
       <div class="relative h-full w-full">
         <img
           src="/images/optimized/blonde-balayage_800.webp"
-          alt="Beautiful hair"
+          alt="Professional blonde balayage hair coloring results showcasing Hair By Melissa's expertise"
           class="h-full w-full object-cover"
         />
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
