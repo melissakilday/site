@@ -14,6 +14,10 @@ This website showcases Hair By Melissa's services and expertise, providing an el
 - **Fast Performance**: Built with Astro for lightning-fast load times
 - **SEO Optimized**: Proper meta tags and structured content
 - **Accessible**: WCAG compliant with proper semantic HTML
+- **📸 Image Optimization**: WebP format with JPEG fallbacks, lazy loading, 60%+ size reduction
+- **⚡ Core Web Vitals**: Optimized for LCP, CLS, and FID performance scores
+- **🖼️ Gallery System**: Advanced image display with lightbox and filtering
+- **📱 Mobile Performance**: Responsive images and optimized loading for all devices
 
 ## 🛠️ Tech Stack
 
@@ -28,33 +32,47 @@ This website showcases Hair By Melissa's services and expertise, providing an el
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   ├── images/
+│   │   ├── optimized/           # 304 WebP/JPEG optimized images  
+│   │   └── original/            # 19 source images from Google Storage
+│   ├── favicon.svg
+│   └── robots.txt              # SEO & image crawling permissions
 ├── src/
 │   ├── components/
 │   │   ├── Footer.astro
-│   │   └── Navbar.astro
+│   │   ├── Navbar.astro
+│   │   ├── LoadingSpinner.astro
+│   │   └── OptimizedImage.astro # Responsive image component
 │   ├── layouts/
-│   │   ├── Layout.astro
+│   │   ├── Layout.astro        # Enhanced with structured data
 │   │   └── ServiceLayout.astro
 │   ├── pages/
 │   │   ├── index.astro
+│   │   ├── about.astro         # ✅ Implemented
+│   │   ├── gallery.astro       # ✅ Implemented with lightbox
+│   │   ├── contact.astro       # ✅ Implemented  
+│   │   ├── booking.astro       # ✅ Implemented
+│   │   ├── faq.astro          # ✅ Implemented
+│   │   ├── keratin.astro      # ✅ Winter special
 │   │   ├── services.astro
-│   │   └── services/
-│   │       ├── balayage.astro
-│   │       ├── blow-wave.astro
-│   │       ├── full-head-highlights.astro
-│   │       ├── half-head-highlights.astro
-│   │       ├── keratin-treatments.astro
-│   │       ├── partial-foils.astro
-│   │       ├── permanent-tint-all-over.astro
-│   │       ├── permanent-tint-touch-up.astro
-│   │       ├── toner.astro
-│   │       └── womens-cut-finish.astro
-│   └── styles/
-│       └── global.css
+│   │   ├── blog.astro         # ✅ Blog system
+│   │   ├── blog/              # Blog posts
+│   │   ├── locations/         # Location-specific pages
+│   │   └── services/          # All service pages
+│   ├── scripts/
+│   │   ├── animations.js
+│   │   └── image-optimization.js # Advanced lazy loading
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── image-optimization.css # Lazy loading styles  
+│   └── utils/
+│       └── imageMap.ts         # Image URL mapping system
 ├── astro.config.mjs
 ├── package.json
-└── tsconfig.json
+├── tsconfig.json
+├── CLAUDE.md                   # Project context & memory
+├── IMAGE_OPTIMIZATION_PROGRESS.md # Detailed implementation log
+└── GALLERY_FIXES.md           # Troubleshooting history
 ```
 
 ## 🚀 Getting Started
@@ -100,18 +118,43 @@ npm run preview
 
 ## 📄 Pages
 
-### Current Pages
+### ✅ Implemented Pages (38 total)
 - **Home** (`/`) - Landing page with hero section, services preview, testimonials
-- **Services** (`/services`) - Complete list of all services with modal details
-- **Individual Service Pages** (`/services/[service-name]`) - Detailed pages for each service
+- **About** (`/about`) - About Melissa and the salon story
+- **Gallery** (`/gallery`) - Portfolio with lightbox, category filtering, 14 optimized images
+- **Contact** (`/contact`) - Contact information, location, and inquiry form
+- **FAQ** (`/faq`) - Frequently asked questions about services
+- **Booking** (`/booking`) - Online booking system integration
+- **Services** (`/services`) - Complete list of all services with detailed descriptions
+- **Keratin Special** (`/keratin`) - Winter special promotion page
+- **Blog** (`/blog`) - Hair care tips and industry insights (9 articles)
+- **404** (`/404`) - Custom error page
+- **Privacy** (`/privacy`) - Privacy policy
+- **Terms** (`/terms`) - Terms of service
 
-### Planned Pages (To Be Implemented)
-- **About** (`/about`) - About Melissa and the salon
-- **Gallery** (`/gallery`) - Portfolio of work
-- **Contact** (`/contact`) - Contact information and form
-- **FAQ** (`/faq`) - Frequently asked questions
-- **Booking** (`/booking`) - Online booking system
-- **Keratin Special** (`/keratin`) - Winter special promotion
+### Individual Service Pages (`/services/[service-name]`)
+- Balayage ($230)
+- Full Head Highlights ($180) 
+- Half Head Highlights ($140)
+- Permanent Tint & All Over Color ($140)
+- Keratin Treatments ($180)
+- Women's Cut & Finish ($50)
+- Partial Foils ($90)
+- Permanent Tint & Touch Up ($90)
+- Blow Wave ($50)
+- Toner ($40)
+
+### Location Pages (`/locations/[area]`)
+- Kaukapakapa (main location)
+- Helensville 
+- Wainui
+- Waitoki
+
+### Blog Categories (`/blog/category/[category]`)
+- Hair Care Tips
+- Color Insights  
+- Styling Guides
+- Seasonal Tips
 
 ## 🎨 Design System
 
@@ -170,8 +213,54 @@ For salon inquiries:
 - **Phone**: [Salon Phone Number]
 - **Address**: [Salon Address]
 
+## 📊 Performance & SEO
+
+### Image Optimization
+- **304 Optimized Files**: WebP + JPEG fallbacks across 7 responsive breakpoints
+- **60%+ Size Reduction**: WebP compression with quality optimization
+- **Lazy Loading**: IntersectionObserver with 200px preload margin
+- **Core Web Vitals**: LCP, CLS, and FID optimizations implemented
+
+### SEO Features  
+- **Structured Data**: LocalBusiness schema with comprehensive service listings
+- **Location Targeting**: Kaukapakapa, Helensville, Wainui, Waitoki optimization
+- **Image Sitemaps**: Search engine crawling permissions for all optimized images
+- **Meta Optimization**: Title tags, descriptions, Open Graph, Twitter cards
+
+### Build Performance
+- **38 Static Pages**: Sub-60 second build times
+- **Astro v5.13.0**: Static site generation for maximum performance
+- **TypeScript**: Type safety and developer experience
+
+## 🔧 Development Notes
+
+### Image System
+All images have been migrated from Google Storage to local optimization:
+- Original URLs: `https://storage.googleapis.com/msgsndr/...`
+- Local paths: `/images/optimized/[name]_[size].webp`
+- Mapping system: `src/utils/imageMap.ts` with metadata
+
+### Gallery System
+Advanced gallery with category filtering and lightbox:
+- **14 Portfolio Images**: Balayage, highlights, color transformations
+- **Category Filtering**: Dynamic JavaScript filtering
+- **Lightbox**: Click-to-enlarge functionality
+- **Performance Fix**: Eager loading for immediate thumbnail display
+
+### Known Issues (Resolved)
+- ✅ **Gallery Black Screen**: Fixed opacity conflicts in lazy loading
+- ✅ **Image Loading**: Comprehensive WebP/JPEG fallback system
+
+## 📝 Memory & Documentation
+
+### Project Memory Files
+- **`CLAUDE.md`**: Project context and session memory
+- **`IMAGE_OPTIMIZATION_PROGRESS.md`**: Detailed implementation history  
+- **`GALLERY_FIXES.md`**: Troubleshooting and resolution log
+
 ## 🙏 Acknowledgments
 
-- Design inspired by modern salon websites
-- Images hosted on Google Cloud Storage
-- Built with love using Astro and Tailwind CSS
+- Design inspired by modern salon websites  
+- Original images from Google Cloud Storage (now locally optimized)
+- Built with love using Astro v5.13.0 and Tailwind CSS
+- Image optimization powered by Squoosh and custom tooling

@@ -6,14 +6,14 @@ img {
   height: auto;
 }
 
-/* Lazy loading image placeholder */
-img[loading="lazy"] {
+/* Lazy loading image placeholder - EXCLUDE GALLERY IMAGES */
+img[loading="lazy"]:not(.gallery-image) {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-img[loading="lazy"].loaded,
-img[loading="lazy"]:not([data-lazy]) {
+img[loading="lazy"].loaded:not(.gallery-image),
+img[loading="lazy"]:not([data-lazy]):not(.gallery-image) {
   opacity: 1;
 }
 
@@ -45,21 +45,39 @@ img[loading="lazy"]:not([data-lazy]) {
   z-index: 2;
 }
 
-/* Gallery image loading states */
+/* Gallery - COMPLETELY ISOLATED FROM IMAGE OPTIMIZATION */
 .gallery-item {
   position: relative;
   overflow: hidden;
+  background: #f5f5f5; /* Fallback background */
 }
 
-.gallery-item img[loading="lazy"] {
-  transform: scale(1.05);
-  filter: blur(2px);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+/* Gallery images - COMPLETELY RESET AND ISOLATED */
+.gallery-item img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
+  background: none !important;
+  transition: transform 0.3s ease-in-out !important;
+  display: block !important;
+  width: 100% !important;
+  height: 16rem !important; /* h-64 = 16rem */
+  object-fit: cover !important;
 }
 
-.gallery-item img[loading="lazy"].loaded {
-  transform: scale(1);
-  filter: blur(0);
+.gallery-item img:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Override ALL other image optimization rules for gallery */
+.gallery-item img[loading="lazy"],
+.gallery-item img[loading="eager"],
+.gallery-item img[data-lazy] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  filter: none !important;
 }
 
 /* Aspect ratio containers for stable layouts */

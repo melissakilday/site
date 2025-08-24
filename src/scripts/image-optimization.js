@@ -7,8 +7,12 @@ class ImageOptimizer {
   }
 
   init() {
-    // Count all images that need optimization
+    // Count all images that need optimization - EXCLUDE GALLERY IMAGES
     this.totalImages = document.querySelectorAll('img[loading="lazy"], img[data-lazy]').length;
+    
+    // EXCLUDE gallery images from optimization
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    this.totalImages -= galleryImages.length;
     
     // Set up intersection observer for lazy loading
     this.setupLazyLoading();
@@ -19,7 +23,7 @@ class ImageOptimizer {
     // Add loading states for better UX
     this.setupLoadingStates();
     
-    console.log(`🖼️ Image Optimizer: ${this.totalImages} images found`);
+    console.log(`🖼️ Image Optimizer: ${this.totalImages} images found (gallery excluded)`);
   }
 
   setupLazyLoading() {
@@ -41,8 +45,12 @@ class ImageOptimizer {
       threshold: 0.01
     });
 
-    // Observe all lazy images
+    // Observe all lazy images - EXCLUDE GALLERY IMAGES
     document.querySelectorAll('img[loading="lazy"], img[data-lazy]').forEach(img => {
+      // Skip gallery images completely
+      if (img.closest('.gallery-item')) {
+        return;
+      }
       observer.observe(img);
     });
   }
@@ -84,6 +92,11 @@ class ImageOptimizer {
 
   optimizeAllImages() {
     document.querySelectorAll('img').forEach((img, index) => {
+      // SKIP ALL GALLERY IMAGES FROM OPTIMIZATION
+      if (img.closest('.gallery-item')) {
+        return;
+      }
+      
       // Add loading="lazy" to images without it (except critical images)
       if (!img.hasAttribute('loading') && !img.hasAttribute('data-critical')) {
         img.loading = 'lazy';
