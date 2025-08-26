@@ -56,6 +56,9 @@ const galleryImages = [
   description="Hair By Melissa - Premier hairdresser in Kaukapakapa offering smoothing treatments, custom color, precision cuts & hair transformations. Serving Helensville, Wainui & Waitoki. Book today!"
   keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair coloring wainui, haircut waitoki, best hairdresser rodney district"
 >
+  <!-- Core Web Vitals: Preload hero image for mobile LCP -->
+  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_640.webp" media="(max-width: 767px)" />
+  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_1280.webp" media="(min-width: 768px)" />
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center overflow-hidden">
     <!-- Background Layer with Parallax -->
@@ -244,6 +247,8 @@ const galleryImages = [
             <img 
               src={image.src}
               alt={image.alt}
+              loading={index < 2 ? "eager" : "lazy"}
+              fetchpriority={index < 2 ? "high" : "auto"}
               class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">

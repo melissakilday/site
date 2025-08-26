@@ -25,55 +25,56 @@ const {
   ...props
 } = Astro.props;
 
-// Generate responsive image sizes
-const generateSrcSet = (baseSrc: string, sizes: number[]) => {
+// Mobile-first responsive breakpoints (prioritize mobile sizes)
+const mobileFirstSizes = [320, 480, 640, 768, 1024, 1280, 1920];
+
+// Generate responsive image sizes with mobile-first optimization
+const generateSrcSet = (baseSrc: string, sizes: number[], format: 'webp' | 'jpg' = 'webp') => {
   return sizes.map(size => {
-    const webpSrc = baseSrc.replace('/original/', '/optimized/').replace('.png', `_${size}.webp`);
-    const fallbackSrc = baseSrc.replace('/original/', '/optimized/').replace('.png', `_${size}.jpg`);
-    return `${webpSrc} ${size}w`;
+    const extension = format === 'webp' ? '.webp' : '.jpg';
+    const optimizedSrc = baseSrc.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, `_${size}${extension}`);
+    return `${optimizedSrc} ${size}w`;
   }).join(', ');
 };
 
-// Common responsive breakpoints
-const responsiveSizes = [320, 640, 768, 1024, 1280, 1920];
-
-// Generate WebP srcset for modern browsers
-const webpSrcSet = generateSrcSet(src, responsiveSizes);
+// Generate WebP srcset for modern browsers (mobile-first)
+const webpSrcSet = generateSrcSet(src, mobileFirstSizes, 'webp');
 
 // Generate fallback srcset for older browsers  
-const fallbackSrcSet = generateSrcSet(src, responsiveSizes);
+const fallbackSrcSet = generateSrcSet(src, mobileFirstSizes, 'jpg');
 
-// Default sizes attribute for responsive images
-const defaultSizes = sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
+// Mobile-first sizes attribute (optimize for mobile viewport)
+const mobileFirstSizesAttr = sizes || '(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 50vw, 33vw';
 
-// Optimized main image source
-const optimizedSrc = src.replace('/original/', '/optimized/').replace('.png', '_800.webp');
-const fallbackSrc = src.replace('/original/', '/optimized/').replace('.png', '_800.jpg');
+// Optimized main image source - use smaller default for mobile LCP
+const mobileOptimizedSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640.webp');
+const mobileFallbackSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640.jpg');
 ---
 
 <picture class={`optimized-image ${className}`}>
-  <!-- WebP sources for modern browsers -->
+  <!-- WebP sources for modern browsers (mobile-first) -->
   <source 
     srcset={webpSrcSet}
-    sizes={defaultSizes}
+    sizes={mobileFirstSizesAttr}
     type="image/webp"
   />
   
   <!-- Fallback JPEG sources -->
   <source 
     srcset={fallbackSrcSet}
-    sizes={defaultSizes}
+    sizes={mobileFirstSizesAttr}
     type="image/jpeg"
   />
   
-  <!-- Final fallback img tag -->
+  <!-- Final fallback img tag (mobile-optimized) -->
   <img 
-    src={fallbackSrc}
+    src={mobileFallbackSrc}
     alt={alt}
-    width={width}
-    height={height}
+    width={width || 640}
+    height={height || 480}
     loading={priority ? 'eager' : loading}
     decoding="async"
+    fetchpriority={priority ? 'high' : 'auto'}
     class={className}
     {...props}
   />
@@ -118,7 +119,7 @@ const fallbackSrc = src.replace('/original/', '/optimized/').replace('.png', '_8
 </style>
 
 <script>
-  // Enhanced lazy loading with intersection observer
+  // Mobile-optimized lazy loading with intersection observer
   if ('IntersectionObserver' in window) {
     const images = document.querySelectorAll('.optimized-image img[loading="lazy"]');
     
@@ -128,10 +129,19 @@ const fallbackSrc = src.replace('/original/', '/optimized/').replace('.png', '_8
           const img = entry.target as HTMLImageElement;
           const picture = img.closest('.optimized-image') as HTMLElement;
           
+          // Performance optimization for mobile
           img.addEventListener('load', () => {
             img.classList.add('loaded');
             picture.classList.add('loaded');
-          });
+          }, { passive: true });
+          
+          // Handle load errors (fallback to JPEG)
+          img.addEventListener('error', () => {
+            const fallbackSrc = img.src.replace('.webp', '.jpg');
+            if (img.src !== fallbackSrc) {
+              img.src = fallbackSrc;
+            }
+          }, { passive: true });
           
           // Force load if not already loaded
           if (!img.complete) {
@@ -145,10 +155,16 @@ const fallbackSrc = src.replace('/original/', '/optimized/').replace('.png', '_8
         }
       });
     }, {
-      rootMargin: '50px 0px',
-      threshold: 0.1
+      // Mobile-optimized intersection observer settings
+      rootMargin: window.innerWidth < 768 ? '100px 0px' : '50px 0px',
+      threshold: 0.01
     });
     
     images.forEach(img => imageObserver.observe(img));
+    
+    // Cleanup observer when images are loaded
+    window.addEventListener('beforeunload', () => {
+      imageObserver.disconnect();
+    }, { passive: true });
   }
 </script>

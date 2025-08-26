@@ -248,12 +248,67 @@ p {
   100% { opacity: 1; }
 }
 
-/* Hero background images */
+/* Hero background images - Mobile First */
 .hero-bg-home {
-  background-image: url('/images/optimized/salon-exterior_800.webp');
+  background-image: url('/images/optimized/salon-exterior_640.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Larger hero image for tablets and desktop */
+@media (min-width: 768px) {
+  .hero-bg-home {
+    background-image: url('/images/optimized/salon-exterior_1280.webp');
+  }
+}
+
+/* Mobile-First Core Web Vitals Optimizations */
+@media (max-width: 767px) {
+  /* Reduce motion for better mobile performance */
+  .parallax-bg {
+    transform: none !important;
+  }
+  
+  /* Optimize font sizes for mobile readability */
+  h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+  
+  /* Mobile-optimized spacing */
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Mobile touch targets (minimum 44px) */
+  .btn-primary,
+  button,
+  a[role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Optimize animations for mobile */
+  .animate-fade-in {
+    animation-duration: 0.3s;
+  }
+  
+  /* Mobile grid optimizations */
+  .grid-cols-2 {
+    gap: 1rem;
+  }
+  
+  /* Reduce blur effects on mobile for performance */
+  .blur-3xl {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
 }
 
 .hero-bg-services {
