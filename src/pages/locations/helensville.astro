@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const pageTitle = "Hair Salon Helensville | Professional Hairdresser Serving Helensville | Hair By Melissa";
-const pageDescription = "Premier hair salon serving Helensville with expert keratin treatments, balayage, and hair coloring. Located in nearby Kaukapakapa, we're your trusted local hairdresser for Helensville residents.";
+const pageTitle = "Helensville Hairdresser | Expert Hair Styling & Color North Auckland | Hair By Melissa";
+const pageDescription = "Top-rated hairdresser serving Helensville from our Kaukapakapa salon. Specializing in frizz control, highlights, and coastal climate hair care. 15 minutes from Helensville center with free parking.";
 const pageKeywords = "hair salon helensville, hairdresser helensville, hair coloring helensville, keratin treatment helensville, balayage helensville, highlights helensville, hair salon near helensville";
 
 // Local business schema for Helensville service area
@@ -161,7 +161,7 @@ const travelInfo = {
       
       <div class="max-w-4xl">
         <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-          Hair Salon <span class="gradient-text">Helensville</span>
+          Expert <span class="gradient-text">Helensville</span> Hairdresser
         </h1>
         <p class="text-xl text-gray-700 mb-8">
           Professional hair salon serving Helensville residents from our convenient Kaukapakapa location. Just 15 minutes from Helensville center, Hair By Melissa offers expert keratin treatments, balayage, and full hair services perfect for the coastal climate.
@@ -253,8 +253,14 @@ const travelInfo = {
               </div>
               <p class="text-gray-700 mb-6">{service.description}</p>
               <a 
-                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
-                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                href={
+                  service.name === 'Keratin Treatments' ? '/services/keratin-treatments' :
+                  service.name === 'Balayage' ? '/services/balayage' :
+                  service.name === 'Full Head Highlights' ? '/services/full-head-highlights' :
+                  service.name === "Women's Cut & Finish" ? '/services/womens-cut-finish' :
+                  '/services'
+                }
+                class="inline-flex items-center text-[#1EAEDB] font-medium hover:text-[#0F7A9C] transition-colors"
               >
                 Learn more about {service.name}
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -493,6 +499,84 @@ const travelInfo = {
             <p class="text-gray-700">
               Yes, we provide free on-site parking directly outside our salon. This is a major advantage over busier urban salon locations where parking can be expensive or difficult to find. Our rural Kaukapakapa location ensures convenient, stress-free parking for all appointments.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services & Information -->
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center">Explore Our Services & Location Information</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-[#1EAEDB] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              <a href="/services" class="text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+                View All Services
+              </a>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Discover our complete range of professional hair services, from keratin treatments to precision cuts, all designed for Helensville's coastal climate.
+            </p>
+            <a href="/services" class="text-sm font-medium text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors inline-flex items-center">
+              Explore Services 
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-[#1EAEDB] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              <a href="/locations/kaukapakapa" class="text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+                Our Kaukapakapa Salon
+              </a>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Learn about our peaceful salon location in Kaukapakapa, just 15 minutes from Helensville with free parking and a relaxing rural setting.
+            </p>
+            <a href="/locations/kaukapakapa" class="text-sm font-medium text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors inline-flex items-center">
+              About Our Salon 
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-[#1EAEDB] rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">
+              <a href="/blog/winter-hair-care" class="text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+                Hair Care for Coastal Climate
+              </a>
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Professional tips for managing hair in Helensville's unique coastal climate, including humidity control and seasonal care advice.
+            </p>
+            <a href="/blog/winter-hair-care" class="text-sm font-medium text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors inline-flex items-center">
+              Read Hair Tips 
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </div>

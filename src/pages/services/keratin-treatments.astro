@@ -1,9 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { serviceRelationships } from '../../utils/internalLinks.ts';
 
 const pageTitle = "Keratin Treatment Kaukapakapa | Frizz-Free Hair North Auckland";
 const pageDescription = "Professional keratin treatments in Kaukapakapa for $180. Transform frizzy hair into smooth, manageable locks. Serving Helensville, Wainui & Waitoki. Results last 5 months!";
 const pageKeywords = "keratin treatment kaukapakapa, brazilian blowout helensville, hair smoothing wainui, frizz treatment waitoki, keratin hair treatment north auckland, anti-frizz treatment rodney";
+
+const relatedLinks = serviceRelationships["keratin-treatments"];
 ---
 
 <ServiceLayout 
@@ -69,9 +73,46 @@ const pageKeywords = "keratin treatment kaukapakapa, brazilian blowout helensvil
     Melissa's expertise in keratin treatments ensures you receive the highest quality service with results that exceed expectations. Using only premium, formaldehyde-free products and advanced application techniques, she customizes each treatment to your hair's specific needs. Her attention to detail and commitment to hair health means you'll leave with not just smoother hair, but healthier hair too.
   </p>
 
-  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-6">
+  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-6 mb-8">
     <p class="text-gray-700 italic">
       "Transform your morning routine and say goodbye to bad hair days. Our keratin treatment is an investment in convenience, confidence, and stunning hair that turns heads wherever you go."
     </p>
+  </div>
+
+  <div class="mt-12">
+    <h3 class="text-2xl font-semibold mb-6">Complement Your Keratin Treatment</h3>
+    <p class="text-gray-700 mb-6">
+      Maximize your smooth hair results with these additional services and expert tips:
+    </p>
+    
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">
+          <a href="/services/womens-cut-finish" class="text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+            Women's Cut & Finish
+          </a>
+        </h4>
+        <p class="text-sm text-gray-600 mb-4">
+          Perfect your new smooth hair with a professional cut and styling session.
+        </p>
+        <a href="/services/womens-cut-finish" class="text-sm font-medium text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+          Learn More →
+        </a>
+      </div>
+      
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h4 class="font-semibold text-gray-900 mb-3">
+          <a href="/blog/keratin-aftercare" class="text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+            Keratin Aftercare Guide
+          </a>
+        </h4>
+        <p class="text-sm text-gray-600 mb-4">
+          Essential tips to maintain your keratin treatment results for months.
+        </p>
+        <a href="/blog/keratin-aftercare" class="text-sm font-medium text-[#1EAEDB] hover:text-[#0F7A9C] transition-colors">
+          Read Guide →
+        </a>
+      </div>
+    </div>
   </div>
 </ServiceLayout>
