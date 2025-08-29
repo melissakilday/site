@@ -4,7 +4,6 @@ import '../styles/global.css';
 import '../styles/image-optimization.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import LoadingSpinner from '../components/LoadingSpinner.astro';
 
 export interface Props {
   title: string;
@@ -600,15 +599,13 @@ const localEventSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Performance: Aggressive preconnect hints -->
+    <!-- Aggressive preconnect and DNS hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    
-    <!-- Netlify performance hints -->
-    <link rel="dns-prefetch" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
     <link rel="preconnect" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
+    <link rel="dns-prefetch" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
     
     <!-- ALL Critical CSS Inlined to Eliminate Network Requests -->
     <style>
@@ -850,17 +847,46 @@ const localEventSchema = {
     <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     
-    <!-- Minimal script to prevent forced reflow -->
+    <!-- All JavaScript inline to prevent separate files -->
     <script>
-      // Minimal DOM interaction to avoid reflow
+      // Minimal DOM interaction to avoid reflow + essential navbar functionality
       window.addEventListener('load', function() {
         document.body.style.opacity = '1';
+        
+        // Navbar scroll effect (deferred to prevent reflow)
+        const navbar = document.getElementById('navbar');
+        const handleScroll = () => {
+          if (window.scrollY > 10) {
+            navbar?.classList.add('scrolled');
+          } else {
+            navbar?.classList.remove('scrolled');
+          }
+        };
+        window.addEventListener('scroll', handleScroll);
+        
+        // Mobile menu toggle (deferred)
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const open = document.getElementById('menu-open');
+        const close = document.getElementById('menu-close');
+        
+        toggle?.addEventListener('click', () => {
+          const isOpen = !menu?.classList.contains('hidden');
+          if (isOpen) {
+            menu?.classList.add('hidden');
+            open?.classList.remove('hidden');
+            close?.classList.add('hidden');
+          } else {
+            menu?.classList.remove('hidden');
+            open?.classList.add('hidden');
+            close?.classList.remove('hidden');
+          }
+        });
       });
     </script>
     
   </head>
   <body>
-    <LoadingSpinner />
     <Navbar />
     <main>
       <slot />

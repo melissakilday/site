@@ -11,13 +11,21 @@ export default defineConfig({
   },
   vite: {
     build: {
-      // Force all CSS to be inlined to eliminate network requests
-      assetsInlineLimit: 0, // Inline everything
-      cssCodeSplit: false // Single CSS bundle
+      // Eliminate ALL separate asset files
+      assetsInlineLimit: 0, // Inline everything 
+      cssCodeSplit: false, // No CSS splitting
+      rollupOptions: {
+        external: [], // No external dependencies
+        output: {
+          // Minimize separate chunks
+          manualChunks: undefined,
+          inlineDynamicImports: true
+        }
+      }
     }
   },
   build: {
-    // Force inline ALL stylesheets to eliminate critical path
+    // Force inline everything to eliminate critical path
     inlineStylesheets: 'always'
   }
 });

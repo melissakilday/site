@@ -248,35 +248,4 @@ const navLinks = [
   }
 </style>
 
-<script>
-  const navbar = document.getElementById('navbar');
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuOpen = document.getElementById('menu-open');
-  const menuClose = document.getElementById('menu-close');
-
-  // Handle scroll effect
-  const handleScroll = () => {
-    if (window.scrollY > 10) {
-      navbar?.classList.add('scrolled');
-    } else {
-      navbar?.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll);
-
-  // Handle mobile menu toggle
-  mobileMenuToggle?.addEventListener('click', () => {
-    const isOpen = !mobileMenu?.classList.contains('hidden');
-    if (isOpen) {
-      mobileMenu?.classList.add('hidden');
-      menuOpen?.classList.remove('hidden');
-      menuClose?.classList.add('hidden');
-    } else {
-      mobileMenu?.classList.remove('hidden');
-      menuOpen?.classList.add('hidden');
-      menuClose?.classList.remove('hidden');
-    }
-  });
-</script>
+<!-- JavaScript moved to Layout.astro to prevent separate JS files -->
