@@ -600,42 +600,71 @@ const localEventSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Performance: Preconnect to Google Fonts for faster loading -->
+    <!-- Performance: Aggressive preconnect hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     
-    <!-- Core Web Vitals: Critical CSS inlined for mobile LCP -->
+    <!-- Netlify performance hints -->
+    <link rel="dns-prefetch" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
+    <link rel="preconnect" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
+    
+    <!-- ALL Critical CSS Inlined to Eliminate Network Requests -->
     <style>
-      /* Critical CSS Variables */
+      /* Complete CSS Variables */
       :root {
         --salon-blue: #D3E4FD;
         --salon-pink: #FFDEE2;
+        --salon-lightgray: #F8F9FA;
         --salon-darkblue: #0B7BA7;
         --gradient-primary: linear-gradient(135deg, #D3E4FD 0%, #FFDEE2 100%);
+        --gradient-accent: linear-gradient(45deg, #0B7BA7 0%, #D3E4FD 100%);
+        --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
         --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       
-      /* Critical Base Styles */
+      /* Base Styles */
+      * { box-sizing: border-box; }
       body {
-        font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
         font-size: 16px;
         line-height: 1.6;
         color: #333;
         margin: 0;
         padding: 0;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+      h2 { font-size: clamp(2rem, 4vw, 3rem); }
+      h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+      p { margin-bottom: 1rem; line-height: 1.8; }
+      
+      /* Layout */
       .container-custom {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1rem;
       }
+      @media (min-width: 768px) {
+        .container-custom { padding: 0 2rem; }
+      }
       
-      /* Critical Button Styles */
+      /* Buttons */
       .btn-primary {
-        display: inline-block;
-        background-color: var(--salon-darkblue);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-accent);
         color: white;
         font-weight: 600;
         padding: 0.75rem 1.5rem;
@@ -645,32 +674,69 @@ const localEventSchema = {
         border: none;
         cursor: pointer;
       }
-      
       .btn-primary:hover {
-        background-color: #085a7a;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
       }
       
-      /* Critical Typography */
-      h1, h2, h3 {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-      }
-      
+      /* Gradients */
       .gradient-text {
-        background: linear-gradient(45deg, var(--salon-darkblue), #1EAEDB);
+        background: var(--gradient-accent);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
       
-      /* Critical Layout */
-      .hidden { display: none; }
+      /* Utility Classes */
+      .hidden { display: none !important; }
       .flex { display: flex; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .justify-between { justify-content: space-between; }
       .relative { position: relative; }
+      .absolute { position: absolute; }
+      .fixed { position: fixed; }
+      .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+      .z-10 { z-index: 10; }
+      .z-50 { z-index: 50; }
       .text-center { text-align: center; }
+      .text-white { color: white; }
+      .text-gray-600 { color: #6b7280; }
+      .text-gray-700 { color: #374151; }
+      .bg-white { background-color: white; }
+      .w-full { width: 100%; }
+      .h-full { height: 100%; }
+      .max-w-4xl { max-width: 56rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .mt-4 { margin-top: 1rem; }
+      .mb-4 { margin-bottom: 1rem; }
+      .mt-8 { margin-top: 2rem; }
+      .mb-8 { margin-bottom: 2rem; }
+      .p-4 { padding: 1rem; }
+      .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .rounded-lg { border-radius: 0.5rem; }
+      .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+      .grid { display: grid; }
+      .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      .gap-8 { gap: 2rem; }
+      @media (min-width: 768px) {
+        .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        transition: var(--transition-base);
+      }
     </style>
     
     <!-- Primary Meta Tags -->
@@ -784,12 +850,11 @@ const localEventSchema = {
     <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     
-    <!-- Progressive enhancement script -->
+    <!-- Minimal script to prevent forced reflow -->
     <script>
-      // Simple progressive enhancement
-      document.addEventListener('DOMContentLoaded', function() {
-        // Add loaded class to enable transitions
-        document.body.classList.add('loaded');
+      // Minimal DOM interaction to avoid reflow
+      window.addEventListener('load', function() {
+        document.body.style.opacity = '1';
       });
     </script>
     

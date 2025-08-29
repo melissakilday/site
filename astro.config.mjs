@@ -9,8 +9,15 @@ export default defineConfig({
     domains: ['storage.googleapis.com'],
     remotePatterns: [{ protocol: 'https' }]
   },
+  vite: {
+    build: {
+      // Force all CSS to be inlined to eliminate network requests
+      assetsInlineLimit: 0, // Inline everything
+      cssCodeSplit: false // Single CSS bundle
+    }
+  },
   build: {
-    // Inline critical CSS to reduce render blocking
-    inlineStylesheets: 'auto'
+    // Force inline ALL stylesheets to eliminate critical path
+    inlineStylesheets: 'always'
   }
 });
