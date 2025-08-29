@@ -16,13 +16,15 @@ export default {
           'blue': '#D3E4FD',
           'pink': '#FFDEE2', 
           'lightgray': '#F8F9FA',
-          'darkblue': '#1EAEDB',
+          'darkblue': '#0B7BA7',      // WCAG AA compliant (4.5:1 contrast)
+          'mediumblue': '#1C9BC4',    // WCAG AA large text (3:1 contrast)
+          'lightblue': '#1EAEDB',     // Original color for backgrounds only
         }
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #D3E4FD 0%, #FFDEE2 100%)',
-        'gradient-accent': 'linear-gradient(45deg, #1EAEDB 0%, #D3E4FD 100%)',
-        'gradient-dark': 'linear-gradient(135deg, rgba(30, 174, 219, 0.9) 0%, rgba(211, 228, 253, 0.8) 100%)',
+        'gradient-accent': 'linear-gradient(45deg, #0B7BA7 0%, #D3E4FD 100%)',
+        'gradient-dark': 'linear-gradient(135deg, rgba(11, 123, 167, 0.9) 0%, rgba(211, 228, 253, 0.8) 100%)',
       },
       boxShadow: {
         'salon-sm': '0 2px 4px rgba(0,0,0,0.05)',

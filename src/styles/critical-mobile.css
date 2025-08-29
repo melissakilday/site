@@ -6,7 +6,7 @@
   --salon-blue: #D3E4FD;
   --salon-pink: #FFDEE2;
   --salon-lightgray: #F8F9FA;
-  --salon-darkblue: #1EAEDB;
+  --salon-darkblue: #0B7BA7;  /* WCAG AA compliant */
   --gradient-primary: linear-gradient(135deg, #D3E4FD 0%, #FFDEE2 100%);
   --shadow-md: 0 5px 15px rgba(0,0,0,0.08);
   --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -84,7 +84,7 @@ body {
 /* Critical Button Styles - Mobile First */
 .btn-primary {
   display: inline-block;
-  background: linear-gradient(135deg, #1EAEDB 0%, #D3E4FD 100%);
+  background: linear-gradient(135deg, #0B7BA7 0%, #D3E4FD 100%);
   color: white;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -97,7 +97,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(30, 174, 219, 0.3);
+  box-shadow: 0 10px 25px rgba(11, 123, 167, 0.3);
 }
 
 /* Critical Navigation - Mobile First */
@@ -249,6 +249,6 @@ body {
 /* Critical Focus States for Accessibility */
 .btn-primary:focus,
 .navbar a:focus {
-  outline: 2px solid #1EAEDB;
+  outline: 2px solid #0B7BA7;
   outline-offset: 2px;
 }

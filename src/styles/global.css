@@ -6,12 +6,12 @@
   --salon-blue: #D3E4FD;
   --salon-pink: #FFDEE2;
   --salon-lightgray: #F8F9FA;
-  --salon-darkblue: #1EAEDB;
+  --salon-darkblue: #0B7BA7;  /* WCAG AA compliant */
   
   /* Enhanced color palette */
   --gradient-primary: linear-gradient(135deg, #D3E4FD 0%, #FFDEE2 100%);
-  --gradient-accent: linear-gradient(45deg, #1EAEDB 0%, #D3E4FD 100%);
-  --gradient-dark: linear-gradient(135deg, rgba(30, 174, 219, 0.9) 0%, rgba(211, 228, 253, 0.8) 100%);
+  --gradient-accent: linear-gradient(45deg, #0B7BA7 0%, #D3E4FD 100%);
+  --gradient-dark: linear-gradient(135deg, rgba(11, 123, 167, 0.9) 0%, rgba(211, 228, 253, 0.8) 100%);
   
   /* Shadows */
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
@@ -521,7 +521,7 @@ nav.scroll-up {
 }
 
 .glow-hover:hover {
-  box-shadow: 0 0 20px rgba(30, 174, 219, 0.4);
+  box-shadow: 0 0 20px rgba(11, 123, 167, 0.4);
 }
 
 /* Morph Blob Animation */

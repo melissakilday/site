@@ -154,11 +154,11 @@ const services = [
             data-service-id={service.id}
           >
             {service.icon === "zap" ? (
-              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-10 w-10 text-salon-darkblue mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
             ) : service.icon === "scissors" ? (
-              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-10 w-10 text-salon-darkblue mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="6" cy="6" r="3"></circle>
                 <circle cx="6" cy="18" r="3"></circle>
                 <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
@@ -166,7 +166,7 @@ const services = [
                 <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
               </svg>
             ) : (
-              <svg class="h-10 w-10 text-[#1EAEDB] mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="h-10 w-10 text-salon-darkblue mb-4 transform transition-transform duration-300 hover:rotate-12" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
                 <path d="M5 3v4"></path>
                 <path d="M19 17v4"></path>
@@ -175,9 +175,9 @@ const services = [
               </svg>
             )}
             <h3 class="text-xl font-semibold">{service.name}</h3>
-            <p class="text-2xl text-[#1EAEDB] mt-2">{service.price}</p>
+            <p class="text-2xl text-salon-darkblue mt-2">{service.price}</p>
             <p class="text-gray-600 mt-4">{service.description}</p>
-            <div class="mt-4 text-[#1EAEDB] font-medium hover-underline inline-block">
+            <div class="mt-4 text-salon-darkblue font-medium hover-underline inline-block">
               Click for details
             </div>
           </div>
@@ -236,7 +236,7 @@ const services = [
       if (service) {
         modalContent.innerHTML = `
           <h2 class="text-2xl font-bold mb-2">${service.name}</h2>
-          <p class="text-xl text-[#1EAEDB] font-semibold mb-4">${service.price}</p>
+          <p class="text-xl text-salon-darkblue font-semibold mb-4">${service.price}</p>
           <div class="space-y-4">
             <p class="text-gray-700">${service.fullDescription}</p>
             <div class="flex items-center gap-2 text-gray-700">

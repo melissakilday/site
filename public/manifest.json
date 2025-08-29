@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#1EAEDB",
+  "theme_color": "#0B7BA7",
   "background_color": "#FFFFFF",
   "categories": ["beauty", "lifestyle", "business"],
   "lang": "en-NZ",
