@@ -36,8 +36,8 @@ const generateSrcSet = (baseSrc: string, sizes: number[], format: 'webp' | 'jpg'
     // Handle both original images and already optimized images
     let optimizedSrc = baseSrc.replace('/original/', '/optimized/');
     if (optimizedSrc.includes('_') && optimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
-      // Already has size, replace it
-      optimizedSrc = optimizedSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, `_${size}q${quality}${extension}`);
+      // Already has size, replace everything after the size
+      optimizedSrc = optimizedSrc.replace(/_(320|480|640|768|1024|1280|1920)([^\/]*)\.(webp|jpg|jpeg|png)$/, `_${size}q${quality}${extension}`);
     } else {
       // Original image, add size and quality
       optimizedSrc = optimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, `_${size}q${quality}${extension}`);
@@ -60,9 +60,9 @@ let mobileOptimizedSrc = src.replace('/original/', '/optimized/');
 let mobileFallbackSrc = src.replace('/original/', '/optimized/');
 
 if (mobileOptimizedSrc.includes('_') && mobileOptimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
-  // Already has size, replace it
-  mobileOptimizedSrc = mobileOptimizedSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, '_640q60.webp');
-  mobileFallbackSrc = mobileFallbackSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, '_640q70.jpg');
+  // Already has size, replace everything after the size
+  mobileOptimizedSrc = mobileOptimizedSrc.replace(/_(320|480|640|768|1024|1280|1920)([^\/]*)\.(webp|jpg|jpeg|png)$/, '_640q60.webp');
+  mobileFallbackSrc = mobileFallbackSrc.replace(/_(320|480|640|768|1024|1280|1920)([^\/]*)\.(webp|jpg|jpeg|png)$/, '_640q70.jpg');
 } else {
   // Original image, add size and quality
   mobileOptimizedSrc = mobileOptimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, '_640q60.webp');
