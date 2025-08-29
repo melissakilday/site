@@ -219,8 +219,9 @@ const breadcrumbSchema = {
                   </div>
                 ))}
               </div>
-              <a href={`#${topic.id}`} class="inline-flex items-center mt-6 text-[#1EAEDB] font-medium hover:underline">
-                Learn more
+              <a href={`#${topic.id}`} class="inline-flex items-center mt-6 text-salon-darkblue font-medium hover:underline" 
+                 aria-label={`Learn more about ${topic.title}`}>
+                Learn more about {topic.title}
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>

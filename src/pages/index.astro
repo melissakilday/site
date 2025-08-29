@@ -3,12 +3,48 @@ import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 
 const services = [
-  { name: "Keratin Treatments", price: "$180", icon: "sparkles" },
-  { name: "Women's Cut & Finish", price: "$50", icon: "scissors" },
-  { name: "Partial Foils", price: "$90", icon: "scissors" },
-  { name: "Half Head of Highlights", price: "$140", icon: "scissors" },
-  { name: "Full Head of Highlights", price: "$180", icon: "scissors" },
-  { name: "Permanent Tint & Touch Up", price: "$90", icon: "scissors" },
+  { 
+    name: "Keratin Treatments", 
+    price: "$180", 
+    icon: "sparkles",
+    url: "/services/keratin-treatments",
+    linkText: "Learn about keratin treatments"
+  },
+  { 
+    name: "Women's Cut & Finish", 
+    price: "$50", 
+    icon: "scissors",
+    url: "/services/womens-cut-finish",
+    linkText: "Learn about women's cuts & styling"
+  },
+  { 
+    name: "Partial Foils", 
+    price: "$90", 
+    icon: "scissors",
+    url: "/services/partial-foils", 
+    linkText: "Learn about partial foils"
+  },
+  { 
+    name: "Half Head of Highlights", 
+    price: "$140", 
+    icon: "scissors",
+    url: "/services/half-head-highlights",
+    linkText: "Learn about half head highlights"
+  },
+  { 
+    name: "Full Head of Highlights", 
+    price: "$180", 
+    icon: "scissors",
+    url: "/services/full-head-highlights",
+    linkText: "Learn about full head highlights" 
+  },
+  { 
+    name: "Permanent Tint & Touch Up", 
+    price: "$90", 
+    icon: "scissors",
+    url: "/services/permanent-tint-touch-up",
+    linkText: "Learn about permanent tint & touch up"
+  },
 ];
 
 const reviews = [
@@ -132,10 +168,11 @@ const galleryImages = [
             <h3 class="text-xl font-semibold">{service.name}</h3>
             <p class="text-gray-600 mt-2">Starting at {service.price}</p>
             <a 
-              href="/services" 
-              class="inline-flex items-center mt-4 text-[#1EAEDB] hover-underline"
+              href={service.url} 
+              class="inline-flex items-center mt-4 text-salon-darkblue hover-underline"
+              aria-label={service.linkText}
             >
-              Learn more 
+              {service.linkText}
               <svg class="h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
