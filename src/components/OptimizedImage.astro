@@ -36,12 +36,12 @@ const generateSrcSet = (baseSrc: string, sizes: number[], format: 'webp' | 'jpg'
     // Handle both original images and already optimized images
     let optimizedSrc = baseSrc.replace('/original/', '/optimized/');
     
-    // Check if it already has a size suffix
-    const hasSizeMatch = optimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/);
-    if (hasSizeMatch) {
-      // Already has size - replace the entire suffix from the size onwards
-      const baseName = optimizedSrc.substring(0, optimizedSrc.indexOf('_' + hasSizeMatch[1]));
-      optimizedSrc = `${baseName}_${size}q${quality}${extension}`;
+    // Handle both original and pre-sized images by normalizing first
+    if (optimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
+      // Remove existing size suffix completely first
+      optimizedSrc = optimizedSrc.replace(/_(320|480|640|768|1024|1280|1920)[^/]*\.(webp|jpg|jpeg|png)$/, `.${extension.substring(1)}`);
+      // Now add the new size and quality
+      optimizedSrc = optimizedSrc.replace(/\.(webp|jpg|jpeg|png)$/, `_${size}q${quality}${extension}`);
     } else {
       // Original image, add size and quality
       optimizedSrc = optimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, `_${size}q${quality}${extension}`);
@@ -63,23 +63,23 @@ const mobileFirstSizesAttr = sizes || '(max-width: 480px) 100vw, (max-width: 768
 let mobileOptimizedSrc = src.replace('/original/', '/optimized/');
 let mobileFallbackSrc = src.replace('/original/', '/optimized/');
 
-// Check if it already has a size suffix
-const webpSizeMatch = mobileOptimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/);
-const jpgSizeMatch = mobileFallbackSrc.match(/_(320|480|640|768|1024|1280|1920)/);
-
-if (webpSizeMatch) {
-  // Already has size - replace the entire suffix from the size onwards
-  const baseName = mobileOptimizedSrc.substring(0, mobileOptimizedSrc.indexOf('_' + webpSizeMatch[1]));
-  mobileOptimizedSrc = `${baseName}_640q60.webp`;
+// Handle WebP main image source
+if (mobileOptimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
+  // Remove existing size suffix completely first
+  mobileOptimizedSrc = mobileOptimizedSrc.replace(/_(320|480|640|768|1024|1280|1920)[^/]*\.(webp|jpg|jpeg|png)$/, '.webp');
+  // Now add the new size and quality
+  mobileOptimizedSrc = mobileOptimizedSrc.replace(/\.webp$/, '_640q60.webp');
 } else {
   // Original image, add size and quality
   mobileOptimizedSrc = mobileOptimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, '_640q60.webp');
 }
 
-if (jpgSizeMatch) {
-  // Already has size - replace the entire suffix from the size onwards  
-  const baseName = mobileFallbackSrc.substring(0, mobileFallbackSrc.indexOf('_' + jpgSizeMatch[1]));
-  mobileFallbackSrc = `${baseName}_640q70.jpg`;
+// Handle JPG fallback image source
+if (mobileFallbackSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
+  // Remove existing size suffix completely first
+  mobileFallbackSrc = mobileFallbackSrc.replace(/_(320|480|640|768|1024|1280|1920)[^/]*\.(webp|jpg|jpeg|png)$/, '.jpg');
+  // Now add the new size and quality
+  mobileFallbackSrc = mobileFallbackSrc.replace(/\.jpg$/, '_640q70.jpg');
 } else {
   // Original image, add size and quality
   mobileFallbackSrc = mobileFallbackSrc.replace(/\.(png|jpg|jpeg|webp)$/, '_640q70.jpg');
