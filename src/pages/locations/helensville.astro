@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Helensville Hairdresser | Expert Hair Styling & Color North Auckland | Hair By Melissa";
 const pageDescription = "Top-rated hairdresser serving Helensville from our Kaukapakapa salon. Specializing in frizz control, highlights, and coastal climate hair care. 15 minutes from Helensville center with free parking.";
 const pageKeywords = "hair salon helensville, hairdresser helensville, hair coloring helensville, keratin treatment helensville, balayage helensville, highlights helensville, hair salon near helensville";
+
+const faqs = locationFAQs['helensville'];
 
 // Local business schema for Helensville service area
 const helensvilleSchema = {
@@ -615,5 +619,10 @@ const travelInfo = {
 
   <!-- Schema Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(helensvilleSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(helensvilleFAQ)} />
+  
+  <!-- FAQ Section -->
+  <FAQSchema 
+    faqs={faqs} 
+    pageUrl="https://hairbymelissa.co.nz/locations/helensville"
+  />
 </Layout>

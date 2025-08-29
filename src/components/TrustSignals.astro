@@ -1,0 +1,109 @@
+---
+export interface Props {
+  variant?: 'horizontal' | 'grid' | 'compact';
+  showGuarantee?: boolean;
+  showExperience?: boolean;
+  showProducts?: boolean;
+  showCertification?: boolean;
+}
+
+const { 
+  variant = 'horizontal', 
+  showGuarantee = true, 
+  showExperience = true, 
+  showProducts = true,
+  showCertification = false
+} = Astro.props;
+---
+
+<div class={`trust-signals ${variant === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4' : variant === 'compact' ? 'flex flex-wrap gap-3' : 'flex flex-wrap gap-6 justify-center'}`}>
+  
+  {showExperience && (
+    <div class="trust-signal bg-white rounded-lg p-4 border border-gray-100 shadow-sm flex items-center gap-3">
+      <div class="trust-icon bg-[#D3E4FD] bg-opacity-30 rounded-full p-2">
+        <svg class="h-6 w-6 text-[#1EAEDB]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          <path d="M5 3v4"></path>
+          <path d="M19 17v4"></path>
+          <path d="M3 5h4"></path>
+          <path d="M17 19h4"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-900 text-sm">5+ Years Experience</div>
+        <div class="text-xs text-gray-600">Expert Hair Specialist</div>
+      </div>
+    </div>
+  )}
+
+  {showGuarantee && (
+    <div class="trust-signal bg-white rounded-lg p-4 border border-gray-100 shadow-sm flex items-center gap-3">
+      <div class="trust-icon bg-[#FFDEE2] bg-opacity-30 rounded-full p-2">
+        <svg class="h-6 w-6 text-[#E91E63]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-900 text-sm">Satisfaction Guarantee</div>
+        <div class="text-xs text-gray-600">7-Day Service Guarantee</div>
+      </div>
+    </div>
+  )}
+
+  {showProducts && (
+    <div class="trust-signal bg-white rounded-lg p-4 border border-gray-100 shadow-sm flex items-center gap-3">
+      <div class="trust-icon bg-[#E8F5E8] rounded-full p-2">
+        <svg class="h-6 w-6 text-[#4CAF50]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-900 text-sm">Premium Products</div>
+        <div class="text-xs text-gray-600">Professional Grade Only</div>
+      </div>
+    </div>
+  )}
+
+  {showCertification && (
+    <div class="trust-signal bg-white rounded-lg p-4 border border-gray-100 shadow-sm flex items-center gap-3">
+      <div class="trust-icon bg-[#FFF3CD] rounded-full p-2">
+        <svg class="h-6 w-6 text-[#FFC107]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"></circle>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+        </svg>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-900 text-sm">Certified Professional</div>
+        <div class="text-xs text-gray-600">Trained Hair Specialist</div>
+      </div>
+    </div>
+  )}
+
+</div>
+
+<style>
+  .trust-signal {
+    transition: all 0.3s ease;
+  }
+  
+  .trust-signal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .trust-icon {
+    flex-shrink: 0;
+  }
+  
+  @media (max-width: 640px) {
+    .trust-signals.horizontal {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .trust-signal {
+      padding: 0.75rem;
+    }
+  }
+</style>

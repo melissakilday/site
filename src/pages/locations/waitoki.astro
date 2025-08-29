@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Waitoki Hair Stylist | Rural Lifestyle Hair Care North Auckland | Hair By Melissa";
 const pageDescription = "Rural hair care specialists serving Waitoki's equestrian and farming community. Dust-resistant styling, UV protection, and low-maintenance treatments. Located 10 minutes from Waitoki in Kaukapakapa.";
 const pageKeywords = "hair salon waitoki, hairdresser waitoki, hair coloring waitoki, keratin treatment waitoki, balayage waitoki, highlights waitoki, hair salon near waitoki, rural hair care";
+
+const faqs = locationFAQs['waitoki'];
 
 // Local business schema for Waitoki service area
 const waitokiSchema = {
@@ -695,5 +699,10 @@ const ruralConsiderations = [
 
   <!-- Schema Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(waitokiSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(waitokiFAQ)} />
+  
+  <!-- FAQ Section -->
+  <FAQSchema 
+    faqs={faqs} 
+    pageUrl="https://hairbymelissa.co.nz/locations/waitoki"
+  />
 </Layout>

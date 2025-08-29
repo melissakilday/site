@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TrustSignals from '../components/TrustSignals.astro';
 
 const pageTitle = "Hair Services Kaukapakapa | Prices & Treatments";
 const pageDescription = "Complete hair services menu & prices at Hair By Melissa Kaukapakapa. Keratin treatments $180, Balayage $230, Highlights from $90, Women's cuts $50. Serving North Auckland areas.";
@@ -140,6 +141,11 @@ const services = [
   <!-- Services Section -->
   <section class="bg-white py-20">
     <div class="container-custom">
+      <!-- Trust Signals -->
+      <div class="mb-12 text-center">
+        <TrustSignals variant="horizontal" />
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <div

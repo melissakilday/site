@@ -1,9 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { serviceFAQs } from '../../data/serviceFAQs';
 
 const pageTitle = "Balayage Kaukapakapa | Hand-Painted Hair Color North Auckland";
 const pageDescription = "Expert balayage hair coloring in Kaukapakapa. Natural sun-kissed highlights with low maintenance. Serving Helensville, Wainui & Waitoki. Book your transformation today!";
 const pageKeywords = "balayage kaukapakapa, hair highlights helensville, ombre hair wainui, hand painted highlights waitoki, hair color north auckland, balayage specialist rodney";
+
+const faqs = serviceFAQs['balayage'];
 ---
 
 <ServiceLayout 
@@ -180,3 +184,9 @@ const pageKeywords = "balayage kaukapakapa, hair highlights helensville, ombre h
     </div>
   </div>
 </ServiceLayout>
+
+<!-- FAQ Schema -->
+<FAQSchema 
+  faqs={faqs} 
+  pageUrl="https://hairbymelissa.co.nz/services/balayage"
+/>

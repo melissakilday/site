@@ -1,5 +1,9 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { serviceFAQs } from '../../data/serviceFAQs';
+
+const faqs = serviceFAQs['permanent-tint-touch-up'];
 ---
 
 <ServiceLayout 
@@ -107,3 +111,9 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
     </p>
   </div>
 </ServiceLayout>
+
+<!-- FAQ Schema -->
+<FAQSchema 
+  faqs={faqs} 
+  pageUrl="https://hairbymelissa.co.nz/services/permanent-tint-touch-up"
+/>

@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Wainui Village Hair Care | Surfer Hair Specialist North Auckland | Hair By Melissa";
 const pageDescription = "Beach hair specialists serving Wainui surfers and coastal residents. UV protection, salt damage repair, and frizz control treatments. Expert keratin & color services 20 minutes from Wainui Village.";
 const pageKeywords = "hair salon wainui, hairdresser wainui, hair coloring wainui, keratin treatment wainui, balayage wainui, highlights wainui, hair salon near wainui, beach hair care";
+
+const faqs = locationFAQs['wainui'];
 
 // Local business schema for Wainui service area
 const wainuiSchema = {
@@ -580,5 +584,10 @@ const beachHairTips = [
 
   <!-- Schema Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(wainuiSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(wainuiFAQ)} />
+  
+  <!-- FAQ Section -->
+  <FAQSchema 
+    faqs={faqs} 
+    pageUrl="https://hairbymelissa.co.nz/locations/wainui"
+  />
 </Layout>

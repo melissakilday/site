@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TrustSignals from '../components/TrustSignals.astro';
 
 const services = [
   { name: "Keratin Treatments", price: "$180", icon: "sparkles" },
@@ -41,12 +42,12 @@ const galleryImages = [
     alt: "Before and after hair highlights transformation by Hair By Melissa showing dimensional color"
   },
   {
-    src: "/images/optimized/professional-blowdry_800.webp",
-    alt: "Professional blow dry hair styling with volume and smooth finish at Hair By Melissa salon"
+    src: "/images/optimized/melissa-professional_800.webp",
+    alt: "Melissa professional hair stylist at Hair By Melissa salon in Kaukapakapa"
   },
   {
-    src: "/images/optimized/natural-balayage_800.webp",
-    alt: "Natural sun-kissed balayage hair coloring technique with seamless color blending"
+    src: "/images/optimized/salon-interior_800.webp",
+    alt: "Hair By Melissa salon interior showing professional styling station and modern decor"
   }
 ];
 ---
@@ -98,6 +99,11 @@ const galleryImages = [
         <p class="text-gray-600 mt-4">
           Discover our range of high-quality hair services designed to transform, enhance, and maintain your beautiful locks.
         </p>
+      </div>
+      
+      <!-- Trust Signals -->
+      <div class="mb-12">
+        <TrustSignals variant="horizontal" />
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -211,13 +217,13 @@ const galleryImages = [
             style={`animation-delay: ${review.id * 100}ms`}
           >
             <div class="flex mb-4">
-              {[...Array(review.rating)].map((_, i) => (
-                <svg key={i} class="h-5 w-5 text-yellow-500 fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              {[...Array(review.rating)].map((_) => (
+                <svg class="h-5 w-5 text-yellow-500 fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
               ))}
             </div>
-            <p class="text-gray-700 italic">{review.review}</p>
+            <p class="text-gray-700 italic">"{review.review}"</p>
             <p class="font-medium mt-4">- {review.name}</p>
           </div>
         ))}
@@ -271,8 +277,8 @@ const galleryImages = [
     <div class="absolute inset-0 z-0">
       <div class="relative h-full w-full">
         <img
-          src="/images/optimized/blonde-balayage_800.webp"
-          alt="Professional blonde balayage hair coloring results showcasing Hair By Melissa's expertise"
+          src="/images/optimized/balayage-transformation_1920q80.webp"
+          alt="Professional balayage hair transformation showcasing Hair By Melissa's expertise"
           class="h-full w-full object-cover"
         />
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -299,9 +305,24 @@ const galleryImages = [
       </div>
     </div>
   </section>
+
+  <!-- Trust Indicators Section -->
+  <section class="py-16 bg-white overflow-hidden">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl font-bold">Why Choose Hair By Melissa</h2>
+        <p class="text-gray-600 mt-4">
+          Professional expertise you can trust for all your hair care needs
+        </p>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <TrustSignals variant="grid" showCertification={true} />
+      </div>
+    </div>
+  </section>
   
   <!-- Internal Hub Links Section -->
-  <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-[#D3E4FD]/10">
+  <section class="py-20 bg-gradient-to-br from-gray-50 via-white to-[#D3E4FD]/10 overflow-hidden">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-4xl font-bold text-gray-900">Explore Hair By Melissa</h2>

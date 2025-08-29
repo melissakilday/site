@@ -1,9 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { serviceFAQs } from '../../data/serviceFAQs';
 
 const pageTitle = "Women's Cut & Finish Kaukapakapa | Professional Hair Styling North Auckland";
 const pageDescription = "Expert women's haircuts and professional styling in Kaukapakapa. Precision cuts tailored to your lifestyle. Serving Helensville, Wainui & Waitoki. Book today!";
 const pageKeywords = "womens haircut kaukapakapa, hair styling helensville, professional hair cut wainui, hair salon waitoki, womens hair cut north auckland, hair styling rodney";
+
+const faqs = serviceFAQs['womens-cut-finish'];
 ---
 
 <ServiceLayout 
@@ -91,3 +95,9 @@ const pageKeywords = "womens haircut kaukapakapa, hair styling helensville, prof
     </p>
   </div>
 </ServiceLayout>
+
+<!-- FAQ Schema -->
+<FAQSchema 
+  faqs={faqs} 
+  pageUrl="https://hairbymelissa.co.nz/services/womens-cut-finish"
+/>

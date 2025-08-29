@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
 
 const features = [
   {
@@ -103,6 +105,11 @@ const features = [
         <p class="text-gray-700">
           Experience the difference of a truly personalized salon experience in a tranquil rural setting.
         </p>
+      </div>
+      
+      <!-- Trust Signals -->
+      <div class="mb-12">
+        <TrustSignals variant="grid" showCertification={true} />
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -212,6 +219,39 @@ const features = [
             class="w-full h-full object-cover"
           />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="bg-white py-20">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl font-bold mb-4">What Our Clients Say</h2>
+        <p class="text-gray-700">
+          Real testimonials from satisfied clients across North Auckland.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <TestimonialCard 
+          name="Sarah Johnson"
+          location="Kaukapakapa"
+          service="Keratin Treatment"
+          testimonial="Melissa transformed my frizzy hair into silky smooth locks! The keratin treatment has been life-changing - I save so much time styling my hair now."
+        />
+        <TestimonialCard 
+          name="Emma Wilson"
+          location="Helensville"
+          service="Balayage"
+          testimonial="The balayage Melissa created is absolutely stunning. She really understood my vision and the color grows out so naturally. Highly recommend!"
+        />
+        <TestimonialCard 
+          name="Rachel Thompson"
+          location="Wainui Village"
+          service="Highlights"
+          testimonial="Melissa is a true artist with color. My highlights look so natural and professional. The salon atmosphere is so relaxing too."
+        />
       </div>
     </div>
   </section>

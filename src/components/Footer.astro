@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear();
 
 <footer class="bg-black text-white pt-16 pb-8">
   <div class="container-custom">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       <!-- Logo and About -->
       <div class="space-y-4">
         <div class="flex items-center space-x-2">
@@ -51,15 +51,95 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <!-- Quick Links -->
+      <!-- Services -->
       <div>
-        <h3 class="text-xl mb-4">Quick Links</h3>
-        <ul class="space-y-2">
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4">Services</h3>
+        <ul class="space-y-1.5 lg:space-y-2">
           <li>
-            <a href="/services" class="text-gray-300 hover:text-white transition-colors">Services</a>
+            <a href="/services/keratin-treatments" class="text-gray-300 hover:text-white transition-colors">Keratin Treatments</a>
           </li>
           <li>
-            <a href="/about" class="text-gray-300 hover:text-white transition-colors">About Us</a>
+            <a href="/services/balayage" class="text-gray-300 hover:text-white transition-colors">Balayage</a>
+          </li>
+          <li>
+            <a href="/services/full-head-highlights" class="text-gray-300 hover:text-white transition-colors">Full Head Highlights</a>
+          </li>
+          <li>
+            <a href="/services/half-head-highlights" class="text-gray-300 hover:text-white transition-colors">Half Head Highlights</a>
+          </li>
+          <li>
+            <a href="/services/partial-foils" class="text-gray-300 hover:text-white transition-colors">Partial Foils</a>
+          </li>
+          <li>
+            <a href="/services/permanent-tint-all-over" class="text-gray-300 hover:text-white transition-colors">Permanent Tint</a>
+          </li>
+          <li>
+            <a href="/services/permanent-tint-touch-up" class="text-gray-300 hover:text-white transition-colors">Touch Up</a>
+          </li>
+          <li>
+            <a href="/services/toner" class="text-gray-300 hover:text-white transition-colors">Toner</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- More Services & Locations -->
+      <div>
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4">More Services</h3>
+        <ul class="space-y-1.5 lg:space-y-2">
+          <li>
+            <a href="/services/blow-wave" class="text-gray-300 hover:text-white transition-colors">Blow Wave</a>
+          </li>
+          <li>
+            <a href="/services/womens-cut-finish" class="text-gray-300 hover:text-white transition-colors">Women's Cut & Finish</a>
+          </li>
+          <li>
+            <a href="/services/uv-protection-treatments" class="text-gray-300 hover:text-white transition-colors">UV Protection</a>
+          </li>
+          <li>
+            <a href="/hair-dressing" class="text-gray-300 hover:text-white transition-colors">Hair Dressing</a>
+          </li>
+        </ul>
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4 mt-4 lg:mt-6">Locations</h3>
+        <ul class="space-y-1.5 lg:space-y-2">
+          <li>
+            <a href="/locations/kaukapakapa" class="text-gray-300 hover:text-white transition-colors">Kaukapakapa</a>
+          </li>
+          <li>
+            <a href="/locations/helensville" class="text-gray-300 hover:text-white transition-colors">Helensville</a>
+          </li>
+          <li>
+            <a href="/locations/wainui" class="text-gray-300 hover:text-white transition-colors">Wainui Village</a>
+          </li>
+          <li>
+            <a href="/locations/waitoki" class="text-gray-300 hover:text-white transition-colors">Waitoki</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Resources & Company -->
+      <div>
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4">Resources</h3>
+        <ul class="space-y-1.5 lg:space-y-2">
+          <li>
+            <a href="/blog" class="text-gray-300 hover:text-white transition-colors">Hair Care Blog</a>
+          </li>
+          <li>
+            <a href="/blog/category/color-insights" class="text-gray-300 hover:text-white transition-colors">Color Insights</a>
+          </li>
+          <li>
+            <a href="/blog/category/hair-care" class="text-gray-300 hover:text-white transition-colors">Hair Care Tips</a>
+          </li>
+          <li>
+            <a href="/blog/category/styling-guides" class="text-gray-300 hover:text-white transition-colors">Styling Guides</a>
+          </li>
+          <li>
+            <a href="/blog/category/seasonal-tips" class="text-gray-300 hover:text-white transition-colors">Seasonal Tips</a>
+          </li>
+        </ul>
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4 mt-4 lg:mt-6">Company</h3>
+        <ul class="space-y-1.5 lg:space-y-2">
+          <li>
+            <a href="/about" class="text-gray-300 hover:text-white transition-colors">About Melissa</a>
           </li>
           <li>
             <a href="/gallery" class="text-gray-300 hover:text-white transition-colors">Gallery</a>
@@ -70,43 +150,36 @@ const currentYear = new Date().getFullYear();
           <li>
             <a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
           </li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div>
-        <h3 class="text-xl mb-4">Legal</h3>
-        <ul class="space-y-2">
+          <li>
+            <a href="/faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
+          </li>
           <li>
             <a href="/privacy" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a>
           </li>
           <li>
             <a href="/terms" class="text-gray-300 hover:text-white transition-colors">Terms of Service</a>
           </li>
-          <li>
-            <a href="/faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
-          </li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div>
-        <h3 class="text-xl mb-4">Contact Us</h3>
-        <div class="space-y-4">
+        <h3 class="text-lg lg:text-xl mb-3 lg:mb-4">Contact Us</h3>
+        <div class="space-y-3 lg:space-y-4">
           <div class="flex items-start">
             <!-- MapPin -->
             <svg class="mr-2 h-5 w-5 text-[#1EAEDB] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
-            <span class="text-gray-300">Magnolia Lane, Kaukapakapa, Rural Auckland, NZ</span>
+            <span class="text-gray-300 text-sm lg:text-base">Magnolia Lane, Kaukapakapa, Rural Auckland, NZ</span>
           </div>
           <div class="flex items-center">
             <!-- Phone -->
             <svg class="mr-2 h-5 w-5 text-[#1EAEDB] flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            <span class="text-gray-300">027 520 1613</span>
+            <span class="text-gray-300 text-sm lg:text-base whitespace-nowrap">027 520 1613</span>
           </div>
           <div class="flex items-center">
             <!-- Mail -->
@@ -114,7 +187,7 @@ const currentYear = new Date().getFullYear();
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            <span class="text-gray-300">melissa@hairbymelissa.co.nz</span>
+            <span class="text-gray-300 text-sm lg:text-base">melissa@hairbymelissa.co.nz</span>
           </div>
         </div>
       </div>

@@ -1,0 +1,74 @@
+---
+export interface Props {
+  name: string;
+  location: string;
+  service?: string;
+  rating?: number;
+  testimonial: string;
+  variant?: 'default' | 'compact';
+}
+
+const { 
+  name, 
+  location, 
+  service, 
+  rating = 5, 
+  testimonial, 
+  variant = 'default' 
+} = Astro.props;
+---
+
+<div class={`testimonial-card bg-white rounded-lg shadow-md p-6 ${variant === 'compact' ? 'p-4' : ''}`}>
+  <!-- Rating Stars -->
+  <div class="flex items-center mb-3">
+    {Array.from({ length: 5 }).map((_, index) => (
+      <svg 
+        class={`h-4 w-4 ${index < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" 
+        height="24" 
+        viewBox="0 0 24 24" 
+        fill="currentColor"
+      >
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+    ))}
+    <span class="text-sm text-gray-600 ml-2">{rating}/5</span>
+  </div>
+
+  <!-- Testimonial Text -->
+  <blockquote class={`text-gray-700 italic mb-4 ${variant === 'compact' ? 'text-sm' : ''}`}>
+    "{testimonial}"
+  </blockquote>
+
+  <!-- Client Info -->
+  <div class="border-t pt-3">
+    <div class={`font-semibold text-gray-900 ${variant === 'compact' ? 'text-sm' : ''}`}>
+      {name}
+    </div>
+    <div class={`text-gray-600 ${variant === 'compact' ? 'text-xs' : 'text-sm'}`}>
+      {location}
+      {service && ` • ${service}`}
+    </div>
+  </div>
+
+  <!-- Trust Badge -->
+  <div class="flex items-center mt-3 text-xs text-gray-500">
+    <svg class="h-3 w-3 text-green-500 mr-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+      <path d="M9 12l2 2 4-4"></path>
+    </svg>
+    Verified Client Review
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    transition: all 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+</style>

@@ -1,13 +1,16 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceRelationships } from '../../utils/internalLinks.ts';
+import { serviceFAQs } from '../../data/serviceFAQs';
 
 const pageTitle = "Keratin Treatment Kaukapakapa | Frizz-Free Hair North Auckland";
 const pageDescription = "Professional keratin treatments in Kaukapakapa. Transform frizzy hair into smooth, manageable locks. Serving Helensville, Wainui & Waitoki. Results last 5 months!";
 const pageKeywords = "keratin treatment kaukapakapa, brazilian blowout helensville, hair smoothing wainui, frizz treatment waitoki, keratin hair treatment north auckland, anti-frizz treatment rodney";
 
 const relatedLinks = serviceRelationships["keratin-treatments"];
+const faqs = serviceFAQs['keratin-treatments'];
 ---
 
 <ServiceLayout 
@@ -137,3 +140,9 @@ const relatedLinks = serviceRelationships["keratin-treatments"];
     </div>
   </div>
 </ServiceLayout>
+
+<!-- FAQ Schema -->
+<FAQSchema 
+  faqs={faqs} 
+  pageUrl="https://hairbymelissa.co.nz/services/keratin-treatments"
+/>

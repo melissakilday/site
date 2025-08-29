@@ -1,9 +1,13 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { serviceFAQs } from '../../data/serviceFAQs';
 
 const pageTitle = "UV Protection Hair Treatments | Coastal Hair Care North Auckland";
 const pageDescription = "Professional UV protection treatments for $40. Shield your hair from sun damage and color fading. Perfect for surfers, beach lovers, and outdoor workers in North Auckland.";
 const pageKeywords = "UV protection hair treatment, sun protection hair, beach hair care, coastal hair protection, surfer hair care, UV damage prevention, North Auckland";
+
+const faqs = serviceFAQs['uv-protection-treatments'];
 ---
 
 <ServiceLayout 
@@ -174,3 +178,9 @@ const pageKeywords = "UV protection hair treatment, sun protection hair, beach h
     </div>
   </div>
 </ServiceLayout>
+
+<!-- FAQ Schema -->
+<FAQSchema 
+  faqs={faqs} 
+  pageUrl="https://hairbymelissa.co.nz/services/uv-protection-treatments"
+/>

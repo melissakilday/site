@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Hair Salon Kaukapakapa | Premium Hairdresser in Kaukapakapa Village | Hair By Melissa";
 const pageDescription = "Hair By Melissa's main salon located in the heart of Kaukapakapa village. Expert hair services including keratin treatments, balayage, and styling in a peaceful rural setting with free parking.";
 const pageKeywords = "hair salon kaukapakapa, hairdresser kaukapakapa, hair coloring kaukapakapa, keratin treatment kaukapakapa, magnolia lane hair salon, rural hair salon auckland, kaukapakapa village salon";
+
+const faqs = locationFAQs['kaukapakapa'];
 
 // Local business schema for Kaukapakapa main location
 const kaukapakapaSchema = {
@@ -738,5 +742,10 @@ const localLandmarks = [
 
   <!-- Schema Scripts -->
   <script type="application/ld+json" set:html={JSON.stringify(kaukapakapaSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(kaukapakapaFAQ)} />
+  
+  <!-- FAQ Section -->
+  <FAQSchema 
+    faqs={faqs} 
+    pageUrl="https://hairbymelissa.co.nz/locations/kaukapakapa"
+  />
 </Layout>
