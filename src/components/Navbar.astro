@@ -146,7 +146,7 @@ const navLinks = [
           <div>
             <a
               href={link.path}
-              class="text-gray-800 font-medium hover:text-[#1EAEDB] block"
+              class="text-gray-800 font-medium hover:text-salon-darkblue block"
             >
               {link.name}
             </a>
@@ -154,7 +154,7 @@ const navLinks = [
               {link.dropdown.map((item) => (
                 <a
                   href={item.path}
-                  class="text-gray-600 hover:text-[#1EAEDB] block text-sm"
+                  class="text-gray-600 hover:text-salon-darkblue block text-sm"
                 >
                   {item.name}
                 </a>
@@ -164,7 +164,7 @@ const navLinks = [
         ) : (
           <a
             href={link.path}
-            class="text-gray-800 font-medium hover:text-[#1EAEDB]"
+            class="text-gray-800 font-medium hover:text-salon-darkblue"
           >
             {link.name}
           </a>

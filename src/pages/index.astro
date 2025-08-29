@@ -57,9 +57,9 @@ const galleryImages = [
   description="Hair By Melissa - Premier hairdresser in Kaukapakapa offering smoothing treatments, custom color, precision cuts & hair transformations. Serving Helensville, Wainui & Waitoki. Book today!"
   keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair coloring wainui, haircut waitoki, best hairdresser rodney district"
 >
-  <!-- Core Web Vitals: Preload hero image for mobile LCP -->
-  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_640.webp" media="(max-width: 767px)" />
-  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_1280.webp" media="(min-width: 768px)" />
+  <!-- Core Web Vitals: Preload compressed hero images -->
+  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_640q35.webp" media="(max-width: 767px)" />
+  <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_1280q40.webp" media="(min-width: 768px)" />
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center overflow-hidden">
     <!-- Background Layer with Parallax -->
@@ -333,11 +333,22 @@ const galleryImages = [
   <section class="relative section-padding">
     <div class="absolute inset-0 z-0">
       <div class="relative h-full w-full">
-        <img
-          src="/images/optimized/balayage-transformation_1920q80.webp"
-          alt="Professional balayage hair transformation showcasing Hair By Melissa's expertise"
-          class="h-full w-full object-cover"
-        />
+        <picture>
+          <source 
+            media="(max-width: 768px)" 
+            srcset="/images/optimized/balayage-transformation_800q25.webp"
+          />
+          <source 
+            media="(max-width: 1280px)" 
+            srcset="/images/optimized/balayage-transformation_1280q30.webp"
+          />
+          <img
+            src="/images/optimized/balayage-transformation_1920q35.webp"
+            alt="Professional balayage hair transformation showcasing Hair By Melissa's expertise"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </picture>
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
     </div>
