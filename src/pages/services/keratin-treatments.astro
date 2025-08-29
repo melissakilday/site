@@ -146,3 +146,52 @@ const faqs = serviceFAQs['keratin-treatments'];
   faqs={faqs} 
   pageUrl="https://hairbymelissa.co.nz/services/keratin-treatments"
 />
+
+<!-- Local Service Availability Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://hairbymelissa.co.nz/services/keratin-treatments#service",
+  "serviceType": "Keratin Hair Treatment",
+  "provider": {
+    "@type": "HairSalon",
+    "name": "Hair By Melissa",
+    "@id": "https://hairbymelissa.co.nz/#business"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Kaukapakapa",
+      "identifier": "kaukapakapa-nz"
+    },
+    {
+      "@type": "City", 
+      "name": "Helensville",
+      "identifier": "helensville-nz"
+    },
+    {
+      "@type": "City",
+      "name": "Wainui", 
+      "identifier": "wainui-nz"
+    },
+    {
+      "@type": "City",
+      "name": "Waitoki",
+      "identifier": "waitoki-nz" 
+    }
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://hairbymelissa.co.nz/booking",
+    "servicePhone": "+64275201613",
+    "availableLanguage": ["en-NZ"]
+  },
+  "hoursAvailable": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "opens": "09:00",
+      "closes": "17:00",
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"]
+    }
+  ]
+})} />

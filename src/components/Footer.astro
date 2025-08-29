@@ -193,6 +193,41 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
+    <!-- Local Community Engagement Signals -->
+    <div class="hidden" itemscope itemtype="https://schema.org/Organization">
+      <span itemprop="name">Hair By Melissa</span>
+      <div itemprop="location" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Kaukapakapa Village</span>
+        <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="addressLocality">Kaukapakapa</span>
+          <span itemprop="addressRegion">Auckland</span>
+          <span itemprop="addressCountry">New Zealand</span>
+        </div>
+      </div>
+      
+      <!-- Local Community Connections -->
+      <div itemprop="memberOf" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Kaukapakapa Business Community</span>
+      </div>
+      
+      <!-- Local Landmarks Association -->
+      <div itemprop="knows" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Kaukapakapa Village Store</span>
+      </div>
+      <div itemprop="knows" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Kaukapakapa Railway Station</span>
+      </div>
+      
+      <!-- Service Area Entities -->
+      <div itemprop="serviceArea" itemscope itemtype="https://schema.org/GeoCircle">
+        <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
+          <meta itemprop="latitude" content="-36.6173">
+          <meta itemprop="longitude" content="174.4829">
+        </div>
+        <meta itemprop="geoRadius" content="25000">
+      </div>
+    </div>
+
     <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
       <p>&copy; {currentYear} Hair By Melissa. All rights reserved.</p>
     </div>

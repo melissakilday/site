@@ -32,7 +32,7 @@ const localBusinessSchema = {
   "alternateName": ["Melissa's Hair Salon", "Hair By Melissa Kaukapakapa"],
   "description": "Premium hair salon specializing in keratin treatments, balayage, highlights, and expert hair coloring in Kaukapakapa, Auckland. Serving North Auckland with professional hair services since 2020.",
   "url": "https://hairbymelissa.co.nz",
-  "telephone": "+64-21-XXX-XXXX",
+  "telephone": "+64275201613",
   "email": "book@hairbymelissa.co.nz",
   "foundingDate": "2020",
   "founder": {
@@ -452,6 +452,145 @@ const geoContext = {
     "name": "North Auckland including Kaukapakapa, Helensville, Wainui, and Waitoki"
   }
 };
+
+// Enhanced Local Entity Recognition Schema for 2024 GEO
+const localEntitySchema = {
+  "@context": "https://schema.org",
+  "@type": ["Place", "LocalBusiness", "HairSalon"],
+  "@id": "https://hairbymelissa.co.nz/#place",
+  "identifier": "hair-by-melissa-kaukapakapa",
+  "name": "Hair By Melissa",
+  "alternateName": ["Melissa's Hair Salon Kaukapakapa", "Kaukapakapa Hair Salon"],
+  "description": "Premier hair salon in Kaukapakapa village specializing in keratin treatments, balayage, and expert hair coloring. Serving North Auckland including Helensville, Wainui, and Waitoki.",
+  
+  // Enhanced Geographic Entities (Critical for GEO 2024)
+  "containedInPlace": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Kaukapakapa",
+      "alternateName": ["Kaukapakapa Village", "Kaukapakapa Township"],
+      "containedInPlace": {
+        "@type": "AdministrativeArea", 
+        "name": "Auckland Region",
+        "alternateName": ["North Auckland", "Greater Auckland"]
+      }
+    }
+  ],
+  
+  // Near Me Query Optimization
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Primary Service Area",
+      "value": "Kaukapakapa, Helensville, Wainui, Waitoki"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Search Intent Keywords",
+      "value": "hair salon near me, hairdresser near me, keratin treatment near me, balayage near me"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Local Specialties", 
+      "value": "Village salon, Rural hair care, Coastal climate hair treatments"
+    }
+  ],
+
+  // Voice Search Optimization Schema
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "query-input": "required name=search_term_string",
+      "target": "https://hairbymelissa.co.nz/search?q={search_term_string}"
+    },
+    {
+      "@type": "FindAction",
+      "object": {
+        "@type": "HairSalon",
+        "name": "Hair By Melissa"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Kaukapakapa, Auckland"
+      }
+    }
+  ],
+
+  // Enhanced Availability Schema for Local Search
+  "specialOpeningHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "opens": "09:00",
+      "closes": "17:00", 
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "validFrom": "2024-01-01",
+      "validThrough": "2024-12-31"
+    }
+  ]
+};
+
+// Local Event & Community Integration Schema
+const localEventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization", 
+  "@id": "https://hairbymelissa.co.nz/#organization",
+  "name": "Hair By Melissa",
+  "memberOf": [
+    {
+      "@type": "Organization",
+      "name": "Kaukapakapa Business Association",
+      "description": "Local business community supporting Kaukapakapa village"
+    },
+    {
+      "@type": "Organization", 
+      "name": "North Auckland Chamber of Commerce",
+      "description": "Regional business network"
+    }
+  ],
+  "knowsAbout": [
+    {
+      "@type": "Place",
+      "name": "Kaukapakapa Pioneer Village",
+      "description": "Historic village attraction near our salon"
+    },
+    {
+      "@type": "Event",
+      "name": "Kaukapakapa Country Fair",
+      "description": "Annual community event where we participate"
+    },
+    {
+      "@type": "Place",
+      "name": "Helensville Agricultural & Pastoral Show", 
+      "description": "Regional event serving our client community"
+    }
+  ],
+  "audience": [
+    {
+      "@type": "Audience",
+      "audienceType": "Local Residents",
+      "geographicArea": {
+        "@type": "AdministrativeArea",
+        "name": "Kaukapakapa and surroundings"
+      }
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "Rural Community",
+      "geographicArea": {
+        "@type": "AdministrativeArea", 
+        "name": "North Auckland Rural"
+      }
+    },
+    {
+      "@type": "Audience",
+      "audienceType": "Lifestyle Block Owners",
+      "geographicArea": {
+        "@type": "AdministrativeArea",
+        "name": "Rodney District"
+      }
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -521,6 +660,26 @@ const geoContext = {
     <meta name="geo.position" content="-36.6173;174.4829" />
     <meta name="ICBM" content="-36.6173, 174.4829" />
     
+    <!-- Enhanced Local Entity Recognition Meta Tags -->
+    <meta name="geo.placename" content="Kaukapakapa Village, Auckland, New Zealand" />
+    <meta name="geo.county" content="Auckland Region" />
+    <meta name="geo.district" content="Rodney District" />
+    <meta name="NUTS" content="NZ011" />
+
+    <!-- Local Search Intent Optimization -->
+    <meta name="local-search-intent" content="hair salon near me, hairdresser near me, keratin treatment kaukapakapa, balayage helensville" />
+    <meta name="service-locality" content="Kaukapakapa, Helensville, Wainui, Waitoki, North Auckland" />
+
+    <!-- Voice Search Optimization -->
+    <meta name="voice-search-queries" content="hair salon near me, best hairdresser kaukapakapa, keratin treatment north auckland, where to get balayage" />
+    <meta name="natural-language-queries" content="find hair salon kaukapakapa, book hair appointment near me, keratin treatment specialist" />
+
+    <!-- Local Business Entity Signals -->
+    <meta name="local-business-type" content="HairSalon, BeautySalon, LocalBusiness" />
+    <meta name="establishment-year" content="2020" />
+    <meta name="owner-operator" content="Melissa" />
+    <meta name="local-community" content="Kaukapakapa Village Community" />
+    
     <!-- Business Information -->
     <meta name="business:contact_data:street_address" content="Magnolia Lane" />
     <meta name="business:contact_data:locality" content="Kaukapakapa" />
@@ -534,6 +693,12 @@ const geoContext = {
     
     <!-- Structured Data - LocalBusiness Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    
+    <!-- Enhanced Local Entity Recognition Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localEntitySchema)} />
+    
+    <!-- Local Event & Community Integration Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localEventSchema)} />
     
     <!-- GEO Context for LLMs -->
     <script type="application/ld+json" set:html={JSON.stringify(geoContext)} />
@@ -576,6 +741,11 @@ const geoContext = {
         const imageScript = document.createElement('script');
         imageScript.src = '/src/scripts/image-optimization.js';
         document.body.appendChild(imageScript);
+        
+        // Defer local SEO and geolocation script
+        const localSeoScript = document.createElement('script');
+        localSeoScript.src = '/src/scripts/local-seo.js';
+        document.body.appendChild(localSeoScript);
       });
     </script>
   </body>

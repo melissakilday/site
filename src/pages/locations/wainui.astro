@@ -3,9 +3,9 @@ import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
-const pageTitle = "Wainui Village Hair Care | Surfer Hair Specialist North Auckland | Hair By Melissa";
-const pageDescription = "Beach hair specialists serving Wainui surfers and coastal residents. UV protection, salt damage repair, and frizz control treatments. Expert keratin & color services 20 minutes from Wainui Village.";
-const pageKeywords = "hair salon wainui, hairdresser wainui, hair coloring wainui, keratin treatment wainui, balayage wainui, highlights wainui, hair salon near wainui, beach hair care";
+const pageTitle = "Wainui Village Hair Care | Professional Hair Specialist North Auckland | Hair By Melissa";
+const pageDescription = "Expert hair specialists serving Wainui village residents. Professional hair care, UV protection, and styling treatments. Expert keratin & color services 20 minutes from Wainui Village.";
+const pageKeywords = "hair salon wainui, hairdresser wainui, hair coloring wainui, keratin treatment wainui, balayage wainui, highlights wainui, hair salon near wainui, village hair care";
 
 const faqs = locationFAQs['wainui'];
 
@@ -14,9 +14,9 @@ const wainuiSchema = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "name": "Hair By Melissa - Serving Wainui",
-  "description": "Professional hair salon serving Wainui residents with expert hair care designed for coastal living. Specializing in beach-ready styles and humidity-resistant treatments.",
+  "description": "Professional hair salon serving Wainui village residents with expert hair care designed for rural living. Specializing in natural styles and weather-resistant treatments.",
   "url": "https://hairbymelissa.co.nz/locations/wainui",
-  "telephone": "+64-21-XXX-XXXX",
+  "telephone": "+64275201613",
   "email": "book@hairbymelissa.co.nz",
   "address": {
     "@type": "PostalAddress",
@@ -77,15 +77,15 @@ const wainuiFAQ = {
       "name": "Where is the closest hair salon to Wainui?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hair By Melissa in Kaukapakapa is the closest professional hair salon to Wainui, located just 20 minutes away. We specialize in hair care for coastal living and understand the unique needs of Wainui's beachside community."
+        "text": "Hair By Melissa in Kaukapakapa is the closest professional hair salon to Wainui, located just 20 minutes away. We specialize in professional hair care and understand the unique needs of Wainui's rural village community."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you understand beach hair care for Wainui residents?",
+      "name": "Do you understand village hair care for Wainui residents?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely! We specialize in hair care for coastal living. Our treatments are designed to protect against salt water, UV damage, and humidity - perfect for Wainui's beach lifestyle. Our keratin treatments are particularly popular with surf enthusiasts."
+        "text": "Absolutely! We specialize in hair care for village living. Our treatments are designed to protect against environmental factors, UV damage, and humidity - perfect for Wainui's rural lifestyle. Our keratin treatments are particularly popular with active village residents."
       }
     },
     {
@@ -99,58 +99,58 @@ const wainuiFAQ = {
   ]
 };
 
-// Services specifically beneficial for beach lifestyle
+// Services specifically beneficial for village lifestyle
 const wainuiServices = [
   {
     name: "Keratin Treatments",
     price: "$180",
-    description: "Ultimate protection against salt water and humidity",
+    description: "Ultimate protection against humidity and environmental factors",
     duration: "2-3 hours",
-    beachBenefit: "Resists salt water damage and prevents frizz in beach humidity",
+    villageBenefit: "Protects against humidity and prevents frizz in rural conditions",
     popular: true
   },
   {
     name: "Balayage",
     price: "$230", 
-    description: "Sun-kissed looks that complement your beach lifestyle",
+    description: "Natural sun-kissed looks perfect for village living",
     duration: "3-4 hours",
-    beachBenefit: "Natural highlights that mimic sun-bleached beach hair",
+    villageBenefit: "Natural highlights that complement an active village lifestyle",
     popular: true
   },
   {
     name: "UV Protection Treatments",
     price: "$40",
-    description: "Shield your hair from intense coastal UV exposure",
+    description: "Shield your hair from intense UV exposure",
     duration: "30 min",
-    beachBenefit: "Prevents sun damage and color fading from beach activities",
+    villageBenefit: "Prevents sun damage and color fading from outdoor activities",
     popular: false
   },
   {
-    name: "Salt Water Recovery",
+    name: "Deep Conditioning Treatments",
     price: "$60",
-    description: "Deep conditioning to repair salt water damage",
+    description: "Intensive moisture restoration for healthy hair",
     duration: "45 min",
-    beachBenefit: "Restores moisture lost from regular ocean swimming",
+    villageBenefit: "Restores moisture and vitality for active village residents",
     popular: true
   }
 ];
 
-// Beach-specific hair care tips
-const beachHairTips = [
+// Village-specific hair care tips
+const villageHairTips = [
   {
     season: "Summer",
-    tip: "Apply leave-in UV protectant before beach days",
+    tip: "Apply leave-in UV protectant before outdoor activities",
     reason: "Wainui's intense summer sun can damage unprotected hair"
   },
   {
     season: "Year-round",
-    tip: "Rinse with fresh water immediately after surfing",
-    reason: "Removes salt buildup that can make hair brittle"
+    tip: "Regular deep conditioning maintains healthy hair",
+    reason: "Keeps hair strong and resilient against environmental factors"
   },
   {
     season: "Winter",
-    tip: "Deep condition weekly during surf season",
-    reason: "Wet suits and frequent water exposure require extra moisture"
+    tip: "Weekly deep conditioning for active lifestyles",
+    reason: "Outdoor activities and weather exposure require extra moisture"
   },
   {
     season: "Spring",
@@ -187,7 +187,7 @@ const beachHairTips = [
           <span class="gradient-text">Wainui</span> Village Hair Specialists
         </h1>
         <p class="text-xl text-gray-700 mb-8">
-          Professional hair care designed for Wainui's coastal lifestyle. Located 20 minutes away in Kaukapakapa, Hair By Melissa specializes in beach-ready treatments that protect against salt water, UV damage, and coastal humidity.
+          Professional hair care designed for Wainui's village lifestyle. Located 20 minutes away in Kaukapakapa, Hair By Melissa specializes in natural treatments that protect against environmental factors, UV damage, and humidity.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
@@ -197,8 +197,8 @@ const beachHairTips = [
             </svg>
             Book Your Appointment
           </a>
-          <a href="#beach-services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
-            Beach Hair Services
+          <a href="#village-services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+            Village Hair Services
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
@@ -212,89 +212,89 @@ const beachHairTips = [
   <section class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8">Hair Care for Wainui's Unique Beach Environment</h2>
+        <h2 class="text-4xl font-bold mb-8">Hair Care for Wainui's Unique Village Environment</h2>
         
         <div class="prose prose-lg max-w-none text-gray-700">
           <p class="text-xl mb-6">
-            Wainui represents the epitome of New Zealand's coastal lifestyle - a small beachside community where the rhythm of life moves with the tides and the seasons. This stunning location on Auckland's west coast presents unique challenges for hair care that require specialized knowledge and treatments designed specifically for coastal living.
+            Wainui represents the charm of New Zealand's rural village lifestyle - a peaceful rural community where life moves with the natural rhythms of the seasons. This beautiful location in rural Auckland presents unique opportunities for hair care that celebrates the natural beauty and active lifestyle of village living.
           </p>
           
-          <h3 class="text-2xl font-semibold mb-4">Understanding Wainui's Coastal Climate</h3>
+          <h3 class="text-2xl font-semibold mb-4">Understanding Wainui's Rural Climate</h3>
           <p class="mb-6">
-            Positioned on the rugged west coast, Wainui experiences the full force of the Tasman Sea's influence. The community sits in a valley that opens directly onto the beach, creating a unique microclimate where salt-laden air, intense UV radiation, and fluctuating humidity levels combine to create significant challenges for maintaining healthy, beautiful hair.
-          </p>
-          
-          <p class="mb-6">
-            The prevailing westerly winds carry salt spray well inland, meaning that even residents who don't spend time directly on the beach are exposed to salt air daily. This constant exposure can lead to dryness, brittleness, and premature color fading - issues that require proactive care rather than reactive treatment.
+            Positioned in rural Auckland, Wainui experiences the natural beauty of countryside living. The community sits in a peaceful valley, creating a unique environment where fresh air, natural UV exposure, and seasonal humidity variations provide the perfect backdrop for healthy hair that thrives with proper care and attention.
           </p>
           
           <p class="mb-6">
-            Wainui's elevation and topography create dramatic temperature variations throughout the day. Morning coastal mists give way to intense afternoon sun, while evening sea breezes can bring sudden humidity changes. These rapid environmental shifts stress hair cuticles and can make styling unpredictable without proper protective treatments.
-          </p>
-          
-          <h3 class="text-2xl font-semibold mb-4">The Surf Community's Hair Care Needs</h3>
-          <p class="mb-6">
-            Wainui is renowned for its excellent surf breaks, attracting both local enthusiasts and visitors year-round. The surfing community faces particular hair care challenges that we understand and address through specialized treatments. Regular exposure to salt water strips natural oils from hair, while wet suits can cause friction and breakage around the hairline.
+            The natural rural environment offers clean air and outdoor activities that promote healthy living. This active village lifestyle enhances natural hair health when combined with proper professional care - creating vibrant, resilient hair that reflects the vitality of country living.
           </p>
           
           <p class="mb-6">
-            Many Wainui surfers surf multiple times per week, sometimes daily during good swells. This level of salt water exposure requires more than standard hair care routines. Our keratin treatments have become incredibly popular with the surf community because they create a protective barrier that helps prevent salt penetration while maintaining hair's natural flexibility and movement.
+            Wainui's elevation and rural topography create gentle temperature variations throughout the day. Morning country air gives way to warm afternoon sun, while evening breezes bring refreshing humidity changes. These natural environmental shifts can enhance hair health when properly supported with appropriate protective treatments.
+          </p>
+          
+          <h3 class="text-2xl font-semibold mb-4">The Active Village Community's Hair Care Needs</h3>
+          <p class="mb-6">
+            Wainui is renowned for its active, outdoor-loving community, attracting residents who embrace the rural lifestyle year-round. The village community faces particular hair care opportunities that we understand and enhance through specialized treatments. Regular outdoor activities and fresh air exposure enhance natural hair vitality when supported with proper professional care.
           </p>
           
           <p class="mb-6">
-            The surfing lifestyle also influences styling preferences. Wainui residents often prefer low-maintenance styles that look good both in and out of the water, can withstand being under a wetsuit hood, and dry naturally into attractive shapes. Our cutting techniques take these lifestyle factors into account, creating styles that enhance rather than fight against the natural textures that coastal living encourages.
+            Many Wainui residents enjoy outdoor activities multiple times per week, from hiking to gardening to rural pursuits. This active village lifestyle benefits from professional hair care routines that enhance natural beauty. Our keratin treatments have become incredibly popular with the village community because they provide protection and manageability while maintaining hair's natural flexibility and movement.
+          </p>
+          
+          <p class="mb-6">
+            The active village lifestyle influences styling preferences. Wainui residents often prefer versatile styles that look great for both everyday activities and special occasions, can withstand active pursuits, and work beautifully with natural textures. Our cutting techniques celebrate these lifestyle factors, creating styles that enhance rather than compete with the natural beauty that village living encourages.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Seasonal Variations in Wainui</h3>
           <p class="mb-6">
-            <strong>Summer (December-February):</strong> Wainui summers are intense, with high UV levels reflecting off both sand and water. The combination of chlorophyll-rich vegetation in the valley and salt spray creates a unique atmospheric mix that can affect hair color stability. This is our busiest season for UV protection treatments and color refresh services.
+            <strong>Summer (December-February):</strong> Wainui summers are vibrant, with abundant sunshine perfect for outdoor village activities. The combination of lush vegetation in the valley and fresh country air creates a wonderful environment that enhances natural hair vitality. This is our busiest season for UV protection treatments and color refresh services to complement the active summer lifestyle.
           </p>
           
           <p class="mb-6">
-            <strong>Autumn (March-May):</strong> The changing season brings some of the year's best surf conditions, but also increasing wind exposure. Autumn in Wainui is characterized by warm, dry northwest winds that can be particularly damaging to hair. This season sees increased demand for deep conditioning treatments and protective styling services.
+            <strong>Autumn (March-May):</strong> The changing season brings beautiful rural colors and perfect weather for outdoor pursuits. Autumn in Wainui is characterized by crisp, clear days that are ideal for exploring the countryside. This season sees increased demand for deep conditioning treatments and protective styling services to maintain hair health during active autumn months.
           </p>
           
           <p class="mb-6">
-            <strong>Winter (June-August):</strong> While winter surfing is popular among dedicated enthusiasts, the season brings different challenges. Cooler temperatures mean less natural oil production, while winter storms create more dramatic humidity fluctuations. This is an ideal time for intensive repair treatments and color services that won't face immediate summer UV stress.
+            <strong>Winter (June-August):</strong> While winter brings cozy village charm, the season also provides opportunities for hair restoration and renewal. Cooler temperatures and indoor gathering times make this an ideal period for intensive repair treatments and color services that will showcase beautifully when warmer weather returns.
           </p>
           
           <p class="mb-6">
-            <strong>Spring (September-November):</strong> Spring brings renewal and often requests for lighter, sun-ready colors in preparation for summer. The variable weather patterns of spring in Wainui - from calm, misty mornings to gusty afternoons - make this a perfect time for treatments that provide flexibility and protection for the coming summer season.
+            <strong>Spring (September-November):</strong> Spring brings renewal and often requests for lighter, fresh colors in preparation for the active outdoor season. The variable weather patterns of spring in Wainui - from peaceful mornings to refreshing afternoons - make this a perfect time for treatments that provide flexibility and protection for the coming active season.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">The Wainui Community Character</h3>
           <p class="mb-6">
-            Wainui's small population creates a tight-knit community where authenticity and natural beauty are highly valued. This philosophy extends to hair care preferences, with many residents favoring styles that enhance their natural texture rather than fighting against it. The community's appreciation for sustainable, low-impact living also influences treatment choices, with many clients preferring services that maintain hair health rather than requiring frequent touch-ups.
+            Wainui's close-knit village population creates a wonderful community where authenticity and natural beauty are highly valued. This philosophy extends to hair care preferences, with many residents favoring styles that enhance their natural texture rather than fighting against it. The community's appreciation for sustainable, natural living also influences treatment choices, with many clients preferring services that maintain hair health and celebrate natural beauty.
           </p>
           
           <p class="mb-6">
-            The community includes a mix of long-term residents who have deep connections to the land and sea, alongside newcomers drawn by the lifestyle and natural beauty. This diversity creates interesting styling challenges as we work to honor both traditional preferences and contemporary trends, always keeping the practical demands of coastal living in mind.
+            The community includes a mix of long-term residents who have deep connections to the rural lifestyle, alongside newcomers drawn by the village charm and natural beauty. This diversity creates wonderful styling opportunities as we work to honor both traditional preferences and contemporary trends, always keeping the practical demands of active village living in mind.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Access and Convenience from Wainui</h3>
           <p class="mb-6">
-            The journey from Wainui to our Kaukapakapa salon, while requiring a 20-minute drive, offers several advantages that our clients have come to appreciate. The route takes you away from the immediate coastal environment, allowing hair to begin adjusting to different humidity levels before treatment. This transition period actually enhances the effectiveness of many services.
+            The journey from Wainui to our Kaukapakapa salon, while requiring a 20-minute drive, offers several advantages that our clients have come to appreciate. The route through scenic rural countryside allows for a relaxing transition that prepares you for your salon experience. This peaceful journey enhances the overall effectiveness of your visit.
           </p>
           
           <p class="mb-6">
-            Many Wainui clients use their salon appointments as part of a broader self-care routine that includes shopping in Kumeu, visiting other rural businesses, or simply enjoying the scenic drive through some of Auckland's most beautiful countryside. The appointment becomes part of a day trip that provides a welcome break from the intensity of coastal living.
+            Many Wainui clients use their salon appointments as part of a broader self-care routine that includes shopping in Kumeu, visiting other rural businesses, or simply enjoying the scenic drive through some of Auckland's most beautiful countryside. The appointment becomes part of a day trip that provides a welcome break from daily routines and celebrates rural living.
           </p>
           
           <p class="mb-6">
-            Our location in Kaukapakapa also provides a more stable environment for hair treatments. The inland location means less salt air interference during chemical processes, while the peaceful rural setting creates a relaxing atmosphere that many clients find superior to busier urban salon environments.
+            Our location in Kaukapakapa provides an ideal environment for hair treatments. The peaceful rural location ensures optimal conditions for chemical processes, while the tranquil setting creates a relaxing atmosphere that many clients find superior to busier urban salon environments.
           </p>
           
-          <h3 class="text-2xl font-semibold mb-4">Specialized Knowledge for Coastal Hair Care</h3>
+          <h3 class="text-2xl font-semibold mb-4">Specialized Knowledge for Village Hair Care</h3>
           <p class="mb-6">
-            Understanding Wainui's unique environment allows us to provide superior service to our clients from this area. We know that traditional hair care advice often doesn't apply to coastal living. For example, daily washing might seem excessive for most people, but for regular surfers from Wainui, it's necessary to remove salt buildup that can cause long-term damage.
-          </p>
-          
-          <p class="mb-6">
-            We also understand that color services need to account for rapid UV exposure and salt water contact. Our color formulations and application techniques are modified for clients who will be exposing their hair to these extreme conditions regularly. This attention to environmental factors ensures longer-lasting, more vibrant results that can withstand the challenges of coastal living.
+            Understanding Wainui's unique village environment allows us to provide superior service to our clients from this area. We know that rural living has specific hair care needs that differ from urban environments. Our professional approach ensures your hair looks and feels its best while supporting your active village lifestyle.
           </p>
           
           <p class="mb-6">
-            Our treatment recommendations are based on years of working with coastal residents and understanding how different hair types respond to salt air, intense UV, and high humidity. We can predict which treatments will work best for specific lifestyles and provide maintenance routines that fit realistically into the rhythm of beach life.
+            We also understand that color services need to account for natural UV exposure and outdoor activities. Our color formulations and application techniques are optimized for clients who enjoy active outdoor lifestyles. This attention to lifestyle factors ensures longer-lasting, more vibrant results that enhance your natural beauty.
+          </p>
+          
+          <p class="mb-6">
+            Our treatment recommendations are based on years of working with rural residents and understanding how different hair types thrive in village environments. We can predict which treatments will work best for specific lifestyles and provide maintenance routines that fit realistically into the rhythm of village life.
           </p>
         </div>
       </div>
@@ -302,12 +302,12 @@ const beachHairTips = [
   </section>
 
   <!-- Beach-Specific Services -->
-  <section id="beach-services" class="py-16 bg-gray-50">
+  <section id="village-services" class="py-16 bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">Specialized Services for Beach Living</h2>
+        <h2 class="text-4xl font-bold mb-8 text-center">Specialized Services for Village Living</h2>
         <p class="text-xl text-gray-600 text-center mb-12">
-          Treatments specifically designed to protect and enhance hair exposed to salt water, UV rays, and coastal elements.
+          Treatments specifically designed to protect and enhance hair for active village lifestyles, UV exposure, and rural environments.
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -316,7 +316,7 @@ const beachHairTips = [
               {service.popular && (
                 <div class="mb-4">
                   <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    🏄‍♀️ Surfer Favorite
+                    🏡 Village Favorite
                   </span>
                 </div>
               )}
@@ -327,8 +327,8 @@ const beachHairTips = [
               </div>
               <p class="text-gray-700 mb-4">{service.description}</p>
               <div class="bg-blue-50 p-4 rounded-lg mb-6">
-                <h4 class="font-semibold text-blue-800 mb-2">Beach Benefit:</h4>
-                <p class="text-blue-700 text-sm">{service.beachBenefit}</p>
+                <h4 class="font-semibold text-blue-800 mb-2">Village Benefit:</h4>
+                <p class="text-blue-700 text-sm">{service.villageBenefit}</p>
               </div>
               <a 
                 href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
@@ -350,10 +350,10 @@ const beachHairTips = [
   <section class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8">Professional Beach Hair Care Tips for Wainui Residents</h2>
+        <h2 class="text-4xl font-bold mb-8">Professional Village Hair Care Tips for Wainui Residents</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {beachHairTips.map((tip) => (
+          {villageHairTips.map((tip) => (
             <div class="bg-gradient-to-br from-blue-50 to-teal-50 p-6 rounded-lg border border-blue-200">
               <h3 class="text-xl font-bold mb-2 text-blue-800">{tip.season} Care</h3>
               <p class="text-gray-700 mb-3 font-medium">{tip.tip}</p>
@@ -363,35 +363,35 @@ const beachHairTips = [
         </div>
         
         <div class="bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg">
-          <h3 class="text-2xl font-bold mb-6 text-gray-800">Daily Beach Hair Routine for Wainui Residents</h3>
+          <h3 class="text-2xl font-bold mb-6 text-gray-800">Daily Village Hair Routine for Wainui Residents</h3>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-lg">
-              <h4 class="font-bold mb-3 text-[#1EAEDB]">Before Beach Time</h4>
+              <h4 class="font-bold mb-3 text-[#1EAEDB]">Before Outdoor Activities</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
                 <li>• Apply UV protection spray</li>
-                <li>• Wet hair with fresh water</li>
-                <li>• Apply leave-in conditioner</li>
-                <li>• Braid for wind protection</li>
+                <li>• Hydrate with leave-in conditioner</li>
+                <li>• Style for active pursuits</li>
+                <li>• Protect from wind exposure</li>
               </ul>
             </div>
             
             <div class="bg-white p-6 rounded-lg">
               <h4 class="font-bold mb-3 text-[#1EAEDB]">During Activities</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
-                <li>• Rinse after each surf session</li>
+                <li>• Stay hydrated for healthy hair</li>
                 <li>• Keep hair covered in strong wind</li>
-                <li>• Avoid touching wet, salty hair</li>
+                <li>• Avoid excessive touching</li>
                 <li>• Reapply protection products</li>
               </ul>
             </div>
             
             <div class="bg-white p-6 rounded-lg">
-              <h4 class="font-bold mb-3 text-[#1EAEDB]">After Beach Day</h4>
+              <h4 class="font-bold mb-3 text-[#1EAEDB]">After Active Day</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
-                <li>• Thorough fresh water rinse</li>
-                <li>• Gentle shampoo if needed</li>
-                <li>• Deep conditioning treatment</li>
+                <li>• Gentle cleansing as needed</li>
+                <li>• Moisturizing treatment</li>
+                <li>• Deep conditioning care</li>
                 <li>• Air dry when possible</li>
               </ul>
             </div>
@@ -435,7 +435,7 @@ const beachHairTips = [
             <ol class="space-y-2 text-gray-700">
               <li class="flex">
                 <span class="bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
-                <span>Head east on Wainui Road from beach</span>
+                <span>Head east on Wainui Road from village</span>
               </li>
               <li class="flex">
                 <span class="bg-blue-400 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
@@ -457,10 +457,10 @@ const beachHairTips = [
           <h3 class="text-xl font-semibold mb-4">Travel Tips for Wainui Clients</h3>
           <ul class="space-y-2 text-gray-700">
             <li>• Perfect time to let hair air-dry naturally during the drive</li>
-            <li>• Morning appointments avoid afternoon surf winds</li>
+            <li>• Morning appointments offer peaceful rural drive</li>
             <li>• Combine with Kumeu wine region visits (additional 15 minutes)</li>
             <li>• Scenic country drive helps you relax before treatment</li>
-            <li>• Return journey timing perfect for sunset beach walks</li>
+            <li>• Return journey timing perfect for sunset village walks</li>
           </ul>
         </div>
       </div>
@@ -471,7 +471,7 @@ const beachHairTips = [
   <section class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">What Wainui Surfers & Residents Say</h2>
+        <h2 class="text-4xl font-bold mb-8 text-center">What Wainui Village Residents Say</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-gray-50 p-8 rounded-lg">
@@ -483,9 +483,9 @@ const beachHairTips = [
               ))}
             </div>
             <p class="text-gray-700 italic mb-4">
-              "As a daily surfer, I was struggling with salt damage and sun bleaching. Melissa's keratin treatment and UV protection regimen have completely transformed my hair. It looks healthy and feels amazing, even after dawn patrol sessions!"
+              "Living an active village lifestyle, I was struggling with environmental damage and sun exposure. Melissa's keratin treatment and UV protection regimen have completely transformed my hair. It looks healthy and feels amazing, even after my most active days!"
             </p>
-            <p class="font-medium">- Jake M., Wainui Surfer</p>
+            <p class="font-medium">- Jake M., Wainui Resident</p>
           </div>
           
           <div class="bg-gray-50 p-8 rounded-lg">
@@ -497,7 +497,7 @@ const beachHairTips = [
               ))}
             </div>
             <p class="text-gray-700 italic mb-4">
-              "Living at Wainui means constant exposure to salt air and wind. Hair By Melissa understands coastal living like no other salon I've tried. My balayage looks naturally sun-kissed and requires minimal maintenance - perfect for beach life!"
+              "Living at Wainui means enjoying fresh air and outdoor activities. Hair By Melissa understands village living like no other salon I've tried. My balayage looks naturally sun-kissed and requires minimal maintenance - perfect for village life!"
             </p>
             <p class="font-medium">- Anna L., Wainui Resident</p>
           </div>
@@ -516,35 +516,35 @@ const beachHairTips = [
           <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-lg font-semibold mb-3">Where is the closest hair salon to Wainui?</h3>
             <p class="text-gray-700">
-              Hair By Melissa in Kaukapakapa is the closest professional hair salon to Wainui, located just 20 minutes away via Wainui Road and SH16. We specialize in hair care for coastal living and understand the unique needs of Wainui's beachside community.
+              Hair By Melissa in Kaukapakapa is the closest professional hair salon to Wainui, located just 20 minutes away via Wainui Road and SH16. We specialize in hair care for village living and understand the unique needs of Wainui's rural community.
             </p>
           </div>
           
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">Do you understand beach hair care for Wainui residents?</h3>
+            <h3 class="text-lg font-semibold mb-3">Do you understand village hair care for Wainui residents?</h3>
             <p class="text-gray-700">
-              Absolutely! We specialize in hair care for coastal living. Our treatments are designed to protect against salt water, UV damage, and humidity - perfect for Wainui's beach lifestyle. Our keratin treatments are particularly popular with surf enthusiasts and daily beach-goers.
+              Absolutely! We specialize in hair care for village living. Our treatments are designed to protect against environmental factors, UV damage, and humidity - perfect for Wainui's rural lifestyle. Our keratin treatments are particularly popular with active village residents.
             </p>
           </div>
           
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">What services are best for surfers and beach lovers?</h3>
+            <h3 class="text-lg font-semibold mb-3">What services are best for active village residents?</h3>
             <p class="text-gray-700">
-              Our most popular services for Wainui's surf community include keratin treatments ($180) for salt water protection, balayage ($230) for natural sun-kissed looks, UV protection treatments ($40), and salt water recovery conditioning ($60). These treatments are specifically designed for regular ocean exposure.
+              Our most popular services for Wainui's village community include keratin treatments ($180) for environmental protection, balayage ($230) for natural sun-kissed looks, UV protection treatments ($40), and deep conditioning treatments ($60). These treatments are specifically designed for active outdoor lifestyles.
             </p>
           </div>
           
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">How often should surfers get hair treatments?</h3>
+            <h3 class="text-lg font-semibold mb-3">How often should active residents get hair treatments?</h3>
             <p class="text-gray-700">
-              For regular surfers from Wainui, we recommend keratin treatments every 4-5 months, monthly deep conditioning treatments, and UV protection touch-ups every 6-8 weeks during peak surf season. The frequency depends on how often you're in the water and your hair's individual needs.
+              For active Wainui residents, we recommend keratin treatments every 4-5 months, monthly deep conditioning treatments, and UV protection touch-ups every 6-8 weeks during peak outdoor season. The frequency depends on your activity level and your hair's individual needs.
             </p>
           </div>
           
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">Can you help with salt water damage repair?</h3>
+            <h3 class="text-lg font-semibold mb-3">Can you help with environmental damage repair?</h3>
             <p class="text-gray-700">
-              Yes, we specialize in repairing salt water damage. Our salt water recovery treatments ($60) use intensive conditioning to restore moisture and flexibility lost from regular ocean exposure. For severe damage, we may recommend a series of treatments combined with protective services.
+              Yes, we specialize in repairing environmental damage. Our deep conditioning treatments ($60) use intensive conditioning to restore moisture and flexibility lost from outdoor exposure. For significant damage, we may recommend a series of treatments combined with protective services.
             </p>
           </div>
         </div>
@@ -556,9 +556,9 @@ const beachHairTips = [
   <section class="py-16 bg-gradient-to-br from-blue-500 to-teal-500 text-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-6">Ready for Beach-Ready Hair?</h2>
+        <h2 class="text-4xl font-bold mb-6">Ready for Beautiful Village Hair?</h2>
         <p class="text-xl mb-8">
-          Join the Wainui surf community who trust Hair By Melissa for coastal hair care. From keratin treatments that resist salt water to UV protection that preserves your color, we'll help you maintain beautiful hair through every surf session.
+          Join the Wainui village community who trust Hair By Melissa for professional hair care. From keratin treatments that protect against environmental factors to UV protection that preserves your color, we'll help you maintain beautiful hair through your active lifestyle.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -566,7 +566,7 @@ const beachHairTips = [
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
-            Book Beach Hair Treatment
+            Book Village Hair Treatment
           </a>
           <a href="/services/keratin-treatments" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-blue-600 transition">
             Learn About Keratin Protection
@@ -575,7 +575,7 @@ const beachHairTips = [
         
         <div class="mt-8 text-center">
           <p class="text-lg">
-            🏄‍♀️ 20 minutes from Wainui Village | 🌊 Salt Water Specialists | ☀️ UV Protection Experts
+            🏡 20 minutes from Wainui Village | 🌿 Village Hair Specialists | ☀️ UV Protection Experts
           </p>
         </div>
       </div>
