@@ -28,11 +28,12 @@ const {
 // Mobile-first responsive breakpoints (prioritize mobile sizes)
 const mobileFirstSizes = [320, 480, 640, 768, 1024, 1280, 1920];
 
-// Generate responsive image sizes with mobile-first optimization
+// Generate responsive image sizes with mobile-first optimization and quality suffix
 const generateSrcSet = (baseSrc: string, sizes: number[], format: 'webp' | 'jpg' = 'webp') => {
+  const quality = format === 'webp' ? 60 : 70; // Match optimization script quality
   return sizes.map(size => {
     const extension = format === 'webp' ? '.webp' : '.jpg';
-    const optimizedSrc = baseSrc.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, `_${size}${extension}`);
+    const optimizedSrc = baseSrc.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, `_${size}q${quality}${extension}`);
     return `${optimizedSrc} ${size}w`;
   }).join(', ');
 };
@@ -46,9 +47,9 @@ const fallbackSrcSet = generateSrcSet(src, mobileFirstSizes, 'jpg');
 // Mobile-first sizes attribute (optimize for mobile viewport)
 const mobileFirstSizesAttr = sizes || '(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 50vw, 33vw';
 
-// Optimized main image source - use smaller default for mobile LCP
-const mobileOptimizedSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640.webp');
-const mobileFallbackSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640.jpg');
+// Optimized main image source - use smaller default for mobile LCP with quality suffix
+const mobileOptimizedSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640q60.webp');
+const mobileFallbackSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640q70.jpg');
 ---
 
 <picture class={`optimized-image ${className}`}>
