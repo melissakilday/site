@@ -224,9 +224,9 @@ const localLandmarks = [
     <div class="container-custom relative z-10">
       <nav class="mb-6">
         <ol class="flex items-center space-x-2 text-sm">
-          <li><a href="/" class="text-gray-600 hover:text-[#1EAEDB]">Home</a></li>
+          <li><a href="/" class="text-gray-600 hover:text-salon-darkblue">Home</a></li>
           <li class="text-gray-400">/</li>
-          <li><a href="/locations" class="text-gray-600 hover:text-[#1EAEDB]">Locations</a></li>
+          <li><a href="/locations" class="text-gray-600 hover:text-salon-darkblue">Locations</a></li>
           <li class="text-gray-400">/</li>
           <li class="text-gray-900 font-medium">Kaukapakapa</li>
         </ol>
@@ -463,17 +463,17 @@ const localLandmarks = [
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {mainLocationServices.map((service) => (
-            <div class={`bg-white rounded-lg shadow-lg p-8 border ${service.popular ? 'border-[#1EAEDB] border-2' : 'border-gray-200'}`}>
+            <div class={`bg-white rounded-lg shadow-lg p-8 border ${service.popular ? 'border-salon-darkblue border-2' : 'border-gray-200'}`}>
               {service.popular && (
                 <div class="mb-4">
-                  <span class="bg-[#1EAEDB] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span class="bg-salon-darkblue text-white px-3 py-1 rounded-full text-sm font-medium">
                     ⭐ Signature Service
                   </span>
                 </div>
               )}
               <h3 class="text-2xl font-bold mb-3">{service.name}</h3>
               <div class="flex justify-between items-center mb-4">
-                <span class="text-3xl font-bold text-[#1EAEDB]">{service.price}</span>
+                <span class="text-3xl font-bold text-salon-darkblue">{service.price}</span>
                 <span class="text-gray-600">{service.duration}</span>
               </div>
               <p class="text-gray-700 mb-4">{service.description}</p>
@@ -483,7 +483,7 @@ const localLandmarks = [
               </div>
               <a 
                 href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
-                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Learn more about {service.name}
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -506,7 +506,7 @@ const localLandmarks = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {localLandmarks.map((landmark) => (
             <div class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="text-xl font-bold mb-3 text-[#1EAEDB]">{landmark.name}</h3>
+              <h3 class="text-xl font-bold mb-3 text-salon-darkblue">{landmark.name}</h3>
               <p class="text-gray-700 mb-3">{landmark.description}</p>
               <p class="text-sm text-gray-600 italic">{landmark.relevance}</p>
             </div>
@@ -518,7 +518,7 @@ const localLandmarks = [
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-lg">
-              <h4 class="font-bold mb-3 text-[#1EAEDB]">Arrive & Relax</h4>
+              <h4 class="font-bold mb-3 text-salon-darkblue">Arrive & Relax</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
                 <li>• Free parking right outside</li>
                 <li>• Peaceful village atmosphere</li>
@@ -528,7 +528,7 @@ const localLandmarks = [
             </div>
             
             <div class="bg-white p-6 rounded-lg">
-              <h4 class="font-bold mb-3 text-[#1EAEDB]">Expert Treatment</h4>
+              <h4 class="font-bold mb-3 text-salon-darkblue">Expert Treatment</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
                 <li>• Thorough consultation</li>
                 <li>• Stable environment for optimal results</li>
@@ -538,7 +538,7 @@ const localLandmarks = [
             </div>
             
             <div class="bg-white p-6 rounded-lg">
-              <h4 class="font-bold mb-3 text-[#1EAEDB]">Leave Transformed</h4>
+              <h4 class="font-bold mb-3 text-salon-darkblue">Leave Transformed</h4>
               <ul class="space-y-2 text-gray-700 text-sm">
                 <li>• Beautiful, professional results</li>
                 <li>• Styling tips for home care</li>
@@ -560,7 +560,7 @@ const localLandmarks = [
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Location Details</h3>
+            <h3 class="text-xl font-bold mb-4 text-salon-darkblue">Location Details</h3>
             <div class="space-y-3">
               <div class="flex justify-between">
                 <span class="font-medium">Address:</span>
@@ -582,7 +582,7 @@ const localLandmarks = [
           </div>
           
           <div class="bg-white rounded-lg shadow-lg p-6">
-            <h3 class="text-xl font-bold mb-4 text-[#1EAEDB]">Travel Times to Our Salon</h3>
+            <h3 class="text-xl font-bold mb-4 text-salon-darkblue">Travel Times to Our Salon</h3>
             <div class="space-y-3">
               <div class="flex justify-between">
                 <span class="font-medium">From Helensville:</span>

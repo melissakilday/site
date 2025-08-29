@@ -158,22 +158,22 @@ const blogSchema = {
               class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition text-sm font-medium"
             >
               {category.icon === "heart" && (
-                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
               )}
               {category.icon === "sparkles" && (
-                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                 </svg>
               )}
               {category.icon === "palette" && (
-                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
                 </svg>
               )}
               {category.icon === "calendar" && (
-                <svg class="w-4 h-4 mr-2 text-[#1EAEDB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
               )}
@@ -231,7 +231,7 @@ const blogSchema = {
             </div>
             <div class={`${index === 0 ? 'p-8' : 'p-6'}`}>
               <h3 class={`${index === 0 ? 'text-2xl' : 'text-xl'} font-bold mb-3 leading-tight`}>
-                <a href={`/blog/${post.id}`} class="hover:text-[#1EAEDB] transition-colors">
+                <a href={`/blog/${post.id}`} class="hover:text-salon-darkblue transition-colors">
                   {post.title}
                 </a>
               </h3>
@@ -240,7 +240,7 @@ const blogSchema = {
               </p>
               <a 
                 href={`/blog/${post.id}`} 
-                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Read full article
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -296,7 +296,7 @@ const blogSchema = {
               <p class="text-gray-600 mb-4">{category.description}</p>
               <a 
                 href={`/blog/category/${category.id}`} 
-                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Browse articles
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -327,7 +327,7 @@ const blogSchema = {
           <article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
             <div class="p-6">
               <div class="flex items-center justify-between mb-3">
-                <span class="bg-[#D3E4FD] text-[#1EAEDB] px-3 py-1 rounded-full text-sm font-medium">
+                <span class="bg-[#D3E4FD] text-salon-darkblue px-3 py-1 rounded-full text-sm font-medium">
                   {post.category}
                 </span>
                 <div class="flex items-center text-gray-500 text-sm space-x-3">
@@ -341,7 +341,7 @@ const blogSchema = {
                 </div>
               </div>
               <h3 class="text-xl font-bold mb-3 leading-tight">
-                <a href={`/blog/${post.id}`} class="hover:text-[#1EAEDB] transition-colors">
+                <a href={`/blog/${post.id}`} class="hover:text-salon-darkblue transition-colors">
                   {post.title}
                 </a>
               </h3>
@@ -350,7 +350,7 @@ const blogSchema = {
               </p>
               <a 
                 href={`/blog/${post.id}`} 
-                class="inline-flex items-center text-[#1EAEDB] font-medium hover:underline"
+                class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Read more
                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -376,7 +376,7 @@ const blogSchema = {
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class="bg-white p-6 rounded-lg shadow">
-            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-12 h-12 text-salon-darkblue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <h3 class="font-semibold mb-2">Expert Consultation</h3>
@@ -384,7 +384,7 @@ const blogSchema = {
           </div>
           
           <div class="bg-white p-6 rounded-lg shadow">
-            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-12 h-12 text-salon-darkblue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
             </svg>
             <h3 class="font-semibold mb-2">Premium Treatments</h3>
@@ -392,7 +392,7 @@ const blogSchema = {
           </div>
           
           <div class="bg-white p-6 rounded-lg shadow">
-            <svg class="w-12 h-12 text-[#1EAEDB] mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-12 h-12 text-salon-darkblue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>

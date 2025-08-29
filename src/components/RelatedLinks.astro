@@ -33,14 +33,14 @@ const { links, title = "Related Content", className = "" } = Astro.props;
                 {link.category.charAt(0).toUpperCase() + link.category.slice(1)}
               </span>
               
-              <h4 class="font-semibold text-gray-900 group-hover:text-[#1EAEDB] transition-colors leading-tight">
+              <h4 class="font-semibold text-gray-900 group-hover:text-salon-darkblue transition-colors leading-tight">
                 <a href={link.url} class="stretched-link">
                   {link.title}
                 </a>
               </h4>
             </div>
             
-            <svg class="h-4 w-4 text-[#1EAEDB] group-hover:translate-x-1 transition-transform" 
+            <svg class="h-4 w-4 text-salon-darkblue group-hover:translate-x-1 transition-transform" 
                  fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                     d="M9 5l7 7-7 7"/>
