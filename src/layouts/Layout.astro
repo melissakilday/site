@@ -1,5 +1,6 @@
 ---
-// Mobile-first Core Web Vitals optimization - defer non-critical CSS
+// Import all CSS files for proper Astro processing
+import '../styles/global.css';
 import '../styles/image-optimization.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
@@ -715,9 +716,7 @@ const localEventSchema = {
     <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     
-    <!-- Core Web Vitals: Defer non-critical CSS for mobile FID -->
-    <link rel="preload" href="/src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="/src/styles/global.css" /></noscript>
+    <!-- CSS is now properly imported in component frontmatter for Astro processing -->
     
   </head>
   <body>
