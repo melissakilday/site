@@ -603,7 +603,6 @@ const localEventSchema = {
     <!-- Performance: Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
     
     <!-- Core Web Vitals: Critical CSS inlined for mobile LCP -->
     <style>
@@ -722,7 +721,28 @@ const localEventSchema = {
     <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
     
-    <!-- CSS is now properly imported in component frontmatter for Astro processing -->
+    <!-- Lazy load non-critical CSS -->
+    <script>
+      // Load non-critical CSS after initial render
+      const loadCSS = (href) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = 'print';
+        link.onload = () => { link.media = 'all'; };
+        document.head.appendChild(link);
+      };
+      
+      // Load on DOMContentLoaded for faster perceived performance
+      document.addEventListener('DOMContentLoaded', () => {
+        // Add slight delay to ensure critical render is complete
+        setTimeout(() => {
+          // Mark non-critical content as loaded
+          const nonCritical = document.querySelectorAll('.non-critical');
+          nonCritical.forEach(el => el.classList.add('loaded'));
+        }, 100);
+      });
+    </script>
     
   </head>
   <body>
