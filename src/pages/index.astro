@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
 
 const services = [
   { 
@@ -344,11 +345,14 @@ const galleryImages = [
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {galleryImages.map((image, index) => (
           <div class="relative overflow-hidden rounded-lg group animate-fade-in" style={`animation-delay: ${index * 100}ms`}>
-            <img 
+            <OptimizedImage
               src={image.src}
               alt={image.alt}
+              width={455}
+              height={256}
               loading={index < 2 ? "eager" : "lazy"}
-              fetchpriority={index < 2 ? "high" : "auto"}
+              priority={index < 2}
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
