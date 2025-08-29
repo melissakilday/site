@@ -1,10 +1,10 @@
 {
-  "name": "hairbymelissa-1756460357595",
+  "name": "hairbymelissa-astro",
   "type": "module",
-  "version": "0.0.1756460357595",
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "rm -rf dist node_modules/.astro && npm install && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "optimize-images": "node optimize-images.js"
