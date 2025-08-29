@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "rm -rf dist node_modules/.astro && npm install && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "optimize-images": "node optimize-images.js"

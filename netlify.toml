@@ -2,7 +2,11 @@
 
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "rm -rf dist && npm run build"
+  
+[build.environment]
+  NODE_VERSION = "18"
+  NETLIFY_SKIP_CACHE = "true"
 
 # Domain consolidation redirects - Force apex domain for SEO authority
 [[redirects]]
@@ -134,3 +138,22 @@
   for = "*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+# URGENT: Block old JavaScript files to force cache invalidation
+[[redirects]]
+  from = "/_astro/Layout.astro_ast*.js"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/_astro/LoadingSpinner.astro_ast*.js"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/_astro/Navbar.astro_ast*.js"
+  to = "/404"
+  status = 404
+  force = true
