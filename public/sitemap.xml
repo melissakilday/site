@@ -51,7 +51,7 @@
     <mobile:mobile/>
     <image:image>
       <image:loc>/images/optimized/hair-care-general_800.webp</image:loc>
-      <image:caption>Professional Hair Dressing Guide - Techniques, Trends & Tips</image:caption>
+      <image:caption>Professional Hair Dressing Guide - Techniques, Trends &amp; Tips</image:caption>
       <image:title>Hair Dressing Comprehensive Guide</image:title>
     </image:image>
   </url>
