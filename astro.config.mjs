@@ -11,21 +11,25 @@ export default defineConfig({
   },
   vite: {
     build: {
-      // Eliminate ALL separate asset files
-      assetsInlineLimit: 0, // Inline everything 
-      cssCodeSplit: false, // No CSS splitting
+      // EXTREME: Prevent ANY separate files
+      assetsInlineLimit: 0,
+      cssCodeSplit: false,
       rollupOptions: {
-        external: [], // No external dependencies
+        external: [],
         output: {
-          // Minimize separate chunks
-          manualChunks: undefined,
-          inlineDynamicImports: true
+          manualChunks: () => 'everything',
+          inlineDynamicImports: true,
+          entryFileNames: 'entry.js',
+          chunkFileNames: 'chunk.js',
+          assetFileNames: 'asset.[ext]'
         }
       }
     }
   },
   build: {
-    // Force inline everything to eliminate critical path
+    // Force inline everything
     inlineStylesheets: 'always'
-  }
+  },
+  // Disable client-side routing
+  output: 'static'
 });
