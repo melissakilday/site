@@ -897,20 +897,6 @@ const localEventSchema = {
     <script>
       // Load scripts after critical rendering
       window.addEventListener('load', function() {
-        // Defer animation script
-        const animationScript = document.createElement('script');
-        animationScript.src = '/src/scripts/animations.js';
-        document.body.appendChild(animationScript);
-        
-        // Defer image optimization script
-        const imageScript = document.createElement('script');
-        imageScript.src = '/src/scripts/image-optimization.js';
-        document.body.appendChild(imageScript);
-        
-        // Defer local SEO and geolocation script
-        const localSeoScript = document.createElement('script');
-        localSeoScript.src = '/src/scripts/local-seo.js';
-        document.body.appendChild(localSeoScript);
       });
     </script>
   </body>

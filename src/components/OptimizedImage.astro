@@ -33,7 +33,15 @@ const generateSrcSet = (baseSrc: string, sizes: number[], format: 'webp' | 'jpg'
   const quality = format === 'webp' ? 60 : 70; // Match optimization script quality
   return sizes.map(size => {
     const extension = format === 'webp' ? '.webp' : '.jpg';
-    const optimizedSrc = baseSrc.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, `_${size}q${quality}${extension}`);
+    // Handle both original images and already optimized images
+    let optimizedSrc = baseSrc.replace('/original/', '/optimized/');
+    if (optimizedSrc.includes('_') && optimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
+      // Already has size, replace it
+      optimizedSrc = optimizedSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, `_${size}q${quality}${extension}`);
+    } else {
+      // Original image, add size and quality
+      optimizedSrc = optimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, `_${size}q${quality}${extension}`);
+    }
     return `${optimizedSrc} ${size}w`;
   }).join(', ');
 };
@@ -48,8 +56,18 @@ const fallbackSrcSet = generateSrcSet(src, mobileFirstSizes, 'jpg');
 const mobileFirstSizesAttr = sizes || '(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 50vw, 33vw';
 
 // Optimized main image source - use smaller default for mobile LCP with quality suffix
-const mobileOptimizedSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640q60.webp');
-const mobileFallbackSrc = src.replace('/original/', '/optimized/').replace(/\.(png|jpg|jpeg)$/, '_640q70.jpg');
+let mobileOptimizedSrc = src.replace('/original/', '/optimized/');
+let mobileFallbackSrc = src.replace('/original/', '/optimized/');
+
+if (mobileOptimizedSrc.includes('_') && mobileOptimizedSrc.match(/_(320|480|640|768|1024|1280|1920)/)) {
+  // Already has size, replace it
+  mobileOptimizedSrc = mobileOptimizedSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, '_640q60.webp');
+  mobileFallbackSrc = mobileFallbackSrc.replace(/_(320|480|640|768|1024|1280|1920).*\.(webp|jpg|jpeg|png)$/, '_640q70.jpg');
+} else {
+  // Original image, add size and quality
+  mobileOptimizedSrc = mobileOptimizedSrc.replace(/\.(png|jpg|jpeg|webp)$/, '_640q60.webp');
+  mobileFallbackSrc = mobileFallbackSrc.replace(/\.(png|jpg|jpeg|webp)$/, '_640q70.jpg');
+}
 ---
 
 <picture class={`optimized-image ${className}`}>
