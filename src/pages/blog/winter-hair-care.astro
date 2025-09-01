@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Winter Hair Care Essentials | Protect Your Hair This Winter | Hair By Melissa Kaukapakapa";
 const pageDescription = "Protect and nourish your hair during North Auckland's cooler months with professional winter hair care tips from Hair By Melissa in Kaukapakapa.";
@@ -9,6 +10,7 @@ const publishDate = "2025-01-15";
 const readTime = "6 min read";
 const category = "Seasonal Tips";
 const author = "Melissa - Hair By Melissa";
+const slug = "winter-hair-care";
 ---
 
 <Layout 
@@ -344,4 +346,16 @@ const author = "Melissa - Hair By Melissa";
       </div>
     </div>
   </section>
+
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
 </Layout>

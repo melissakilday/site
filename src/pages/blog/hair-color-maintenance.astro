@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Hair Color Maintenance Guide | Keep Your Color Vibrant | Hair By Melissa Kaukapakapa";
 const pageDescription = "Essential tips for maintaining vibrant hair color in North Auckland's variable climate. Expert maintenance advice from Hair By Melissa in Kaukapakapa for long-lasting color.";
@@ -9,6 +10,7 @@ const publishDate = "2025-01-22";
 const readTime = "8 min read";
 const category = "Color Insights";
 const author = "Melissa - Hair By Melissa";
+const slug = "hair-color-maintenance";
 ---
 
 <Layout 
@@ -393,4 +395,16 @@ const author = "Melissa - Hair By Melissa";
       </div>
     </div>
   </section>
+
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
 </Layout>
