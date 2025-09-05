@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Frizzy Hair Solutions for Coastal Living | Combat Humidity & Frizz | Hair By Melissa Kaukapakapa";
 const pageDescription = "Combat humidity and frizz with professional techniques designed for Auckland's coastal climate. Expert solutions from Hair By Melissa in Kaukapakapa for smooth, manageable hair.";
@@ -9,6 +10,7 @@ const publishDate = "2025-01-22";
 const readTime = "8 min read";
 const category = "Hair Care";
 const author = "Melissa - Hair By Melissa";
+const slug = "frizzy-hair-solutions";
 ---
 
 <Layout 
@@ -332,4 +334,16 @@ const author = "Melissa - Hair By Melissa";
       </div>
     </div>
   </section>
+
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
 </Layout>

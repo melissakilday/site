@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Hair Health Warning Signs | Identify Early Hair Damage | Hair By Melissa Kaukapakapa";
 const pageDescription = "Identify early signs of hair damage and when to seek professional treatment. Expert guidance from Hair By Melissa in Kaukapakapa for maintaining healthy hair.";
@@ -9,6 +10,7 @@ const publishDate = "2025-01-20";
 const readTime = "5 min read";
 const category = "Hair Care";
 const author = "Melissa - Hair By Melissa";
+const slug = "hair-health-signs";
 ---
 
 <Layout 
@@ -376,4 +378,17 @@ const author = "Melissa - Hair By Melissa";
       </div>
     </div>
   </section>
+
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+    wordCount={2800}
+  />
 </Layout>

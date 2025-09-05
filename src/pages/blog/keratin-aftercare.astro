@@ -1,48 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Complete Keratin Treatment Aftercare Guide | Hair By Melissa";
 const pageDescription = "Make your keratin treatment last 5+ months with expert aftercare tips. Learn what to avoid, which products to use, and how to maintain smooth, frizz-free hair from Kaukapakapa's trusted hairdresser.";
 const pageKeywords = "keratin aftercare, keratin treatment maintenance, post keratin care, keratin treatment tips, smooth hair maintenance, frizz-free hair care, keratin products";
+const slug = "keratin-aftercare";
+const publishDate = "2025-01-20";
+const readTime = "6 min read";
+const category = "Hair Care Tips";
+const author = "Melissa";
 
-// Article schema
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Complete Keratin Treatment Aftercare Guide",
-  "description": pageDescription,
-  "author": {
-    "@type": "Person",
-    "name": "Melissa",
-    "jobTitle": "Professional Hairdresser",
-    "worksFor": {
-      "@type": "HairSalon",
-      "name": "Hair By Melissa",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kaukapakapa",
-        "addressRegion": "Auckland"
-      }
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hair By Melissa",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://hairbymelissa.co.nz/images/logo.png"
-    }
-  },
-  "datePublished": "2025-01-20",
-  "dateModified": "2025-01-20",
-  "url": "https://hairbymelissa.co.nz/blog/keratin-aftercare",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hairbymelissa.co.nz/blog/keratin-aftercare"
-  },
-  "articleSection": "Hair Care Tips",
-  "keywords": ["keratin aftercare", "keratin maintenance", "hair treatment care", "smooth hair tips"]
-};
 
 // FAQ Schema for this article
 const faqSchema = {
@@ -654,7 +622,18 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Schema Scripts -->
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
+
+  <!-- FAQ Schema Script -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

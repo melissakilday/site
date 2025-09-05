@@ -1,48 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Balayage vs Highlights: Which is Right for You? | Hair By Melissa";
 const pageDescription = "Confused between balayage and traditional highlights? Expert comparison of techniques, costs, maintenance, and which option suits your lifestyle best. Professional advice from Kaukapakapa hairdresser.";
 const pageKeywords = "balayage vs highlights, difference between balayage and highlights, hair coloring techniques, which highlighting technique, balayage or foils, hair color comparison";
+const slug = "balayage-vs-highlights";
+const publishDate = "2025-01-18";
+const readTime = "8 min read";
+const category = "Color Insights";
+const author = "Melissa - Hair By Melissa";
 
-// Article schema
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Balayage vs Highlights: Which is Right for You?",
-  "description": pageDescription,
-  "author": {
-    "@type": "Person",
-    "name": "Melissa",
-    "jobTitle": "Professional Hairdresser",
-    "worksFor": {
-      "@type": "HairSalon",
-      "name": "Hair By Melissa",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kaukapakapa",
-        "addressRegion": "Auckland"
-      }
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Hair By Melissa",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://hairbymelissa.co.nz/images/logo.png"
-    }
-  },
-  "datePublished": "2025-01-18",
-  "dateModified": "2025-01-18",
-  "url": "https://hairbymelissa.co.nz/blog/balayage-vs-highlights",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://hairbymelissa.co.nz/blog/balayage-vs-highlights"
-  },
-  "articleSection": "Color Insights",
-  "keywords": ["balayage", "highlights", "hair coloring", "color techniques"]
-};
 ---
 
 <Layout 
@@ -564,6 +532,16 @@ const articleSchema = {
     </div>
   </section>
 
-  <!-- Schema Script -->
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
+
 </Layout>

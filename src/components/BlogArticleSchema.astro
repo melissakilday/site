@@ -1,0 +1,123 @@
+---
+// BlogArticleSchema.astro - Reusable Article structured data component for blog posts
+
+export interface Props {
+  title: string;
+  description: string;
+  keywords: string;
+  publishDate: string;
+  readTime: string;
+  category: string;
+  author: string;
+  slug: string;
+  featuredImage?: string;
+  wordCount?: number;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  publishDate,
+  readTime,
+  category,
+  author,
+  slug,
+  featuredImage = "https://hairbymelissa.co.nz/images/optimized/hair-care-general_800.webp",
+  wordCount = 2500
+} = Astro.props;
+
+// Generate Article Schema
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "image": featuredImage,
+  "author": {
+    "@type": "Person",
+    "name": "Melissa",
+    "jobTitle": "Professional Hairdresser",
+    "worksFor": {
+      "@type": "HairSalon",
+      "@id": "https://hairbymelissa.co.nz/#business",
+      "name": "Hair By Melissa",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Magnolia Lane",
+        "addressLocality": "Kaukapakapa",
+        "addressRegion": "Auckland",
+        "postalCode": "0810",
+        "addressCountry": "NZ"
+      }
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://hairbymelissa.co.nz/#business",
+    "name": "Hair By Melissa",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hairbymelissa.co.nz/images/logo.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Magnolia Lane",
+      "addressLocality": "Kaukapakapa",
+      "addressRegion": "Auckland",
+      "postalCode": "0810",
+      "addressCountry": "NZ"
+    }
+  },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://hairbymelissa.co.nz/blog/${slug}`
+  },
+  "articleSection": category,
+  "keywords": keywords,
+  "wordCount": wordCount,
+  "timeRequired": readTime,
+  "about": {
+    "@type": "Thing",
+    "name": "Professional Hair Care",
+    "description": "Expert hair care advice and professional salon services"
+  },
+  "mentions": [
+    {
+      "@type": "Service",
+      "name": "Professional Hair Services",
+      "serviceType": "Hair Care and Styling",
+      "provider": {
+        "@type": "HairSalon",
+        "@id": "https://hairbymelissa.co.nz/#business"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "North Auckland",
+      "containsPlace": [
+        {"@type": "Place", "name": "Kaukapakapa"},
+        {"@type": "Place", "name": "Helensville"},
+        {"@type": "Place", "name": "Wainui"},
+        {"@type": "Place", "name": "Waitoki"}
+      ]
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://hairbymelissa.co.nz/blog",
+    "name": "Hair By Melissa Blog"
+  },
+  "inLanguage": "en-NZ",
+  "copyrightYear": new Date().getFullYear(),
+  "copyrightHolder": {
+    "@type": "Organization",
+    "@id": "https://hairbymelissa.co.nz/#business"
+  }
+};
+---
+
+<!-- Article Schema Script -->
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />

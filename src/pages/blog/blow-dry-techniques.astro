@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
 
 const pageTitle = "Professional Blow-Dry Techniques | Master Salon-Quality Results | Hair By Melissa Kaukapakapa";
 const pageDescription = "Master salon-quality blow-dry techniques at home with professional tips for volume and longevity. Expert blow-dry guidance from Hair By Melissa in Kaukapakapa.";
@@ -9,6 +10,7 @@ const publishDate = "2025-01-20";
 const readTime = "7 min read";
 const category = "Styling Guides";
 const author = "Melissa - Hair By Melissa";
+const slug = "blow-dry-techniques";
 ---
 
 <Layout 
@@ -410,4 +412,16 @@ const author = "Melissa - Hair By Melissa";
       </div>
     </div>
   </section>
+
+  <!-- Blog Article Schema -->
+  <BlogArticleSchema 
+    title={pageTitle}
+    description={pageDescription}
+    keywords={pageKeywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author={author}
+    slug={slug}
+  />
 </Layout>
