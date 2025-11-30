@@ -899,6 +899,28 @@ const localEventSchema = {
       window.addEventListener('load', function() {
       });
     </script>
+    <script>
+      // Fix for LeadConnector widget microphone permissions
+      // This observer watches for the widget iframe and adds the allow="microphone" attribute
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.nodeName === 'IFRAME' && (node.src.includes('leadconnectorhq.com') || node.id.includes('chat-widget'))) {
+              const iframe = node;
+              if (!iframe.allow || !iframe.allow.includes('microphone')) {
+                iframe.allow = (iframe.allow ? iframe.allow + '; ' : '') + 'microphone *';
+                // Force reload if needed, but setting attribute early is usually enough
+              }
+            }
+          });
+        });
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    </script>
     <script 
       src="https://beta.leadconnectorhq.com/loader.js"  
       data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
