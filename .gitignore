@@ -68,3 +68,4 @@ Desktop.ini
 # package manager
 .pnpm-store/
 .yarn/
+git_auth_info.txt

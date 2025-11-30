@@ -20,7 +20,7 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How do I book an appointment in Kaukapakapa?",
-      answer: "You can book online through our website, call us directly at 027 520 1613, or email melissa@hairbymelissa.co.nz. We'll confirm your appointment within 1-2 business days and provide any pre-appointment instructions."
+      answer: "You can book online through our website, call us directly at 0274799320, or email melissa@hairbymelissa.co.nz. We'll confirm your appointment within 1-2 business days and provide any pre-appointment instructions."
     }
   ],
 
