@@ -105,7 +105,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    Permissions-Policy = "microphone=(self https://beta.leadconnectorhq.com https://*.leadconnectorhq.com)"
 
 # Caching for performance (SEO factor)
 [[headers]]
@@ -137,4 +137,3 @@
   for = "*.svg"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
-

@@ -1,2 +1,1 @@
-/*
-  Permissions-Policy: microphone=(self https://beta.leadconnectorhq.com)
+# Headers managed by netlify.toml - do not duplicate here
