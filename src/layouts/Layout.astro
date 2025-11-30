@@ -893,38 +893,206 @@ const localEventSchema = {
     </main>
     <Footer />
     
+      .text-gray-600 { color: #6b7280; }
+      .text-gray-700 { color: #374151; }
+      .bg-white { background-color: white; }
+      .w-full { width: 100%; }
+      .h-full { height: 100%; }
+      .max-w-4xl { max-width: 56rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .mt-4 { margin-top: 1rem; }
+      .mb-4 { margin-bottom: 1rem; }
+      .mt-8 { margin-top: 2rem; }
+      .mb-8 { margin-bottom: 2rem; }
+      .p-4 { padding: 1rem; }
+      .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .rounded-lg { border-radius: 0.5rem; }
+      .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+      .grid { display: grid; }
+      .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+      .gap-8 { gap: 2rem; }
+      @media (min-width: 768px) {
+        .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .md\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        transition: var(--transition-base);
+      }
+    </style>
+    
+    <!-- Primary Meta Tags -->
+    <title>{title} | Hair By Melissa - Premium Hairdresser Kaukapakapa</title>
+    <meta name="title" content={`${title} | Hair By Melissa - Premium Hairdresser Kaukapakapa`} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Hair By Melissa" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Optimized font loading for Core Web Vitals -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS prefetch for faster asset loading -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Non-blocking font loading with combined request -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" />
+    </noscript>
+    
+    <!-- Favicons & PWA -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0B7BA7" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Hair By Melissa`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Hair By Melissa" />
+    <meta property="og:locale" content="en_NZ" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Hair By Melissa`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="NZ-AUK" />
+    <meta name="geo.placename" content="Kaukapakapa" />
+    <meta name="geo.position" content="-36.6173;174.4829" />
+    <meta name="ICBM" content="-36.6173, 174.4829" />
+    
+    <!-- Enhanced Local Entity Recognition Meta Tags -->
+    <meta name="geo.placename" content="Kaukapakapa Village, Auckland, New Zealand" />
+    <meta name="geo.county" content="Auckland Region" />
+    <meta name="geo.district" content="Rodney District" />
+    <meta name="NUTS" content="NZ011" />
+
+    <!-- Local Search Intent Optimization -->
+    <meta name="local-search-intent" content="hair salon near me, hairdresser near me, keratin treatment kaukapakapa, balayage helensville" />
+    <meta name="service-locality" content="Kaukapakapa, Helensville, Wainui, Waitoki, North Auckland" />
+
+    <!-- Voice Search Optimization -->
+    <meta name="voice-search-queries" content="hair salon near me, best hairdresser kaukapakapa, keratin treatment north auckland, where to get balayage" />
+    <meta name="natural-language-queries" content="find hair salon kaukapakapa, book hair appointment near me, keratin treatment specialist" />
+
+    <!-- Local Business Entity Signals -->
+    <meta name="local-business-type" content="HairSalon, BeautySalon, LocalBusiness" />
+    <meta name="establishment-year" content="2020" />
+    <meta name="owner-operator" content="Melissa" />
+    <meta name="local-community" content="Kaukapakapa Village Community" />
+    
+    <!-- Business Information -->
+    <meta name="business:contact_data:street_address" content="Magnolia Lane" />
+    <meta name="business:contact_data:locality" content="Kaukapakapa" />
+    <meta name="business:contact_data:region" content="Auckland" />
+    <meta name="business:contact_data:postal_code" content="0810" />
+    <meta name="business:contact_data:country_name" content="New Zealand" />
+    
+    <!-- DNS Prefetch for mobile performance -->
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    
+    <!-- Enhanced Local Entity Recognition Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localEntitySchema)} />
+    
+    <!-- Local Event & Community Integration Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(localEventSchema)} />
+    
+    <!-- GEO Context for LLMs -->
+    <script type="application/ld+json" set:html={JSON.stringify(geoContext)} />
+    
+    <!-- Additional SEO Context for AI/LLMs -->
+    <meta name="ai-content-description" content="Hair By Melissa is a premium hair salon located in Kaukapakapa, Auckland, New Zealand. We specialize in professional hair services including keratin treatments ($180), balayage ($230), highlights (from $90), hair coloring, and women's cuts ($50). Our expert hairdresser Melissa serves clients from Kaukapakapa, Helensville, Wainui, and Waitoki areas. Book your appointment for a hair transformation today!" />
+    <meta name="service-areas" content="Kaukapakapa, Helensville, Wainui, Waitoki, North Auckland, Rodney District" />
+    <meta name="price-range" content="NZD $40-$230" />
+    
+    <!-- Domain Authority Consolidation -->
+    <meta name="domain-authority" content="hairbymelissa.co.nz" />
+    <meta name="canonical-domain" content="hairbymelissa.co.nz" />
+    
+    <!-- HSTS for HTTPS enforcement (helps with domain authority) -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
+    
+    <!-- All JavaScript inline to prevent separate files -->
+    <script>
+      // Minimal DOM interaction to avoid reflow + essential navbar functionality
+      window.addEventListener('load', function() {
+        document.body.style.opacity = '1';
+        
+        // Navbar scroll effect (deferred to prevent reflow)
+        const navbar = document.getElementById('navbar');
+        const handleScroll = () => {
+          if (window.scrollY > 10) {
+            navbar?.classList.add('scrolled');
+          } else {
+            navbar?.classList.remove('scrolled');
+          }
+        };
+        window.addEventListener('scroll', handleScroll);
+        
+        // Mobile menu toggle (deferred)
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const open = document.getElementById('menu-open');
+        const close = document.getElementById('menu-close');
+        
+        toggle?.addEventListener('click', () => {
+          const isOpen = !menu?.classList.contains('hidden');
+          if (isOpen) {
+            menu?.classList.add('hidden');
+            open?.classList.remove('hidden');
+            close?.classList.add('hidden');
+          } else {
+            menu?.classList.remove('hidden');
+            open?.classList.add('hidden');
+            close?.classList.remove('hidden');
+          }
+        });
+      });
+    </script>
+    
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    
     <!-- Core Web Vitals: Defer JavaScript for mobile FID -->
     <script>
       // Load scripts after critical rendering
       window.addEventListener('load', function() {
       });
-    </script>
-    <script>
-      // Fix for LeadConnector widget microphone permissions
-      // This observer watches for the widget iframe and adds the allow="microphone" attribute
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeName === 'IFRAME' && (node.src.includes('leadconnectorhq.com') || node.id.includes('chat-widget'))) {
-              const iframe = node;
-              if (!iframe.allow || !iframe.allow.includes('microphone')) {
-                iframe.allow = (iframe.allow ? iframe.allow + '; ' : '') + 'microphone *';
-                // Force reload if needed, but setting attribute early is usually enough
-              }
-            }
-          });
-        });
-      });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-    </script>
-    <script 
-      src="https://beta.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="692b9dcfd47c137da229a289"   > 
     </script>
   </body>
 </html>
