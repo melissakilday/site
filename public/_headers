@@ -1,2 +1,2 @@
 /*
-  Permissions-Policy: microphone=(self "https://beta.leadconnectorhq.com")
+  Permissions-Policy: microphone=(self https://beta.leadconnectorhq.com)
