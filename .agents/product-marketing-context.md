@@ -5,7 +5,7 @@ Created 2026-09-18 from repo facts + Search Console. Items marked **UNVERIFIED**
 
 ## Business
 - Trading name: Hair By Melissa. Stylist/owner: Melissa (surname not in repo).
-- One-stylist boutique salon at 12 Magnolia Lane, Kaukapakapa 0875, NZ (matches Google; site corrected 2026-09-18). Google lists the business as "Hair By Melissa A". Geo -36.6173, 174.4829.
+- One-stylist boutique salon at 12 Magnolia Lane, Kaukapakapa 0875, NZ (matches Google; site corrected 2026-09-18). Google lists the business as "Hair By Melissa A": the "A" is deliberate, to distinguish it from another "Hair by Melissa" nearby on Google Maps. Keep mirroring it (schema alternateName, map embed query, contact page line). GBP categories: Hairdresser (primary) + Beauty salon; Google has no "Hair Salon" category. Geo -36.6173, 174.4829.
 - Trading since 2020 per schema; copy says "5+ years experience" (static, drifting). **UNVERIFIED: actual start year.**
 - Booking: LeadConnector/GoHighLevel embedded widget on /booking. Separate form on /keratin promo page.
 - Email: melissa@hairbymelissa.co.nz (public). Schema uses book@hairbymelissa.co.nz. **UNVERIFIED which is monitored.**
@@ -29,7 +29,7 @@ Created 2026-09-18 from repo facts + Search Console. Items marked **UNVERIFIED**
 Prices used as shown on /services (owner did not object 2026-09-18). /keratin promo page removed with a 301.
 
 ## Service area
-Kaukapakapa (salon), Helensville (15 min via SH16), Wainui (20 min), Waitoki (10 min). Rodney / North Auckland. Clients travel to the salon. The /locations hub claims "mobile services" — contradicted everywhere else; treat as false unless confirmed.
+Google Business Profile service area (confirmed by owner 2026-09-18): Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū. Site has location pages for the first four only. Kaukapakapa (salon), Helensville (15 min via SH16), Wainui (20 min), Waitoki (10 min). Rodney / North Auckland. Clients travel to the salon. The /locations hub claims "mobile services" — contradicted everywhere else; treat as false unless confirmed.
 
 ## Ideal customer
 Women in rural North Auckland / Kaipara who want a personal, unhurried salon experience close to home instead of driving to the city. Colour (balayage, highlights, tints) and keratin smoothing are the money services; coastal humidity/frizz is a recurring local pain point. 73% of search clicks are mobile.

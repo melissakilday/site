@@ -16,6 +16,12 @@
 - `src/layouts/Layout.astro`: `hasMap` added to the HairSalon schema (Google profile link).
 - `.agents/product-marketing-context.md`: stale notes refreshed.
 
+## Owner feedback (2026-09-18, after the list)
+- GBP service area already set: Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū → site schema `areaServed` and llms.txt extended to match.
+- GBP categories are Hairdresser + Beauty salon (Google has no "Hair Salon" category); matches the site's HairSalon/BeautySalon schema types.
+- "Hair By Melissa A" is intentional: another Hair by Melissa exists nearby on Google Maps. Site keeps the alternateName and now states the Google name on the contact page.
+- Photos and the remaining profile items are being done by the owner.
+
 ## Owner actions (not code) — see tools/claude-seo/reports/2026-09-18-seo-local.md §2–3
 Reviews campaign with the profile link; categories; service area incl. Helensville/Wainui/Waitoki; services + prices; photos; attributes; weekly posts and Q&A; claim Bing Places and Apple Business Connect; add the salon to OpenStreetMap; decide on "Hair By Melissa A" vs "Hair By Melissa" and apply consistently.
 
