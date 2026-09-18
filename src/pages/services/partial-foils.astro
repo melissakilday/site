@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('partial-foils');
+
+const pageTitle = "Partial Foils, $90, Kaukapakapa North Auckland";
+const pageDescription = "Partial foils in Kaukapakapa, North Auckland. $90, about 1-1.5 hours with Melissa. Face-framing dimension, free parking, online booking, open 7 days.";
 
 const faqs = serviceFAQs['partial-foils'];
 ---
 
-<ServiceLayout 
-  title="Partial Foils" 
-  price="Contact for pricing" 
-  duration="1-1.5 hours"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/balayage-transformation_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Add Dimension with Strategic Highlights</h2>

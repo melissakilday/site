@@ -110,15 +110,4 @@
     </image:image>
   </url>
   
-  <!-- Keratin Special Page Images -->
-  <url>
-    <loc>https://hairbymelissa.co.nz/keratin</loc>
-    <image:image>
-      <image:loc>https://hairbymelissa.co.nz/images/optimized/blonde-balayage_800.webp</image:loc>
-      <image:caption>Winter Keratin Treatment Special - Premium hair smoothing service in North Auckland</image:caption>
-      <image:title>Keratin Treatment Winter Special</image:title>
-      <image:geo_location>Kaukapakapa, Auckland, New Zealand</image:geo_location>
-    </image:image>
-  </url>
-  
 </urlset>

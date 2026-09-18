@@ -2,49 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
+import { business } from '../data/business';
+import { getService } from '../data/services';
 
 const services = [
-  { 
-    name: "Keratin Treatments", 
-    price: "$150", 
+  {
+    ...getService('keratin-treatments'),
     icon: "sparkles",
-    url: "/services/keratin-treatments",
-    linkText: "Learn about keratin treatments"
   },
-  { 
-    name: "Women's Cut & Finish", 
-    price: "$70", 
+  {
+    ...getService('womens-cut-finish'),
     icon: "scissors",
-    url: "/services/womens-cut-finish",
-    linkText: "Learn about women's cuts & styling"
   },
-  { 
-    name: "Partial Foils", 
-    price: "$90", 
+  {
+    ...getService('partial-foils'),
     icon: "scissors",
-    url: "/services/partial-foils", 
-    linkText: "Learn about partial foils"
   },
-  { 
-    name: "Half Head of Highlights", 
-    price: "$140", 
+  {
+    ...getService('half-head-highlights'),
     icon: "scissors",
-    url: "/services/half-head-highlights",
-    linkText: "Learn about half head highlights"
   },
-  { 
-    name: "Full Head of Highlights", 
-    price: "$180", 
+  {
+    ...getService('full-head-highlights'),
     icon: "scissors",
-    url: "/services/full-head-highlights",
-    linkText: "Learn about full head highlights" 
   },
-  { 
-    name: "Permanent Tint & Touch Up", 
-    price: "$90", 
+  {
+    ...getService('permanent-tint-touch-up'),
     icon: "scissors",
-    url: "/services/permanent-tint-touch-up",
-    linkText: "Learn about permanent tint & touch up"
   },
 ];
 
@@ -89,9 +73,9 @@ const galleryImages = [
 ];
 ---
 
-<Layout 
-  title="Expert Hairdresser Kaukapakapa | Hair Salon North Auckland"
-  description="Hair By Melissa - Premier hairdresser in Kaukapakapa offering smoothing treatments, custom color, precision cuts & hair transformations. Serving Helensville, Wainui & Waitoki. Book today!"
+<Layout
+  title="Hairdresser Kaukapakapa, North Auckland"
+  description="Colour, balayage, keratin smoothing and cuts at a one-stylist salon in Kaukapakapa, North Auckland. 15 minutes from Helensville, free parking. Book online."
   keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair coloring wainui, haircut waitoki, best hairdresser rodney district"
 >
   <!-- Core Web Vitals: Preload compressed hero images -->
@@ -111,17 +95,17 @@ const galleryImages = [
     <div class="container-custom relative z-10 mt-20">
       <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
-          Premium <span class="gradient-text">Hairdresser in Kaukapakapa</span> Auckland
+          Expert <span class="gradient-text">colour, keratin smoothing and cuts</span> in Kaukapakapa
         </h1>
         <p class="text-xl text-white mt-6">
-          Expert hair transformations, smoothing treatments, and custom styling in North Auckland. Melissa creates stunning results for clients from Kaukapakapa, Helensville, Wainui & Waitoki with 5+ years of experience.
+          One stylist, unhurried appointments, and colour that suits you. 45 minutes from central Auckland, free parking at the door.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="/booking" class="btn-primary magnetic-hover">
-            Book Now
+          <a href="/booking/" class="btn-primary magnetic-hover">
+            Book online
           </a>
-          <a href="/services" class="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-md hover:bg-white hover:text-black transition duration-300 ease-in-out glow-hover">
-            Explore Services
+          <a href={business.phoneHref} class="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-md hover:bg-white hover:text-black transition duration-300 ease-in-out glow-hover">
+            Call 0274 799 320
           </a>
         </div>
       </div>
@@ -168,12 +152,12 @@ const galleryImages = [
             )}
             <h3 class="text-xl font-semibold">{service.name}</h3>
             <p class="text-gray-600 mt-2">Starting at {service.price}</p>
-            <a 
-              href={service.url} 
+            <a
+              href={`/services/${service.slug}/`}
               class="inline-flex items-center mt-4 text-salon-darkblue hover-underline"
-              aria-label={service.linkText}
+              aria-label={`Learn more about ${service.name}`}
             >
-              {service.linkText}
+              {service.name}
               <svg class="h-4 w-4 ml-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 18 15 12 9 6"></polyline>
               </svg>
@@ -194,7 +178,7 @@ const galleryImages = [
   <section class="relative section-padding overflow-hidden">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('/images/optimized/hero-background_1920q80.webp'); background-size: cover; background-position: center; filter: blur(3px);"></div>
+      <div class="absolute inset-0" style="background-image: url('/images/optimized/salon-exterior_1280q40.webp'); background-size: cover; background-position: center; filter: blur(3px);"></div>
     </div>
     <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-r from-[#D3E4FD]/90 via-white/95 to-[#FFDEE2]/90"></div>
@@ -203,7 +187,7 @@ const galleryImages = [
         <div class="order-2 lg:order-1 animate-fade-in">
           <h2 class="text-4xl font-bold">About Melissa</h2>
           <p class="text-gray-700 mt-4">
-            With 5 years of experience in the hair industry, Melissa has built a reputation for creating beautiful, personalized hair transformations. Specializing in color techniques and keratin treatments, her passion for helping clients look and feel their best shines through in every appointment.
+            Melissa has built a reputation for creating beautiful, personalized hair transformations in a relaxed, one-stylist salon. Specializing in color techniques and keratin treatments, her passion for helping clients look and feel their best shines through in every appointment.
           </p>
           <p class="text-gray-700 mt-4">
             Using only premium products and staying at the forefront of industry trends, Melissa ensures that each client receives a bespoke service tailored to their unique hair type, face shape, and lifestyle.
@@ -568,7 +552,7 @@ const galleryImages = [
               </a>
             </h3>
             <p class="text-gray-600 mb-4">
-              Learn about Melissa's 5+ years of experience, qualifications, and passion for creating beautiful hair transformations in North Auckland.
+              Discover Melissa's qualifications, experience, and passion for creating beautiful hair transformations in North Auckland.
             </p>
             <a href="/about" class="inline-flex items-center text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors group">
               About Our Stylist 
@@ -615,7 +599,10 @@ const galleryImages = [
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-4xl font-bold">Find Us</h2>
         <p class="text-gray-600 mt-4">
-          Visit our boutique salon located in Magnolia Lane, Kaukapakapa.
+          Visit our boutique salon at 12 Magnolia Lane, Kaukapakapa 0875.
+        </p>
+        <p class="text-gray-600 mt-2">
+          Open 7 days · {business.hoursLine}
         </p>
       </div>
       

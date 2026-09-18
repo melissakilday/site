@@ -3,111 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
-const pageTitle = "Hair Salon Kaukapakapa | Premium Hairdresser in Kaukapakapa Village | Hair By Melissa";
-const pageDescription = "Hair By Melissa's main salon located in the heart of Kaukapakapa village. Expert hair services including keratin treatments, balayage, and styling in a peaceful rural setting with free parking.";
+const pageTitle = "Hair Salon in Kaukapakapa Village";
+const pageDescription = "Hair By Melissa's main salon in Kaukapakapa village. Expert keratin, balayage, and cuts in a peaceful rural setting.";
 const pageKeywords = "hair salon kaukapakapa, hairdresser kaukapakapa, hair coloring kaukapakapa, keratin treatment kaukapakapa, magnolia lane hair salon, rural hair salon auckland, kaukapakapa village salon";
 
 const faqs = locationFAQs['kaukapakapa'];
-
-// Local business schema for Kaukapakapa main location
-const kaukapakapaSchema = {
-  "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "@id": "https://hairbymelissa.co.nz/#business",
-  "name": "Hair By Melissa - Kaukapakapa Village",
-  "description": "Premium hair salon located in the heart of Kaukapakapa village. Specializing in keratin treatments, balayage, and expert hair coloring in a peaceful rural setting.",
-  "url": "https://hairbymelissa.co.nz/locations/kaukapakapa",
-  "telephone": "+64275201613",
-  "email": "book@hairbymelissa.co.nz",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Magnolia Lane",
-    "addressLocality": "Kaukapakapa",
-    "addressRegion": "Auckland",
-    "postalCode": "0810",
-    "addressCountry": "NZ"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -36.6173,
-    "longitude": 174.4829
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Kaukapakapa",
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Auckland Region"
-      }
-    },
-    {
-      "@type": "City", 
-      "name": "Helensville",
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Auckland Region"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Wainui", 
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Auckland Region"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Waitoki",
-      "containedInPlace": {
-        "@type": "AdministrativeArea", 
-        "name": "Auckland Region"
-      }
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00", 
-      "closes": "15:00"
-    }
-  ],
-  "priceRange": "$40-$230",
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": -36.6173,
-      "longitude": 174.4829
-    },
-    "geoRadius": "25000"
-  },
-  "amenityFeature": [
-    {
-      "@type": "LocationFeatureSpecification",
-      "name": "Free Parking",
-      "value": true
-    },
-    {
-      "@type": "LocationFeatureSpecification", 
-      "name": "Rural Setting",
-      "value": true
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      "name": "Professional Hair Care",
-      "value": true
-    }
-  ]
-};
 
 // FAQ Schema specific to Kaukapakapa
 const kaukapakapaFAQ = {
@@ -153,6 +53,7 @@ const kaukapakapaFAQ = {
 const mainLocationServices = [
   {
     name: "Keratin Treatments",
+    slug: "keratin-treatments",
     price: "$180",
     description: "Our signature service in the perfect environment for optimal results",
     duration: "2-3 hours",
@@ -161,6 +62,7 @@ const mainLocationServices = [
   },
   {
     name: "Balayage",
+    slug: "balayage",
     price: "$230",
     description: "Hand-painted color technique in peaceful, professional setting",
     duration: "3-4 hours", 
@@ -169,6 +71,7 @@ const mainLocationServices = [
   },
   {
     name: "Women's Cut & Finish",
+    slug: "womens-cut-finish",
     price: "$50",
     description: "Personalized cuts designed for your lifestyle",
     duration: "45-60 min",
@@ -177,6 +80,7 @@ const mainLocationServices = [
   },
   {
     name: "Full Head Highlights",
+    slug: "full-head-highlights",
     price: "$180",
     description: "Complete color transformation with expert technique",
     duration: "2.5-3 hours",
@@ -482,7 +386,7 @@ const localLandmarks = [
                 <p class="text-green-700 text-sm">{service.advantage}</p>
               </div>
               <a 
-                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                href={`/services/${service.slug}/`}
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Learn more about {service.name}
@@ -564,7 +468,7 @@ const localLandmarks = [
             <div class="space-y-3">
               <div class="flex justify-between">
                 <span class="font-medium">Address:</span>
-                <span>Magnolia Lane, Kaukapakapa</span>
+                <span>12 Magnolia Lane, Kaukapakapa 0875</span>
               </div>
               <div class="flex justify-between">
                 <span class="font-medium">Access:</span>
@@ -740,11 +644,8 @@ const localLandmarks = [
     </div>
   </section>
 
-  <!-- Schema Scripts -->
-  <script type="application/ld+json" set:html={JSON.stringify(kaukapakapaSchema)} />
-  
-  <!-- FAQ Section -->
-  <FAQSchema 
+  <!-- FAQ Schema -->
+  <FAQSchema
     faqs={faqs} 
     pageUrl="https://hairbymelissa.co.nz/locations/kaukapakapa"
   />

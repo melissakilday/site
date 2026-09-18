@@ -2,20 +2,24 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
 
-const pageTitle = "Balayage Kaukapakapa | Hand-Painted Hair Color North Auckland";
-const pageDescription = "Expert balayage hair coloring in Kaukapakapa. Natural sun-kissed highlights with low maintenance. Serving Helensville, Wainui & Waitoki. Book your transformation today!";
+const service = getService('balayage');
+
+const pageTitle = "Balayage North Auckland, $230, 3–4 Hours";
+const pageDescription = "Balayage in North Auckland from $230. Hand-painted, low-maintenance colour by Melissa in Kaukapakapa, 45 minutes from the city. See results and book online.";
 const pageKeywords = "balayage kaukapakapa, hair highlights helensville, ombre hair wainui, hand painted highlights waitoki, hair color north auckland, balayage specialist rodney";
 
 const faqs = serviceFAQs['balayage'];
 ---
 
-<ServiceLayout 
+<ServiceLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
-  price="Contact for pricing" 
-  duration="3-4 hours"
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/color-transformation_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Professional Balayage in Kaukapakapa: Hand-Painted Hair Artistry</h2>

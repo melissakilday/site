@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('toner');
+
+const pageTitle = "Hair Toner, $40, Kaukapakapa North Auckland";
+const pageDescription = "Professional hair toner in Kaukapakapa, North Auckland. $40, about 30-45 minutes with Melissa. Neutralize brassiness, free parking, book online.";
 
 const faqs = serviceFAQs['toner'];
 ---
 
-<ServiceLayout 
-  title="Toner" 
-  price="Contact for pricing" 
-  duration="30-45 minutes"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/melissa-professional_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Perfect Your Shade with Professional Toning</h2>

@@ -6,27 +6,31 @@ export interface Props {
   price: string;
   duration: string;
   image: string;
+  h1?: string;
+  description?: string;
+  keywords?: string;
 }
 
-const { title, price, duration, image } = Astro.props;
+const { title, price, duration, image, h1, description, keywords } = Astro.props;
+const heading = h1 ?? title.split(' | ')[0];
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} keywords={keywords}>
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 overflow-hidden">
     <!-- Background Layer -->
-    <div 
+    <div
       class="absolute inset-0"
       style={`background-image: url('${image}'); background-size: cover; background-position: center; background-repeat: no-repeat;`}
     ></div>
-    
+
     <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-black/60"></div>
-    
+
     <div class="container-custom relative z-10">
       <div class="max-w-2xl">
         <h1 class="text-5xl font-bold text-white leading-tight">
-          {title}
+          {heading}
         </h1>
       </div>
     </div>

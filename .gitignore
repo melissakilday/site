@@ -68,4 +68,10 @@ Desktop.ini
 # package manager
 .pnpm-store/
 .yarn/
-git_auth_info.txt
+# mcp-gsc (vendored Google Search Console MCP server, project-local)
+tools/mcp-gsc/.venv/
+tools/mcp-gsc/credentials/
+tools/mcp-gsc/__pycache__/
+
+# macOS AppleDouble files on exFAT
+._*

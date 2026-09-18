@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
+import { business } from '../data/business';
 
-const pageTitle = "Book Hair Appointment Kaukapakapa | Online Booking";
-const pageDescription = "Book your hair appointment online at Hair By Melissa Kaukapakapa. Online booking for keratin treatments, balayage, highlights & cuts. Serving Helensville, Wainui & Waitoki.";
+const pageTitle = "Book an Appointment";
+const pageDescription = "Book your hair appointment online at Hair By Melissa Kaukapakapa. Online booking for keratin treatments, balayage, highlights & cuts.";
 const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville, online booking wainui, salon booking waitoki, book keratin treatment north auckland";
 ---
 
@@ -23,11 +24,19 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
     <div class="container-custom relative z-10">
       <div class="max-w-2xl">
         <h1 class="text-5xl font-bold text-white leading-tight">
-          Book Hair Appointment in Kaukapakapa
+          Book your appointment
         </h1>
         <p class="text-xl text-white mt-6">
           Schedule your hair appointment online at our Kaukapakapa salon. We serve clients from Helensville, Wainui, Waitoki and surrounding North Auckland areas.
         </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#booking-widget" class="btn-primary magnetic-hover">
+            Book online below
+          </a>
+          <a href={business.phoneHref} class="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-md hover:bg-white hover:text-black transition duration-300 ease-in-out glow-hover">
+            Call or text 0274 799 320
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -50,14 +59,18 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
           
           <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
             <p class="text-blue-800 text-sm">
-              <strong>Booking Confirmation:</strong> After submitting your booking request, I'll confirm your appointment within 1-2 business days via phone or email. For same-day appointments, please call 0274799320.
+              Pick a time below and Melissa will confirm by text. Need today or tomorrow? Call or text and she'll fit you in if she can.
             </p>
           </div>
+
+          <p class="text-gray-700 mt-6 font-medium">
+            Open 7 days · {business.hoursLine}
+          </p>
         </div>
 
         <!-- LeadConnector Booking Widget -->
-        <div class="booking-widget-container">
-          <iframe 
+        <div id="booking-widget" class="booking-widget-container">
+          <iframe
             src="https://api.leadconnectorhq.com/widget/service-menu/67fe3af34e4a6b61c1bc9563"
             class="booking-iframe"
             frameborder="0"
@@ -72,7 +85,7 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
   <!-- Information Sections -->
   <section class="bg-[#F8F9FA] py-16">
     <div class="container-custom">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- What to Expect -->
         <div class="bg-white rounded-lg p-8 shadow-lg">
           <div class="flex items-center mb-4">
@@ -133,30 +146,32 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
             </li>
           </ul>
         </div>
+      </div>
 
-        <!-- Cancellation Policy -->
-        <div class="bg-white rounded-lg p-8 shadow-lg">
-          <div class="flex items-center mb-4">
-            <svg class="h-8 w-8 text-salon-darkblue mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Cancellation Policy - demoted, quieter styling -->
+      <div class="max-w-2xl mx-auto mt-8">
+        <div class="rounded-lg p-6">
+          <div class="flex items-center mb-3">
+            <svg class="h-6 w-6 text-gray-400 mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
             </svg>
-            <h3 class="text-xl font-semibold">Cancellation Policy</h3>
+            <h3 class="text-lg font-medium text-gray-500">Cancellation Policy</h3>
           </div>
-          <ul class="space-y-3 text-gray-700">
+          <ul class="space-y-2 text-sm text-gray-500">
             <li class="flex items-start">
-              <span class="text-salon-darkblue mr-2">•</span>
+              <span class="text-gray-400 mr-2">•</span>
               <span>Please provide 24 hours notice for cancellations</span>
             </li>
             <li class="flex items-start">
-              <span class="text-salon-darkblue mr-2">•</span>
+              <span class="text-gray-400 mr-2">•</span>
               <span>Late cancellations may incur a fee</span>
             </li>
             <li class="flex items-start">
-              <span class="text-salon-darkblue mr-2">•</span>
+              <span class="text-gray-400 mr-2">•</span>
               <span>We understand emergencies happen</span>
             </li>
             <li class="flex items-start">
-              <span class="text-salon-darkblue mr-2">•</span>
+              <span class="text-gray-400 mr-2">•</span>
               <span>Contact us directly if you need to reschedule</span>
             </li>
           </ul>
@@ -174,11 +189,11 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
           If you have any questions or need assistance with booking, don't hesitate to reach out to us directly.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+64275201613" class="btn-primary inline-flex items-center justify-center">
+          <a href={business.phoneHref} class="btn-primary inline-flex items-center justify-center">
             <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            Call Now
+            Call 0274 799 320
           </a>
           <a href="/contact" class="btn-secondary inline-flex items-center justify-center">
             <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -187,6 +202,11 @@ const pageKeywords = "book hairdresser kaukapakapa, hair appointment helensville
             Contact Us
           </a>
         </div>
+        <p class="mt-6">
+          <a href={business.googleReviewUrl} target="_blank" rel="noopener" class="text-sm text-salon-darkblue hover-underline">
+            Leave a Google review
+          </a>
+        </p>
       </div>
     </div>
   </section>

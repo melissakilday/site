@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('full-head-highlights');
+
+const pageTitle = "Full Head Highlights, $180, Kaukapakapa";
+const pageDescription = "Full head of highlights in Kaukapakapa, North Auckland. $180, about 2.5-3 hours with Melissa. Maximum dimension, free parking, online booking, open 7 days.";
 
 const faqs = serviceFAQs['full-head-highlights'];
 ---
 
-<ServiceLayout 
-  title="Full Head of Highlights" 
-  price="Contact for pricing" 
-  duration="2.5-3 hours"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/professional-blowdry_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Complete Transformation with Maximum Dimension</h2>

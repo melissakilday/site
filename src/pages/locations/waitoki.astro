@@ -3,69 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
-const pageTitle = "Waitoki Hair Stylist | Rural Lifestyle Hair Care North Auckland | Hair By Melissa";
-const pageDescription = "Rural hair care specialists serving Waitoki's equestrian and farming community. Dust-resistant styling, UV protection, and low-maintenance treatments. Located 10 minutes from Waitoki in Kaukapakapa.";
+const pageTitle = "Waitoki Hair Stylist, North Auckland";
+const pageDescription = "Rural hair care specialists serving Waitoki's equestrian and farming community. Located 10 minutes from Kaukapakapa.";
 const pageKeywords = "hair salon waitoki, hairdresser waitoki, hair coloring waitoki, keratin treatment waitoki, balayage waitoki, highlights waitoki, hair salon near waitoki, rural hair care";
 
 const faqs = locationFAQs['waitoki'];
-
-// Local business schema for Waitoki service area
-const waitokiSchema = {
-  "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Hair By Melissa - Serving Waitoki",
-  "description": "Professional hair salon serving Waitoki residents with expert hair care tailored for rural living and equestrian lifestyles. Located in nearby Kaukapakapa.",
-  "url": "https://hairbymelissa.co.nz/locations/waitoki",
-  "telephone": "+64275201613",
-  "email": "book@hairbymelissa.co.nz",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Magnolia Lane",
-    "addressLocality": "Kaukapakapa",
-    "addressRegion": "Auckland",
-    "postalCode": "0810",
-    "addressCountry": "NZ"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -36.6173,
-    "longitude": 174.4829
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Waitoki",
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Auckland Region"
-      }
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "15:00"
-    }
-  ],
-  "priceRange": "$40-$230",
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": -36.6173,
-      "longitude": 174.4829
-    },
-    "geoRadius": "25000"
-  }
-};
 
 // FAQ Schema specific to Waitoki
 const waitokiFAQ = {
@@ -103,6 +45,7 @@ const waitokiFAQ = {
 const waitokiServices = [
   {
     name: "Keratin Treatments",
+    slug: "keratin-treatments",
     price: "$180",
     description: "Perfect for helmet-wearing equestrians and outdoor lifestyles",
     duration: "2-3 hours",
@@ -110,7 +53,8 @@ const waitokiServices = [
     popular: true
   },
   {
-    name: "Low-Maintenance Cuts",
+    name: "Women's Cut & Finish",
+    slug: "womens-cut-finish",
     price: "$50", 
     description: "Practical styles that look great with minimal daily styling",
     duration: "45-60 min",
@@ -119,6 +63,7 @@ const waitokiServices = [
   },
   {
     name: "Balayage",
+    slug: "balayage",
     price: "$230",
     description: "Natural highlights that grow out beautifully",
     duration: "3-4 hours",
@@ -126,11 +71,12 @@ const waitokiServices = [
     popular: false
   },
   {
-    name: "Protective Styling",
-    price: "$80",
-    description: "Styles designed to withstand outdoor work and activities",
-    duration: "1 hour",
-    ruralBenefit: "Long-lasting styles for farming, equestrian, and outdoor work",
+    name: "Partial Foils",
+    slug: "partial-foils",
+    price: "$90",
+    description: "Highlights around the face and crown for a subtle lift",
+    duration: "1-1.5 hours",
+    ruralBenefit: "A quicker colour appointment that suits a busy rural schedule",
     popular: true
   }
 ];
@@ -348,7 +294,7 @@ const ruralConsiderations = [
                 <p class="text-green-700 text-sm">{service.ruralBenefit}</p>
               </div>
               <a 
-                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                href={`/services/${service.slug}/`}
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Learn more about {service.name}
@@ -697,11 +643,8 @@ const ruralConsiderations = [
     </div>
   </section>
 
-  <!-- Schema Scripts -->
-  <script type="application/ld+json" set:html={JSON.stringify(waitokiSchema)} />
-  
-  <!-- FAQ Section -->
-  <FAQSchema 
+  <!-- FAQ Schema -->
+  <FAQSchema
     faqs={faqs} 
     pageUrl="https://hairbymelissa.co.nz/locations/waitoki"
   />

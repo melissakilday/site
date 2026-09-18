@@ -2,20 +2,24 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
 
-const pageTitle = "UV Protection Hair Treatments | Coastal Hair Care North Auckland";
-const pageDescription = "Professional UV protection treatments for $40. Shield your hair from sun damage and color fading. Perfect for surfers, beach lovers, and outdoor workers in North Auckland.";
+const service = getService('uv-protection-treatments');
+
+const pageTitle = "UV Protection Hair Treatment, $40, North Auckland";
+const pageDescription = "UV protection treatments for $40. Shield hair from sun damage and color fading. Perfect for surfers and outdoor workers.";
 const pageKeywords = "UV protection hair treatment, sun protection hair, beach hair care, coastal hair protection, surfer hair care, UV damage prevention, North Auckland";
 
 const faqs = serviceFAQs['uv-protection-treatments'];
 ---
 
-<ServiceLayout 
+<ServiceLayout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
-  price="Contact for pricing" 
-  duration="30 minutes"
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/hair-care-general_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">UV Protection Treatments - Shield Your Hair from Sun Damage</h2>

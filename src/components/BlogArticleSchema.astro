@@ -12,6 +12,8 @@ export interface Props {
   slug: string;
   featuredImage?: string;
   wordCount?: number;
+  /** ISO date of the last substantive edit; defaults to publishDate */
+  modifiedDate?: string;
 }
 
 const {
@@ -24,7 +26,8 @@ const {
   author,
   slug,
   featuredImage = "https://hairbymelissa.co.nz/images/optimized/hair-care-general_800.webp",
-  wordCount = 2500
+  wordCount = 2500,
+  modifiedDate
 } = Astro.props;
 
 // Generate Article Schema
@@ -44,10 +47,10 @@ const articleSchema = {
       "name": "Hair By Melissa",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Magnolia Lane",
+        "streetAddress": "12 Magnolia Lane",
         "addressLocality": "Kaukapakapa",
         "addressRegion": "Auckland",
-        "postalCode": "0810",
+        "postalCode": "0875",
         "addressCountry": "NZ"
       }
     }
@@ -62,15 +65,15 @@ const articleSchema = {
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Magnolia Lane",
+      "streetAddress": "12 Magnolia Lane",
       "addressLocality": "Kaukapakapa",
       "addressRegion": "Auckland",
-      "postalCode": "0810",
+      "postalCode": "0875",
       "addressCountry": "NZ"
     }
   },
   "datePublished": publishDate,
-  "dateModified": publishDate,
+  "dateModified": modifiedDate || publishDate,
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": `https://hairbymelissa.co.nz/blog/${slug}`

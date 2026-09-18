@@ -4,6 +4,7 @@ import '../styles/global.css';
 import '../styles/image-optimization.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { business, openingHoursSpecification, postalAddress } from '../data/business';
 
 export interface Props {
   title: string;
@@ -18,7 +19,7 @@ const {
   title, 
   description = 'Premium hairdresser in Kaukapakapa, Auckland. Expert hair coloring, keratin treatments, balayage & highlights. Serving Kaukapakapa, Helensville, Wainui & Waitoki. Book your transformation today!',
   keywords = 'hairdresser kaukapakapa, hair salon kaukapakapa, hair coloring auckland north, keratin treatment kaukapakapa, balayage helensville, highlights wainui, haircut waitoki, melissa hair salon, hair stylist north auckland',
-  ogImage = 'https://hairbymelissa.co.nz/images/og-image.jpg',
+  ogImage = business.ogImage,
   canonicalURL = new URL(Astro.url.pathname, 'https://hairbymelissa.co.nz').toString(),
   pageType = 'website'
 } = Astro.props;
@@ -32,7 +33,7 @@ const localBusinessSchema = {
   "alternateName": ["Melissa's Hair Salon", "Hair By Melissa Kaukapakapa"],
   "description": "Premium hair salon specializing in keratin treatments, balayage, highlights, and expert hair coloring in Kaukapakapa, Auckland. Serving North Auckland with professional hair services since 2020.",
   "url": "https://hairbymelissa.co.nz",
-  "telephone": "+64275201613",
+  "telephone": business.phoneE164,
   "email": "book@hairbymelissa.co.nz",
   "foundingDate": "2020",
   "founder": {
@@ -40,39 +41,15 @@ const localBusinessSchema = {
     "name": "Melissa",
     "jobTitle": "Hair Stylist & Salon Owner"
   },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Magnolia Lane",
-    "addressLocality": "Kaukapakapa",
-    "addressRegion": "Auckland",
-    "postalCode": "0810",
-    "addressCountry": "NZ"
-  },
+  "address": postalAddress,
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": -36.6173,
     "longitude": 174.4829
   },
-  "image": [
-    "https://hairbymelissa.co.nz/images/salon-exterior.jpg",
-    "https://hairbymelissa.co.nz/images/salon-interior.jpg",
-    "https://hairbymelissa.co.nz/images/hair-services-gallery.jpg"
-  ],
-  "logo": "https://hairbymelissa.co.nz/images/logo.png",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "15:00"
-    }
-  ],
+  "image": [...business.images],
+  "logo": business.logo,
+  "openingHoursSpecification": openingHoursSpecification,
   "priceRange": "$40-$230",
   "currenciesAccepted": "NZD",
   "paymentAccepted": ["Cash", "Credit Card", "EFTPOS", "Bank Transfer"],
@@ -353,6 +330,30 @@ const localBusinessSchema = {
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
         "url": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/uv-protection-treatments#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Hair Treatment",
+          "name": "UV Protection Treatment",
+          "description": "Protective treatment that shields hair from sun damage and colour fading. Suited to coastal and outdoor lifestyles in North Auckland.",
+          "category": "Hair Treatment",
+          "duration": "PT30M",
+          "serviceOutput": "Hair protected against UV damage and colour fade"
+        },
+        "price": "40",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "40",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01",
+        "url": "https://hairbymelissa.co.nz/services/uv-protection-treatments"
       }
     ]
   },
@@ -376,46 +377,7 @@ const localBusinessSchema = {
     },
     "geoRadius": "25000"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "47",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Sarah Johnson"
-      },
-      "reviewBody": "Melissa transformed my dull, lifeless hair into a vibrant masterpiece. The keratin treatment was a game-changer!",
-      "datePublished": "2024-01-15"
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Emma Wilson"
-      },
-      "reviewBody": "Best balayage I've ever had! Melissa really knows her craft and the salon atmosphere is so relaxing.",
-      "datePublished": "2024-02-03"
-    }
-  ],
-  "sameAs": [
-    "https://www.facebook.com/hairbymelissa",
-    "https://www.instagram.com/hairbymelissa_nz",
-    "https://www.google.com/maps/place/Hair+By+Melissa"
-  ],
+  "sameAs": [business.instagram],
   "mainEntityOfPage": "https://hairbymelissa.co.nz",
   "potentialAction": {
     "@type": "ReserveAction",
@@ -434,163 +396,6 @@ const localBusinessSchema = {
   }
 };
 
-// GEO Optimization Context for LLMs
-const geoContext = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "about": {
-    "@type": "HairSalon",
-    "name": "Hair By Melissa"
-  },
-  "keywords": keywords,
-  "contentLocation": {
-    "@type": "Place",
-    "name": "Kaukapakapa, Auckland, New Zealand"
-  },
-  "spatialCoverage": {
-    "@type": "Place",
-    "name": "North Auckland including Kaukapakapa, Helensville, Wainui, and Waitoki"
-  }
-};
-
-// Enhanced Local Entity Recognition Schema for 2024 GEO
-const localEntitySchema = {
-  "@context": "https://schema.org",
-  "@type": ["Place", "LocalBusiness", "HairSalon"],
-  "@id": "https://hairbymelissa.co.nz/#place",
-  "identifier": "hair-by-melissa-kaukapakapa",
-  "name": "Hair By Melissa",
-  "alternateName": ["Melissa's Hair Salon Kaukapakapa", "Kaukapakapa Hair Salon"],
-  "description": "Premier hair salon in Kaukapakapa village specializing in keratin treatments, balayage, and expert hair coloring. Serving North Auckland including Helensville, Wainui, and Waitoki.",
-  
-  // Enhanced Geographic Entities (Critical for GEO 2024)
-  "containedInPlace": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "Kaukapakapa",
-      "alternateName": ["Kaukapakapa Village", "Kaukapakapa Township"],
-      "containedInPlace": {
-        "@type": "AdministrativeArea", 
-        "name": "Auckland Region",
-        "alternateName": ["North Auckland", "Greater Auckland"]
-      }
-    }
-  ],
-  
-  // Near Me Query Optimization
-  "additionalProperty": [
-    {
-      "@type": "PropertyValue",
-      "name": "Primary Service Area",
-      "value": "Kaukapakapa, Helensville, Wainui, Waitoki"
-    },
-    {
-      "@type": "PropertyValue", 
-      "name": "Search Intent Keywords",
-      "value": "hair salon near me, hairdresser near me, keratin treatment near me, balayage near me"
-    },
-    {
-      "@type": "PropertyValue",
-      "name": "Local Specialties", 
-      "value": "Village salon, Rural hair care, Coastal climate hair treatments"
-    }
-  ],
-
-  // Voice Search Optimization Schema
-  "potentialAction": [
-    {
-      "@type": "SearchAction",
-      "query-input": "required name=search_term_string",
-      "target": "https://hairbymelissa.co.nz/search?q={search_term_string}"
-    },
-    {
-      "@type": "FindAction",
-      "object": {
-        "@type": "HairSalon",
-        "name": "Hair By Melissa"
-      },
-      "location": {
-        "@type": "Place",
-        "name": "Kaukapakapa, Auckland"
-      }
-    }
-  ],
-
-  // Enhanced Availability Schema for Local Search
-  "specialOpeningHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "opens": "09:00",
-      "closes": "17:00", 
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "validFrom": "2024-01-01",
-      "validThrough": "2024-12-31"
-    }
-  ]
-};
-
-// Local Event & Community Integration Schema
-const localEventSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization", 
-  "@id": "https://hairbymelissa.co.nz/#organization",
-  "name": "Hair By Melissa",
-  "memberOf": [
-    {
-      "@type": "Organization",
-      "name": "Kaukapakapa Business Association",
-      "description": "Local business community supporting Kaukapakapa village"
-    },
-    {
-      "@type": "Organization", 
-      "name": "North Auckland Chamber of Commerce",
-      "description": "Regional business network"
-    }
-  ],
-  "knowsAbout": [
-    {
-      "@type": "Place",
-      "name": "Kaukapakapa Pioneer Village",
-      "description": "Historic village attraction near our salon"
-    },
-    {
-      "@type": "Event",
-      "name": "Kaukapakapa Country Fair",
-      "description": "Annual community event where we participate"
-    },
-    {
-      "@type": "Place",
-      "name": "Helensville Agricultural & Pastoral Show", 
-      "description": "Regional event serving our client community"
-    }
-  ],
-  "audience": [
-    {
-      "@type": "Audience",
-      "audienceType": "Local Residents",
-      "geographicArea": {
-        "@type": "AdministrativeArea",
-        "name": "Kaukapakapa and surroundings"
-      }
-    },
-    {
-      "@type": "Audience",
-      "audienceType": "Rural Community",
-      "geographicArea": {
-        "@type": "AdministrativeArea", 
-        "name": "North Auckland Rural"
-      }
-    },
-    {
-      "@type": "Audience",
-      "audienceType": "Lifestyle Block Owners",
-      "geographicArea": {
-        "@type": "AdministrativeArea",
-        "name": "Rodney District"
-      }
-    }
-  ]
-};
 ---
 
 <!DOCTYPE html>
@@ -738,8 +543,8 @@ const localEventSchema = {
     </style>
     
     <!-- Primary Meta Tags -->
-    <title>{title} | Hair By Melissa - Premium Hairdresser Kaukapakapa</title>
-    <meta name="title" content={`${title} | Hair By Melissa - Premium Hairdresser Kaukapakapa`} />
+    <title>{title} | Hair By Melissa</title>
+    <meta name="title" content={`${title} | Hair By Melissa`} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Hair By Melissa" />
@@ -814,10 +619,10 @@ const localEventSchema = {
     <meta name="local-community" content="Kaukapakapa Village Community" />
     
     <!-- Business Information -->
-    <meta name="business:contact_data:street_address" content="Magnolia Lane" />
+    <meta name="business:contact_data:street_address" content="12 Magnolia Lane" />
     <meta name="business:contact_data:locality" content="Kaukapakapa" />
     <meta name="business:contact_data:region" content="Auckland" />
-    <meta name="business:contact_data:postal_code" content="0810" />
+    <meta name="business:contact_data:postal_code" content="0875" />
     <meta name="business:contact_data:country_name" content="New Zealand" />
     
     <!-- DNS Prefetch for mobile performance -->
@@ -828,14 +633,7 @@ const localEventSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
     
     <!-- Enhanced Local Entity Recognition Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(localEntitySchema)} />
-    
-    <!-- Local Event & Community Integration Schema -->
-    <script type="application/ld+json" set:html={JSON.stringify(localEventSchema)} />
-    
-    <!-- GEO Context for LLMs -->
-    <script type="application/ld+json" set:html={JSON.stringify(geoContext)} />
-    
+
     <!-- Additional SEO Context for AI/LLMs -->
     <meta name="ai-content-description" content="Hair By Melissa is a premium hair salon located in Kaukapakapa, Auckland, New Zealand. We specialize in professional hair services including keratin treatments ($180), balayage ($230), highlights (from $90), hair coloring, and women's cuts ($50). Our expert hairdresser Melissa serves clients from Kaukapakapa, Helensville, Wainui, and Waitoki areas. Book your appointment for a hair transformation today!" />
     <meta name="service-areas" content="Kaukapakapa, Helensville, Wainui, Waitoki, North Auckland, Rodney District" />
@@ -901,12 +699,29 @@ const localEventSchema = {
       });
     </script>
     
-    <!-- Voice AI Chat Widget -->
-    <script 
-      src="https://beta.leadconnectorhq.com/loader.js"  
-      data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
-      data-widget-id="692b9dcfd47c137da229a289"
-      is:inline
-    ></script>
+    <!-- Voice AI Chat Widget: keep the bubble off the hero CTA on mobile -->
+    <style>
+      @media (max-width: 767px) {
+        [id^="lc_text-widget"],
+        .lc_text-widget--container,
+        chat-widget {
+          z-index: 40 !important;
+          bottom: 5rem !important;
+        }
+      }
+    </style>
+    <script is:inline>
+      // Load the chat widget 8s after window load so its bubble doesn't
+      // cover the hero "Book Now" button on mobile during first paint.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          const s = document.createElement('script');
+          s.src = 'https://beta.leadconnectorhq.com/loader.js';
+          s.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
+          s.setAttribute('data-widget-id', '692b9dcfd47c137da229a289');
+          document.body.appendChild(s);
+        }, 8000);
+      });
+    </script>
   </body>
 </html>

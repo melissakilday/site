@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { business } from '../data/business';
 
 const lastUpdated = "January 15, 2025";
 ---
@@ -41,9 +42,8 @@ const lastUpdated = "January 15, 2025";
           <p class="text-gray-700 leading-relaxed mt-4">
             <strong>Business Details:</strong><br />
             Hair By Melissa<br />
-            Magnolia Lane, Peak Village<br />
-            Kaukapakapa, Rural Auckland, New Zealand<br />
-            Phone: 021 752 611<br />
+            {business.addressLine}<br />
+            Phone: {business.phoneDisplay}<br />
             Email: <a href="mailto:hairbymelissanz@gmail.com" class="text-salon-darkblue hover:underline">hairbymelissanz@gmail.com</a>
           </p>
         </div>
@@ -194,9 +194,9 @@ const lastUpdated = "January 15, 2025";
           <div class="bg-[#F8F9FA] p-6 rounded-lg mt-4">
             <p class="text-gray-700">
               <strong>Hair By Melissa</strong><br />
-              Phone: <a href="tel:021752611" class="text-salon-darkblue hover:underline">021 752 611</a><br />
+              Phone: <a href={business.phoneHref} class="text-salon-darkblue hover:underline">{business.phoneDisplay}</a><br />
               Email: <a href="mailto:hairbymelissanz@gmail.com" class="text-salon-darkblue hover:underline">hairbymelissanz@gmail.com</a><br />
-              Address: Magnolia Lane, Peak Village, Kaukapakapa, Rural Auckland, NZ
+              Address: {business.addressLine}
             </p>
           </div>
         </div>

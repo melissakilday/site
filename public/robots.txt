@@ -41,7 +41,7 @@ User-agent: Claude-Web
 Allow: /
 
 # Sitemap location
-Sitemap: https://hairbymelissa.co.nz/sitemap.xml
+Sitemap: https://hairbymelissa.co.nz/sitemap-index.xml
 
 # Allow optimized images directory
 Allow: /images/optimized/

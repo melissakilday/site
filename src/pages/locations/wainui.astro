@@ -3,69 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
-const pageTitle = "Wainui Village Hair Care | Professional Hair Specialist North Auckland | Hair By Melissa";
-const pageDescription = "Expert hair specialists serving Wainui village residents. Professional hair care, UV protection, and styling treatments. Expert keratin & color services 20 minutes from Wainui Village.";
+const pageTitle = "Wainui Hair Care, North Auckland";
+const pageDescription = "Expert hair specialists serving Wainui village residents. UV protection, styling and keratin treatments in North Auckland.";
 const pageKeywords = "hair salon wainui, hairdresser wainui, hair coloring wainui, keratin treatment wainui, balayage wainui, highlights wainui, hair salon near wainui, village hair care";
 
 const faqs = locationFAQs['wainui'];
-
-// Local business schema for Wainui service area
-const wainuiSchema = {
-  "@context": "https://schema.org",
-  "@type": "HairSalon",
-  "name": "Hair By Melissa - Serving Wainui",
-  "description": "Professional hair salon serving Wainui village residents with expert hair care designed for rural living. Specializing in natural styles and weather-resistant treatments.",
-  "url": "https://hairbymelissa.co.nz/locations/wainui",
-  "telephone": "+64275201613",
-  "email": "book@hairbymelissa.co.nz",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Magnolia Lane",
-    "addressLocality": "Kaukapakapa",
-    "addressRegion": "Auckland",
-    "postalCode": "0810",
-    "addressCountry": "NZ"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -36.6173,
-    "longitude": 174.4829
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Wainui",
-      "containedInPlace": {
-        "@type": "AdministrativeArea",
-        "name": "Auckland Region"
-      }
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "15:00"
-    }
-  ],
-  "priceRange": "$40-$230",
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": -36.6173,
-      "longitude": 174.4829
-    },
-    "geoRadius": "25000"
-  }
-};
 
 // FAQ Schema specific to Wainui
 const wainuiFAQ = {
@@ -103,6 +45,7 @@ const wainuiFAQ = {
 const wainuiServices = [
   {
     name: "Keratin Treatments",
+    slug: "keratin-treatments",
     price: "$180",
     description: "Ultimate protection against humidity and environmental factors",
     duration: "2-3 hours",
@@ -111,6 +54,7 @@ const wainuiServices = [
   },
   {
     name: "Balayage",
+    slug: "balayage",
     price: "$230", 
     description: "Natural sun-kissed looks perfect for village living",
     duration: "3-4 hours",
@@ -119,6 +63,7 @@ const wainuiServices = [
   },
   {
     name: "UV Protection Treatments",
+    slug: "uv-protection-treatments",
     price: "$40",
     description: "Shield your hair from intense UV exposure",
     duration: "30 min",
@@ -126,11 +71,12 @@ const wainuiServices = [
     popular: false
   },
   {
-    name: "Deep Conditioning Treatments",
-    price: "$60",
-    description: "Intensive moisture restoration for healthy hair",
-    duration: "45 min",
-    villageBenefit: "Restores moisture and vitality for active village residents",
+    name: "Half Head of Highlights",
+    slug: "half-head-highlights",
+    price: "$140",
+    description: "Dimension through the top and sides for a natural, sun-kissed finish",
+    duration: "2-2.5 hours",
+    villageBenefit: "Grows out softly, so village residents need fewer salon trips",
     popular: true
   }
 ];
@@ -331,7 +277,7 @@ const villageHairTips = [
                 <p class="text-blue-700 text-sm">{service.villageBenefit}</p>
               </div>
               <a 
-                href={`/services/${service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')}`}
+                href={`/services/${service.slug}/`}
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Learn more about {service.name}
@@ -582,11 +528,8 @@ const villageHairTips = [
     </div>
   </section>
 
-  <!-- Schema Scripts -->
-  <script type="application/ld+json" set:html={JSON.stringify(wainuiSchema)} />
-  
-  <!-- FAQ Section -->
-  <FAQSchema 
+  <!-- FAQ Schema -->
+  <FAQSchema
     faqs={faqs} 
     pageUrl="https://hairbymelissa.co.nz/locations/wainui"
   />

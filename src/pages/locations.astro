@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { business } from '../data/business';
 ---
 
-<Layout title="Hair Salon Service Locations | Hair By Melissa - Kaukapakapa, Helensville, Wainui & Waitoki">
+<Layout title="Hair Salon Locations in North Auckland" description="Hair salon locations in Kaukapakapa, Helensville, Wainui and Waitoki in North Auckland. Free parking, online booking.">
   <main class="pt-20">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden hero-bg-home">
@@ -13,7 +14,7 @@ import Layout from '../layouts/Layout.astro';
             Hair Salon <span class="gradient-text">Service Locations</span>
           </h1>
           <p class="text-xl text-white/90 mb-8">
-            Professional hair services across North Auckland. From our boutique salon in Kaukapakapa to mobile services in Helensville, Wainui & Waitoki.
+            Professional hair services for clients across North Auckland. Visit our boutique salon in Kaukapakapa from Helensville, Wainui & Waitoki — see the drive time below.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/booking" class="btn-primary magnetic-hover">
@@ -54,9 +55,12 @@ import Layout from '../layouts/Layout.astro';
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   </svg>
                   <div>
-                    <p class="text-gray-800 font-medium">Magnolia Lane, Kaukapakapa</p>
-                    <p class="text-gray-600">Rural Auckland, New Zealand</p>
+                    <p class="text-gray-800 font-medium">{business.address.street}, {business.address.locality} {business.address.postcode}</p>
+                    <p class="text-gray-600">{business.address.region}, New Zealand</p>
                   </div>
+                </div>
+                <div class="flex items-start">
+                  <svg class="h-5 w-5 text-salon-darkblue mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                   </svg>
                   <a href="mailto:melissa@hairbymelissa.co.nz" class="text-gray-800 hover:text-salon-darkblue transition-colors">
@@ -66,9 +70,8 @@ import Layout from '../layouts/Layout.astro';
               </div>
 
               <div class="pt-4 border-t border-white/30">
-                <p class="text-sm text-gray-700 mb-2 font-medium">Operating Hours:</p>
-                <p class="text-sm text-gray-600">By Appointment Only</p>
-                <p class="text-sm text-gray-600">Tuesday - Saturday</p>
+                <p class="text-sm text-gray-700 mb-2 font-medium">Operating Hours: <span class="font-normal">Open 7 days</span></p>
+                <p class="text-sm text-gray-600">{business.hoursLine}</p>
               </div>
             </div>
           </div>
@@ -122,7 +125,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-gray-900 mb-4">Service Areas</h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            We proudly serve clients across North Auckland with mobile services and convenient scheduling
+            We proudly welcome clients from across North Auckland to our Kaukapakapa salon, with easy travel and convenient scheduling
           </p>
         </div>
 
@@ -139,7 +142,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div class="space-y-3 mb-6">
-              <p class="text-gray-600 text-sm">Mobile hair services available</p>
+              <p class="text-gray-600 text-sm">Clients visit our Kaukapakapa salon</p>
               <div class="flex items-center text-sm">
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -150,7 +153,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span class="text-gray-600">Most services available</span>
+                <span class="text-gray-600">All salon services available</span>
               </div>
             </div>
 
@@ -176,7 +179,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div class="space-y-3 mb-6">
-              <p class="text-gray-600 text-sm">Mobile hair services available</p>
+              <p class="text-gray-600 text-sm">Clients visit our Kaukapakapa salon</p>
               <div class="flex items-center text-sm">
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -187,7 +190,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span class="text-gray-600">Selected services available</span>
+                <span class="text-gray-600">All salon services available</span>
               </div>
             </div>
 
@@ -213,7 +216,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             
             <div class="space-y-3 mb-6">
-              <p class="text-gray-600 text-sm">Mobile hair services available</p>
+              <p class="text-gray-600 text-sm">Clients visit our Kaukapakapa salon</p>
               <div class="flex items-center text-sm">
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
@@ -224,7 +227,7 @@ import Layout from '../layouts/Layout.astro';
                 <svg class="h-4 w-4 text-salon-darkblue mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span class="text-gray-600">Selected services available</span>
+                <span class="text-gray-600">All salon services available</span>
               </div>
             </div>
 
@@ -247,7 +250,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Service Radius</h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Serving North Auckland communities with mobile services and our central Kaukapakapa salon
+            Serving North Auckland communities who travel to our central Kaukapakapa salon
           </p>
         </div>
 
@@ -270,7 +273,7 @@ import Layout from '../layouts/Layout.astro';
                     <div class="w-3 h-3 bg-[#FFDEE2] rounded-full mr-3"></div>
                     <span class="font-medium text-gray-900">Helensville</span>
                   </div>
-                  <span class="text-sm text-gray-600">Most Services • 15 mins</span>
+                  <span class="text-sm text-gray-600">All Services • 15 mins</span>
                 </div>
 
                 <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
@@ -278,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
                     <div class="w-3 h-3 bg-[#D3E4FD] rounded-full mr-3"></div>
                     <span class="font-medium text-gray-900">Wainui</span>
                   </div>
-                  <span class="text-sm text-gray-600">Selected Services • 20 mins</span>
+                  <span class="text-sm text-gray-600">All Services • 20 mins</span>
                 </div>
 
                 <div class="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
@@ -286,17 +289,17 @@ import Layout from '../layouts/Layout.astro';
                     <div class="w-3 h-3 bg-gray-300 rounded-full mr-3"></div>
                     <span class="font-medium text-gray-900">Waitoki</span>
                   </div>
-                  <span class="text-sm text-gray-600">Selected Services • 25 mins</span>
+                  <span class="text-sm text-gray-600">All Services • 25 mins</span>
                 </div>
               </div>
 
               <div class="mt-8 p-6 bg-white rounded-lg">
-                <h4 class="font-semibold text-gray-900 mb-3">Mobile Service Information</h4>
+                <h4 class="font-semibold text-gray-900 mb-3">Visiting the Salon</h4>
                 <ul class="text-sm text-gray-600 space-y-2">
-                  <li>• Mobile services subject to minimum booking requirements</li>
-                  <li>• Travel time included in service duration</li>
-                  <li>• Some treatments may require salon visit for optimal results</li>
-                  <li>• Book in advance for mobile appointments</li>
+                  <li>• All services are performed at our Kaukapakapa salon</li>
+                  <li>• Plan your travel time from your suburb using the times above</li>
+                  <li>• Free on-site parking is available for every appointment</li>
+                  <li>• Book in advance to secure your preferred time</li>
                 </ul>
               </div>
             </div>
@@ -314,7 +317,7 @@ import Layout from '../layouts/Layout.astro';
                   </a>
                   
                   <div class="flex gap-3">
-                    <a href="tel:0274799320" class="btn-secondary flex-1 text-center text-sm">
+                    <a href={business.phoneHref} class="btn-secondary flex-1 text-center text-sm">
                       Call Now
                     </a>
                     <a href="/contact" class="btn-secondary flex-1 text-center text-sm">
@@ -347,7 +350,7 @@ import Layout from '../layouts/Layout.astro';
   
   @media (min-width: 1920px) {
     .hero-bg-home {
-      background-image: url('/images/optimized/salon-exterior_1920.webp');
+      background-image: url('/images/optimized/salon-exterior_1200.webp');
     }
   }
 </style>

@@ -1,0 +1,13 @@
+# Google Search Console MCP — Hair By Melissa project only.
+[mcp_servers.gsc]
+command = "/Users/altusmacbook/.local/bin/uvx"
+args = ["--from", "mcp-search-console==0.4.1", "mcp-search-console"]
+cwd = "/Volumes/KINGSTON/projects/hairbymellisa"
+enabled = true
+startup_timeout_sec = 60
+tool_timeout_sec = 120
+
+[mcp_servers.gsc.env]
+GSC_OAUTH_CLIENT_SECRETS_FILE = "/Volumes/KINGSTON/projects/hairbymellisa/.codex/gsc/client_secrets.json"
+GSC_CONFIG_DIR = "/Volumes/KINGSTON/projects/hairbymellisa/.codex/gsc"
+GSC_ALLOW_DESTRUCTIVE = "false"

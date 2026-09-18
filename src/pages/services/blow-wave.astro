@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('blow-wave');
+
+const pageTitle = "Blow Wave Kaukapakapa, $50, North Auckland";
+const pageDescription = "Professional blow wave in Kaukapakapa, North Auckland. $50, about 45-60 minutes with Melissa. Smooth, voluminous styling, free parking, book online.";
 
 const faqs = serviceFAQs['blow-wave'];
 ---
 
-<ServiceLayout 
-  title="Blow Wave" 
-  price="Contact for pricing" 
-  duration="45-60 minutes"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/blonde-balayage_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Professional Styling for Every Occasion</h2>

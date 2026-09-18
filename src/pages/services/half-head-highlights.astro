@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('half-head-highlights');
+
+const pageTitle = "Half Head Highlights, $140, Kaukapakapa";
+const pageDescription = "Half head of highlights in Kaukapakapa, North Auckland. $140, about 2-2.5 hours with Melissa. Free parking, online booking, open 7 days.";
 
 const faqs = serviceFAQs['half-head-highlights'];
 ---
 
-<ServiceLayout 
-  title="Half Head of Highlights" 
-  price="Contact for pricing" 
-  duration="2-2.5 hours"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/highlights-before-after_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Natural Sun-Kissed Dimension Throughout</h2>

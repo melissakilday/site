@@ -1,51 +1,58 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BlogArticleSchema from '../../components/BlogArticleSchema.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
 
-const pageTitle = "Complete Keratin Treatment Aftercare Guide | Hair By Melissa";
-const pageDescription = "Make your keratin treatment last 5+ months with expert aftercare tips. Learn what to avoid, which products to use, and how to maintain smooth, frizz-free hair from Kaukapakapa's trusted hairdresser.";
+const pageTitle = "Keratin Aftercare: When Can You Wash Your Hair?";
+const pageDescription = "Wait 72 hours before washing. What to avoid, when you can brush, tie or dry-shampoo, and how to make a keratin treatment last 5 months. By an NZ stylist.";
 const pageKeywords = "keratin aftercare, keratin treatment maintenance, post keratin care, keratin treatment tips, smooth hair maintenance, frizz-free hair care, keratin products";
 const slug = "keratin-aftercare";
 const publishDate = "2025-01-20";
 const readTime = "6 min read";
 const category = "Hair Care Tips";
 const author = "Melissa";
+const featuredImage = "https://hairbymelissa.co.nz/images/optimized/keratin-before-after_1200.webp";
 
-
-// FAQ Schema for this article
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How long should I wait to wash my hair after keratin treatment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wait at least 48-72 hours before washing your hair after a keratin treatment. This allows the treatment to fully bond with your hair cuticles for maximum effectiveness and longevity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What shampoo should I use after keratin treatment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use only sulfate-free, sodium chloride-free shampoos after keratin treatment. Sulfates can strip the keratin from your hair, reducing the treatment's effectiveness and lifespan."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long does keratin treatment last with proper care?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "With proper aftercare, a keratin treatment can last 4-6 months. Using the right products, avoiding excessive heat, and following maintenance guidelines can extend the treatment's life."
-      }
-    }
-  ]
-};
+// Single FAQ source of truth — drives both the visible accordion and the
+// FAQPage JSON-LD via FAQSchema.astro. Questions are character-identical to
+// the 8 H2s below.
+const faqs = [
+  {
+    question: "When can I wash my hair after a keratin treatment?",
+    answer: "Wait 72 hours before washing your hair after a keratin treatment; 48 hours is the absolute minimum for most formulas. The keratin is still bonding with your hair cuticles during that window, so moisture can disrupt the process."
+  },
+  {
+    question: "Can I brush or comb my hair after keratin?",
+    answer: "In the first 72 hours, avoid brushing — only gently comb with a wide-tooth comb if absolutely necessary. After that, gently brush morning and night to distribute natural oils and keep hair smooth."
+  },
+  {
+    question: "Can I tie my hair up after keratin?",
+    answer: "No — for the first 72 hours keep your hair completely loose. No ponytails, clips, bands, headbands, hats or tucking behind your ears, since any crease can set into the new keratin bonds."
+  },
+  {
+    question: "Can I use dry shampoo after a keratin treatment?",
+    answer: "Yes — dry shampoo is the one product allowed during the first 72 hours if your roots get oily, applied sparingly at the roots only. Afterwards, it's a good way to stretch out your 2–3 washes a week."
+  },
+  {
+    question: "What happens if my hair gets wet in the first 72 hours?",
+    answer: "Don't panic — immediately blow-dry your hair straight with medium heat and a round brush to reset it. It isn't ideal and may shorten how long the treatment lasts, but quick action limits the damage."
+  },
+  {
+    question: "What shampoo should I use after keratin?",
+    answer: "Use a sulfate-free, sodium-chloride-free, pH-balanced shampoo and conditioner — sulfates strip keratin from the hair and shorten the treatment's life. Wash no more than 2–3 times a week with lukewarm water and a cool final rinse."
+  },
+  {
+    question: "How long does a keratin treatment last?",
+    answer: "A keratin treatment lasts three to five months with proper aftercare, and up to 5 months with Hair By Melissa's formaldehyde-free formula. Sulfate-free products and limited heat styling extend its life — book a touch-up once frizz returns to the roots or it's been 4–5 months."
+  },
+  {
+    question: "When can I colour my hair after keratin?",
+    answer: "Wait at least 2 weeks after a keratin treatment before any chemical colour processing. Book a consultation so your stylist can plan your colour and keratin schedule together."
+  }
+];
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
@@ -63,7 +70,7 @@ const faqSchema = {
           <li class="text-gray-900 font-medium">Keratin Aftercare Guide</li>
         </ol>
       </nav>
-      
+
       <div class="max-w-4xl">
         <div class="flex items-center space-x-4 mb-4">
           <span class="bg-[#D3E4FD] text-salon-darkblue px-3 py-1 rounded-full text-sm font-medium">
@@ -90,13 +97,24 @@ const faqSchema = {
             </span>
           </div>
         </div>
-        
+
         <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
-          Complete Keratin Treatment Aftercare Guide
+          Keratin treatment aftercare: when to wash, brush and style your hair
         </h1>
-        <p class="text-xl text-gray-700 leading-relaxed">
-          You've invested in a keratin treatment to achieve smooth, frizz-free hair. Now learn how to protect that investment and make your treatment last 5+ months with these professional aftercare tips from Hair By Melissa.
-        </p>
+
+        <!-- Quick-answer box: first content block after the H1 -->
+        <div class="bg-[#D3E4FD] bg-opacity-40 border-l-4 border-salon-darkblue p-6 rounded-lg mb-6">
+          <p class="text-gray-800 mb-0">
+            <strong>Quick answer:</strong> Wait <strong>72 hours</strong> before your first wash (48 hours is the absolute minimum for most formulas). Until then keep hair dry, straight and loose: no hair ties, clips, tucking behind ears, or sweat. After that, use a sulfate-free shampoo and wash no more than 2–3 times a week.
+          </p>
+        </div>
+
+        <!-- Early soft CTA -->
+        <div class="bg-gray-50 border border-gray-200 p-5 rounded-lg text-gray-700">
+          <p class="mb-0">
+            Based in North Auckland? Melissa does keratin treatments at her Kaukapakapa salon for $180, about 2–3 hours. <a href="/services/keratin-treatments/" class="text-salon-darkblue font-semibold hover:underline">See the keratin treatment →</a>
+          </p>
+        </div>
       </div>
     </header>
 
@@ -104,121 +122,152 @@ const faqSchema = {
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
         <div class="prose prose-lg max-w-none">
-          
-          <!-- Introduction -->
-          <div class="bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">Why Aftercare Matters</h2>
-            <p class="text-gray-700 mb-0">
-              A keratin treatment is more than just a salon service—it's an investment in your hair's health and manageability. At Hair By Melissa, our formaldehyde-free keratin treatments can last up to 5 months, but only with proper aftercare. The first 72 hours are critical, and your ongoing maintenance routine determines how long you'll enjoy smooth, frizz-free hair.
-            </p>
-          </div>
 
-          <!-- The First 72 Hours -->
+          <!-- Intro (demoted from old "Why Aftercare Matters" H2 — no heading, not one of the 8 questions) -->
+          <p class="text-gray-700">
+            A keratin treatment is an investment in your hair's health and manageability. At Hair By Melissa, our formaldehyde-free keratin treatments can last up to 5 months — but only with proper aftercare. Here's exactly what to do, question by question.
+          </p>
+
+          <!-- Q1 -->
           <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">The Critical First 72 Hours</h2>
-            
-            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
-              <div class="flex">
-                <svg class="w-6 h-6 text-yellow-400 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                </svg>
-                <div>
-                  <p class="font-semibold text-yellow-800 mb-2">Critical Period Alert</p>
-                  <p class="text-yellow-700">During the first 72 hours, the keratin is still bonding with your hair cuticles. Any moisture, chemicals, or physical manipulation can disrupt this process and reduce your treatment's effectiveness.</p>
-                </div>
-              </div>
-            </div>
+            <h2 class="text-3xl font-bold mb-6">When can I wash my hair after a keratin treatment?</h2>
 
-            <h3 class="text-2xl font-semibold mb-4">What You MUST Avoid (First 72 Hours)</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div class="bg-red-50 p-6 rounded-lg border border-red-200">
-                <h4 class="font-semibold text-red-800 mb-3 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                  NO Water Contact
-                </h4>
-                <ul class="text-red-700 space-y-1">
-                  <li>• No washing or shampooing</li>
-                  <li>• Avoid rain and humidity</li>
-                  <li>• No swimming or water sports</li>
-                  <li>• Use dry shampoo if needed</li>
-                </ul>
-              </div>
-              
-              <div class="bg-red-50 p-6 rounded-lg border border-red-200">
-                <h4 class="font-semibold text-red-800 mb-3 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                  NO Hair Accessories
-                </h4>
-                <ul class="text-red-700 space-y-1">
-                  <li>• No ponytails or buns</li>
-                  <li>• Avoid hair clips or bands</li>
-                  <li>• No headbands or hats</li>
-                  <li>• Sleep with hair completely loose</li>
-                </ul>
-              </div>
-              
-              <div class="bg-red-50 p-6 rounded-lg border border-red-200">
-                <h4 class="font-semibold text-red-800 mb-3 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                  NO Physical Manipulation
-                </h4>
-                <ul class="text-red-700 space-y-1">
-                  <li>• Don't touch or run fingers through hair</li>
-                  <li>• No brushing (gentle combing only)</li>
-                  <li>• Avoid tucking behind ears</li>
-                  <li>• No excessive head movement during sleep</li>
-                </ul>
-              </div>
-              
-              <div class="bg-red-50 p-6 rounded-lg border border-red-200">
-                <h4 class="font-semibold text-red-800 mb-3 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                  NO Heat or Chemicals
-                </h4>
-                <ul class="text-red-700 space-y-1">
-                  <li>• No hair styling tools</li>
-                  <li>• Avoid saunas or steam rooms</li>
-                  <li>• No hair products (except recommended)</li>
-                  <li>• Avoid excessive sweating</li>
-                </ul>
-              </div>
-            </div>
+            <p class="text-gray-700 mb-6">
+              Wait 72 hours before washing your hair after a keratin treatment — 48 hours is the absolute minimum for most formulas. During this window the keratin is still bonding with your hair cuticles, and moisture, chemicals or physical manipulation can disrupt that process and reduce how long the treatment lasts.
+            </p>
 
-            <div class="bg-green-50 p-6 rounded-lg border border-green-200 mb-8">
-              <h4 class="font-semibold text-green-800 mb-3 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                What You CAN Do
-              </h4>
-              <ul class="text-green-700 space-y-1">
-                <li>• Sleep on a silk or satin pillowcase</li>
-                <li>• Gently comb with a wide-tooth comb if absolutely necessary</li>
-                <li>• Use dry shampoo at roots only if hair becomes oily</li>
-                <li>• Keep hair straight and loose at all times</li>
-                <li>• Avoid activities that cause sweating</li>
+            <h3 class="text-xl font-semibold mb-4">Also avoid for 72 hours</h3>
+            <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+              <ul class="text-red-700 space-y-1">
+                <li>• No swimming, rain or humidity</li>
+                <li>• No heat styling tools, saunas or steam rooms</li>
+                <li>• No hair products except a recommended dry shampoo</li>
+                <li>• Avoid excessive sweating</li>
               </ul>
             </div>
           </section>
 
-          <!-- Long-term Care -->
+          <!-- Q2 -->
           <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">Long-Term Keratin Maintenance (After 72 Hours)</h2>
-            
-            <h3 class="text-2xl font-semibold mb-4">The Right Products Make All the Difference</h3>
-            
+            <h2 class="text-3xl font-bold mb-6">Can I brush or comb my hair after keratin?</h2>
+
+            <p class="text-gray-700 mb-6">
+              Not in the first 72 hours — avoid brushing altogether, and only comb gently with a wide-tooth comb if it's absolutely necessary. Don't touch or run your fingers through your hair, and try to keep head movement to a minimum while you sleep.
+            </p>
+
+            <div class="bg-red-50 p-6 rounded-lg border border-red-200 mb-8">
+              <h4 class="font-semibold text-red-800 mb-3 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                NO Physical Manipulation (first 72 hours)
+              </h4>
+              <ul class="text-red-700 space-y-1">
+                <li>• Don't touch or run fingers through hair</li>
+                <li>• Avoid tucking behind ears</li>
+                <li>• No excessive head movement during sleep</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-4">Brushing once you're past 72 hours</h3>
+            <div class="bg-white border border-gray-200 p-4 rounded-lg">
+              <ul class="text-gray-700 space-y-1">
+                <li>• Morning: gently brush with a wide-tooth comb, apply leave-in conditioner to the ends, and use heat protectant before styling</li>
+                <li>• Night: brush gently to distribute natural oils, sleep on a silk or satin pillowcase, and avoid tight hairstyles</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Q3 -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Can I tie my hair up after keratin?</h2>
+
+            <p class="text-gray-700 mb-6">
+              No — for the first 72 hours your hair needs to stay completely loose. Any tie, clip or crease can set into the new keratin bonds while they're still forming, leaving a dent or wave where it shouldn't be.
+            </p>
+
+            <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+              <h4 class="font-semibold text-red-800 mb-3 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+                NO Hair Accessories (first 72 hours)
+              </h4>
+              <ul class="text-red-700 space-y-1">
+                <li>• No ponytails or buns</li>
+                <li>• Avoid hair clips or bands</li>
+                <li>• No headbands or hats</li>
+                <li>• Sleep with hair completely loose</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Q4 -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">Can I use dry shampoo after a keratin treatment?</h2>
+
+            <p class="text-gray-700 mb-0">
+              Yes — dry shampoo is the one product you're allowed to use during the first 72 hours if your roots get oily, applied sparingly at the roots only. Once you're past the 72-hour mark, dry shampoo between washes is a good way to stretch out your 2–3 washes a week and keep the treatment lasting longer.
+            </p>
+          </section>
+
+          <!-- Mid-article CTA — immediately after Q4 -->
+          <div class="bg-gradient-to-r from-[#1EAEDB] to-[#0891B2] text-white p-6 rounded-lg mb-12 text-center">
+            <p class="text-lg mb-0">
+              Ready for smooth hair that lasts? <a href="/services/keratin-treatments/" class="underline font-semibold">Book a keratin treatment in North Auckland</a> or call <a href="tel:+64274799320" class="underline font-semibold">0274 799 320</a>.
+            </p>
+          </div>
+
+          <!-- Q5 -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">What happens if my hair gets wet in the first 72 hours?</h2>
+
+            <p class="text-gray-700 mb-6">
+              Don't panic — immediately blow-dry your hair straight with medium heat and a round brush to reset it. It isn't ideal and can shorten how long the treatment lasts, but quick action minimizes the damage. Contact your stylist if you're concerned about the result.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4">Troubleshooting common issues</h3>
+            <div class="space-y-6">
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="text-xl font-semibold mb-3 text-red-600">Problem: Hair Feels Stiff or Crunchy</h4>
+                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Product buildup or using the wrong products</p>
+                <ul class="text-gray-700 space-y-1 ml-4">
+                  <li>• Use a clarifying shampoo once, then a deep conditioning treatment</li>
+                  <li>• Switch to keratin-safe products</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="text-xl font-semibold mb-3 text-red-600">Problem: Frizz Returning Early</h4>
+                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Using sulfate shampoos or exposure to chlorine</p>
+                <ul class="text-gray-700 space-y-1 ml-4">
+                  <li>• Switch to sulfate-free products and increase deep conditioning</li>
+                  <li>• Reduce heat styling frequency, or consider a touch-up treatment</li>
+                </ul>
+              </div>
+
+              <div class="bg-white border border-gray-200 p-6 rounded-lg">
+                <h4 class="text-xl font-semibold mb-3 text-red-600">Problem: Hair Looks Greasy or Flat</h4>
+                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Over-conditioning or using too much product</p>
+                <ul class="text-gray-700 space-y-1 ml-4">
+                  <li>• Reduce conditioning frequency and focus it on the ends only</li>
+                  <li>• Use less product, or try a lightweight leave-in conditioner</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Q6 -->
+          <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6">What shampoo should I use after keratin?</h2>
+
+            <p class="text-gray-700 mb-6">
+              Use a sulfate-free, sodium chloride-free, pH-balanced shampoo and conditioner — sulfates strip the keratin from your hair and shorten the treatment's lifespan. Wash no more than 2–3 times a week with lukewarm water and finish with a cool rinse to seal the cuticle.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4">Product recommendations</h3>
             <div class="bg-blue-50 p-8 rounded-lg mb-8">
               <h4 class="text-xl font-semibold mb-4 text-blue-800">Essential Product Guidelines</h4>
-              
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h5 class="font-semibold mb-3 text-green-700 flex items-center">
@@ -235,7 +284,6 @@ const faqSchema = {
                     <li><strong>Deep Conditioning Mask:</strong> Weekly treatments</li>
                   </ul>
                 </div>
-                
                 <div>
                   <h5 class="font-semibold mb-3 text-red-700 flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,33 +302,32 @@ const faqSchema = {
               </div>
             </div>
 
-            <h3 class="text-2xl font-semibold mb-4">Optimal Washing Routine</h3>
-            
+            <h3 class="text-2xl font-semibold mb-4">Optimal washing routine</h3>
             <div class="bg-white border border-gray-200 p-6 rounded-lg mb-6">
               <h4 class="font-semibold mb-3">Step-by-Step Washing Process</h4>
               <ol class="space-y-3 text-gray-700">
                 <li class="flex items-start">
                   <span class="bg-salon-darkblue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</span>
                   <div>
-                    <strong>Pre-Rinse:</strong> Thoroughly wet hair with lukewarm water. Avoid hot water as it opens the hair cuticle and can strip the keratin.
+                    <strong>Pre-rinse:</strong> lukewarm water only — hot water opens the cuticle and can strip the keratin.
                   </div>
                 </li>
                 <li class="flex items-start">
                   <span class="bg-salon-darkblue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</span>
                   <div>
-                    <strong>Gentle Shampooing:</strong> Use a sulfate-free shampoo, focusing on the scalp. Avoid scrubbing or rough movements. Let the suds run down the length of your hair naturally.
+                    <strong>Shampoo gently:</strong> sulfate-free, focused on the scalp, no scrubbing.
                   </div>
                 </li>
                 <li class="flex items-start">
                   <span class="bg-salon-darkblue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</span>
                   <div>
-                    <strong>Conditioning:</strong> Apply conditioner from mid-length to ends, avoiding the roots. Leave for 2-3 minutes before rinsing thoroughly.
+                    <strong>Condition:</strong> mid-length to ends only, leave 2-3 minutes, then rinse.
                   </div>
                 </li>
                 <li class="flex items-start">
                   <span class="bg-salon-darkblue text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">4</span>
                   <div>
-                    <strong>Cool Rinse:</strong> Finish with cool water to seal the hair cuticle and lock in the keratin treatment.
+                    <strong>Cool rinse:</strong> seals the cuticle and locks in the treatment.
                   </div>
                 </li>
               </ol>
@@ -297,192 +344,64 @@ const faqSchema = {
             </div>
           </section>
 
-          <!-- Styling Guidelines -->
+          <!-- Q7 -->
           <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">Heat Styling & Daily Care</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Heat Styling Best Practices</h3>
-                <div class="space-y-4">
-                  <div class="bg-white border border-gray-200 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">Temperature Guidelines</h4>
-                    <ul class="text-gray-700 space-y-1">
-                      <li>• Blow dryer: Medium heat, cool shot finish</li>
-                      <li>• Flat iron: 300-350°F maximum</li>
-                      <li>• Curling iron: 300°F maximum</li>
-                      <li>• Always use heat protectant first</li>
-                    </ul>
-                  </div>
-                  
-                  <div class="bg-white border border-gray-200 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">Frequency Limits</h4>
-                    <ul class="text-gray-700 space-y-1">
-                      <li>• Heat styling: Maximum 2-3 times per week</li>
-                      <li>• Air dry when possible</li>
-                      <li>• Use heat-free styling methods</li>
-                      <li>• Give hair rest days between heat sessions</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h3 class="text-xl font-semibold mb-4">Daily Hair Care Routine</h3>
-                <div class="space-y-4">
-                  <div class="bg-white border border-gray-200 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">Morning Routine</h4>
-                    <ul class="text-gray-700 space-y-1">
-                      <li>• Gently brush with wide-tooth comb</li>
-                      <li>• Apply leave-in conditioner to ends</li>
-                      <li>• Use heat protectant if styling</li>
-                      <li>• Style on lower heat settings</li>
-                    </ul>
-                  </div>
-                  
-                  <div class="bg-white border border-gray-200 p-4 rounded-lg">
-                    <h4 class="font-semibold mb-2">Night Routine</h4>
-                    <ul class="text-gray-700 space-y-1">
-                      <li>• Brush gently to distribute natural oils</li>
-                      <li>• Sleep on silk or satin pillowcase</li>
-                      <li>• Loose braid for long hair (optional)</li>
-                      <li>• Avoid tight hairstyles while sleeping</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            <h2 class="text-3xl font-bold mb-6">How long does a keratin treatment last?</h2>
 
-          <!-- Troubleshooting -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">Troubleshooting Common Issues</h2>
-            
-            <div class="space-y-6">
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3 text-red-600">Problem: Hair Feels Stiff or Crunchy</h3>
-                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Product buildup or using the wrong products</p>
-                <p class="text-gray-700 mb-3"><strong>Solution:</strong></p>
-                <ul class="text-gray-700 space-y-1 ml-4">
-                  <li>• Use a clarifying shampoo (once only)</li>
-                  <li>• Follow with deep conditioning treatment</li>
-                  <li>• Switch to keratin-safe products</li>
-                  <li>• Book a consultation for product recommendations</li>
-                </ul>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3 text-red-600">Problem: Frizz Returning Early</h3>
-                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Using sulfate shampoos or exposure to chlorine</p>
-                <p class="text-gray-700 mb-3"><strong>Solution:</strong></p>
-                <ul class="text-gray-700 space-y-1 ml-4">
-                  <li>• Immediately switch to sulfate-free products</li>
-                  <li>• Increase deep conditioning treatments</li>
-                  <li>• Reduce heat styling frequency</li>
-                  <li>• Consider a keratin touch-up treatment</li>
-                </ul>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-3 text-red-600">Problem: Hair Looks Greasy or Flat</h3>
-                <p class="text-gray-700 mb-3"><strong>Cause:</strong> Over-conditioning or using too much product</p>
-                <p class="text-gray-700 mb-3"><strong>Solution:</strong></p>
-                <ul class="text-gray-700 space-y-1 ml-4">
-                  <li>• Reduce conditioning frequency</li>
-                  <li>• Focus conditioner on ends only</li>
-                  <li>• Use less product overall</li>
-                  <li>• Try a lightweight leave-in conditioner</li>
-                </ul>
-              </div>
-            </div>
-          </section>
+            <p class="text-gray-700 mb-6">
+              A keratin treatment lasts three to five months with proper aftercare — Hair By Melissa's formaldehyde-free formula can last up to 5 months when you follow the wash, product and heat-styling guidelines above. Limiting heat, using the right products and handling hair gently all extend its life.
+            </p>
 
-          <!-- Professional Touch-ups -->
-          <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-6">When to Book Your Next Treatment</h2>
-            
+            <h3 class="text-xl font-semibold mb-4">Heat styling best practices</h3>
+            <div class="bg-white border border-gray-200 p-4 rounded-lg mb-8">
+              <ul class="text-gray-700 space-y-1">
+                <li>• Flat iron 300-350°F max, curling iron 300°F max, always with heat protectant</li>
+                <li>• Heat styling maximum 2-3 times per week — air dry the rest of the time</li>
+                <li>• Blow dryer on medium heat with a cool shot finish</li>
+              </ul>
+            </div>
+
+            <h3 class="text-xl font-semibold mb-4">When to book your next treatment</h3>
             <div class="bg-gradient-to-r from-[#D3E4FD] to-[#FFDEE2] p-8 rounded-lg">
-              <h3 class="text-xl font-semibold mb-4">Signs It's Time for a Touch-Up</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>Frizz returning to root area</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>Increased styling time needed</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>Hair texture feeling coarser</span>
-                  </li>
-                </ul>
-                <ul class="space-y-2 text-gray-700">
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>Humidity affecting hair more</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>4-5 months since last treatment</span>
-                  </li>
-                  <li class="flex items-start">
-                    <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                    </svg>
-                    <span>Longing for that fresh-treatment feel</span>
-                  </li>
-                </ul>
-              </div>
+              <h4 class="font-semibold mb-4">Signs It's Time for a Touch-Up</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  <span>Frizz returning to the root area, or hair texture feeling coarser</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  <span>Increased styling time needed, or humidity affecting hair more</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                  </svg>
+                  <span>4-5 months since your last treatment</span>
+                </li>
+              </ul>
             </div>
           </section>
 
-          <!-- FAQ Section -->
+          <!-- Q8 -->
           <section class="mb-12">
-            <h2 class="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-            
-            <div class="space-y-6">
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-3">Q: How long should I wait to wash my hair after keratin treatment?</h3>
-                <p class="text-gray-700">Wait at least 48-72 hours before washing your hair after a keratin treatment. This allows the treatment to fully bond with your hair cuticles for maximum effectiveness and longevity. At Hair By Melissa, we recommend waiting the full 72 hours for best results.</p>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-3">Q: What shampoo should I use after keratin treatment?</h3>
-                <p class="text-gray-700">Use only sulfate-free, sodium chloride-free shampoos after keratin treatment. Sulfates can strip the keratin from your hair, reducing the treatment's effectiveness and lifespan. We can recommend specific products that work best with our treatments.</p>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-3">Q: How long does keratin treatment last with proper care?</h3>
-                <p class="text-gray-700">With proper aftercare, a keratin treatment can last 4-6 months. Using the right products, avoiding excessive heat, and following maintenance guidelines can extend the treatment's life. Our clients often see results lasting 5+ months with dedicated care.</p>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-3">Q: Can I color my hair after keratin treatment?</h3>
-                <p class="text-gray-700">Yes, but timing matters. Wait at least 2 weeks after keratin treatment before any chemical processing. We recommend booking a consultation to plan your color and keratin schedule for optimal results without compromising either treatment.</p>
-              </div>
-              
-              <div class="bg-white border border-gray-200 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-3">Q: What if I accidentally get my hair wet in the first 72 hours?</h3>
-                <p class="text-gray-700">Don't panic! Immediately blow dry your hair straight with medium heat and a round brush. While this isn't ideal, quick action can minimize damage to the treatment. Contact us if you're concerned about the results.</p>
-              </div>
-            </div>
+            <h2 class="text-3xl font-bold mb-6">When can I colour my hair after keratin?</h2>
+
+            <p class="text-gray-700 mb-0">
+              Wait at least 2 weeks after a keratin treatment before any chemical colour processing. Timing matters — book a consultation so your stylist can plan your colour and keratin schedule together for the best results without compromising either treatment.
+            </p>
           </section>
+
+          <!-- FAQ Section: single source of truth drives both visible accordion and JSON-LD -->
+          <FAQSchema faqs={faqs} pageUrl="https://hairbymelissa.co.nz/blog/keratin-aftercare/" />
 
           <!-- Call to Action -->
-          <section class="bg-gradient-to-r from-[#1EAEDB] to-[#0891B2] p-8 rounded-lg text-white text-center">
-            <h2 class="text-2xl font-bold mb-4">Ready for Your Keratin Treatment?</h2>
+          <section class="bg-gradient-to-r from-[#1EAEDB] to-[#0891B2] p-8 rounded-lg text-white text-center mt-12">
+            <h3 class="text-2xl font-bold mb-4">Ready for Your Keratin Treatment?</h3>
             <p class="text-lg mb-6">
               Experience the transformative power of our professional keratin treatments at Hair By Melissa. Located in Kaukapakapa, serving all of North Auckland with premium hair care.
             </p>
@@ -521,13 +440,13 @@ const faqSchema = {
             Professional keratin treatments in Kaukapakapa. Transform frizzy hair into smooth, manageable locks for up to 5 months.
           </p>
           <a href="/services/keratin-treatments" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors inline-flex items-center">
-            Book Keratin Treatment 
+            Book Keratin Treatment
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
         </div>
-        
+
         <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
           <div class="w-12 h-12 bg-salon-darkblue rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -543,13 +462,13 @@ const faqSchema = {
             Perfect your keratin-treated hair with a professional cut and styling session. Showcase your smooth, healthy hair.
           </p>
           <a href="/services/womens-cut-finish" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors inline-flex items-center">
-            Book Cut & Style 
+            Book Cut & Style
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
         </div>
-        
+
         <div class="bg-white rounded-lg shadow-md p-6 border border-gray-100 hover:shadow-lg transition-shadow">
           <div class="w-12 h-12 bg-salon-darkblue rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -565,7 +484,7 @@ const faqSchema = {
             Learn to recognize when your hair needs professional treatment. Understand the signs that indicate keratin treatment benefits.
           </p>
           <a href="/blog/hair-health-signs" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors inline-flex items-center">
-            Read Health Guide 
+            Read Health Guide
             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
@@ -592,7 +511,7 @@ const faqSchema = {
             <p class="text-gray-600">Compare these popular coloring techniques and find the perfect option for your lifestyle and hair goals.</p>
           </div>
         </article>
-        
+
         <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
           <div class="h-48 bg-gradient-to-br from-green-500 to-emerald-400"></div>
           <div class="p-6">
@@ -605,7 +524,7 @@ const faqSchema = {
             <p class="text-gray-600">Protect your hair during Auckland's cooler months with professional tips and product recommendations.</p>
           </div>
         </article>
-        
+
         <article class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
           <div class="h-48 bg-gradient-to-br from-orange-500 to-red-400"></div>
           <div class="p-6">
@@ -623,7 +542,7 @@ const faqSchema = {
   </section>
 
   <!-- Blog Article Schema -->
-  <BlogArticleSchema 
+  <BlogArticleSchema
     title={pageTitle}
     description={pageDescription}
     keywords={pageKeywords}
@@ -632,8 +551,7 @@ const faqSchema = {
     category={category}
     author={author}
     slug={slug}
+    featuredImage={featuredImage}
+    modifiedDate="2026-09-18"
   />
-
-  <!-- FAQ Schema Script -->
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </Layout>

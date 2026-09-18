@@ -2,14 +2,22 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+
+const service = getService('permanent-tint-all-over');
+
+const pageTitle = "All Over Hair Colour, $140, North Auckland";
+const pageDescription = "Permanent tint, all-over colour in Kaukapakapa, North Auckland. $140, about 1.5-2 hours with Melissa. Full gray coverage, free parking, book online.";
 
 const faqs = serviceFAQs['permanent-tint-all-over'];
 ---
 
-<ServiceLayout 
-  title="Permanent Tint & All Over Color" 
-  price="Contact for pricing" 
-  duration="1.5-2 hours"
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
   image="/images/optimized/updo-styling_800.webp"
 >
   <h2 class="text-3xl font-bold mb-6">Complete Color Transformation from Roots to Ends</h2>
