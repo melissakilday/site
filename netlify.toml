@@ -9,6 +9,12 @@
 
 # Domain consolidation redirects - Force apex domain for SEO authority
 [[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://www.hairbymelissa.co.nz/*"
   to = "https://hairbymelissa.co.nz/:splat"
   status = 301
