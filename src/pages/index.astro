@@ -37,19 +37,16 @@ const reviews = [
     id: 1,
     name: "Sarah Johnson",
     review: "Melissa transformed my dull, lifeless hair into a vibrant masterpiece. The keratin treatment was a game-changer for my frizzy hair!",
-    rating: 5,
   },
   {
     id: 2,
     name: "Jessica Miller",
     review: "I've been to many salons, but none compare to Hair By Melissa. The balayage she did on my hair has received so many compliments.",
-    rating: 5,
   },
   {
     id: 3,
     name: "Rachel Thompson",
     review: "Melissa takes the time to understand exactly what you want. My highlights look so natural and blend perfectly with my base color.",
-    rating: 5,
   },
 ];
 
@@ -316,13 +313,6 @@ const faqSchema = {
             class="glass-card rounded-lg p-8 animate-scale"
             style={`animation-delay: ${review.id * 100}ms`}
           >
-            <div class="flex mb-4">
-              {[...Array(review.rating)].map((_) => (
-                <svg class="h-5 w-5 text-yellow-500 fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              ))}
-            </div>
             <p class="text-gray-700 italic">"{review.review}"</p>
             <p class="font-medium mt-4">- {review.name}</p>
           </div>
@@ -629,7 +619,7 @@ const faqSchema = {
       
       <div class="bg-[#F8F9FA] rounded-lg overflow-hidden shadow-lg">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51188.31438193855!2d174.48289783973983!3d-36.61726962066159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0ccd0a6cb14ae1%3A0x500ef6143a31611!2sKaukapakapa%2C%20Auckland%2C%20New%20Zealand!5e0!3m2!1sen!2sus!4v1712885742714!5m2!1sen!2sus"
+          src="https://www.google.com/maps?q=Hair+By+Melissa+A,+12+Magnolia+Lane,+Kaukapakapa+0875&output=embed"
           width="100%"
           height="450"
           style="border:0;"
