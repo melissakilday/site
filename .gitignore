@@ -79,3 +79,8 @@ tools/mcp-gsc/__pycache__/
 # geo-optimizer (project-local)
 tools/geo-optimizer/.venv/
 tools/geo-optimizer/reports/
+
+# claude-seo (project-local vendored skill runtime)
+tools/claude-seo/.venv/
+tools/claude-seo/data/
+tools/claude-seo/*.db
