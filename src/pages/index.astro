@@ -71,6 +71,30 @@ const galleryImages = [
     alt: "Hair By Melissa salon interior showing professional styling station and modern decor"
   }
 ];
+
+const homeFaqs = [
+  {
+    question: "What's the best hair salon near me in North Auckland?",
+    answer: "Hair By Melissa in Kaukapakapa village offers premium hair services including keratin treatments ($180), balayage ($230), and expert cuts ($50) with free parking and a peaceful village atmosphere.",
+  },
+  {
+    question: "Where can I get keratin treatment near Helensville?",
+    answer: "Hair By Melissa, located 15 minutes from Helensville in Kaukapakapa, specializes in formaldehyde-free keratin treatments that last 3-5 months, perfect for North Auckland's coastal climate.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <Layout
@@ -261,20 +285,17 @@ const galleryImages = [
         <div class="bg-white rounded-xl shadow-lg p-8" itemscope itemtype="https://schema.org/FAQPage">
           <h3 class="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
           <div class="grid md:grid-cols-2 gap-6 text-left">
-            <div itemscope itemtype="https://schema.org/Question">
-              <h4 class="font-semibold mb-2" itemprop="name">What's the best hair salon near me in North Auckland?</h4>
-              <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                <p class="text-gray-700" itemprop="text">Hair By Melissa in Kaukapakapa village offers premium hair services including keratin treatments ($180), balayage ($230), and expert cuts ($50) with free parking and a peaceful village atmosphere.</p>
+            {homeFaqs.map((faq) => (
+              <div itemscope itemtype="https://schema.org/Question">
+                <h4 class="font-semibold mb-2" itemprop="name">{faq.question}</h4>
+                <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+                  <p class="text-gray-700" itemprop="text">{faq.answer}</p>
+                </div>
               </div>
-            </div>
-            <div itemscope itemtype="https://schema.org/Question">
-              <h4 class="font-semibold mb-2" itemprop="name">Where can I get keratin treatment near Helensville?</h4>
-              <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                <p class="text-gray-700" itemprop="text">Hair By Melissa, located 15 minutes from Helensville in Kaukapakapa, specializes in formaldehyde-free keratin treatments that last 3-5 months, perfect for North Auckland's coastal climate.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+        <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
       </div>
     </div>
   </section>

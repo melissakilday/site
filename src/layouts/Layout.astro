@@ -396,6 +396,20 @@ const localBusinessSchema = {
   }
 };
 
+// Structured Data - WebSite Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://hairbymelissa.co.nz/#website",
+  "name": business.name,
+  "alternateName": "Hair By Melissa A",
+  "url": business.url,
+  "inLanguage": "en-NZ",
+  "publisher": {
+    "@id": "https://hairbymelissa.co.nz/#business"
+  }
+};
+
 ---
 
 <!DOCTYPE html>
@@ -554,6 +568,9 @@ const localBusinessSchema = {
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Hair By Melissa blog" href="/rss.xml" />
     
     <!-- Optimized font loading for Core Web Vitals -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -631,6 +648,9 @@ const localBusinessSchema = {
     
     <!-- Structured Data - LocalBusiness Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+    <!-- Structured Data - WebSite Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     
     <!-- Enhanced Local Entity Recognition Schema -->
 

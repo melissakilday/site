@@ -75,3 +75,7 @@ tools/mcp-gsc/__pycache__/
 
 # macOS AppleDouble files on exFAT
 ._*
+
+# geo-optimizer (project-local)
+tools/geo-optimizer/.venv/
+tools/geo-optimizer/reports/

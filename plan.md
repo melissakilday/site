@@ -190,6 +190,21 @@ Fold into the builder tasks above; all are small.
 | Helensville page has a dead `helensvilleFAQ` const plus two visible FAQ sections | helensville.astro | Keep only the `FAQSchema` component instance | B2 |
 | Homepage uses the anchor "Learn more" six times for /services | index.astro | Use the service name as anchor text | B3 |
 
+## 10. GEO round (approved 2026-09-18, after deploy of the conversion fix set)
+
+Source: geo-optimizer 4.18.1 audits, reports in `tools/geo-optimizer/reports/`. Homepage 50/100 ("foundation"). Keratin post: FAQPage + Article present, no definition opening.
+Skipped on purpose (non-standard or not truthful for this business): `/ai/*.json`, `/.well-known/ai.txt`, WebMCP attributes, Wikipedia/Wikidata sameAs (none exist), keyword-density note.
+
+| # | Change | File(s) | Owner | Done-check |
+|---|---|---|---|---|
+| G1 | `public/llms.txt` (Lead-written, already in place). Do not regenerate from the sitemap. | public/llms.txt | Lead (done) | `curl /llms.txt` 200 in preview; no /keratin/ link |
+| G2 | Add `WebSite` JSON-LD to Layout: name "Hair By Melissa", alternateName from business data, url, inLanguage "en-NZ", publisher `{"@id": <HairSalon @id>}`. Give the HairSalon block an `@id` (`https://hairbymelissa.co.nz/#salon`) if it lacks one. Add `<link rel="alternate" type="application/rss+xml" title="Hair By Melissa blog" href="/rss.xml">` in `<head>`. | src/layouts/Layout.astro | growth-builder | dist/index.html contains `"@type":"WebSite"` and the rss link; JSON parses |
+| G3 | RSS feed: `npm i @astrojs/rss`; `src/pages/rss.xml.ts` with the 7 blog posts (title, description, pubDate, link) read from a new `src/data/blogPosts.ts` (slug, title, description, datePublished, dateModified) populated from each post's existing constants. `site` is already set in astro.config. | src/pages/rss.xml.ts, src/data/blogPosts.ts | growth-builder | dist/rss.xml exists, 7 items, valid XML |
+| G4 | Homepage FAQPage JSON-LD for the existing visible "Voice Search FAQ" block (index.astro ~line 260, microdata only). Emit one `<script type="application/ld+json">` FAQPage built from the same questions/answers array; do not add a second visible accordion. | src/pages/index.astro | growth-builder | dist/index.html has exactly one FAQPage JSON-LD whose questions equal the visible ones |
+| G5 | Keratin post definition opening. Insert this paragraph as the first body paragraph directly under the H1, above the quick-answer box, verbatim: "A keratin treatment is a salon smoothing service: a keratin-based formula is applied to each strand and sealed in with heat, leaving hair smoother and less frizzy for three to five months. What you do in the first 72 hours decides how long that lasts." Update `dateModified` to the build date. | src/pages/blog/keratin-aftercare.astro | growth-builder | first `<p>` after H1 starts with "A keratin treatment is" |
+| G6 | Verify: `npm run build`; start `npm run preview -- --port 4322`; run `tools/geo-optimizer/.venv/bin/geo audit --url http://localhost:4322/` and `.../blog/keratin-aftercare/`; save to `tools/geo-optimizer/reports/2026-09-18-audit-*-after.txt`; stop preview. | — | growth-orchestrator | homepage score ≥ 65; llms.txt ✅; WebSite ✅; FAQPage ✅ on home; RSS ✅ |
+| G7 | Changelog `changelog/2026-09-18-geo-round.md` + README row; commit on `deploy-main`. No push. | changelog/ | growth-orchestrator | entry lists before/after scores |
+
 ## 9. Success metrics (re-check 2026-10-16, 28 days)
 
 | Metric | Now | Target |
