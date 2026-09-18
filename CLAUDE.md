@@ -218,6 +218,6 @@ Agent definitions live in `.claude/agents/` (growth-orchestrator, growth-builder
 
 **Changelog:** every change set gets an entry in `changelog/` named `YYYY-MM-DD-<slug>.md` (what changed, why, files touched, GSC metric it targets, date to re-check). `changelog/README.md` is the index.
 
-**Git:** work on a `growth/<slug>-<date>` branch. Never push to GitHub without the user explicitly asking. Never change a URL without a 301 in `public/netlify.toml` and `public/_redirects` in the same commit.
+**Git / deploy:** production deploys via Netlify from **github.com/melissakilday/site** (`main`), added as remote `deploy`; the local working branch is `deploy-main` (tracks it). `origin` (AltusSnyman/hairbymelissa-astro) is a stale fork, do not deploy from it. Work on a `growth/<slug>-<date>` branch, then fast-forward `deploy-main` and push `deploy-main:main` — never force-push. Pushing needs the classic token in `.env` (`classictoken:`), passed to git as an in-memory header only, never stored. Never push to GitHub without the user explicitly asking. Never change a URL without a 301 in `public/netlify.toml` and `public/_redirects` in the same commit.
 
 **Data:** the `gsc` MCP server (project-scoped, `.mcp.json`) is the source of truth for rankings. Property is `sc-domain:hairbymelissa.co.nz`. Use it before any keyword estimate.

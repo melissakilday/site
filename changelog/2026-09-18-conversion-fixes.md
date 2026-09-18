@@ -158,3 +158,6 @@ and FAQ; the keratin post's 8 FAQ questions character-identical across H2s, visi
 - Mobile preview check (375px) of /, /blog/keratin-aftercare/, /locations/helensville/, /booking/: hero CTAs visible, quick-answer box and soft CTA render, chat bubble not covering Book button on load.
 - Fixed one visual regression the verifiers missed: Helensville hero "Call" button was white-on-white (light gradient hero); now dark outline (`src/pages/locations/helensville.astro:85`).
 - Added `.claude/launch.json` (astro preview on :4322) for future visual QA.
+
+## Deployed
+- 2026-09-18: squashed as commit `8ab3358` on melissakilday/site `main` (fast-forward from e393dd4). Netlify auto-build.
