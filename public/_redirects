@@ -27,7 +27,8 @@ http://www.hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
 /treatments /services/ 301
 
 # Specific service redirects for common searches
-/keratin /services/keratin-treatments/ 301
+/keratin /services/keratin-treatments/ 301!
+/keratin/ /services/keratin-treatments/ 301!
 /highlights /services/full-head-highlights/ 301
 /balayage /services/balayage/ 301
 /cut /services/womens-cut-finish/ 301

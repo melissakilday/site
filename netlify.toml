@@ -65,6 +65,13 @@
   from = "/keratin"
   to = "/services/keratin-treatments/"
   status = 301
+  force = true
+
+[[redirects]]
+  from = "/keratin/"
+  to = "/services/keratin-treatments/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/highlights"
