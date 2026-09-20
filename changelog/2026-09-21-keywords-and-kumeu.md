@@ -9,3 +9,7 @@
 **Owner:** Google reviews campaign is now the top item (Helensville map pack is a review-count gap). Kumeū: encourage any Kumeū clients to mention the town in reviews.
 
 **Targets:** `/locations/kumeu/` indexed and showing impressions for "hairdresser kumeu"; balayage page position < 30 for "balayage auckland"; keratin post CTR ≥ 1%. **Re-check:** 2026-10-21 (and the existing 2026-10-16 check).
+
+## Deployed 2026-09-21 (melissakilday/site main a69e51a, Netlify live in ~30 s)
+
+Live checks: Kumeū page 200 with FAQPage, in the sitemap; hair-dressing hub and Kaukapakapa titles serving; balayage FAQ present; gallery links to the balayage page. Indexing requested for /locations/kumeu/. Re-check 2026-10-21.
