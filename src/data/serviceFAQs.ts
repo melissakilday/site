@@ -26,8 +26,16 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   
   'balayage': [
     {
+      question: "How much does balayage cost in NZ?",
+      answer: "Balayage at Hair By Melissa is $230, and the appointment takes 3-4 hours. Longer or thicker hair can take longer to process and style, so your exact appointment time may vary — we'll confirm this at consultation."
+    },
+    {
+      question: "How long does balayage last?",
+      answer: "Balayage grows out softly over several months, without the hard regrowth line you get with traditional highlights, so there's no fixed date by which it needs to be redone. Most clients come in for a refresh when they feel ready for one rather than on a strict schedule."
+    },
+    {
       question: "What's the difference between balayage and highlights?",
-      answer: "Balayage is a freehand painting technique that creates natural, sun-kissed color with softer grow-out, while highlights use foils for more uniform, structured color placement. Balayage typically requires less maintenance and gives a more organic, dimensional result."
+      answer: "Balayage is a freehand painting technique that creates natural, sun-kissed color with softer grow-out, while highlights use foils for more uniform, structured color placement. Balayage typically requires less maintenance and gives a more organic, dimensional result. See our full balayage vs highlights comparison for a detailed breakdown."
     },
     {
       question: "How often should I get balayage touch-ups?",

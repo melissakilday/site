@@ -70,6 +70,21 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     }
   ],
 
+  'kumeu': [
+    {
+      question: "Do you have a salon in Kumeū?",
+      answer: "No — Hair By Melissa's salon is in Kaukapakapa, about 25 minutes up SH16 from Kumeū. Kumeū is within our service area, and many clients from Kumeū and Huapai make the drive for balayage, keratin treatments and colour in a quiet, one-on-one setting."
+    },
+    {
+      question: "How long is the drive from Kumeū to Hair By Melissa?",
+      answer: "It's about 25 minutes, heading up SH16 through Waimauku to Kaukapakapa. It's an easy, mostly rural drive, and we'd rather give you an honest estimate than promise an exact time — traffic through Waimauku can add a few minutes at peak times."
+    },
+    {
+      question: "What services do Kumeū clients usually book?",
+      answer: "Balayage and keratin treatments are popular with Kumeū clients, along with highlights and a cut and finish. Keratin is a common choice for taming humidity on the drive back down SH16, and balayage suits clients who want low-maintenance colour between visits."
+    }
+  ],
+
   'waitoki': [
     {
       question: "How close is Hair By Melissa to Waitoki?",
