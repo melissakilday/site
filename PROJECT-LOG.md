@@ -11,7 +11,7 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 | GEO round | llms.txt, WebSite + FAQPage JSON-LD, RSS feed, definition opening on the keratin post | GEO score home 50 → 69, keratin post 61 → 77 |
 | Local round | Testimonial star rows removed everywhere, map embeds and `hasMap` point at the Google listing, service area + llms.txt match Google, contact page states the Google name | Live as 04fb3a8 |
 | Search Console | sitemap-index.xml submitted; old /sitemap.xml 301s to it | |
-| Keywords + Kumeū (2026-09-21) | DataForSEO skill vendored; report `tools/dataforseo/reports/2026-09-21-hbm-keywords.md`; new /locations/kumeu/; /hair-dressing/ reframed as local hub; Kaukapakapa title; balayage FAQ + links | Branch growth/keywords-2026-09-21, awaiting push |
+| Keywords + Kumeū (2026-09-21) | DataForSEO skill vendored; report `tools/dataforseo/reports/2026-09-21-hbm-keywords.md`; new /locations/kumeu/; /hair-dressing/ reframed as local hub; Kaukapakapa title; balayage FAQ + links | Live as melissakilday/site a69e51a (2026-09-21). Indexing requested for /locations/kumeu/. Re-check 2026-10-21 |
 
 ## Where things are
 - Plan and evidence: `plan.md` (sections 1–10), `.agents/product-marketing-context.md` (client facts), `changelog/` (one entry per change set), `tools/geo-optimizer/reports/`, `tools/claude-seo/reports/`.
@@ -23,6 +23,6 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 19 clicks · 1,613 impressions · 1.18% CTR · position 29.2 · Helensville page CTR 1.0% · keratin post position 38 · "balayage auckland" position 47.
 
 ## To do later
-- **Owner:** Google reviews campaign (profile link on the site), photos on the profile, claim Bing Places + Apple Business Connect, add the salon to OpenStreetMap, Fresha/Yelp listings, confirm Facebook URL and product brands.
+- **Owner (top priority, per DataForSEO 2026-09-21: 1 review vs competitors' 24–66 keeps her out of the Helensville map pack):** Google reviews campaign (profile link on the site), photos on the profile, claim Bing Places + Apple Business Connect, add the salon to OpenStreetMap, Fresha/Yelp listings, confirm Facebook URL and product brands.
 - **Next build:** balayage page gallery + visible FAQ, location-page depth, analytics, content collections for the blog, decide whether to keep "5+ years" copy.
 - **Re-check 2026-10-16:** Search Console 28-day vs baseline; `npm`-free drift check with `.claude/skills/seo/scripts/drift_compare.py` on the 8 baselined URLs (commands in `tools/claude-seo/reports/2026-09-18-drift-baseline.md`); GEO re-audit.
