@@ -84,3 +84,5 @@ tools/geo-optimizer/reports/
 tools/claude-seo/.venv/
 tools/claude-seo/data/
 tools/claude-seo/*.db
+
+tools/dataforseo/outputs/
