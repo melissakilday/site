@@ -20,3 +20,6 @@
 **Resolved:** the keratin quick answer now says no ponytails, clips or tucking behind the ears, matching the article (lead fix, 7640857). Verified in preview: reviews, posts and images widgets all render; no console errors. Owner questions: nanoplasty price/duration; whether kids' cuts need a price line; which email is live (schema now uses `business.ts` melissa@; old schema had book@); the scanner's suggested FAQ list never arrived.
 
 **Targets:** Helensville CTR ≥4% and keratin post position <25 by 2026-10-26; Google reviews ≥10 by 2026-11-26. **Re-check:** 2026-10-26.
+
+## Deployed 2026-09-26 (melissakilday/site main cab1b1a, fast-forward from a69e51a)
+Live checks: all eight changed pages return 200 with the new titles; `/review` and `/review/` 302 to the Google review form; home has one reviews widget and the posts widget, no placeholder names; one HairSalon node ("Hair By Melissa A", Google pin, Facebook + Instagram + Maps in sameAs, no rating markup). Search Console: indexing requested for /, /locations/helensville/, /blog/keratin-aftercare/, /services/half-head-highlights/. The last Google crawl of those pages still showed the old invalid Event markup (removed 2026-09-18); the recrawl should clear it.
