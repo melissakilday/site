@@ -16,6 +16,7 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 | Carousel + owner FAQs (2026-09-26) | Reviews widget swapped to the owner's GoHighLevel reputation widget (4 pages); posts widget removed; home before-and-after carousel (10 photos, WebP 480/800, no library); owner's 11 FAQs as accordion + FAQPage; nanoplasty removed site-wide (owner: not offered); keratin wash time unified at 72 hours | Live as melissakilday/site 5b8d76e (2026-09-26). Re-check 2026-10-26 |
 | Google profile terms research (2026-09-26) | Priced the 10 terms and 3 locations the Google profile targets (DataForSEO NZ, US$0.09): nanoplasty 3,600/mo but not offered; keratin treatment 2,400 (peaks Oct–Dec); balayage 3,600; blow dry 880; half head foils 480; hairdresser helensville 50; Kaukapakapa and Wainui below threshold; kids too small to measure. Report `tools/dataforseo/reports/2026-09-26-hbm-gbp-terms.md` | No site change; feeds the website to-do below |
 | Keratin page push (2026-09-26) | /services/keratin-treatments/ rewritten (937 words, price/time/lasts/72h facts box, suitability, process, aftercare, price, keratin vs nanoplasty, local, 7 FAQs); 3 Kie.ai illustrations labelled as illustrations; Service + BreadcrumbList JSON-LD and LCP hero <img> on all 11 service pages; FAQ blocks and scripts no longer render after </html> (10 service pages, contact, services); unconfirmed formaldehyde-free claim removed from schema; inbound links from aftercare post, frizzy-hair post, 3 location pages | Live as melissakilday/site (see changelog 2026-09-26-keratin-page). Re-check 2026-10-26 and 2026-11-26 |
+| Formaldehyde-free confirmed (2026-09-27) | Owner confirmed the keratin formula is formaldehyde-free: added to the keratin page, a new FAQ (8 in total), the HairSalon keratin offer and llms.txt | Live as melissakilday/site 08771ab |
 
 ## Where things are
 - Plan and evidence: `plan.md` (sections 1–10), `.agents/product-marketing-context.md` (client facts), `changelog/` (one entry per change set), `tools/geo-optimizer/reports/`, `tools/claude-seo/reports/`.
@@ -26,15 +27,19 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 ## Baseline to beat (Search Console, 28 days to 2026-09-18)
 19 clicks · 1,613 impressions · 1.18% CTR · position 29.2 · Helensville page CTR 1.0% · keratin post position 38 · "balayage auckland" position 47.
 
-## Website to-do (next build, from the 2026-09-26 keyword review)
-1. ~~**Keratin push**~~ DONE 2026-09-26 (see Done table). Original note: deepen /services/keratin-treatments/ (position ~60; "keratin treatment" 2,400/mo, "keratin treatment auckland" 480): what's included, 72-hour aftercare summary, how long it lasts, price $180, visible FAQ answering the Google questions (cost in NZ, how long it lasts, is it good for hair); internal links from the aftercare article and home.
-2. **New article "Nanoplasty vs keratin":** honest comparison for the 3,600/mo nanoplasty searches; states she offers keratin, not nanoplasty; links to the keratin page. (Rewrite if Melissa ever offers nanoplasty.)
-3. **Balayage page depth:** /services/balayage/ (position ~50; balayage 3,600/mo, $230): her own before-and-after photos (carousel images 7 and 9 are confirmed client work), what's included, grow-out and maintenance (her FAQ text), visible FAQ.
-4. **Blow dry wording:** add "blow dry" alongside "blow wave" on /services/blow-wave/ (blow dry 880/mo) and in its title if it fits.
-5. **Kids section on /services/womens-cut-finish/:** kids' cuts for any age, gentle and unhurried (her FAQ words). Needs the kids' price from Melissa.
-6. **"Women's hairdresser" wording** on the cut page and **Sunday opening** in the home and cut page copy (hairdresser open sunday 90/mo).
-7. Carry-overs: location-page depth (Helensville first), analytics, content collections for the blog, decide on the "5+ years" copy, three titles over 60 characters (/about/ 61, /services/partial-foils/ 64, /blog/balayage-vs-highlights/ 65).
+## Website to-do (updated 2026-09-27)
+Done from this list: keratin page push (2026-09-26) and formaldehyde-free confirmation (2026-09-27).
+1. **New article "Nanoplasty vs keratin":** honest comparison for the 3,600/mo nanoplasty searches; states she offers keratin, not nanoplasty; links to the keratin page. (Rewrite if Melissa ever offers nanoplasty.)
+2. **Balayage page depth:** /services/balayage/ (position ~50; balayage 3,600/mo, $230): her own before-and-after photos (carousel images 7 and 9 are confirmed client work), what's included, grow-out and maintenance (her FAQ text), visible FAQ, same structure as the keratin page. Also fix its hero file (`color-transformation_800.webp` is really 300×600).
+3. **Blow dry wording:** add "blow dry" alongside "blow wave" on /services/blow-wave/ (blow dry 880/mo) and in its title if it fits.
+4. **Kids section on /services/womens-cut-finish/:** kids' cuts for any age, gentle and unhurried (her FAQ words). **Blocked on the kids' price from Melissa.**
+5. **"Women's hairdresser" wording** on the cut page and **Sunday opening** in the home and cut page copy (hairdresser open sunday 90/mo).
+6. **Carry-overs:** location-page depth (Helensville first); analytics (GA4); content collections for the blog; decide on the "5+ years" copy; three titles over 60 characters (/about/ 61, /services/partial-foils/ 64, /blog/balayage-vs-highlights/ 65); trailing slashes on navbar and footer links.
 Not doing: Wainui page (no measurable demand), kids or "hair treatment" standalone pages (too small), chasing "hairdresser near me"/"hair salon" as site keywords (the Google profile wins those by proximity).
+
+## Owner answers still needed
+- Kids' cut price.
+- Whether Melissa would ever offer nanoplasty (changes to-do 1).
 
 ## Google Business Profile to-do (separate from the website; owner / Altus in the profile)
 - Remove **nanoplasty** from services (not offered).
@@ -46,4 +51,5 @@ Not doing: Wainui page (no measurable demand), kids or "hair treatment" standalo
 
 ## Re-checks
 - **2026-10-16:** Search Console 28-day vs baseline; `npm`-free drift check with `.claude/skills/seo/scripts/drift_compare.py` on the 8 baselined URLs (commands in `tools/claude-seo/reports/2026-09-18-drift-baseline.md`); GEO re-audit.
-- **2026-10-26:** Helensville CTR ≥ 4%, keratin post position < 25; monthly map-pack check from Kaukapakapa, Helensville and Kumeū (DataForSEO maps, ~US$0.01 per search).
+- **2026-10-26:** Helensville CTR ≥ 4%, keratin post position < 25, keratin service page ranking for "keratin treatment auckland" (was ~60); monthly map-pack check from Kaukapakapa, Helensville and Kumeū (DataForSEO maps, ~US$0.01 per search).
+- **2026-11-26:** keratin service page top 20 for "keratin treatment auckland" with first clicks; Google reviews ≥ 10.
