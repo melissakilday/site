@@ -110,10 +110,11 @@ const faqs = serviceFAQs['half-head-highlights'];
       "Half head highlights are my go-to recommendation for clients wanting maximum impact with manageable maintenance. It's the sweet spot between transformation and natural beauty."
     </p>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/half-head-highlights"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/half-head-highlights"
-/>

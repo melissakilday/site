@@ -124,10 +124,11 @@ const faqs = serviceFAQs['permanent-tint-all-over'];
       "There's something magical about finding your perfect color. It's not just about changing your hair – it's about revealing the best version of yourself. All-over color gives you that fresh start and confidence boost we all deserve."
     </p>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/permanent-tint-all-over"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/permanent-tint-all-over"
-/>

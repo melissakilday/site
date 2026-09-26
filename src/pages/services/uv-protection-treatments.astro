@@ -182,10 +182,11 @@ const faqs = serviceFAQs['uv-protection-treatments'];
       </div>
     </div>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/uv-protection-treatments"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/uv-protection-treatments"
-/>

@@ -97,10 +97,11 @@ const faqs = serviceFAQs['partial-foils'];
       "Partial foils are like jewelry for your hair – they catch the light and add sparkle exactly where you need it most. It's amazing how strategic highlights can transform your entire look."
     </p>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/partial-foils"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/partial-foils"
-/>

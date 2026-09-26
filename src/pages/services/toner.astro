@@ -139,10 +139,12 @@ const faqs = serviceFAQs['toner'];
       "Toner is often the difference between good hair color and great hair color. It's that final step that takes your look from 'nice' to 'wow!' – and at such an affordable price, there's no reason not to have perfectly toned hair all the time."
     </p>
   </div>
-</ServiceLayout>
 
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/toner"
-/>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema
+      faqs={faqs}
+      pageUrl="https://hairbymelissa.co.nz/services/toner"
+    />
+  </Fragment>
+</ServiceLayout>

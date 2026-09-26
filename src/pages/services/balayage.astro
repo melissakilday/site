@@ -188,10 +188,11 @@ const faqs = serviceFAQs['balayage'];
       </div>
     </div>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/balayage"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/balayage"
-/>

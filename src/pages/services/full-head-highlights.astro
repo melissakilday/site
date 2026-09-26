@@ -116,10 +116,11 @@ const faqs = serviceFAQs['full-head-highlights'];
       "Full head highlights are an investment in yourself. The confidence that comes from having beautifully dimensional, professionally colored hair is priceless. It's not just about looking good – it's about feeling amazing every single day."
     </p>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/full-head-highlights"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/full-head-highlights"
-/>

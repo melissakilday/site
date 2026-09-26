@@ -99,10 +99,11 @@ const faqs = serviceFAQs['womens-cut-finish'];
       "A great haircut is the foundation of every stunning hairstyle. It's not just about looking good when you leave the salon – it's about feeling confident every single day."
     </p>
   </div>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema 
+      faqs={faqs} 
+      pageUrl="https://hairbymelissa.co.nz/services/womens-cut-finish"
+    />
+  </Fragment>
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/womens-cut-finish"
-/>

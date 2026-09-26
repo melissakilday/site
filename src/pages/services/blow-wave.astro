@@ -131,10 +131,12 @@ const faqs = serviceFAQs['blow-wave'];
       "A great blow wave is like the perfect accessory – it completes your look and makes everything else fall into place. It's amazing how something as simple as beautifully styled hair can make you feel like you can conquer the world."
     </p>
   </div>
-</ServiceLayout>
 
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/blow-wave"
-/>
+  <!-- FAQ Schema -->
+  <Fragment slot="after">
+    <FAQSchema
+      faqs={faqs}
+      pageUrl="https://hairbymelissa.co.nz/services/blow-wave"
+    />
+  </Fragment>
+</ServiceLayout>
