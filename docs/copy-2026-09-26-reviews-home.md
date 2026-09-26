@@ -65,8 +65,8 @@ New section after the portfolio grid:
 - Title core: **When to Wash Hair After Keratin Treatment** (59 with suffix; the old one was 65 and truncated)
 - Description: **Wait 72 hours before washing, then switch to sulfate-free shampoo. A stylist's day-by-day keratin aftercare guide: brushing, tying up, dry shampoo, colour.** (155)
 - H1: **When Can You Wash Your Hair After a Keratin Treatment?**
-- Quick-answer box directly under the H1 (before the first H2): **Wait 72 hours before you wash your hair after a keratin treatment. Keep it dry, loose and tucked behind your ears for those three days. After that, wash with a sulfate-free shampoo in lukewarm water, two or three times a week, to make the smoothing last.**
-- Day-by-day table (built from the article's own sections; builder must match every row to what the article already says and drop any row the article doesn't support): Days 1–3 / Days 4–14 / From week 2 / Ongoing, columns "Wash", "Style", "Avoid".
+- Quick-answer box directly under the H1 (before the first H2): **Wait 72 hours before you wash your hair after a keratin treatment. Keep it dry and loose for those three days, with no ponytails, clips or tucking it behind your ears. After that, wash with a sulfate-free shampoo in lukewarm water, no more than two or three times a week, to make the smoothing last.**
+- Day-by-day table (built from the article's own sections; builder must match every row to what the article already says and drop any row the article doesn't support): Days 1–3 / Days 4–14 / From week 3 / Ongoing, columns "Wash", "Style", "Avoid".
 - Byline: **By Melissa, owner and stylist at Hair By Melissa, Kaukapakapa** · "Updated 26 September 2026". Schema `dateModified` 2026-09-26, `author` Person "Melissa".
 - End-of-article CTA line: **Booking a keratin treatment? See prices and what's included on the** <a href="/services/keratin-treatments/">**keratin treatment page**</a>.
 
