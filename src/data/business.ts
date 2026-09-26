@@ -36,7 +36,7 @@ export const business = {
   ],
   hoursLine: 'Mon–Fri 9am–1:30pm · Sat 2–5pm · Sun 9am–5pm',
 
-  // 5.0 from 3 Google reviews (2026-09-26). Never emit aggregateRating/Review markup from this site.
+  // 5.0 from 4 Google reviews (2026-09-26, per the review widget). Never emit aggregateRating/Review markup from this site.
   googleReviewUrl: 'https://share.google/8GVUyoirDJwTIXnxO',
   instagram: 'https://www.instagram.com/hair_by_melissa_nz/',
   facebook: 'https://www.facebook.com/p/Hair-By-Melissa-A-Kaukapakapa-61581136381949/',
