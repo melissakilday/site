@@ -22,3 +22,10 @@
 **Metric targeted:** keratin service page into the top 20 for "keratin treatment auckland", with first clicks on keratin queries ("keratin treatment", "keratin treatment price nz", "keratin treatment near me") in GSC by 2026-11-26. Also watch for Service/Breadcrumb/FAQ rich results in the GSC Enhancements reports.
 
 **Re-check:** 2026-10-26 and 2026-11-26.
+
+## Lead review and deploy (2026-09-26)
+- Lead reviewed the three generated images (no faces, text or logos; the process image is a manual crop of a source that contains a face, so never re-crop it without checking) and the full page render.
+- Extra fixes before deploy: FAQ blocks moved inside the page on the other 10 service pages (ff855e2); contact and services page scripts moved inside the page (6bde3f4). Every built page now ends at `</html>` and all JSON-LD parses.
+- Deployed as melissakilday/site 36ae5d8 (fast-forward from ea81177). Live checks: keratin title, HairSalon + WebSite + Service + BreadcrumbList + FAQPage JSON-LD, no formaldehyde claim, og:image and all image files return 200.
+- Search Console: indexing requested for /services/keratin-treatments/ and /services/balayage/; sitemap-index.xml resubmitted so the other service pages' new schema is picked up.
+- Owner to confirm: is her keratin product formaldehyde-free? (Claim removed from schema; the aftercare article still says it.)
