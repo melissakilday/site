@@ -216,3 +216,24 @@ Skipped on purpose (non-standard or not truthful for this business): `/ai/*.json
 | Site clicks | 19 | ≥30 |
 | "balayage auckland" position | 47 | ≤30 |
 | Brand query served by / not /locations/helensville/ | split | home only |
+
+## 11. Reviews, home and click-rate round (lead plan 2026-09-26, approved by Altus in chat)
+
+Evidence (Search Console, 28 days to 2026-09-26): 25 clicks, 1,264 impressions, 2.0% CTR, position 25.3 (baseline 19 / 1,613 / 1.2% / 29.2). Helensville page position 6.3 but 1.9% CTR (title truncated at 68 chars). Keratin post position ~40 on "when can i wash my hair after keratin treatment". Half-head highlights ~8 for "1/2 head highlights". Google profile now shows 5.0 from 3 reviews; competitors 24–66. Copy: `docs/copy-2026-09-26-reviews-home.md` (verbatim).
+
+Build (branch `growth/reviews-home-2026-09-26`):
+1. **Foundation** — `business.ts`: Facebook, Maps cid URL, write-review URL, geo moved to the Google pin (-36.6274074, 174.5007108), review note "5.0 from 3 (2026-09-26)". `Layout.astro`: `titleSuffix` prop (default true; home passes false); LocalBusiness schema merged with the owner's scanner suggestion (below). `/review/` 302 in `public/netlify.toml` and `public/_redirects`. Components `GoogleReviewsWidget`, `GoogleImagesWidget`, `GooglePostsWidget` (lazy iframes, reserved height).
+2. **Home** — owner's title, description and H1; hero lead; services intro; placeholder testimonials → reviews widget + review button; "Latest from the salon" posts widget before Find Us; four FAQs; drop duplicate FAQ microdata.
+3. **Reviews everywhere else** — placeholder testimonials on /about/, /locations/kaukapakapa/, /locations/helensville/ → reviews widget; review link in footer and on /contact/; images widget on /gallery/.
+4. **Click-rate fixes** — Helensville and half-head titles/descriptions; half-head FAQs and three inbound links.
+5. **Keratin post** — title, description, H1, quick answer, day-by-day table, byline + dateModified, CTA line.
+6. **Owner kit** — printable review QR card (A6 PDF, QR → hairbymelissa.co.nz/review/) and a thank-you text template, in `reports/review-card-2026-09-26/`.
+
+Schema decision (owner's scanner suggestion merged into the one existing LocalBusiness node, not added as a second block):
+- Take: `@type` "HairSalon" (single type, scanners read it), `name` "Hair By Melissa A" (matches Google) with `alternateName` "Hair By Melissa" / "Hair By Melissa Kaukapakapa", the lead-edited description, `paymentAccepted` "Cash, Credit Card", `currenciesAccepted` NZD, `addressRegion` Auckland (not null), `areaServed` incl. Wainui, `sameAs` Facebook + Instagram + Maps cid, `hasMap` Maps cid, `email` from business.ts.
+- Leave out `aggregateRating` and `review`: Google does not show stars for a business's own review markup on its own site; the reviews sit in a third-party iframe, which Google does not treat as page content, so the markup would describe reviews that are not on the page; the suggested reviews have empty bodies; and this site's standing rule (business.ts, 2026-09-18) is no rating markup after the fake 47-review rating was removed. Google shows her stars from the profile itself.
+- Leave out the scanner's image/logo on its own CDN; use the site's logo and photos.
+
+Open questions for the owner: nanoplasty price and duration (copy says "ask when you book"); whether kids' cuts need a price line; which email is live (schema used book@, business.ts says melissa@). The FAQ list the scanner suggested did not come through (the paste repeated the posts widget); swap it in when supplied.
+
+Metric: Helensville CTR ≥ 4% and keratin post position < 25 by 2026-10-26; Google reviews ≥ 10 by 2026-11-26.
