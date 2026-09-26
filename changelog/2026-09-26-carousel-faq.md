@@ -24,4 +24,9 @@
 **Re-check:** 2026-10-26.
 
 ## Deployed 2026-09-26 (melissakilday/site main 5b8d76e, fast-forward from 81dc321)
-Live checks: one GoHighLevel reviews widget (owner switched it to the sideways carousel layout in GoHighLevel; height about 530px), no posts widget, carousel with 10 slides and WebP files returning 200, FAQPage with 11 questions, meta description without nanoplasty, schema description without nanoplasty (the only remaining mentions are the owner's "I don't offer nanoplasty" FAQ), keratin service page says 72 hours. Owner open: confirm 72 vs 48 hours; confirm the carousel photos are real client work; consider turning off the widget's "AI Summary" card.
+Live checks: one GoHighLevel reviews widget (owner switched it to the sideways carousel layout in GoHighLevel; height about 530px), no posts widget, carousel with 10 slides and WebP files returning 200, FAQPage with 11 questions, meta description without nanoplasty, schema description without nanoplasty (the only remaining mentions are the owner's "I don't offer nanoplasty" FAQ), keratin service page says 72 hours. Owner confirmed (below): 72 hours, photos are real clients, AI Summary stays on.
+
+## Owner confirmations (Altus, 2026-09-26)
+- Keratin: 72 hours before washing is correct. The keratin article's "48 hours is the absolute minimum" clause was removed (two places) so the site gives one answer.
+- The ten carousel photos are Melissa's real clients.
+- The review widget's "AI Summary" card stays on for now.
