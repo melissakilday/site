@@ -13,7 +13,7 @@ export const serviceLinks = {
   keratin: [
     {
       title: "Keratin Aftercare Guide",
-      url: "/blog/keratin-aftercare",
+      url: "/blog/keratin-aftercare/",
       description: "Essential tips to maintain your keratin treatment results",
       category: "blog" as const
     },
@@ -222,8 +222,8 @@ export const blogLinks = {
 export const homepageLinks = [
   {
     title: "Keratin Treatments",
-    url: "/services/keratin-treatments",
-    description: "Transform frizzy hair with professional keratin",
+    url: "/services/keratin-treatments/",
+    description: "Smooth, frizz-free hair for around 4–5 months, $180",
     category: "service" as const
   },
   {
@@ -263,13 +263,13 @@ export const serviceRelationships = {
   "keratin-treatments": [
     {
       title: "Women's Cut & Finish",
-      url: "/services/womens-cut-finish",
+      url: "/services/womens-cut-finish/",
       description: "Perfect your new smooth hair with professional styling",
       category: "service" as const
     },
     {
       title: "Hair Health Assessment",
-      url: "/blog/hair-health-signs",
+      url: "/blog/hair-health-signs/",
       description: "Understand if keratin is right for your hair",
       category: "blog" as const
     }
@@ -329,8 +329,8 @@ export const serviceRelationships = {
     },
     {
       title: "Keratin Treatments",
-      url: "/services/keratin-treatments",
-      description: "Combine UV protection with smoothing treatments",
+      url: "/services/keratin-treatments/",
+      description: "Smooth, frizz-free hair for around 4–5 months, $180",
       category: "service" as const
     },
     {
