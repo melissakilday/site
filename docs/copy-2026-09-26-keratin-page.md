@@ -5,7 +5,7 @@ Why: "keratin treatment" 2,400/mo NZ, "keratin treatment auckland" 480, "keratin
 Research: `tools/dataforseo/reports/2026-09-26-hbm-gbp-terms.md` and the SERP/PAA pull of 2026-09-26 (raw in tools/dataforseo/outputs, gitignored).
 
 **Facts allowed (nothing else):** $180 · about 2 to 3 hours · lasts around 4 to 5 months · no washing for 72 hours · wait at least 2 weeks before colour · one stylist, home salon at 12 Magnolia Lane, Kaukapakapa · free parking · Helensville 15 minutes, Kumeū about 25 minutes · open 7 days (hours from business.ts) · she does NOT offer nanoplasty · phone 0274 799 320 · online booking at /booking/.
-**Do not claim:** formaldehyde-free (unconfirmed, owner to confirm the product), percentages ("95% of frizz", "50% less styling"), "scientifically proven", "repairs damage", "safe for all hair types", "3–6 months", "Contact us for pricing".
+**Formaldehyde-free: CONFIRMED by the owner 2026-09-27** (page line, FAQ 8, schema, llms.txt). **Do not claim:** percentages ("95% of frizz", "50% less styling"), "scientifically proven", "repairs damage", "safe for all hair types", "3–6 months", "Contact us for pricing".
 Use verbatim. NZ English. Every internal link with a trailing slash.
 
 ---

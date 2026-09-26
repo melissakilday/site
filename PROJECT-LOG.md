@@ -1,7 +1,7 @@
 # Hair By Melissa — project log
 
 Live: https://hairbymelissa.co.nz · Repo that deploys: github.com/melissakilday/site `main` (Netlify) · Local folder: /Volumes/KINGSTON/projects/hairbymellisa (working branch `deploy-main`, remote `deploy`) · `origin` (AltusSnyman/hairbymelissa-astro) is a stale fork, never deploy from it.
-Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am–1:30pm, Sat 2–5pm, Sun 9am–5pm · Google name "Hair By Melissa A" (deliberate, another Hair by Melissa nearby) · 5.0 from 4 Google reviews (2026-09-26) · categories Hairdresser + Beauty salon · does NOT offer nanoplasty · kids' cuts any age · keratin no-wash 72 hours · Facebook https://www.facebook.com/p/Hair-By-Melissa-A-Kaukapakapa-61581136381949/ · service area Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū.
+Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am–1:30pm, Sat 2–5pm, Sun 9am–5pm · Google name "Hair By Melissa A" (deliberate, another Hair by Melissa nearby) · 5.0 from 4 Google reviews (2026-09-26) · categories Hairdresser + Beauty salon · does NOT offer nanoplasty · kids' cuts any age · keratin no-wash 72 hours · keratin formula is formaldehyde-free (confirmed 2026-09-27) · Facebook https://www.facebook.com/p/Hair-By-Melissa-A-Kaukapakapa-61581136381949/ · service area Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū.
 
 ## Done
 | Round | What | Result |
@@ -41,7 +41,6 @@ Not doing: Wainui page (no measurable demand), kids or "hair treatment" standalo
 - Add **Hair salon** as an additional category if available ("hair salon near me" 14,800/mo).
 - Service names and prices matching the site; link each service to its page.
 - Weekly posts; add real photos regularly; remove the photo branded "Superior Hair Home Studio".
-- Confirm with Melissa whether her keratin product is formaldehyde-free (claim removed from schema until confirmed; the aftercare article still says it).
 - Reviews: counter QR card + thank-you text after every appointment; target 10 by late November, 25 by March. Clients can be asked to say what they had done; no incentives, no scripts.
 - Claim Bing Places and Apple Business Connect; OpenStreetMap; Fresha/Yelp listings; product brands.
 

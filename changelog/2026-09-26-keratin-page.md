@@ -29,3 +29,6 @@
 - Deployed as melissakilday/site 36ae5d8 (fast-forward from ea81177). Live checks: keratin title, HairSalon + WebSite + Service + BreadcrumbList + FAQPage JSON-LD, no formaldehyde claim, og:image and all image files return 200.
 - Search Console: indexing requested for /services/keratin-treatments/ and /services/balayage/; sitemap-index.xml resubmitted so the other service pages' new schema is picked up.
 - Owner to confirm: is her keratin product formaldehyde-free? (Claim removed from schema; the aftercare article still says it.)
+
+## Owner confirmation (2026-09-27)
+Melissa's keratin formula is formaldehyde-free (Altus). Added back: one line on the keratin page ("Melissa uses a formaldehyde-free keratin formula."), FAQ 8 "Is your keratin treatment formaldehyde-free?" (visible + FAQPage JSON-LD), the keratin Offer description in the site-wide HairSalon schema, and the llms.txt keratin line. The aftercare article's existing mentions are now accurate.

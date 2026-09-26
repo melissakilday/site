@@ -27,6 +27,10 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
       answer: "A salon treatment is applied section by section and sealed with a professional flat iron, with a consultation first to check it suits your hair. Home kits vary a lot, and uneven application is the most common problem."
     },
     {
+      question: "Is your keratin treatment formaldehyde-free?",
+      answer: "Yes. Melissa uses a formaldehyde-free keratin formula for every keratin treatment at the salon."
+    },
+    {
       question: "Do you offer nanoplasty?",
       answer: "No. Hair By Melissa offers keratin smoothing, which is built for the same goal of smoother, frizz-free, easier-to-style hair."
     }
