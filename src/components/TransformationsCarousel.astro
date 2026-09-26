@@ -1,0 +1,230 @@
+---
+interface Slide {
+  slug: string;
+  caption: string;
+  href?: string;
+  alt: string;
+}
+
+const slides: Slide[] = [
+  {
+    slug: "keratin-smoothing-long-dark-hair",
+    caption: "Keratin smoothing",
+    href: "/services/keratin-treatments/",
+    alt: "Before and after: long, frizzy dark brown waves smoothed into sleek, straight hair",
+  },
+  {
+    slug: "curl-definition",
+    caption: "Curl definition",
+    alt: "Before and after: dry, undefined curly hair styled into defined, glossy curls",
+  },
+  {
+    slug: "cut-and-smooth-blow-dry",
+    caption: "Cut and smooth blow-dry",
+    href: "/services/womens-cut-finish/",
+    alt: "Before and after, side view: shoulder-length curly hair cut and blow-dried into a smooth, sleek lob",
+  },
+  {
+    slug: "copper-colour-refresh",
+    caption: "Copper colour refresh",
+    href: "/services/toner/",
+    alt: "Before and after: faded red waves refreshed to a glossy copper colour",
+  },
+  {
+    slug: "bob-haircut",
+    caption: "Bob cut",
+    href: "/services/womens-cut-finish/",
+    alt: "Before and after: an overgrown brunette bob reshaped into a sleek chin-length bob",
+  },
+  {
+    slug: "curly-cut-and-shape",
+    caption: "Curly cut and shape",
+    href: "/services/womens-cut-finish/",
+    alt: "Before and after, side view: long curly hair cut and shaped into defined, bouncy curls",
+  },
+  {
+    slug: "blonde-balayage-refresh",
+    caption: "Blonde tone and refresh",
+    href: "/services/balayage/",
+    alt: "Before and after: brassy wavy blonde toned and refreshed into bright, smooth blonde",
+  },
+  {
+    slug: "keratin-smoothing-brunette",
+    caption: "Keratin smoothing",
+    href: "/services/keratin-treatments/",
+    alt: "Before and after, side view: frizzy long brunette hair smoothed into glossy, straight hair",
+  },
+  {
+    slug: "balayage-brunette-lob",
+    caption: "Balayage refresh",
+    href: "/services/balayage/",
+    alt: "Before and after: grown-out brunette balayage brightened with caramel face-framing pieces",
+  },
+  {
+    slug: "layered-cut-blow-dry",
+    caption: "Layered cut and blow-dry",
+    href: "/services/womens-cut-finish/",
+    alt: "Before and after: long dark hair given a layered cut and a smooth, bouncy blow-dry",
+  },
+];
+---
+
+<section
+  class="bg-gray-50 section-padding"
+  aria-roledescription="carousel"
+  aria-labelledby="transformations-heading"
+  data-transformations-carousel
+>
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 id="transformations-heading" class="text-4xl font-bold">Before and after</h2>
+      <p class="text-gray-600 mt-4">
+        Smoothing, colour, cuts and curls. Swipe or use the arrows.
+      </p>
+    </div>
+
+    <div class="relative">
+      <ul
+        id="transformations-track"
+        class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-px-4 sm:scroll-px-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-darkblue focus-visible:ring-offset-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        style="scroll-snap-type: x mandatory; scroll-behavior: smooth;"
+        tabindex="0"
+        aria-label="Before and after photos"
+        data-track
+      >
+        {slides.map((slide, index) => (
+          <li
+            class="snap-start shrink-0 min-w-0 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`Slide ${index + 1} of ${slides.length}`}
+          >
+            <figure class="bg-white rounded-2xl shadow-md overflow-hidden h-full">
+              <img
+                src={`/images/transformations/${slide.slug}-800.webp`}
+                srcset={`/images/transformations/${slide.slug}-480.webp 480w, /images/transformations/${slide.slug}-800.webp 800w`}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+                alt={slide.alt}
+                class="w-full h-auto aspect-[4/5] object-cover"
+              />
+              <figcaption class="p-4 text-center font-medium">
+                {slide.href ? (
+                  <a href={slide.href} class="text-salon-darkblue hover:underline">
+                    {slide.caption}
+                  </a>
+                ) : (
+                  slide.caption
+                )}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex items-center justify-center gap-4 mt-6">
+        <button
+          type="button"
+          aria-label="Previous photo"
+          aria-controls="transformations-track"
+          class="flex items-center justify-center w-11 h-11 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-darkblue disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:shadow-none"
+          data-prev
+        >
+          <svg aria-hidden="true" class="h-5 w-5 text-salon-darkblue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Next photo"
+          aria-controls="transformations-track"
+          class="flex items-center justify-center w-11 h-11 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-salon-darkblue disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none disabled:hover:shadow-none"
+          data-next
+        >
+          <svg aria-hidden="true" class="h-5 w-5 text-salon-darkblue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/gallery/" class="btn-primary">
+        See the full gallery
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initTransformationsCarousel(section: Element) {
+    const track = section.querySelector<HTMLElement>("[data-track]");
+    const prevBtn = section.querySelector<HTMLButtonElement>("[data-prev]");
+    const nextBtn = section.querySelector<HTMLButtonElement>("[data-next]");
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const scrollBehavior: ScrollBehavior = prefersReducedMotion ? "auto" : "smooth";
+
+    function getStep(): number {
+      const firstSlide = track!.querySelector("li");
+      if (!firstSlide) return track!.clientWidth;
+      const style = window.getComputedStyle(track!);
+      const gap = parseFloat(style.columnGap || style.gap || "0") || 0;
+      return (firstSlide as HTMLElement).offsetWidth + gap;
+    }
+
+    function updateButtonState() {
+      const maxScroll = track!.scrollWidth - track!.clientWidth;
+      const atStart = track!.scrollLeft <= 2;
+      const atEnd = track!.scrollLeft >= maxScroll - 2;
+      prevBtn!.disabled = atStart;
+      nextBtn!.disabled = atEnd;
+      prevBtn!.setAttribute("aria-disabled", String(atStart));
+      nextBtn!.setAttribute("aria-disabled", String(atEnd));
+    }
+
+    prevBtn.addEventListener("click", () => {
+      track!.scrollBy({ left: -getStep(), behavior: scrollBehavior });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      track!.scrollBy({ left: getStep(), behavior: scrollBehavior });
+    });
+
+    track.addEventListener("keydown", (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        track!.scrollBy({ left: -getStep(), behavior: scrollBehavior });
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        track!.scrollBy({ left: getStep(), behavior: scrollBehavior });
+      }
+    });
+
+    track.addEventListener("scroll", () => {
+      window.requestAnimationFrame(updateButtonState);
+    });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        window.requestAnimationFrame(updateButtonState);
+      },
+      { passive: true }
+    );
+
+    window.addEventListener("load", () => {
+      window.requestAnimationFrame(updateButtonState);
+    });
+
+    updateButtonState();
+  }
+
+  document
+    .querySelectorAll("[data-transformations-carousel]")
+    .forEach((section) => initTransformationsCarousel(section));
+</script>

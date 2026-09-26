@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
 import GoogleReviewsWidget from '../components/GoogleReviewsWidget.astro';
-import GooglePostsWidget from '../components/GooglePostsWidget.astro';
+import TransformationsCarousel from '../components/TransformationsCarousel.astro';
 import { business } from '../data/business';
 import { getService } from '../data/services';
 
@@ -55,24 +55,44 @@ const galleryImages = [
 
 const homeFaqs = [
   {
-    question: "What's the best hair salon near me in North Auckland?",
-    answer: "Hair By Melissa in Kaukapakapa village offers premium hair services including keratin treatments ($180), balayage ($230), and expert cuts ($50) with free parking and a peaceful village atmosphere.",
+    question: "How should I prepare for my appointment, and what aftercare helps my colour or smoothing last longer?",
+    answer: "Before your appointment, come in with your hair clean, dry, and as close to natural as possible. Avoid heavy styling products and don't use a straightener or curling iron right beforehand. Make a note of any inspiration photos or specific goals you have for your hair, as these are helpful to share during your consultation. After your service, it's best to use salon-recommended, sulfate-free shampoos and conditioners to protect your colour or smoothing treatment. Try to wash your hair less often if possible and use lukewarm water instead of hot. For keratin treatments, don't wash your hair for at least 72 hours and avoid tying it up during that time. Always use a heat protectant if you use hot tools, and book in for regular trims and any suggested toners or touch-ups. Following these tips helps keep your colour vibrant and your hair smoother for longer.",
   },
   {
-    question: "Where can I get keratin treatment near Helensville?",
-    answer: "Hair By Melissa, located 15 minutes from Helensville in Kaukapakapa, specializes in formaldehyde-free keratin treatments that last 3-5 months, perfect for North Auckland's coastal climate.",
+    question: "Can I book online, or do I need to call or email to make an appointment?",
+    answer: "You can book your appointment online any time. It's quick and easy. If you'd rather talk things through or have specific questions, you can also call 0274 799 320 or email. All options work, so just use whatever's easiest for you.",
+  },
+  {
+    question: "Do you offer a consultation to help choose the right colour and cut for my hair type and lifestyle?",
+    answer: "Every service includes a thorough consultation before we start. We talk about your hair type, face shape, and what style or colour will really suit your day-to-day life. All your questions about colouring, cutting, or treatments get answered, and you'll know exactly what to expect. It's important to make sure you feel confident about your options before we do anything.",
+  },
+  {
+    question: "Do you offer kids' haircuts, and what ages do you work with?",
+    answer: "Kids' haircuts are available, and I'm happy to work with children of any age. The approach is gentle and unhurried, focusing on making the experience comfortable for younger clients. If you have a child who's nervous or prefers extra time, just let me know so I can make sure we go at their pace.",
+  },
+  {
+    question: "Do you offer foil highlights, and what are the starting prices?",
+    answer: "You can get foil highlights here, including partial foils starting at $90, half head highlights from $140, and full head highlights from $180. Each option is tailored to fit your look and lifestyle, with a detailed consultation before we start so you know what to expect and how it'll suit your hair type.",
+  },
+  {
+    question: "How does balayage work, and what maintenance should I expect as it grows out?",
+    answer: "Balayage is a hand-painting technique where the colour is applied in soft, sweeping sections for a natural, sun-kissed look. Before starting, I do a detailed consultation to talk through your hair history, goals, and the exact effect you want. I mix a custom colour formula and section your hair to create a blend that suits your hair type, face shape, and lifestyle. After painting, the colour is processed, then toned and finished with a blow-dry so you can see the result right away. Balayage blends your roots with lighter ends, so as your hair grows there's no harsh line. Instead, the colour fades out gently, making grow-out softer and much lower maintenance than traditional highlights. Most people only need touch-ups every 3–6 months, plus a good shampoo and conditioner for coloured hair to keep the colour fresh between appointments.",
+  },
+  {
+    question: "How much does a haircut and blow-dry cost, and what's included?",
+    answer: "A women's cut and finish starts at $50. This includes a detailed consultation to discuss your style and hair needs, a professional haircut tailored to suit you, and a blow-dry to finish so you leave with your hair looking polished. You'll also get advice on styling and caring for your hair at home. The service is always personalised, with enough time to make sure you're happy with the end result.",
+  },
+  {
+    question: "Do you offer nanoplasty smoothing?",
+    answer: "I don't offer nanoplasty smoothing. Instead, I provide keratin smoothing treatments, which help reduce frizz and make hair smoother and more manageable. The results from a keratin treatment usually last around 4–5 months, depending on your hair type and how you care for your hair after the service.",
   },
   {
     question: "Are you open on Sundays?",
     answer: "Yes. Hair By Melissa is open Sunday 9am to 5pm, Saturday 2pm to 5pm, and Monday to Friday 9am to 1:30pm. Book online or call 0274 799 320.",
   },
   {
-    question: "Do you cut kids' hair?",
-    answer: "Yes. Melissa cuts kids' hair as well as women's. For school-age children, Saturday afternoon and Sunday are the easiest times. Book online or call 0274 799 320.",
-  },
-  {
-    question: "Do you offer nanoplasty?",
-    answer: "Yes. Alongside keratin smoothing, Melissa offers nanoplasty to calm frizz and make hair easier to manage. Call 0274 799 320 to talk through which suits your hair and for a price.",
+    question: "Where can I get a keratin treatment near Helensville?",
+    answer: "Hair By Melissa is 15 minutes from Helensville in Kaukapakapa. A keratin treatment is $180 and usually lasts four to five months with good aftercare. Free parking at the door.",
   },
   {
     question: "How do I leave a review for Hair By Melissa?",
@@ -97,8 +117,8 @@ const faqSchema = {
 <Layout
   title="Hairdresser | Hair Stylist: Kaukapakapa, Helensville, Wainui"
   titleSuffix={false}
-  description="Hair stylist and hairdresser for women and kids in Kaukapakapa: balayage, cuts, blow dries, foil highlights, keratin and nanoplasty. Helensville & Wainui."
-  keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair colouring wainui, haircut waitoki, best hairdresser rodney district, kids hairdresser kaukapakapa, nanoplasty north auckland, hair stylist kaukapakapa"
+  description="Hair stylist and hairdresser for women and kids in Kaukapakapa: balayage, cuts, blow dries, foil highlights and keratin smoothing. Helensville & Wainui."
+  keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair colouring wainui, haircut waitoki, best hairdresser rodney district, kids hairdresser kaukapakapa, hair stylist kaukapakapa"
 >
   <!-- Core Web Vitals: Preload compressed hero images -->
   <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_640q35.webp" media="(max-width: 767px)" />
@@ -140,7 +160,7 @@ const faqSchema = {
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-4xl font-bold">Our Premium Services</h2>
         <p class="text-gray-600 mt-4">
-          Cuts for women and kids, blow dries, foil highlights, balayage, keratin smoothing and nanoplasty. Prices below; ask about nanoplasty when you book.
+          Cuts for women and kids, blow dries, foil highlights, balayage and keratin smoothing. Prices below.
         </p>
       </div>
       
@@ -282,14 +302,17 @@ const faqSchema = {
         <!-- Voice Search FAQ Integration -->
         <div class="bg-white rounded-xl shadow-lg p-8">
           <h3 class="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
-          <div class="grid md:grid-cols-2 gap-6 text-left">
-            {homeFaqs.map((faq) => (
-              <div>
-                <h4 class="font-semibold mb-2">{faq.question}</h4>
-                <div>
-                  <p class="text-gray-700">{faq.answer}</p>
-                </div>
-              </div>
+          <div class="space-y-4 text-left">
+            {homeFaqs.map((faq, i) => (
+              <details class="group bg-white rounded-lg shadow p-6" open={i === 0}>
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <h4 class="font-semibold">{faq.question}</h4>
+                  <svg class="h-5 w-5 text-salon-darkblue flex-shrink-0 transition-transform duration-200 group-open:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </summary>
+                <p class="text-gray-700 mt-4">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>
@@ -598,19 +621,7 @@ const faqSchema = {
     </div>
   </section>
 
-  <!-- Latest from the salon (Google posts) -->
-  <section class="bg-gray-50 section-padding">
-    <div class="container-custom">
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl font-bold">Latest from the salon</h2>
-        <p class="text-gray-600 mt-4">
-          Offers, new work and updates from our Google profile.
-        </p>
-      </div>
-
-      <GooglePostsWidget />
-    </div>
-  </section>
+  <TransformationsCarousel />
 
   <!-- Map Section -->
   <section class="bg-white section-padding">
