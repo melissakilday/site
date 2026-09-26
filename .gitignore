@@ -86,3 +86,6 @@ tools/claude-seo/data/
 tools/claude-seo/*.db
 
 tools/dataforseo/outputs/
+
+# generated image sources (large PNGs from Kie.ai; manifest in docs/ stays committed)
+assets/generated/

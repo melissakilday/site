@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-26T11:08:54.312Z",
+  "provider": "Kie.ai",
+  "model": "nano-banana-2",
+  "documentation": "https://docs.kie.ai/market/google/nanobanana2",
+  "usageNote": "Generated assets are illustrations, not client work.",
+  "creditBalance": {
+    "before": 1164,
+    "beforeAt": "2026-09-26T11:10:16.407Z",
+    "after": 1148,
+    "afterAt": "2026-09-26T11:11:30.596Z"
+  },
+  "assets": [
+    {
+      "id": "keratin-hero",
+      "kind": "generated-illustration",
+      "model": "nano-banana-2",
+      "prompt": "Warm, calm editorial photograph in a small bright boutique home hair salon in New Zealand: cream walls, pale timber, a large window with soft natural daylight, a few green plants, soft blue and blush accents. Realistic hair texture and believable hands. No faces visible, no logos, no brand names, no text, no watermarks. Illustrative commercial art direction, not a real client. Over-the-shoulder close view from behind a seated client: a hairdresser's hands glide a ceramic flat iron down a smooth, glossy section of long dark brown hair. The client is seen only from the back of the head and shoulders. The left half of the frame is soft, out-of-focus salon background with room for a white headline. Shallow depth of field, 50mm lens.",
+      "aspectRatio": "16:9",
+      "resolution": "2K",
+      "intendedUse": "ServiceLayout hero + og:image (1200x630 crop)",
+      "alt": "Illustration: a hairdresser sealing a keratin treatment into long dark hair with a flat iron",
+      "source": "assets/generated/keratin-hero.png",
+      "status": "downloaded",
+      "creditsConsumed": 12,
+      "taskId": "62de08c6dcd7184927461ba42cb0d7eb",
+      "submittedAt": "2026-09-26T11:08:54.729Z",
+      "completedAt": 1790420950793,
+      "review": "Approved on first generation. Over-the-shoulder view of a seated client's back and shoulders only; no face visible. Hairdresser's hand (5 fingers, no anomalies) holds an unbranded rose-gold flat iron with a plain dial (no screen/text/logo) against a smooth section of dark brown hair. Left half of frame is genuinely soft/out-of-focus salon background (shelving, window, plants) with clear space for a white headline overlay. Hair looks natural, no malformed strands.",
+      "sourceDimensions": {
+        "width": 2752,
+        "height": 1536
+      },
+      "sourceSha256": "d69648391e38f445351aac360162ddbd4d2c03e2066080a6be03140aeada5c12",
+      "outputs": [
+        {
+          "path": "public/images/keratin/keratin-hero-640.webp",
+          "width": 640,
+          "height": 360,
+          "bytes": 17506
+        },
+        {
+          "path": "public/images/keratin/keratin-hero-1200.webp",
+          "width": 1200,
+          "height": 675,
+          "bytes": 42082
+        },
+        {
+          "path": "public/images/keratin/keratin-hero-1600.webp",
+          "width": 1600,
+          "height": 900,
+          "bytes": 64720
+        },
+        {
+          "path": "public/images/keratin/keratin-hero-og.jpg",
+          "width": 1200,
+          "height": 630,
+          "bytes": 77580
+        }
+      ]
+    },
+    {
+      "id": "keratin-process",
+      "kind": "generated-illustration",
+      "model": "nano-banana-2",
+      "prompt": "Warm, calm editorial photograph in a small bright boutique home hair salon in New Zealand: cream walls, pale timber, a large window with soft natural daylight, a few green plants, soft blue and blush accents. Realistic hair texture and believable hands. No faces visible, no logos, no brand names, no text, no watermarks. Illustrative commercial art direction, not a real client. Close-up of a hairdresser's gloved hands applying a creamy white smoothing treatment with a tint brush to one sectioned piece of damp brown hair, other sections held with clips; a small mixing bowl on a tidy trolley nearby.",
+      "aspectRatio": "4:3",
+      "resolution": "1K",
+      "intendedUse": "Process section",
+      "alt": "Illustration: keratin formula being brushed onto a section of hair",
+      "source": "assets/generated/keratin-process-rejected-1.png",
+      "status": "rejected",
+      "creditsConsumed": 8,
+      "taskId": "d67aba4b5488ac28ac6c7751d8f2f044",
+      "submittedAt": "2026-09-26T11:08:54.913Z",
+      "completedAt": 1790420947825,
+      "rejectionReason": "visible partial face: nose, lips and chin clearly shown in top-right of frame",
+      "review": "Rejected on review. Gloved hands brushing white smoothing formula onto a hair section were rendered well, but a woman's face (nose, lips, chin, jawline) is clearly visible and in focus in the top-right of the frame, above a striped-top/apron shoulder. Fails the no-visible-face rule. Regenerated once (see the other keratin-process entry)."
+    },
+    {
+      "id": "keratin-aftercare",
+      "kind": "generated-illustration",
+      "model": "nano-banana-2",
+      "prompt": "Warm, calm editorial photograph in a small bright boutique home hair salon in New Zealand: cream walls, pale timber, a large window with soft natural daylight, a few green plants, soft blue and blush accents. Realistic hair texture and believable hands. No faces visible, no logos, no brand names, no text, no watermarks. Illustrative commercial art direction, not a real client. Overhead flat lay on pale timber: two plain unlabelled pump bottles in cream and soft blue, a wide-tooth comb, a folded soft towel and the corner of a silk pillowcase.",
+      "aspectRatio": "4:3",
+      "resolution": "1K",
+      "intendedUse": "Aftercare section",
+      "alt": "Illustration: sulfate-free shampoo, a wide-tooth comb and a silk pillowcase for keratin aftercare",
+      "source": "assets/generated/keratin-aftercare-rejected-1.png",
+      "status": "rejected",
+      "creditsConsumed": 8,
+      "taskId": "2415e7df24e9d9b1d7a91eaf34819a1c",
+      "submittedAt": "2026-09-26T11:08:55.092Z",
+      "completedAt": 1790420954974,
+      "rejectionReason": "both pump bottles show printed text (\"300ml\") which violates no-text/no-labels rule",
+      "review": "Rejected on review. Clean overhead flat lay with no visible face and no malformed hands, but both pump bottles have sharp, legible \"300ml\" printed on the label area. Regenerated once (see the other keratin-aftercare entry)."
+    },
+    {
+      "id": "keratin-process",
+      "kind": "generated-illustration",
+      "model": "nano-banana-2",
+      "prompt": "Warm, calm editorial photograph in a small bright boutique home hair salon in New Zealand: cream walls, pale timber, a large window with soft natural daylight, a few green plants, soft blue and blush accents. Realistic hair texture and believable hands. No faces visible, no logos, no brand names, no text, no watermarks. Illustrative commercial art direction, not a real client. Close-up of a hairdresser's gloved hands applying a creamy white smoothing treatment with a tint brush to one sectioned piece of damp brown hair, other sections held with clips; a small mixing bowl on a tidy trolley nearby.",
+      "aspectRatio": "4:3",
+      "resolution": "1K",
+      "intendedUse": "Process section",
+      "alt": "Illustration: keratin formula being brushed onto a section of hair",
+      "source": "assets/generated/keratin-process.png",
+      "status": "downloaded",
+      "creditsConsumed": 8,
+      "taskId": "3e5ebe73da04ca03202bb79720181c80",
+      "submittedAt": "2026-09-26T11:10:16.621Z",
+      "completedAt": 1790421082829,
+      "review": "FLAGGED: this regenerated attempt again shows a partial face (sharp, in-focus nose/lips/chin/jawline profile, upper-right of frame, more prominent than the first rejected attempt). Per the one-regeneration limit, this was kept as the better of the two source images because the rest of the composition (gloved hands, tint brush, sectioned wet hair, clips, bowl and trolley, plants) is clean and on-brief. To ship this without showing a face, the optimize step uses a MANUAL off-centre crop (cropOverride below) instead of a plain centre crop: it keeps the lower-left ~63%x62% of the frame (back/side of the client's head with an ear visible, the gloved hands, brush, hair and trolley) and excludes the top-right corner where the face is. This was verified visually after cropping: no face, eyes, nose, mouth or chin remain in the final 4:3 output. Background product bottles in the kept region are soft-focus bokeh with illegible label lines, not readable text. Flagging this clearly for the orchestrator/lead: the source PNG still contains a face outside the crop box, so this image must not be recropped or used differently without re-checking that constraint.",
+      "cropOverride": {
+        "note": "Applied in scripts/generate-images.mjs --optimize instead of the default center-crop-to-aspect, specifically to exclude the visible face in the top-right of the source.",
+        "left": 227,
+        "top": 336,
+        "width": 746,
+        "height": 560,
+        "sourceDimensions": {
+          "width": 1200,
+          "height": 896
+        }
+      },
+      "sourceDimensions": {
+        "width": 1200,
+        "height": 896
+      },
+      "sourceSha256": "b32bddabf4a15d7abf115e875348e557f65cba2ad7b05ae94bda56d05d21b1f1",
+      "outputs": [
+        {
+          "path": "public/images/keratin/keratin-process-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 42546
+        },
+        {
+          "path": "public/images/keratin/keratin-process-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 88070
+        }
+      ]
+    },
+    {
+      "id": "keratin-aftercare",
+      "kind": "generated-illustration",
+      "model": "nano-banana-2",
+      "prompt": "Warm, calm editorial photograph in a small bright boutique home hair salon in New Zealand: cream walls, pale timber, a large window with soft natural daylight, a few green plants, soft blue and blush accents. Realistic hair texture and believable hands. No faces visible, no logos, no brand names, no text, no watermarks. Illustrative commercial art direction, not a real client. Overhead flat lay on pale timber: two plain unlabelled pump bottles in cream and soft blue, a wide-tooth comb, a folded soft towel and the corner of a silk pillowcase.",
+      "aspectRatio": "4:3",
+      "resolution": "1K",
+      "intendedUse": "Aftercare section",
+      "alt": "Illustration: sulfate-free shampoo, a wide-tooth comb and a silk pillowcase for keratin aftercare",
+      "source": "assets/generated/keratin-aftercare.png",
+      "status": "downloaded",
+      "creditsConsumed": 8,
+      "taskId": "2cf75596784bb74d6ff34d31ea1550a4",
+      "submittedAt": "2026-09-26T11:10:16.813Z",
+      "completedAt": 1790421082920,
+      "review": "Approved on regeneration (first attempt rejected for label text). Overhead flat lay on pale timber: two plain pump bottles (cream and soft blue, no visible text or logos on this attempt), a wooden wide-tooth comb, a folded cream waffle towel and the corner of a blush silk pillowcase, with a monstera/fern plant in the top-right and window light on the left. No faces, no hands, no text found anywhere in the frame on close inspection.",
+      "sourceDimensions": {
+        "width": 1200,
+        "height": 896
+      },
+      "sourceSha256": "5ea9e48be994bcdf7030a8649351971888093b24866330bc31d67ff82a0d8aa8",
+      "outputs": [
+        {
+          "path": "public/images/keratin/keratin-aftercare-640.webp",
+          "width": 640,
+          "height": 480,
+          "bytes": 35122
+        },
+        {
+          "path": "public/images/keratin/keratin-aftercare-1200.webp",
+          "width": 1200,
+          "height": 900,
+          "bytes": 86902
+        }
+      ]
+    }
+  ]
+}
