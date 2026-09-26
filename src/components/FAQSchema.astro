@@ -7,9 +7,10 @@ export interface FAQItem {
 export interface Props {
   faqs: FAQItem[];
   pageUrl?: string;
+  schemaOnly?: boolean;
 }
 
-const { faqs, pageUrl } = Astro.props;
+const { faqs, pageUrl, schemaOnly = false } = Astro.props;
 
 // Generate FAQ Schema.org structured data
 const faqSchema = {
@@ -35,6 +36,7 @@ if (pageUrl) {
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 
 <!-- Visible FAQ Section -->
+{!schemaOnly && (
 <section class="bg-[#F8F9FA] py-16">
   <div class="container-custom">
     <div class="max-w-4xl mx-auto">
@@ -110,6 +112,7 @@ if (pageUrl) {
     </div>
   </div>
 </section>
+)}
 
 <style>
   details summary::-webkit-details-marker {
