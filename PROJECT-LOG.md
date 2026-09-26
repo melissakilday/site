@@ -1,9 +1,9 @@
 # Hair By Melissa — project log
 
 Live: https://hairbymelissa.co.nz · Repo that deploys: github.com/melissakilday/site `main` (Netlify) · Local folder: /Volumes/KINGSTON/projects/hairbymellisa (working branch `deploy-main`, remote `deploy`) · `origin` (AltusSnyman/hairbymelissa-astro) is a stale fork, never deploy from it.
-Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am–1:30pm, Sat 2–5pm, Sun 9am–5pm · Google name "Hair By Melissa A" (deliberate, another Hair by Melissa nearby) · 5.0 from 1 Google review · categories Hairdresser + Beauty salon · service area Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū.
+Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am–1:30pm, Sat 2–5pm, Sun 9am–5pm · Google name "Hair By Melissa A" (deliberate, another Hair by Melissa nearby) · 5.0 from 4 Google reviews (2026-09-26) · categories Hairdresser + Beauty salon · does NOT offer nanoplasty · kids' cuts any age · keratin no-wash 72 hours · Facebook https://www.facebook.com/p/Hair-By-Melissa-A-Kaukapakapa-61581136381949/ · service area Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū.
 
-## Done (2026-09-18)
+## Done
 | Round | What | Result |
 |---|---|---|
 | Tooling | Search Console MCP (`tools/mcp-gsc`, `.mcp.json` server `gsc`), GEO optimizer (`tools/geo-optimizer`), claude-seo local/maps/drift/schema skills (`.claude/skills`, `.claude/agents`, `tools/claude-seo`), agent rules in `CLAUDE.md`, `changelog/` | Search Console queryable from this folder only |
@@ -14,6 +14,7 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 | Keywords + Kumeū (2026-09-21) | DataForSEO skill vendored; report `tools/dataforseo/reports/2026-09-21-hbm-keywords.md`; new /locations/kumeu/; /hair-dressing/ reframed as local hub; Kaukapakapa title; balayage FAQ + links | Live as melissakilday/site a69e51a (2026-09-21). Indexing requested for /locations/kumeu/. Re-check 2026-10-21 |
 | Reviews + home (2026-09-26) | Owner's home title/description/H1; merged HairSalon schema (Google name, pin, Facebook, no rating markup); real Google reviews widget replaces invented testimonials on home, about, Kaukapakapa, Helensville; posts widget on home, photos widget on gallery; /review/ → Google review form (302); review link in footer and contact; Helensville and half-head titles fixed (were truncated); keratin post quick answer, day-by-day table, byline; printable review QR card + thank-you text in reports/review-card-2026-09-26/ | Live as melissakilday/site cab1b1a (2026-09-26); indexing requested for home, Helensville, keratin post, half-head. Re-check 2026-10-26 |
 | Carousel + owner FAQs (2026-09-26) | Reviews widget swapped to the owner's GoHighLevel reputation widget (4 pages); posts widget removed; home before-and-after carousel (10 photos, WebP 480/800, no library); owner's 11 FAQs as accordion + FAQPage; nanoplasty removed site-wide (owner: not offered); keratin wash time unified at 72 hours | Live as melissakilday/site 5b8d76e (2026-09-26). Re-check 2026-10-26 |
+| Google profile terms research (2026-09-26) | Priced the 10 terms and 3 locations the Google profile targets (DataForSEO NZ, US$0.09): nanoplasty 3,600/mo but not offered; keratin treatment 2,400 (peaks Oct–Dec); balayage 3,600; blow dry 880; half head foils 480; hairdresser helensville 50; Kaukapakapa and Wainui below threshold; kids too small to measure. Report `tools/dataforseo/reports/2026-09-26-hbm-gbp-terms.md` | No site change; feeds the website to-do below |
 
 ## Where things are
 - Plan and evidence: `plan.md` (sections 1–10), `.agents/product-marketing-context.md` (client facts), `changelog/` (one entry per change set), `tools/geo-optimizer/reports/`, `tools/claude-seo/reports/`.
@@ -24,7 +25,24 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 ## Baseline to beat (Search Console, 28 days to 2026-09-18)
 19 clicks · 1,613 impressions · 1.18% CTR · position 29.2 · Helensville page CTR 1.0% · keratin post position 38 · "balayage auckland" position 47.
 
-## To do later
-- **Owner (top priority, per DataForSEO 2026-09-21: 1 review vs competitors' 24–66 keeps her out of the Helensville map pack):** Google reviews campaign (profile link on the site), photos on the profile, claim Bing Places + Apple Business Connect, add the salon to OpenStreetMap, Fresha/Yelp listings, confirm Facebook URL and product brands.
-- **Next build:** balayage page gallery + visible FAQ, location-page depth, analytics, content collections for the blog, decide whether to keep "5+ years" copy.
-- **Re-check 2026-10-16:** Search Console 28-day vs baseline; `npm`-free drift check with `.claude/skills/seo/scripts/drift_compare.py` on the 8 baselined URLs (commands in `tools/claude-seo/reports/2026-09-18-drift-baseline.md`); GEO re-audit.
+## Website to-do (next build, from the 2026-09-26 keyword review)
+1. **Keratin push (do first, demand peaks Oct–Dec):** deepen /services/keratin-treatments/ (position ~60; "keratin treatment" 2,400/mo, "keratin treatment auckland" 480): what's included, 72-hour aftercare summary, how long it lasts, price $180, visible FAQ answering the Google questions (cost in NZ, how long it lasts, is it good for hair); internal links from the aftercare article and home.
+2. **New article "Nanoplasty vs keratin":** honest comparison for the 3,600/mo nanoplasty searches; states she offers keratin, not nanoplasty; links to the keratin page. (Rewrite if Melissa ever offers nanoplasty.)
+3. **Balayage page depth:** /services/balayage/ (position ~50; balayage 3,600/mo, $230): her own before-and-after photos (carousel images 7 and 9 are confirmed client work), what's included, grow-out and maintenance (her FAQ text), visible FAQ.
+4. **Blow dry wording:** add "blow dry" alongside "blow wave" on /services/blow-wave/ (blow dry 880/mo) and in its title if it fits.
+5. **Kids section on /services/womens-cut-finish/:** kids' cuts for any age, gentle and unhurried (her FAQ words). Needs the kids' price from Melissa.
+6. **"Women's hairdresser" wording** on the cut page and **Sunday opening** in the home and cut page copy (hairdresser open sunday 90/mo).
+7. Carry-overs: location-page depth (Helensville first), analytics, content collections for the blog, decide on the "5+ years" copy, three titles over 60 characters (/about/ 61, /services/partial-foils/ 64, /blog/balayage-vs-highlights/ 65).
+Not doing: Wainui page (no measurable demand), kids or "hair treatment" standalone pages (too small), chasing "hairdresser near me"/"hair salon" as site keywords (the Google profile wins those by proximity).
+
+## Google Business Profile to-do (separate from the website; owner / Altus in the profile)
+- Remove **nanoplasty** from services (not offered).
+- Add **Hair salon** as an additional category if available ("hair salon near me" 14,800/mo).
+- Service names and prices matching the site; link each service to its page.
+- Weekly posts; add real photos regularly; remove the photo branded "Superior Hair Home Studio".
+- Reviews: counter QR card + thank-you text after every appointment; target 10 by late November, 25 by March. Clients can be asked to say what they had done; no incentives, no scripts.
+- Claim Bing Places and Apple Business Connect; OpenStreetMap; Fresha/Yelp listings; product brands.
+
+## Re-checks
+- **2026-10-16:** Search Console 28-day vs baseline; `npm`-free drift check with `.claude/skills/seo/scripts/drift_compare.py` on the 8 baselined URLs (commands in `tools/claude-seo/reports/2026-09-18-drift-baseline.md`); GEO re-audit.
+- **2026-10-26:** Helensville CTR ≥ 4%, keratin post position < 25; monthly map-pack check from Kaukapakapa, Helensville and Kumeū (DataForSEO maps, ~US$0.01 per search).
