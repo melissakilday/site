@@ -103,6 +103,14 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
 
   'half-head-highlights': [
     {
+      question: "How much are half head highlights?",
+      answer: "$140 at Hair By Melissa, and the appointment takes about 2 to 2.5 hours. Partial foils are $90 and a full head of highlights is $180."
+    },
+    {
+      question: "What's the difference between half head and full head highlights?",
+      answer: "A half head places foils through the top and sides, where colour shows when your hair is down. A full head adds foils underneath as well, for all-over brightness. Half head is $140; full head is $180."
+    },
+    {
       question: "What areas do half head highlights cover?",
       answer: "Half head highlights cover the top sections, crown, and sides of your hair - essentially the areas most visible when your hair is styled. This creates beautiful dimension where it counts most while keeping costs moderate."
     },
