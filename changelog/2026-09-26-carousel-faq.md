@@ -22,3 +22,6 @@
 **Metric targeted:** home page FAQ/answer coverage (FAQPage has 11 questions, up from 6; covers booking, consultation, kids' ages, foil and cut prices, balayage upkeep, prep and aftercare) and trust that drives conversions (real before-and-after work, the owner's own reviews feed, no claim for a service she does not offer). In GSC, watch home page impressions and CTR for question-style queries (kids haircut, foils price, balayage maintenance, keratin wash) and bookings/calls from the home page.
 
 **Re-check:** 2026-10-26.
+
+## Deployed 2026-09-26 (melissakilday/site main 5b8d76e, fast-forward from 81dc321)
+Live checks: one GoHighLevel reviews widget (owner switched it to the sideways carousel layout in GoHighLevel; height about 530px), no posts widget, carousel with 10 slides and WebP files returning 200, FAQPage with 11 questions, meta description without nanoplasty, schema description without nanoplasty (the only remaining mentions are the owner's "I don't offer nanoplasty" FAQ), keratin service page says 72 hours. Owner open: confirm 72 vs 48 hours; confirm the carousel photos are real client work; consider turning off the widget's "AI Summary" card.
