@@ -13,29 +13,33 @@ export interface Props {
   ogImage?: string;
   canonicalURL?: string;
   pageType?: 'website' | 'article' | 'service';
+  titleSuffix?: boolean;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = 'Premium hairdresser in Kaukapakapa, Auckland. Expert hair coloring, keratin treatments, balayage & highlights. Serving Kaukapakapa, Helensville, Wainui & Waitoki. Book your transformation today!',
   keywords = 'hairdresser kaukapakapa, hair salon kaukapakapa, hair coloring auckland north, keratin treatment kaukapakapa, balayage helensville, highlights wainui, haircut waitoki, melissa hair salon, hair stylist north auckland',
   ogImage = business.ogImage,
   canonicalURL = new URL(Astro.url.pathname, 'https://hairbymelissa.co.nz').toString(),
-  pageType = 'website'
+  pageType = 'website',
+  titleSuffix = true
 } = Astro.props;
+
+const fullTitle = titleSuffix ? `${title} | Hair By Melissa` : title;
 
 // Enhanced Structured Data for HairSalon with Specific Services
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": ["HairSalon", "BeautySalon"],
+  "@type": "HairSalon",
   "@id": "https://hairbymelissa.co.nz/#business",
-  "name": "Hair By Melissa",
-  "alternateName": ["Melissa's Hair Salon", "Hair By Melissa Kaukapakapa"],
-  "description": "Premium hair salon specializing in keratin treatments, balayage, highlights, and expert hair coloring in Kaukapakapa, Auckland. Serving North Auckland with professional hair services since 2020.",
+  "name": business.googleName,
+  "alternateName": ["Hair By Melissa", "Hair By Melissa Kaukapakapa"],
+  "description": "Hair By Melissa A is a one-stylist hair salon at 12 Magnolia Lane, Kaukapakapa, North Auckland, with unhurried, personal appointments. Melissa is a women's and kids' hairdresser offering haircuts and blow dries, balayage, foil highlights (partial foils, half head and full head), tints and toning, plus keratin smoothing and nanoplasty for frizz-free hair. Free parking at the door; clients come from Helensville, Wainui, Waitoki and Kumeū.",
   "url": "https://hairbymelissa.co.nz",
-  "hasMap": "https://share.google/8GVUyoirDJwTIXnxO",
+  "hasMap": business.googleMapsUrl,
   "telephone": business.phoneE164,
-  "email": "book@hairbymelissa.co.nz",
+  "email": business.email,
   "foundingDate": "2020",
   "founder": {
     "@type": "Person",
@@ -45,15 +49,15 @@ const localBusinessSchema = {
   "address": postalAddress,
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": -36.6173,
-    "longitude": 174.4829
+    "latitude": business.geo.latitude,
+    "longitude": business.geo.longitude
   },
   "image": [...business.images],
   "logo": business.logo,
   "openingHoursSpecification": openingHoursSpecification,
   "priceRange": "$40-$230",
   "currenciesAccepted": "NZD",
-  "paymentAccepted": ["Cash", "Credit Card", "EFTPOS", "Bank Transfer"],
+  "paymentAccepted": "Cash, Credit Card",
   "areaServed": [
     {
       "@type": "City",
@@ -389,12 +393,12 @@ const localBusinessSchema = {
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": -36.6173,
-      "longitude": 174.4829
+      "latitude": business.geo.latitude,
+      "longitude": business.geo.longitude
     },
     "geoRadius": "25000"
   },
-  "sameAs": [business.instagram],
+  "sameAs": [business.facebook, business.instagram, business.googleMapsUrl],
   "mainEntityOfPage": "https://hairbymelissa.co.nz",
   "potentialAction": {
     "@type": "ReserveAction",
@@ -574,8 +578,8 @@ const websiteSchema = {
     </style>
     
     <!-- Primary Meta Tags -->
-    <title>{title} | Hair By Melissa</title>
-    <meta name="title" content={`${title} | Hair By Melissa`} />
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Hair By Melissa" />
@@ -611,7 +615,7 @@ const websiteSchema = {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={pageType} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={`${title} | Hair By Melissa`} />
+    <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
@@ -622,15 +626,15 @@ const websiteSchema = {
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={`${title} | Hair By Melissa`} />
+    <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
     
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="NZ-AUK" />
     <meta name="geo.placename" content="Kaukapakapa" />
-    <meta name="geo.position" content="-36.6173;174.4829" />
-    <meta name="ICBM" content="-36.6173, 174.4829" />
+    <meta name="geo.position" content={`${business.geo.latitude};${business.geo.longitude}`} />
+    <meta name="ICBM" content={`${business.geo.latitude}, ${business.geo.longitude}`} />
     
     <!-- Enhanced Local Entity Recognition Meta Tags -->
     <meta name="geo.placename" content="Kaukapakapa Village, Auckland, New Zealand" />

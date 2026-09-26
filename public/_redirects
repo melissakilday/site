@@ -21,6 +21,10 @@ http://www.hairbymelissa.com/* https://hairbymelissa.co.nz/:splat 301!
 /gallery /gallery/ 301
 /faq /faq/ 301
 
+# Google review short link (printed on the review card)
+/review https://search.google.com/local/writereview?placeid=ChIJGZmF0E4bDW0RWFLRlnwvU20 302!
+/review/ https://search.google.com/local/writereview?placeid=ChIJGZmF0E4bDW0RWFLRlnwvU20 302!
+
 # Legacy URL redirects (if migrating from other structure)
 /book /booking/ 301
 /appointment /booking/ 301

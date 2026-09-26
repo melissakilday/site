@@ -8,8 +8,8 @@
     navigator.geolocation.getCurrentPosition(function(position) {
       const userLat = position.coords.latitude;
       const userLon = position.coords.longitude;
-      const salonLat = -36.6173;
-      const salonLon = 174.4829;
+      const salonLat = -36.6274074; // keep in sync with business.geo in src/data/business.ts
+      const salonLon = 174.5007108;
       
       // Calculate distance for local relevance signals
       const distance = calculateDistance(userLat, userLon, salonLat, salonLon);

@@ -45,6 +45,19 @@
   status = 301
   force = true
 
+# Google review short link (printed on the review card)
+[[redirects]]
+  from = "/review"
+  to = "https://search.google.com/local/writereview?placeid=ChIJGZmF0E4bDW0RWFLRlnwvU20"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/review/"
+  to = "https://search.google.com/local/writereview?placeid=ChIJGZmF0E4bDW0RWFLRlnwvU20"
+  status = 302
+  force = true
+
 # Legacy URL redirects for SEO
 [[redirects]]
   from = "/book"

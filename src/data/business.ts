@@ -24,8 +24,8 @@ export const business = {
   addressLine: '12 Magnolia Lane, Kaukapakapa 0875, Auckland, NZ',
 
   geo: {
-    latitude: -36.6173,
-    longitude: 174.4829,
+    latitude: -36.6274074,
+    longitude: 174.5007108,
   },
 
   // Google Business Profile hours, confirmed 2026-09-18. Open 7 days.
@@ -36,10 +36,13 @@ export const business = {
   ],
   hoursLine: 'Mon–Fri 9am–1:30pm · Sat 2–5pm · Sun 9am–5pm',
 
-  // 5.0 from 1 review — never claim a review count above 1, and never
-  // emit aggregateRating/Review markup from this site.
+  // 5.0 from 3 Google reviews (2026-09-26). Never emit aggregateRating/Review markup from this site.
   googleReviewUrl: 'https://share.google/8GVUyoirDJwTIXnxO',
   instagram: 'https://www.instagram.com/hair_by_melissa_nz/',
+  facebook: 'https://www.facebook.com/p/Hair-By-Melissa-A-Kaukapakapa-61581136381949/',
+  googleMapsUrl: 'https://www.google.com/maps?cid=7877692385353880152',
+  googleWriteReviewUrl: 'https://search.google.com/local/writereview?placeid=ChIJGZmF0E4bDW0RWFLRlnwvU20',
+  googleName: 'Hair By Melissa A',
 
   // Real files under public/ — verified 2026-09-18.
   images: [
