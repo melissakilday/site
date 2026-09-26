@@ -12,6 +12,7 @@ Owner facts: 12 Magnolia Lane, Kaukapakapa 0875 · 0274 799 320 · Mon–Fri 9am
 | Local round | Testimonial star rows removed everywhere, map embeds and `hasMap` point at the Google listing, service area + llms.txt match Google, contact page states the Google name | Live as 04fb3a8 |
 | Search Console | sitemap-index.xml submitted; old /sitemap.xml 301s to it | |
 | Keywords + Kumeū (2026-09-21) | DataForSEO skill vendored; report `tools/dataforseo/reports/2026-09-21-hbm-keywords.md`; new /locations/kumeu/; /hair-dressing/ reframed as local hub; Kaukapakapa title; balayage FAQ + links | Live as melissakilday/site a69e51a (2026-09-21). Indexing requested for /locations/kumeu/. Re-check 2026-10-21 |
+| Reviews + home (2026-09-26) | Owner's home title/description/H1; merged HairSalon schema (Google name, pin, Facebook, no rating markup); real Google reviews widget replaces invented testimonials on home, about, Kaukapakapa, Helensville; posts widget on home, photos widget on gallery; /review/ → Google review form (302); review link in footer and contact; Helensville and half-head titles fixed (were truncated); keratin post quick answer, day-by-day table, byline; printable review QR card + thank-you text in reports/review-card-2026-09-26/ | Branch growth/reviews-home-2026-09-26, built (40 pages), awaiting push. Re-check 2026-10-26 |
 
 ## Where things are
 - Plan and evidence: `plan.md` (sections 1–10), `.agents/product-marketing-context.md` (client facts), `changelog/` (one entry per change set), `tools/geo-optimizer/reports/`, `tools/claude-seo/reports/`.

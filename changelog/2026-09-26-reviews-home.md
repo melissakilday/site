@@ -17,6 +17,6 @@
 
 **QA:** build 40 pages, no warnings. One HairSalon node, no aggregateRating/review in dist. Copy verbatim except the table row label above. Changed-page titles ≤60 and descriptions ≤155; pre-existing titles over 60 left as-is (not in this plan): `/about/` 61, `/services/partial-foils/` 64, `/blog/balayage-vs-highlights/` 65.
 
-**Open before deploy:** keratin quick answer (lead copy) says keep hair "tucked behind your ears" for 72 hours, but the article body says avoid tucking behind ears. The lead or owner needs to decide which is right before this goes live. Owner questions: nanoplasty price/duration; whether kids' cuts need a price line; which email is live (schema now uses `business.ts` melissa@; old schema had book@); the scanner's suggested FAQ list never arrived.
+**Resolved:** the keratin quick answer now says no ponytails, clips or tucking behind the ears, matching the article (lead fix, 7640857). Verified in preview: reviews, posts and images widgets all render; no console errors. Owner questions: nanoplasty price/duration; whether kids' cuts need a price line; which email is live (schema now uses `business.ts` melissa@; old schema had book@); the scanner's suggested FAQ list never arrived.
 
 **Targets:** Helensville CTR ≥4% and keratin post position <25 by 2026-10-26; Google reviews ≥10 by 2026-11-26. **Re-check:** 2026-10-26.
