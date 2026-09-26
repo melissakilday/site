@@ -187,7 +187,7 @@ const currentYear = new Date().getFullYear();
             <svg class="mr-2 h-5 w-5 text-salon-darkblue flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
             </svg>
-            <a href={business.googleReviewUrl} target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Leave a Google review</a>
+            <a href="/review/" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Leave a Google review</a>
           </div>
           <div class="flex items-center">
             <a href={business.instagram} target="_blank" rel="noopener" aria-label="Hair By Melissa on Instagram" class="text-gray-300 hover:text-white transition-colors flex items-center">
@@ -231,8 +231,8 @@ const currentYear = new Date().getFullYear();
       <!-- Service Area Entities -->
       <div itemprop="serviceArea" itemscope itemtype="https://schema.org/GeoCircle">
         <div itemprop="geoMidpoint" itemscope itemtype="https://schema.org/GeoCoordinates">
-          <meta itemprop="latitude" content="-36.6173">
-          <meta itemprop="longitude" content="174.4829">
+          <meta itemprop="latitude" content={business.geo.latitude}>
+          <meta itemprop="longitude" content={business.geo.longitude}>
         </div>
         <meta itemprop="geoRadius" content="25000">
       </div>

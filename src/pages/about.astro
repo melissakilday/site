@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
-import TestimonialCard from '../components/TestimonialCard.astro';
+import GoogleReviewsWidget from '../components/GoogleReviewsWidget.astro';
 
 const features = [
   {
@@ -227,32 +227,11 @@ const features = [
   <section class="bg-white py-20">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl font-bold mb-4">What Our Clients Say</h2>
-        <p class="text-gray-700">
-          Real testimonials from satisfied clients across North Auckland.
-        </p>
+        <h2 class="text-4xl font-bold mb-4">What clients say on Google</h2>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <TestimonialCard 
-          name="Sarah Johnson"
-          location="Kaukapakapa"
-          service="Keratin Treatment"
-          testimonial="Melissa transformed my frizzy hair into silky smooth locks! The keratin treatment has been life-changing - I save so much time styling my hair now."
-        />
-        <TestimonialCard 
-          name="Emma Wilson"
-          location="Helensville"
-          service="Balayage"
-          testimonial="The balayage Melissa created is absolutely stunning. She really understood my vision and the color grows out so naturally. Highly recommend!"
-        />
-        <TestimonialCard 
-          name="Rachel Thompson"
-          location="Wainui Village"
-          service="Highlights"
-          testimonial="Melissa is a true artist with color. My highlights look so natural and professional. The salon atmosphere is so relaxing too."
-        />
-      </div>
+
+      <GoogleReviewsWidget />
+      <p class="text-center text-gray-600 mt-8">Been to see Melissa? <a href="/review/" target="_blank" rel="noopener" class="text-salon-darkblue font-semibold underline hover:text-[#0F7A9C] transition-colors">Leave a Google review</a></p>
     </div>
   </section>
 

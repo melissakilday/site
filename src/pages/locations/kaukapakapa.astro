@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
+import GoogleReviewsWidget from '../../components/GoogleReviewsWidget.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Hairdresser in Kaukapakapa Village, NZ";
@@ -533,23 +534,10 @@ const localLandmarks = [
   <section class="py-16 bg-gray-50">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">What Our Kaukapakapa Clients Say</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-8 rounded-lg shadow-md">
-            <p class="text-gray-700 italic mb-4">
-              "I love coming to Hair By Melissa in Kaukapakapa. The village setting is so peaceful, and the free parking makes it stress-free. My keratin treatments last longer here than they did at my old city salon - I think it's the stable environment!"
-            </p>
-            <p class="font-medium">- Rebecca M., Lifestyle Block Owner</p>
-          </div>
-          
-          <div class="bg-white p-8 rounded-lg shadow-md">
-            <p class="text-gray-700 italic mb-4">
-              "Melissa really understands rural life and creates styles that work with my active lifestyle. The drive to Kaukapakapa has become part of my self-care routine - it's like a mini retreat from farm life!"
-            </p>
-            <p class="font-medium">- Claire H., Local Horse Trainer</p>
-          </div>
-        </div>
+        <h2 class="text-4xl font-bold mb-8 text-center">What clients say on Google</h2>
+
+        <GoogleReviewsWidget />
+        <p class="text-center text-gray-600 mt-8">Been to see Melissa? <a href="/review/" target="_blank" rel="noopener" class="text-salon-darkblue font-semibold underline hover:text-[#0F7A9C] transition-colors">Leave a Google review</a></p>
       </div>
     </div>
   </section>

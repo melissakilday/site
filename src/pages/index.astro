@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import TrustSignals from '../components/TrustSignals.astro';
 import OptimizedImage from '../components/OptimizedImage.astro';
+import GoogleReviewsWidget from '../components/GoogleReviewsWidget.astro';
+import GooglePostsWidget from '../components/GooglePostsWidget.astro';
 import { business } from '../data/business';
 import { getService } from '../data/services';
 
@@ -29,24 +31,6 @@ const services = [
   {
     ...getService('permanent-tint-touch-up'),
     icon: "scissors",
-  },
-];
-
-const reviews = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    review: "Melissa transformed my dull, lifeless hair into a vibrant masterpiece. The keratin treatment was a game-changer for my frizzy hair!",
-  },
-  {
-    id: 2,
-    name: "Jessica Miller",
-    review: "I've been to many salons, but none compare to Hair By Melissa. The balayage she did on my hair has received so many compliments.",
-  },
-  {
-    id: 3,
-    name: "Rachel Thompson",
-    review: "Melissa takes the time to understand exactly what you want. My highlights look so natural and blend perfectly with my base color.",
   },
 ];
 
@@ -78,6 +62,22 @@ const homeFaqs = [
     question: "Where can I get keratin treatment near Helensville?",
     answer: "Hair By Melissa, located 15 minutes from Helensville in Kaukapakapa, specializes in formaldehyde-free keratin treatments that last 3-5 months, perfect for North Auckland's coastal climate.",
   },
+  {
+    question: "Are you open on Sundays?",
+    answer: "Yes. Hair By Melissa is open Sunday 9am to 5pm, Saturday 2pm to 5pm, and Monday to Friday 9am to 1:30pm. Book online or call 0274 799 320.",
+  },
+  {
+    question: "Do you cut kids' hair?",
+    answer: "Yes. Melissa cuts kids' hair as well as women's. For school-age children, Saturday afternoon and Sunday are the easiest times. Book online or call 0274 799 320.",
+  },
+  {
+    question: "Do you offer nanoplasty?",
+    answer: "Yes. Alongside keratin smoothing, Melissa offers nanoplasty to calm frizz and make hair easier to manage. Call 0274 799 320 to talk through which suits your hair and for a price.",
+  },
+  {
+    question: "How do I leave a review for Hair By Melissa?",
+    answer: "Go to hairbymelissa.co.nz/review, which opens our Google review form. It takes about a minute, and it helps other locals find a hairdresser they can trust.",
+  },
 ];
 
 const faqSchema = {
@@ -95,9 +95,10 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Hairdresser Kaukapakapa, North Auckland"
-  description="Colour, balayage, keratin smoothing and cuts at a one-stylist salon in Kaukapakapa, North Auckland. 15 minutes from Helensville, free parking. Book online."
-  keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair coloring wainui, haircut waitoki, best hairdresser rodney district"
+  title="Hairdresser | Hair Stylist: Kaukapakapa, Helensville, Wainui"
+  titleSuffix={false}
+  description="Hair stylist and hairdresser for women and kids in Kaukapakapa: balayage, cuts, blow dries, foil highlights, keratin and nanoplasty. Helensville & Wainui."
+  keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair colouring wainui, haircut waitoki, best hairdresser rodney district, kids hairdresser kaukapakapa, nanoplasty north auckland, hair stylist kaukapakapa"
 >
   <!-- Core Web Vitals: Preload compressed hero images -->
   <link slot="head" rel="preload" as="image" href="/images/optimized/salon-exterior_640q35.webp" media="(max-width: 767px)" />
@@ -116,10 +117,10 @@ const faqSchema = {
     <div class="container-custom relative z-10 mt-20">
       <div class="max-w-2xl animate-fade-in">
         <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight">
-          Expert <span class="gradient-text">colour, keratin smoothing and cuts</span> in Kaukapakapa
+          Hairdresser in Kaukapakapa for <span class="gradient-text">Cuts, Colour and Keratin Treatments</span>
         </h1>
         <p class="text-xl text-white mt-6">
-          One stylist, unhurried appointments, and colour that suits you. 45 minutes from central Auckland, free parking at the door.
+          One stylist, unhurried appointments for women and kids, and colour that suits you. 45 minutes from central Auckland, free parking at the door.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="/booking/" class="btn-primary magnetic-hover">
@@ -139,7 +140,7 @@ const faqSchema = {
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-4xl font-bold">Our Premium Services</h2>
         <p class="text-gray-600 mt-4">
-          Discover our range of high-quality hair services designed to transform, enhance, and maintain your beautiful locks.
+          Cuts for women and kids, blow dries, foil highlights, balayage, keratin smoothing and nanoplasty. Prices below; ask about nanoplasty when you book.
         </p>
       </div>
       
@@ -279,14 +280,14 @@ const faqSchema = {
         </div>
         
         <!-- Voice Search FAQ Integration -->
-        <div class="bg-white rounded-xl shadow-lg p-8" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="bg-white rounded-xl shadow-lg p-8">
           <h3 class="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
           <div class="grid md:grid-cols-2 gap-6 text-left">
             {homeFaqs.map((faq) => (
-              <div itemscope itemtype="https://schema.org/Question">
-                <h4 class="font-semibold mb-2" itemprop="name">{faq.question}</h4>
-                <div itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
-                  <p class="text-gray-700" itemprop="text">{faq.answer}</p>
+              <div>
+                <h4 class="font-semibold mb-2">{faq.question}</h4>
+                <div>
+                  <p class="text-gray-700">{faq.answer}</p>
                 </div>
               </div>
             ))}
@@ -297,31 +298,24 @@ const faqSchema = {
     </div>
   </section>
   
-  <!-- Testimonials Section -->
+  <!-- Google Reviews Section -->
   <section class="bg-white section-padding">
     <div class="container-custom">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-4xl font-bold">What Our Clients Say</h2>
+        <h2 class="text-4xl font-bold">What clients say on Google</h2>
         <p class="text-gray-600 mt-4">
-          Hear from our wonderful clients about their experiences at Hair By Melissa.
+          Real reviews from Hair By Melissa clients, straight from our Google profile.
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {reviews.map((review) => (
-          <div 
-            class="glass-card rounded-lg p-8 animate-scale"
-            style={`animation-delay: ${review.id * 100}ms`}
-          >
-            <p class="text-gray-700 italic">"{review.review}"</p>
-            <p class="font-medium mt-4">- {review.name}</p>
-          </div>
-        ))}
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="/gallery" class="btn-primary">
-          View Our Work
+
+      <GoogleReviewsWidget />
+
+      <div class="text-center mt-12 flex flex-wrap justify-center gap-4">
+        <a href="/review/" target="_blank" rel="noopener" class="btn-primary">
+          Leave a Google review
+        </a>
+        <a href="/gallery/" class="btn-secondary">
+          View our work
         </a>
       </div>
     </div>
@@ -601,6 +595,20 @@ const faqSchema = {
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Latest from the salon (Google posts) -->
+  <section class="bg-gray-50 section-padding">
+    <div class="container-custom">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-4xl font-bold">Latest from the salon</h2>
+        <p class="text-gray-600 mt-4">
+          Offers, new work and updates from our Google profile.
+        </p>
+      </div>
+
+      <GooglePostsWidget />
     </div>
   </section>
 

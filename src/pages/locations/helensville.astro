@@ -1,12 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
+import GoogleReviewsWidget from '../../components/GoogleReviewsWidget.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 import { business } from '../../data/business';
 import { getService } from '../../data/services';
 
-const pageTitle = "Helensville Hairdresser, 15 Min Away, Free Parking";
-const pageDescription = "Helensville locals: colour, balayage and keratin at Hair By Melissa, 15 minutes up SH16 in Kaukapakapa. Free parking, online booking, open 7 days.";
+const pageTitle = "Helensville Hairdresser: Cuts from $50";
+const pageDescription = "Hairdresser 15 minutes from Helensville. Cuts from $50, foils from $90, balayage $230, keratin $180. Open 7 days, free parking at the door. Book online.";
 const pageKeywords = "hair salon helensville, hairdresser helensville, hair coloring helensville, keratin treatment helensville, balayage helensville, highlights helensville, hair salon near helensville";
 
 const faqs = locationFAQs['helensville'];
@@ -333,23 +334,10 @@ const travelInfo = {
   <section class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">What Helensville Clients Say</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-8 rounded-lg">
-            <p class="text-gray-700 italic mb-4">
-              "The drive from Helensville is so worth it! Melissa's keratin treatment has been a game-changer for dealing with the humidity we get from the harbour. My hair stays smooth and manageable all week, even on the most humid days."
-            </p>
-            <p class="font-medium">- Sarah K., Helensville</p>
-          </div>
+        <h2 class="text-4xl font-bold mb-8 text-center">What clients say on Google</h2>
 
-          <div class="bg-gray-50 p-8 rounded-lg">
-            <p class="text-gray-700 italic mb-4">
-              "I've been driving from Helensville to Hair By Melissa for over two years now. The personalized service and peaceful setting make it feel like a mini retreat. Plus, my balayage always looks amazing!"
-            </p>
-            <p class="font-medium">- Emma T., Helensville</p>
-          </div>
-        </div>
+        <GoogleReviewsWidget />
+        <p class="text-center text-gray-600 mt-8">Been to see Melissa? <a href="/review/" target="_blank" rel="noopener" class="text-salon-darkblue font-semibold underline hover:text-[#0F7A9C] transition-colors">Leave a Google review</a></p>
       </div>
     </div>
   </section>
