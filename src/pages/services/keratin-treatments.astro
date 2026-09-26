@@ -5,12 +5,13 @@ import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceRelationships } from '../../utils/internalLinks.ts';
 import { serviceFAQs } from '../../data/serviceFAQs';
 import { getService } from '../../data/services';
+import business from '../../data/business';
 
 const service = getService('keratin-treatments');
 
-const pageTitle = "Keratin Treatment North Auckland, $180";
-const pageDescription = "Professional keratin treatments in Kaukapakapa. Transform frizzy hair into smooth, manageable locks. Results last 5 months.";
-const pageKeywords = "keratin treatment kaukapakapa, brazilian blowout helensville, hair smoothing wainui, frizz treatment waitoki, keratin hair treatment north auckland, anti-frizz treatment rodney";
+const pageTitle = "Keratin Treatment in North Auckland, $180";
+const pageDescription = "Keratin smoothing for frizzy, curly or hard-to-manage hair in Kaukapakapa, North Auckland. $180, about 2 to 3 hours, lasts 4 to 5 months. Book online.";
+const pageKeywords = "keratin treatment auckland, keratin treatment north auckland, keratin treatment near me, keratin hair treatment, keratin treatment price nz, keratin treatment salon, keratin treatment helensville, keratin treatment kaukapakapa";
 
 const relatedLinks = serviceRelationships["keratin-treatments"];
 const faqs = serviceFAQs['keratin-treatments'];
@@ -23,186 +24,171 @@ const faqs = serviceFAQs['keratin-treatments'];
   price={service.price}
   duration={service.duration}
   h1={service.h1}
-  image="/images/optimized/keratin-before-after_1200.webp"
+  serviceName={service.name}
+  image="/images/keratin/keratin-hero-1200.webp"
+  imageSrcset="/images/keratin/keratin-hero-640.webp 640w, /images/keratin/keratin-hero-1200.webp 1200w, /images/keratin/keratin-hero-1600.webp 1600w"
+  imageSizes="100vw"
+  imageWidth={1600}
+  imageHeight={900}
+  imageAlt="Illustration: a hairdresser sealing a keratin treatment into long dark hair with a flat iron"
+  ogImage="https://hairbymelissa.co.nz/images/keratin/keratin-hero-og.jpg"
+  showCta={false}
 >
-  <h2 class="text-3xl font-bold mb-6">Professional Keratin Treatment in Kaukapakapa - Transform Frizzy Hair</h2>
-  
-  <p class="text-gray-700 mb-6">
-    Experience the finest keratin treatment in North Auckland at Hair By Melissa, Kaukapakapa. Our premium keratin service eliminates frizz, adds incredible shine, and reduces styling time by 50%. Serving clients from Kaukapakapa, Helensville, Wainui, and Waitoki, we use formaldehyde-free formulas for silky-smooth hair that lasts up to 5 months. Every treatment is carefully customized to your hair's unique needs, ensuring optimal results that enhance your natural beauty.
+  <p class="text-lg text-gray-700 mb-6">
+    A keratin treatment is a salon smoothing service that calms frizz and makes hair easier to style for around four to five months. At Hair By Melissa in Kaukapakapa, North Auckland, it costs $180 and takes about 2 to 3 hours, one-on-one with Melissa.
   </p>
 
-  <h3 class="text-2xl font-semibold mb-4">Understanding Keratin Treatments: Your Gateway to Effortless Hair</h3>
-  <p class="text-gray-700 mb-6">
-    Keratin treatment is a revolutionary semi-permanent hair smoothing process that works by replenishing the hair's natural protein structure. Over time, factors like heat styling, chemical processing, environmental damage, and daily wear can deplete your hair's keratin levels, leading to porosity, frizz, and unmanageability. Our professional treatment fills these gaps by applying a keratin formula that penetrates deep into the hair shaft, then sealing it with controlled heat application.
+  <dl class="grid grid-cols-2 sm:grid-cols-4 bg-[#F8F9FA] rounded-lg p-6 mb-6">
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Price</dt>
+      <dd class="font-semibold text-salon-darkblue">$180</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Time</dt>
+      <dd class="font-semibold text-salon-darkblue">About 2 to 3 hours</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Lasts</dt>
+      <dd class="font-semibold text-salon-darkblue">Around 4 to 5 months</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">First wash</dt>
+      <dd class="font-semibold text-salon-darkblue">After 72 hours</dd>
+    </div>
+  </dl>
+
+  <div class="flex flex-wrap gap-4 mb-6">
+    <a href="/booking/" class="btn-primary">Book a keratin treatment</a>
+    <a href={business.phoneHref} class="btn-secondary">Call {business.phoneDisplay}</a>
+  </div>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">What a keratin treatment does</h2>
+  <p class="text-gray-700 mb-4">
+    A keratin treatment coats each strand in a smoothing formula, which Melissa seals in with a flat iron. The result is hair that's smoother, shinier and far less frizzy, and that dries faster with less fighting.
+  </p>
+  <p class="text-gray-700 mb-4">
+    It's a good fit if humidity puffs your hair up, if blow-drying takes forever, or if you're tired of straightening every morning. It isn't a permanent straightener. Your hair grows out with its natural texture at the roots, and the smoothing fades gradually rather than leaving a hard line.
   </p>
 
-  <p class="text-gray-700 mb-6">
-    This scientifically-proven process smooths the hair cuticle at a molecular level, creating a protective barrier that locks out humidity while locking in moisture and shine. The result is hair that responds better to styling, maintains its shape longer, and feels noticeably softer and more manageable. Unlike chemical relaxers that break down hair bonds, keratin treatments strengthen and restore your hair's natural structure.
-  </p>
-
-  <h3 class="text-2xl font-semibold mb-4">Comprehensive Benefits of Professional Keratin Treatment</h3>
-  <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-    <li><strong>Dramatic Frizz Reduction:</strong> Eliminates up to 95% of frizz, even in Auckland's humid coastal climate</li>
-    <li><strong>Time-Saving Styling:</strong> Reduces daily styling time by up to 50%, perfect for busy lifestyles</li>
-    <li><strong>Enhanced Shine:</strong> Creates mirror-like shine that reflects light beautifully</li>
-    <li><strong>Improved Manageability:</strong> Makes detangling and styling effortless</li>
-    <li><strong>Environmental Protection:</strong> Shields hair from UV damage, salt air, and pollution</li>
-    <li><strong>Color Compatibility:</strong> Safe for color-treated, highlighted, and chemically processed hair</li>
-    <li><strong>Health-Conscious Formula:</strong> Our formaldehyde-free products prioritize your safety and well-being</li>
-    <li><strong>Versatile Results:</strong> Works with your natural texture to create your desired look</li>
-    <li><strong>Long-lasting Investment:</strong> Results typically last 3-6 months with proper care</li>
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Is keratin right for your hair?</h2>
+  <p class="text-gray-700 mb-4">Keratin usually suits:</p>
+  <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+    <li>Frizzy or puffy hair, especially in coastal humidity</li>
+    <li>Thick or coarse hair that takes a long time to blow-dry</li>
+    <li>Wavy or curly hair you'd like smoother and easier to manage</li>
+    <li>Coloured hair, with the colour timed around the treatment</li>
   </ul>
-
-  <h3 class="text-2xl font-semibold mb-4">Ideal Candidates for Keratin Treatment</h3>
-  <p class="text-gray-700 mb-6">
-    Our keratin treatment transforms lives for clients dealing with various hair challenges. It's particularly transformative for those with naturally curly, coarse, or chemically damaged hair. Whether you're battling daily frizz, struggling with time-consuming styling routines, or simply wanting to enhance your hair's natural beauty, this treatment delivers remarkable results.
+  <p class="text-gray-700 mb-4">
+    It may not be the right choice if you want to keep your full curl pattern, since keratin relaxes curl and wave. Very fine, flat hair can also lose volume. If you're unsure, Melissa will talk it through with you before anything goes on your hair.
   </p>
 
-  <p class="text-gray-700 mb-6">
-    The treatment is especially beneficial for North Auckland residents who face unique environmental challenges. The coastal climate, with its salt air and humidity fluctuations, can wreak havoc on unprotected hair. Our keratin treatment creates a protective barrier that maintains your style regardless of weather conditions, making it perfect for those living in Kaukapakapa, Helensville, Wainui, and surrounding coastal areas.
-  </p>
-
-  <h3 class="text-2xl font-semibold mb-4">Our Meticulous Process: Excellence in Every Step</h3>
-  <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-3">
-    <li><strong>Comprehensive Consultation:</strong> We begin with an in-depth discussion of your hair goals, lifestyle, and maintenance preferences to ensure the treatment aligns perfectly with your expectations</li>
-    <li><strong>Professional Hair Analysis:</strong> Detailed assessment of your hair's current condition, texture, and any previous chemical treatments to customize our approach</li>
-    <li><strong>Deep Cleansing Preparation:</strong> Specialized clarifying shampoo removes buildup and opens the hair cuticle for optimal product penetration</li>
-    <li><strong>Precision Application:</strong> Methodical section-by-section application ensures even coverage and consistent results throughout your entire head</li>
-    <li><strong>Professional Heat Sealing:</strong> Controlled blow-drying followed by precise flat iron application locks the keratin deep into your hair structure</li>
-    <li><strong>Quality Assurance Check:</strong> Thorough inspection and touch-ups ensure every strand meets our high standards</li>
-    <li><strong>Educational Styling Session:</strong> Demonstration of styling techniques and aftercare practices to maximize your results at home</li>
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">What happens at your appointment</h2>
+  <ol class="list-decimal pl-6 text-gray-700 space-y-3 mb-4">
+    <li><strong>Consultation.</strong> Melissa looks at your hair, its history and what you want from it, and tells you honestly whether keratin will get you there.</li>
+    <li><strong>Clarifying wash.</strong> Your hair is washed to lift product build-up so the treatment can take evenly.</li>
+    <li><strong>Application.</strong> The formula is applied section by section from roots to ends.</li>
+    <li><strong>Blow-dry.</strong> Your hair is dried smooth.</li>
+    <li><strong>Flat-iron seal.</strong> Melissa works through small sections with a flat iron to seal the treatment in.</li>
+    <li><strong>Finish and aftercare.</strong> You leave with smooth, sleek hair and clear instructions for the next 72 hours.</li>
   </ol>
 
-  <h3 class="text-2xl font-semibold mb-4">Essential Aftercare for Maximum Results</h3>
-  <div class="bg-[#FFDEE2] bg-opacity-20 rounded-lg p-6 mb-6">
-    <h4 class="font-semibold mb-3">Your 72-Hour Success Plan:</h4>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li><strong>No Water Contact:</strong> Keep hair completely dry for 72 hours to allow complete keratin bonding</li>
-      <li><strong>Gentle Handling:</strong> Avoid hair ties, clips, or headbands that could create dents</li>
-      <li><strong>Sleep Smart:</strong> Use a silk or satin pillowcase and sleep with hair flowing freely</li>
-      <li><strong>Product Patience:</strong> Avoid all hair products during the initial curing period</li>
-    </ul>
-    
-    <h4 class="font-semibold mb-3 mt-4">Long-term Care Excellence:</h4>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li><strong>Sulfate-Free Products:</strong> Use recommended shampoo and conditioner to preserve treatment longevity</li>
-      <li><strong>Heat Protection:</strong> Always apply thermal protectant before using styling tools</li>
-      <li><strong>Chemical Awareness:</strong> Avoid chlorinated pools for the first two weeks</li>
-      <li><strong>Professional Maintenance:</strong> Schedule refresh treatments every 3-4 months</li>
-    </ul>
-  </div>
+  <figure class="my-8">
+    <img
+      src="/images/keratin/keratin-process-1200.webp"
+      srcset="/images/keratin/keratin-process-640.webp 640w, /images/keratin/keratin-process-1200.webp 1200w"
+      sizes="(min-width: 1024px) 590px, 100vw"
+      width="1200"
+      height="900"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+      alt="Illustration: keratin formula being brushed onto a section of hair"
+    />
+    <figcaption class="text-sm text-gray-600 mt-2">Illustration of the application step.</figcaption>
+  </figure>
 
-  <h3 class="text-2xl font-semibold mb-4">The Hair By Melissa Difference: Excellence You Can Trust</h3>
-  <p class="text-gray-700 mb-6">
-    Choosing Hair By Melissa for your keratin treatment means partnering with a dedicated professional who understands that beautiful hair is about more than appearance—it's about confidence, convenience, and feeling your absolute best every day. With years of specialized experience and ongoing education in the latest keratin technologies, Melissa brings unmatched expertise to every appointment.
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">How long keratin lasts, and how to make it last</h2>
+  <p class="text-gray-700 mb-4">
+    A keratin treatment lasts around four to five months. How long yours lasts depends on your hair and how you look after it.
+  </p>
+  <p class="text-gray-700 mb-4">
+    For the first 72 hours, keep your hair dry and loose: no washing, no ponytails, clips or tucking it behind your ears. After that, wash with a sulfate-free shampoo in lukewarm water, and no more than two or three times a week. Wait at least two weeks before any colour.
+  </p>
+  <p class="text-gray-700 mb-4">
+    <span class="font-semibold">Want the day-by-day version? Read our <a href="/blog/keratin-aftercare/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin aftercare guide: when you can wash, brush and tie up your hair</a>.</span>
   </p>
 
-  <p class="text-gray-700 mb-6">
-    Our commitment to transparency means you'll receive honest advice about expected results, realistic maintenance requirements, and ongoing care. We use only premium, health-conscious products that deliver exceptional results without compromising your well-being. Every treatment includes personalized guidance to ensure you achieve and maintain the beautiful, manageable hair you deserve.
+  <figure class="my-8">
+    <img
+      src="/images/keratin/keratin-aftercare-1200.webp"
+      srcset="/images/keratin/keratin-aftercare-640.webp 640w, /images/keratin/keratin-aftercare-1200.webp 1200w"
+      sizes="(min-width: 1024px) 590px, 100vw"
+      width="1200"
+      height="900"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+      alt="Illustration: sulfate-free shampoo, a wide-tooth comb and a silk pillowcase for keratin aftercare"
+    />
+    <figcaption class="text-sm text-gray-600 mt-2">Illustration: a simple, gentle aftercare routine.</figcaption>
+  </figure>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Keratin treatment price in North Auckland</h2>
+  <p class="text-gray-700 mb-4">
+    A keratin treatment at Hair By Melissa is <strong>$180</strong>, and the appointment takes about 2 to 3 hours. It's one-on-one with Melissa, with free parking at the door.
+  </p>
+  <p class="text-gray-700 mb-4">
+    Want a trim as well? Add a <a href="/services/womens-cut-finish/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">women's cut and finish</a> ($50) when you book.
   </p>
 
-  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-6 mb-8">
-    <p class="text-gray-700 italic">
-      "Invest in the freedom that comes with effortlessly beautiful hair. Our keratin treatment isn't just a service—it's a lifestyle transformation that gives you more time, more confidence, and more beautiful days ahead."
-    </p>
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Keratin or nanoplasty?</h2>
+  <p class="text-gray-700 mb-4">
+    Nanoplasty is a different smoothing treatment that uses a different formula. Hair By Melissa doesn't offer nanoplasty. If you've been searching for it because you want smoother, frizz-free hair that's quicker to style, a keratin treatment is built for the same goal, and Melissa is happy to talk through whether it suits your hair before you book.
+  </p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Coming from Helensville, Kumeū or nearby?</h2>
+  <p class="text-gray-700 mb-4">
+    The salon is at 12 Magnolia Lane in Kaukapakapa, about 15 minutes from <a href="/locations/helensville/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Helensville</a> and about 25 minutes from <a href="/locations/kumeu/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Kumeū</a>, with clients also coming from <a href="/locations/wainui/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Wainui</a> and <a href="/locations/waitoki/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Waitoki</a>. It's open seven days, including Sundays.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Hours:</strong> {business.hoursLine}</p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Keratin treatment FAQs</h2>
+  <div class="mb-4">
+    {faqs.map((faq) => (
+      <details class="group bg-white rounded-lg border border-gray-200 mb-3">
+        <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+          <h3 class="font-semibold text-lg text-gray-900">{faq.question}</h3>
+          <svg
+            class="h-5 w-5 text-gray-500 flex-shrink-0 group-open:rotate-45 transition-transform"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5v14"></path>
+            <path d="M5 12h14"></path>
+          </svg>
+        </summary>
+        <p class="px-5 pb-5 text-gray-700">{faq.answer}</p>
+      </details>
+    ))}
   </div>
 
-  <div class="mt-12">
-    <h3 class="text-2xl font-semibold mb-6">Complement Your Keratin Treatment</h3>
-    <p class="text-gray-700 mb-6">
-      Maximize your smooth hair results with these additional services and expert tips:
-    </p>
-    
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h4 class="font-semibold text-gray-900 mb-3">
-          <a href="/services/womens-cut-finish" class="text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-            Women's Cut & Finish
-          </a>
-        </h4>
-        <p class="text-sm text-gray-600 mb-4">
-          Perfect your new smooth hair with a professional cut and styling session.
-        </p>
-        <a href="/services/womens-cut-finish" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-          Learn More →
-        </a>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h4 class="font-semibold text-gray-900 mb-3">
-          <a href="/blog/keratin-aftercare" class="text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-            Keratin Aftercare Guide
-          </a>
-        </h4>
-        <p class="text-sm text-gray-600 mb-4">
-          Essential tips to maintain your keratin treatment results for months.
-        </p>
-        <a href="/blog/keratin-aftercare" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-          Read Guide →
-        </a>
-      </div>
+  <FAQSchema faqs={faqs} pageUrl="https://hairbymelissa.co.nz/services/keratin-treatments/" schemaOnly />
+
+  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-8 mt-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Book your keratin treatment in Kaukapakapa</h2>
+    <p class="text-gray-700 mb-4">$180, about 2 to 3 hours, one-on-one with Melissa. Book online any time or call {business.phoneDisplay}.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="/booking/" class="btn-primary">Book online</a>
+      <a href={business.phoneHref} class="btn-secondary">Call {business.phoneDisplay}</a>
     </div>
   </div>
+
+  <RelatedLinks links={relatedLinks} slot="after" />
 </ServiceLayout>
-
-<!-- FAQ Schema -->
-<FAQSchema 
-  faqs={faqs} 
-  pageUrl="https://hairbymelissa.co.nz/services/keratin-treatments"
-/>
-
-<!-- Local Service Availability Schema -->
-<script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://hairbymelissa.co.nz/services/keratin-treatments#service",
-  "serviceType": "Keratin Hair Treatment",
-  "provider": {
-    "@type": "HairSalon",
-    "name": "Hair By Melissa",
-    "@id": "https://hairbymelissa.co.nz/#business"
-  },
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Kaukapakapa",
-      "identifier": "kaukapakapa-nz"
-    },
-    {
-      "@type": "City",
-      "name": "Helensville",
-      "identifier": "helensville-nz"
-    },
-    {
-      "@type": "City",
-      "name": "Wainui",
-      "identifier": "wainui-nz"
-    },
-    {
-      "@type": "City",
-      "name": "Waitoki",
-      "identifier": "waitoki-nz"
-    }
-  ],
-  "availableChannel": {
-    "@type": "ServiceChannel",
-    "serviceUrl": "https://hairbymelissa.co.nz/booking",
-    "servicePhone": "+64274799320",
-    "availableLanguage": ["en-NZ"]
-  },
-  "hoursAvailable": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "opens": "09:00",
-      "closes": "17:00",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"]
-    }
-  ],
-  "offers": {
-    "@type": "Offer",
-    "price": service.priceValue,
-    "priceCurrency": "NZD",
-    "availability": "https://schema.org/InStock",
-    "url": "https://hairbymelissa.co.nz/services/keratin-treatments/"
-  }
-})} />

@@ -3,24 +3,32 @@ import type { FAQItem } from '../components/FAQSchema.astro';
 export const serviceFAQs: Record<string, FAQItem[]> = {
   'keratin-treatments': [
     {
-      question: "How long do keratin treatments last?",
-      answer: "Professional keratin treatments typically last 3-6 months, depending on your hair type, maintenance routine, and washing frequency. With proper aftercare using sulfate-free products, most clients enjoy smooth, manageable hair for 4-5 months before needing a touch-up."
+      question: "How much is a keratin treatment?",
+      answer: "At Hair By Melissa in Kaukapakapa, North Auckland, a keratin treatment is $180 and takes about 2 to 3 hours."
     },
     {
-      question: "What is the aftercare for keratin treatments?",
-      answer: "For the first 72 hours after your keratin treatment, avoid washing your hair, using hair ties, clips, or creating any dents. After this period, use only sulfate-free shampoo and conditioner, avoid chlorine exposure, and sleep on a silk pillowcase to maintain results."
+      question: "How long does a keratin treatment last?",
+      answer: "Around four to five months, depending on your hair and your aftercare. Sulfate-free shampoo and fewer washes help it last longer."
     },
     {
-      question: "Can I color my hair after a keratin treatment?",
-      answer: "Yes, you can color your hair after a keratin treatment, but it's recommended to wait at least 2 weeks. The keratin treatment may lighten your hair slightly, so a color refresh might be beneficial. Always consult with Melissa about timing for best results."
+      question: "When can I wash my hair after a keratin treatment?",
+      answer: "Wait 72 hours. Keep your hair dry and loose for those three days, then wash with a sulfate-free shampoo in lukewarm water."
     },
     {
-      question: "How much does a keratin treatment cost?",
-      answer: "Contact us for current keratin treatment pricing as costs vary based on hair length, thickness, and condition. We provide personalized quotes during your consultation to ensure you get the best value for your specific hair needs."
+      question: "Are keratin treatments good for your hair?",
+      answer: "For frizzy, thick or hard-to-manage hair, keratin makes hair smoother, shinier and quicker to style, which means less daily heat. It relaxes curl and wave, so it isn't the right choice if you want to keep your full curl pattern. Melissa will tell you honestly at your consultation whether it suits your hair."
     },
     {
-      question: "Is keratin treatment safe for all hair types?",
-      answer: "Yes, our formaldehyde-free keratin treatments are safe for all hair types, including color-treated, chemically processed, and naturally curly hair. The treatment actually helps repair damage while smoothing your hair texture."
+      question: "Can I colour my hair after a keratin treatment?",
+      answer: "Yes. Wait at least two weeks after your keratin treatment before any colour, and let Melissa know so she can plan the timing with you."
+    },
+    {
+      question: "Is a salon keratin treatment better than a home kit?",
+      answer: "A salon treatment is applied section by section and sealed with a professional flat iron, with a consultation first to check it suits your hair. Home kits vary a lot, and uneven application is the most common problem."
+    },
+    {
+      question: "Do you offer nanoplasty?",
+      answer: "No. Hair By Melissa offers keratin smoothing, which is built for the same goal of smoother, frizz-free, easier-to-style hair."
     }
   ],
   
