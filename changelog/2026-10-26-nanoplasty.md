@@ -1,0 +1,23 @@
+# 2026-10-26: Nanoplasty launch page, site-wide "now offered", keratin lasts about 6 months
+
+**Status:** Branch `growth/nanoplasty-2026-10-26`, committed locally, not pushed or deployed. Spec and copy: `docs/copy-2026-10-26-nanoplasty.md`. Build map: `research/nanoplasty/BUILD-MAP.md` (client folder).
+
+**Why:** The owner now offers nanoplasty (price from $200, about 3½ hours, lasts 3 to 6 months, formaldehyde-free salon brands, wash straight away). The site said she did not offer it (keratin page, keratin FAQ, home FAQ, llms.txt). The nanoplasty keyword cluster is about 7,000 searches a month in NZ (nanoplasty 3,600; nanoplasty hair treatment 1,900; nanoplasty auckland 480; nanoplasty nz 260; what is nanoplasty, near me and treatment about 210 each). The owner also confirmed keratin lasts "about 6 months", which replaces the old 4 to 5 months, up to 5 months and 3 to 6 months claims.
+
+**What changed:**
+- **New page `/services/nanoplasty/`** (`src/pages/services/nanoplasty.astro`), built on the keratin page structure: ServiceLayout props, facts box, buttons, 9 H2s per the copy, a nanoplasty vs keratin comparison table (same classes as the keratin aftercare table), two lazy-loaded illustrations, no-JS FAQ accordion with 8 FAQs plus FAQPage JSON-LD (`schemaOnly`), CTA box and RelatedLinks. Title "Nanoplasty Treatment Auckland, from $200 | Hair By Melissa" (58). Layout emits Service (price 200 NZD) and BreadcrumbList.
+- **Data:** `services.ts` nanoplasty entry (after keratin); `serviceFAQs['nanoplasty']` (8 FAQs); the keratin FAQ "Do you offer nanoplasty?" now says yes with the comparison, and the keratin lasts FAQ says about 6 months.
+- **Keratin page:** meta description, intro, facts box ("About 6 months"), aftercare line, and the "Keratin or nanoplasty?" section replaced with the copy (links to the new page).
+- **Home:** FAQ rewritten ("Do you offer nanoplasty?"), meta description now names nanoplasty (154 characters), services intro line and a nanoplasty service card; the "Starting at" prefix is skipped when a price already starts with "From".
+- **Navigation and lists:** Navbar dropdown and footer services list link to `/services/nanoplasty/`; `services.astro` card (modal fields filled only from the copy), hero line and meta description (152 characters); 404 and `locations.astro` lists; nanoplasty cards on the Helensville, Kumeū, Kaukapakapa, Wainui and Waitoki location pages; a nanoplasty line next to the keratin block on `hair-dressing.astro`; `internalLinks.ts` gets a nanoplasty key and a link from keratin.
+- **Schema and llms.txt:** `Layout.astro` HairSalon OfferCatalog gets a Nanoplasty Offer (PT3H30M, price 200, minPrice 200) and "Nanoplasty" in knowsAbout; the keratin Offer says about 6 months. `llms.txt` drops "nanoplasty is not offered", adds a nanoplasty bullet and "keratin and nanoplasty smoothing treatments" in the summary.
+- **Keratin lasts "about 6 months" site-wide:** keratin-aftercare (FAQ array, intro, body, table row, checklist, CTA), frizzy-hair-solutions, winter-hair-care, category pages (hair-care, seasonal-tips), `blogPosts.ts`, `faq.astro`, `services.astro`, home FAQ, Wainui, `internalLinks.ts`. Nanoplasty's 3 to 6 months is untouched. Two lines were reworked for sense: the keratin-aftercare FAQ no longer separates "with proper aftercare" from "up to 5 months with our formula", and frizzy-hair-solutions' "$1.20 per day" became "$1 per day" ($180 over about 6 months).
+- **Images** (Kie.ai illustrations, labelled "Illustration" on the page, carry the IPTC `trainedAlgorithmicMedia` tag): `public/images/nanoplasty/` hero 640/1200/1600 WebP (16:9) and `nanoplasty-hero-og.jpg` (1200×630); process and wash 640/1200 WebP (4:3). All under 110 KB. Swap in Melissa's real photos from the Google Business Profile later.
+
+**Not changed:** the GHL booking widget (the owner adds Nanoplasty in GHL); no URL changes, so no redirects; no `/nanoplasty` short URL; price range `$40-$230` (from $200 fits).
+
+**QA:** build passes with 41 pages. Nanoplasty page: title 58 plus brand, description 148, one H1, FAQPage with 8 questions, Service JSON-LD price 200. All 135 JSON-LD blocks in `dist/` parse. No "not offered" wording near nanoplasty in `dist/`; no keratin "4 to 5 months", "up to 5 months" or "3-6 months" left.
+
+**GSC metric targeted:** impressions and clicks for the nanoplasty cluster (about 7,000 searches a month NZ: "nanoplasty", "nanoplasty hair treatment", "nanoplasty auckland", "nanoplasty nz") on `/services/nanoplasty/`, plus the keratin page (`/services/keratin-treatments/`) for "keratin treatment auckland" and related.
+
+**Re-check:** 2026-11-09 and 2026-11-26.
