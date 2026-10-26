@@ -13,6 +13,10 @@ const services = [
     icon: "sparkles",
   },
   {
+    ...getService('nanoplasty'),
+    icon: "sparkles",
+  },
+  {
     ...getService('womens-cut-finish'),
     icon: "scissors",
   },
@@ -83,8 +87,8 @@ const homeFaqs = [
     answer: "A women's cut and finish starts at $50. This includes a detailed consultation to discuss your style and hair needs, a professional haircut tailored to suit you, and a blow-dry to finish so you leave with your hair looking polished. You'll also get advice on styling and caring for your hair at home. The service is always personalised, with enough time to make sure you're happy with the end result.",
   },
   {
-    question: "Do you offer nanoplasty smoothing?",
-    answer: "I don't offer nanoplasty smoothing. Instead, I provide keratin smoothing treatments, which help reduce frizz and make hair smoother and more manageable. The results from a keratin treatment usually last around 4–5 months, depending on your hair type and how you care for your hair after the service.",
+    question: "Do you offer nanoplasty?",
+    answer: "Yes. I offer nanoplasty from $200 depending on your hair length. It takes about 3½ hours, lasts 3 to 6 months and you can wash your hair straight away. I also offer keratin smoothing for $180, which lasts about 6 months. Both use formaldehyde-free products.",
   },
   {
     question: "Are you open on Sundays?",
@@ -92,7 +96,7 @@ const homeFaqs = [
   },
   {
     question: "Where can I get a keratin treatment near Helensville?",
-    answer: "Hair By Melissa is 15 minutes from Helensville in Kaukapakapa. A keratin treatment is $180 and usually lasts four to five months with good aftercare. Free parking at the door.",
+    answer: "Hair By Melissa is 15 minutes from Helensville in Kaukapakapa. A keratin treatment is $180 and usually lasts about six months with good aftercare. Free parking at the door.",
   },
   {
     question: "How do I leave a review for Hair By Melissa?",
@@ -117,7 +121,7 @@ const faqSchema = {
 <Layout
   title="Hairdresser | Hair Stylist: Kaukapakapa, Helensville, Wainui"
   titleSuffix={false}
-  description="Hair stylist and hairdresser for women and kids in Kaukapakapa: balayage, cuts, blow dries, foil highlights and keratin smoothing. Helensville & Wainui."
+  description="Hair stylist and hairdresser for women and kids in Kaukapakapa: balayage, cuts, blow dries, foil highlights, keratin and nanoplasty. Helensville & Wainui."
   keywords="hairdresser kaukapakapa, hair salon kaukapakapa, keratin treatment north auckland, balayage kaukapakapa, highlights helensville, hair colouring wainui, haircut waitoki, best hairdresser rodney district, kids hairdresser kaukapakapa, hair stylist kaukapakapa"
 >
   <!-- Core Web Vitals: Preload compressed hero images -->
@@ -160,7 +164,7 @@ const faqSchema = {
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-4xl font-bold">Our Premium Services</h2>
         <p class="text-gray-600 mt-4">
-          Cuts for women and kids, blow dries, foil highlights, balayage and keratin smoothing. Prices below.
+          Cuts for women and kids, blow dries, foil highlights, balayage, keratin smoothing and nanoplasty. Prices below.
         </p>
       </div>
       
@@ -193,7 +197,7 @@ const faqSchema = {
               </svg>
             )}
             <h3 class="text-xl font-semibold">{service.name}</h3>
-            <p class="text-gray-600 mt-2">Starting at {service.price}</p>
+            <p class="text-gray-600 mt-2">{service.price.startsWith('From') ? service.price : `Starting at ${service.price}`}</p>
             <a
               href={`/services/${service.slug}/`}
               class="inline-flex items-center mt-4 text-salon-darkblue hover-underline"

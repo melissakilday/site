@@ -50,7 +50,7 @@ export const blogPosts: BlogPost[] = [
     slug: "keratin-aftercare",
     title: "Keratin Aftercare: When Can You Wash Your Hair?",
     description:
-      "Wait 72 hours before washing. What to avoid, when you can brush, tie or dry-shampoo, and how to make a keratin treatment last 5 months. By an NZ stylist.",
+      "Wait 72 hours before washing. What to avoid, when you can brush, tie or dry-shampoo, and how to make a keratin treatment last about 6 months. By an NZ stylist.",
     datePublished: "2025-01-20",
     dateModified: "2026-09-18",
   },
