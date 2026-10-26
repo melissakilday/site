@@ -8,7 +8,7 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does a keratin treatment last?",
-      answer: "Around four to five months, depending on your hair and your aftercare. Sulfate-free shampoo and fewer washes help it last longer."
+      answer: "About 6 months, depending on your hair and your aftercare. Sulfate-free shampoo and fewer washes help it last longer."
     },
     {
       question: "When can I wash my hair after a keratin treatment?",
@@ -31,8 +31,43 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
       answer: "Yes. Melissa uses a formaldehyde-free keratin formula for every keratin treatment at the salon."
     },
     {
-      question: "Do you offer nanoplasty?",
-      answer: "No. Hair By Melissa offers keratin smoothing, which is built for the same goal of smoother, frizz-free, easier-to-style hair."
+      question: "Do you offer nanoplasty as well?",
+      answer: "Yes. Melissa offers nanoplasty too, from $200 depending on hair length. It takes about 3½ hours, lasts 3 to 6 months and you can wash straight away. Keratin is $180, lasts about 6 months and needs 72 hours before the first wash."
+    }
+  ],
+
+  'nanoplasty': [
+    {
+      question: "What is nanoplasty?",
+      answer: "Nanoplasty is a salon smoothing treatment for frizzy, long or hard-to-manage hair. It leaves hair smoother, shinier and easier to style, and at Hair By Melissa it's done with formaldehyde-free salon brands."
+    },
+    {
+      question: "How much does nanoplasty cost?",
+      answer: "At Hair By Melissa in Kaukapakapa, nanoplasty starts from $200. The final price depends on your hair length, and Melissa confirms it before she starts."
+    },
+    {
+      question: "How long does nanoplasty last?",
+      answer: "Around 3 to 6 months, depending on your hair, how often you wash it and the products you use."
+    },
+    {
+      question: "Can I wash my hair after nanoplasty?",
+      answer: "Yes. You can wash your hair straight away after a nanoplasty treatment. There's no waiting period."
+    },
+    {
+      question: "Is nanoplasty formaldehyde-free?",
+      answer: "Yes. Melissa uses formaldehyde-free professional salon brands for nanoplasty."
+    },
+    {
+      question: "How long does a nanoplasty appointment take?",
+      answer: "Allow about 3½ hours. It's one-on-one with Melissa, so there's no rushing."
+    },
+    {
+      question: "Is nanoplasty or keratin better?",
+      answer: "Neither is better for everyone. Nanoplasty suits long or very frizzy hair and lets you wash straight away; it lasts 3 to 6 months and starts from $200. Keratin is $180, lasts about 6 months and needs 72 hours before the first wash. Melissa will help you choose."
+    },
+    {
+      question: "Who is nanoplasty for?",
+      answer: "It's ideal for frizzy, long or unmanageable hair that takes a long time to dry and style. If you'd like to keep your natural curl or volume, talk to Melissa first."
     }
   ],
   

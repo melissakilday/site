@@ -119,7 +119,7 @@ const localBusinessSchema = {
           "@type": ["Service", "HealthAndBeautyBusiness"],
           "serviceType": "Keratin Hair Treatment",
           "name": "Keratin Treatments",
-          "description": "Formaldehyde-free keratin smoothing treatment that reduces frizz for around 4–5 months. $180, about 2–3 hours.",
+          "description": "Formaldehyde-free keratin smoothing treatment that reduces frizz for about 6 months. $180, about 2–3 hours.",
           "category": "Hair Treatment",
           "duration": "PT2H30M",
           "serviceOutput": "Smooth, frizz-free hair with enhanced shine and manageability"
@@ -135,6 +135,30 @@ const localBusinessSchema = {
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
         "url": "https://hairbymelissa.co.nz/services/keratin-treatments/"
+      },
+      {
+        "@type": "Offer",
+        "@id": "https://hairbymelissa.co.nz/services/nanoplasty#offer",
+        "itemOffered": {
+          "@type": ["Service", "HealthAndBeautyBusiness"],
+          "serviceType": "Nanoplasty Hair Treatment",
+          "name": "Nanoplasty",
+          "description": "Formaldehyde-free smoothing treatment for frizzy, long or hard-to-manage hair. Wash straight away; lasts 3 to 6 months. Price from $200 depending on hair length.",
+          "category": "Hair Treatment",
+          "duration": "PT3H30M",
+          "serviceOutput": "Smoother, shinier, more manageable hair"
+        },
+        "price": "200",
+        "priceCurrency": "NZD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": "200",
+          "priceCurrency": "NZD",
+          "valueAddedTaxIncluded": true
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-10-26",
+        "url": "https://hairbymelissa.co.nz/services/nanoplasty/"
       },
       {
         "@type": "Offer",
@@ -380,6 +404,7 @@ const localBusinessSchema = {
   },
   "knowsAbout": [
     "Keratin Treatments",
+    "Nanoplasty",
     "Balayage Technique", 
     "Hair Highlighting",
     "Hair Coloring",

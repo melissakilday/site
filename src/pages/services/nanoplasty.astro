@@ -1,0 +1,233 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import FAQSchema from '../../components/FAQSchema.astro';
+import { serviceRelationships } from '../../utils/internalLinks.ts';
+import { serviceFAQs } from '../../data/serviceFAQs';
+import { getService } from '../../data/services';
+import business from '../../data/business';
+
+const service = getService('nanoplasty');
+
+const pageTitle = "Nanoplasty Treatment Auckland, from $200";
+const pageDescription = "Formaldehyde-free nanoplasty for frizzy, long or hard-to-manage hair in Kaukapakapa, North Auckland. From $200, about 3½ hours, lasts 3 to 6 months.";
+const pageKeywords = "nanoplasty auckland, nanoplasty hair treatment, nanoplasty treatment, nanoplasty nz, nanoplasty near me, nanoplasty north auckland, nanoplasty helensville, nanoplasty kaukapakapa, nanoplasty vs keratin";
+
+const relatedLinks = serviceRelationships["nanoplasty"];
+const faqs = serviceFAQs['nanoplasty'];
+---
+
+<ServiceLayout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  price={service.price}
+  duration={service.duration}
+  h1={service.h1}
+  serviceName={service.name}
+  image="/images/nanoplasty/nanoplasty-hero-1200.webp"
+  imageSrcset="/images/nanoplasty/nanoplasty-hero-640.webp 640w, /images/nanoplasty/nanoplasty-hero-1200.webp 1200w, /images/nanoplasty/nanoplasty-hero-1600.webp 1600w"
+  imageSizes="100vw"
+  imageWidth={1600}
+  imageHeight={900}
+  imageAlt="Illustration: a hairdresser combing through long, smooth hair after a nanoplasty treatment"
+  ogImage="https://hairbymelissa.co.nz/images/nanoplasty/nanoplasty-hero-og.jpg"
+  showCta={false}
+>
+  <p class="text-lg text-gray-700 mb-6">
+    A nanoplasty treatment smooths frizzy, long or hard-to-manage hair so it's softer, shinier and quicker to style, and you can wash it the same day. At Hair By Melissa in Kaukapakapa, North Auckland, nanoplasty starts from $200 depending on your hair length, takes about 3½ hours, and is done one-on-one with Melissa using formaldehyde-free salon brands.
+  </p>
+
+  <dl class="grid grid-cols-2 sm:grid-cols-4 bg-[#F8F9FA] rounded-lg p-6 mb-6">
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Price</dt>
+      <dd class="font-semibold text-salon-darkblue">From $200</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Time</dt>
+      <dd class="font-semibold text-salon-darkblue">About 3½ hours</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Lasts</dt>
+      <dd class="font-semibold text-salon-darkblue">3 to 6 months</dd>
+    </div>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">First wash</dt>
+      <dd class="font-semibold text-salon-darkblue">Straight away</dd>
+    </div>
+  </dl>
+
+  <div class="flex flex-wrap gap-4 mb-6">
+    <a href="/booking/" class="btn-primary">Book a nanoplasty treatment</a>
+    <a href={business.phoneHref} class="btn-secondary">Call {business.phoneDisplay}</a>
+  </div>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">What nanoplasty does</h2>
+  <p class="text-gray-700 mb-4">
+    Nanoplasty is a smoothing treatment for hair that frizzes, puffs up or just won't do what you want. It leaves hair smoother, shinier and more manageable, so it dries faster and takes far less work to style. Melissa uses formaldehyde-free salon brands.
+  </p>
+  <p class="text-gray-700 mb-4">
+    One of the biggest differences you'll notice is aftercare. There's no waiting days to wash your hair. You can wash it straight away and get on with your week.
+  </p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Is nanoplasty right for your hair?</h2>
+  <p class="text-gray-700 mb-4">Nanoplasty usually suits:</p>
+  <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+    <li>Frizzy hair that puffs up in coastal humidity</li>
+    <li>Long hair that takes a long time to dry and style</li>
+    <li>Hair that feels unmanageable, tangles easily or won't sit smooth</li>
+    <li>Anyone who doesn't want to wait days before washing after a smoothing treatment</li>
+  </ul>
+  <p class="text-gray-700 mb-4">
+    If you love your natural curl or volume, talk to Melissa first, because a smoothing treatment is designed to calm it. She'll look at your hair and tell you honestly whether nanoplasty or a keratin treatment will get you the result you're after.
+  </p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Nanoplasty or keratin: what's the difference?</h2>
+  <p class="text-gray-700 mb-4">
+    Melissa offers both, because they're different treatments that suit different people. Here's how they compare at Hair By Melissa:
+  </p>
+  <div class="overflow-x-auto mb-4">
+    <table class="w-full border-collapse border border-gray-200 text-left text-gray-700">
+      <caption class="sr-only">Nanoplasty and keratin treatment compared: price, time, how long it lasts, first wash and formaldehyde-free</caption>
+      <thead>
+        <tr class="bg-gray-50">
+          <th scope="col" class="border border-gray-200 p-3 font-semibold"><span class="sr-only">Detail</span></th>
+          <th scope="col" class="border border-gray-200 p-3 font-semibold">Nanoplasty</th>
+          <th scope="col" class="border border-gray-200 p-3 font-semibold">Keratin treatment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Price</th>
+          <td class="border border-gray-200 p-3 align-top">From $200, depending on length</td>
+          <td class="border border-gray-200 p-3 align-top">$180</td>
+        </tr>
+        <tr>
+          <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Time</th>
+          <td class="border border-gray-200 p-3 align-top">About 3½ hours</td>
+          <td class="border border-gray-200 p-3 align-top">About 2 to 3 hours</td>
+        </tr>
+        <tr>
+          <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Lasts</th>
+          <td class="border border-gray-200 p-3 align-top">3 to 6 months</td>
+          <td class="border border-gray-200 p-3 align-top">About 6 months</td>
+        </tr>
+        <tr>
+          <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">First wash</th>
+          <td class="border border-gray-200 p-3 align-top">Straight away</td>
+          <td class="border border-gray-200 p-3 align-top">After 72 hours</td>
+        </tr>
+        <tr>
+          <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Formaldehyde-free</th>
+          <td class="border border-gray-200 p-3 align-top">Yes</td>
+          <td class="border border-gray-200 p-3 align-top">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="text-gray-700 mb-4">
+    Choose nanoplasty if you have long or very frizzy hair and want to wash it straight away. Choose keratin if you want the longest-lasting smoothing for the lowest price and don't mind keeping your hair dry for three days. Not sure? Ask Melissa at your consultation. Read more about the <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin treatment</a>.
+  </p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">What happens at your appointment</h2>
+  <ol class="list-decimal pl-6 text-gray-700 space-y-3 mb-4">
+    <li><strong>Consultation.</strong> Melissa looks at your hair, its history and what you want from it, and confirms your price based on your hair length.</li>
+    <li><strong>Wash.</strong> Your hair is washed to clear product build-up so the treatment takes evenly.</li>
+    <li><strong>Application.</strong> The nanoplasty treatment is applied section by section from roots to ends.</li>
+    <li><strong>Processing.</strong> The treatment is left to work while you relax.</li>
+    <li><strong>Dry and finish.</strong> Your hair is dried and finished smooth.</li>
+    <li><strong>Aftercare.</strong> You leave with smooth, sleek hair and simple tips to make it last.</li>
+  </ol>
+
+  <figure class="my-8">
+    <img
+      src="/images/nanoplasty/nanoplasty-process-1200.webp"
+      srcset="/images/nanoplasty/nanoplasty-process-640.webp 640w, /images/nanoplasty/nanoplasty-process-1200.webp 1200w"
+      sizes="(min-width: 1024px) 590px, 100vw"
+      width="1200"
+      height="900"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+      alt="Illustration: a smoothing treatment being brushed onto a section of long, frizzy hair"
+    />
+    <figcaption class="text-sm text-gray-600 mt-2">Illustration of the application step.</figcaption>
+  </figure>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">How long nanoplasty lasts, and how to look after it</h2>
+  <p class="text-gray-700 mb-4">
+    A nanoplasty treatment lasts around 3 to 6 months. How long yours lasts depends on your hair, how often you wash it and the products you use.
+  </p>
+  <p class="text-gray-700 mb-4">
+    You can wash your hair straight away. To keep it smooth for longer, use a gentle shampoo, go easy on very hot water and heat styling, and ask Melissa which products she recommends for your hair. When the smoothing starts to soften, book in for a top-up.
+  </p>
+
+  <figure class="my-8">
+    <img
+      src="/images/nanoplasty/nanoplasty-wash-1200.webp"
+      srcset="/images/nanoplasty/nanoplasty-wash-640.webp 640w, /images/nanoplasty/nanoplasty-wash-1200.webp 1200w"
+      sizes="(min-width: 1024px) 590px, 100vw"
+      width="1200"
+      height="900"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+      alt="Illustration: long, smooth hair being rinsed at a salon basin"
+    />
+    <figcaption class="text-sm text-gray-600 mt-2">Illustration: with nanoplasty you can wash your hair straight away.</figcaption>
+  </figure>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Nanoplasty price in North Auckland</h2>
+  <p class="text-gray-700 mb-4">
+    Nanoplasty at Hair By Melissa starts from <strong>$200</strong>. The final price depends on your hair length, because longer hair takes more product and more time. Melissa will confirm your price before she starts, so there are no surprises. The appointment takes about 3½ hours, one-on-one, with free parking at the door.
+  </p>
+  <p class="text-gray-700 mb-4">
+    Want a trim as well? Add a <a href="/services/womens-cut-finish/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">women's cut and finish</a> ($50) when you book.
+  </p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Coming from Helensville, Kumeū or nearby?</h2>
+  <p class="text-gray-700 mb-4">
+    The salon is at 12 Magnolia Lane in Kaukapakapa, about 15 minutes from <a href="/locations/helensville/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Helensville</a> and about 25 minutes from <a href="/locations/kumeu/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Kumeū</a>, with clients also coming from <a href="/locations/wainui/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Wainui</a> and <a href="/locations/waitoki/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Waitoki</a>. It's open seven days, including Sundays.
+  </p>
+  <p class="text-gray-700 mb-4"><strong>Hours:</strong> {business.hoursLine}</p>
+
+  <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-4">Nanoplasty FAQs</h2>
+  <div class="mb-4">
+    {faqs.map((faq) => (
+      <details class="group bg-white rounded-lg border border-gray-200 mb-3">
+        <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+          <h3 class="font-semibold text-lg text-gray-900">{faq.question}</h3>
+          <svg
+            class="h-5 w-5 text-gray-500 flex-shrink-0 group-open:rotate-45 transition-transform"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 5v14"></path>
+            <path d="M5 12h14"></path>
+          </svg>
+        </summary>
+        <p class="px-5 pb-5 text-gray-700">{faq.answer}</p>
+      </details>
+    ))}
+  </div>
+
+  <FAQSchema faqs={faqs} pageUrl="https://hairbymelissa.co.nz/services/nanoplasty/" schemaOnly />
+
+  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-8 mt-12">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Book your nanoplasty treatment in Kaukapakapa</h2>
+    <p class="text-gray-700 mb-4">From $200 depending on hair length, about 3½ hours, one-on-one with Melissa. Book online any time or call {business.phoneDisplay}.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="/booking/" class="btn-primary">Book online</a>
+      <a href={business.phoneHref} class="btn-secondary">Call {business.phoneDisplay}</a>
+    </div>
+  </div>
+
+  <RelatedLinks links={relatedLinks} slot="after" />
+</ServiceLayout>

@@ -223,7 +223,7 @@ export const homepageLinks = [
   {
     title: "Keratin Treatments",
     url: "/services/keratin-treatments/",
-    description: "Smooth, frizz-free hair for around 4–5 months, $180",
+    description: "Smooth, frizz-free hair for about 6 months, $180",
     category: "service" as const
   },
   {
@@ -271,6 +271,39 @@ export const serviceRelationships = {
       title: "Hair Health Assessment",
       url: "/blog/hair-health-signs/",
       description: "Understand if keratin is right for your hair",
+      category: "blog" as const
+    },
+    {
+      title: "Nanoplasty",
+      url: "/services/nanoplasty/",
+      description: "Smoothing you can wash straight away, from $200",
+      category: "service" as const
+    }
+  ],
+
+  "nanoplasty": [
+    {
+      title: "Keratin Treatments",
+      url: "/services/keratin-treatments/",
+      description: "Compare keratin: $180, lasts about 6 months",
+      category: "service" as const
+    },
+    {
+      title: "Women's Cut & Finish",
+      url: "/services/womens-cut-finish/",
+      description: "Add a trim to your smooth, new hair",
+      category: "service" as const
+    },
+    {
+      title: "Blow Wave",
+      url: "/services/blow-wave/",
+      description: "Professional styling for smooth hair",
+      category: "service" as const
+    },
+    {
+      title: "Keratin Aftercare Guide",
+      url: "/blog/keratin-aftercare/",
+      description: "Day-by-day aftercare for smoothing treatments",
       category: "blog" as const
     }
   ],
@@ -330,7 +363,7 @@ export const serviceRelationships = {
     {
       title: "Keratin Treatments",
       url: "/services/keratin-treatments/",
-      description: "Smooth, frizz-free hair for around 4–5 months, $180",
+      description: "Smooth, frizz-free hair for about 6 months, $180",
       category: "service" as const
     },
     {

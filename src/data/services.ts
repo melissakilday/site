@@ -35,6 +35,14 @@ export const services: Service[] = [
     h1: 'Keratin Treatment in Kaukapakapa, North Auckland',
   },
   {
+    slug: 'nanoplasty',
+    name: 'Nanoplasty',
+    price: 'From $200',
+    priceValue: 200,
+    duration: 'About 3.5 hours',
+    h1: 'Nanoplasty in Kaukapakapa, North Auckland',
+  },
+  {
     slug: 'full-head-highlights',
     name: 'Full Head of Highlights',
     price: '$180',
