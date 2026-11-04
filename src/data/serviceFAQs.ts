@@ -136,7 +136,7 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Will full head highlights damage my hair?",
-      answer: "When done professionally with quality products, highlights cause minimal damage. We use ammonia-free lighteners when possible and always finish with conditioning treatments. Proper aftercare with professional products helps maintain hair health."
+      answer: "When done professionally with quality products, highlights cause minimal damage. We always finish with conditioning treatments. Proper aftercare with professional products helps maintain hair health."
     },
     {
       question: "How often should I refresh my highlights?",
@@ -151,11 +151,11 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   'half-head-highlights': [
     {
       question: "How much are half head highlights?",
-      answer: "$140 at Hair By Melissa, and the appointment takes about 2 to 2.5 hours. Partial foils are $90 and a full head of highlights is $180."
+      answer: "$200 at Hair By Melissa, and the appointment takes about 2 to 2.5 hours. Partial foils are $150 and a full head of highlights is $250."
     },
     {
       question: "What's the difference between half head and full head highlights?",
-      answer: "A half head places foils through the top and sides, where colour shows when your hair is down. A full head adds foils underneath as well, for all-over brightness. Half head is $140; full head is $180."
+      answer: "A half head places foils through the top and sides, where colour shows when your hair is down. A full head adds foils underneath as well, for all-over brightness. Half head is $200; full head is $250."
     },
     {
       question: "What areas do half head highlights cover?",
