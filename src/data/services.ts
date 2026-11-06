@@ -7,7 +7,7 @@ export interface Service {
   slug: string;
   /** Short service name, as used in navigation and price lists */
   name: string;
-  /** Display price, e.g. "$230" */
+  /** Display price, e.g. "$280" */
   price: string;
   /** Numeric price for schema.org Offer */
   priceValue: number;
@@ -21,8 +21,8 @@ export const services: Service[] = [
   {
     slug: 'balayage',
     name: 'Balayage',
-    price: '$230',
-    priceValue: 230,
+    price: '$280',
+    priceValue: 280,
     duration: '3-4 hours',
     h1: 'Balayage in Kaukapakapa, North Auckland',
   },
@@ -45,8 +45,8 @@ export const services: Service[] = [
   {
     slug: 'full-head-highlights',
     name: 'Full Head of Highlights',
-    price: '$250',
-    priceValue: 250,
+    price: '$280',
+    priceValue: 280,
     duration: '2.5-3 hours',
     h1: 'Full Head of Highlights in Kaukapakapa, North Auckland',
   },

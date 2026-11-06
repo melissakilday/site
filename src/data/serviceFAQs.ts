@@ -74,7 +74,7 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   'balayage': [
     {
       question: "How much does balayage cost in NZ?",
-      answer: "Balayage at Hair By Melissa is $230, and the appointment takes 3-4 hours. Longer or thicker hair can take longer to process and style, so your exact appointment time may vary — we'll confirm this at consultation."
+      answer: "Balayage at Hair By Melissa is $280, and the appointment takes 3-4 hours. Longer or thicker hair can take longer to process and style, so your exact appointment time may vary — we'll confirm this at consultation."
     },
     {
       question: "How long does balayage last?",
@@ -151,11 +151,11 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   'half-head-highlights': [
     {
       question: "How much are half head highlights?",
-      answer: "$200 at Hair By Melissa, and the appointment takes about 2 to 2.5 hours. Partial foils are $150 and a full head of highlights is $250."
+      answer: "$200 at Hair By Melissa, and the appointment takes about 2 to 2.5 hours. Partial foils are $150 and a full head of highlights is $280."
     },
     {
       question: "What's the difference between half head and full head highlights?",
-      answer: "A half head places foils through the top and sides, where colour shows when your hair is down. A full head adds foils underneath as well, for all-over brightness. Half head is $200; full head is $250."
+      answer: "A half head places foils through the top and sides, where colour shows when your hair is down. A full head adds foils underneath as well, for all-over brightness. Half head is $200; full head is $280."
     },
     {
       question: "What areas do half head highlights cover?",

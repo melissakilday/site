@@ -4,6 +4,7 @@ One entry per change set. Newest first.
 
 | Date | Entry | Target |
 |---|---|---|
+| 2026-11-05 | [Full head and balayage $280, bridal on request](2026-11-05-prices-round-2.md) | CTR on the balayage and full head pages. Re-check 2026-11-26 |
 | 2026-11-05 | [Price rise on 5 services, ammonia-free claim removed](2026-11-05-prices-ammonia.md) | CTR on the 5 repriced service pages and Helensville, whose titles show prices. Re-check 2026-11-26 |
 | 2026-10-26 | [Nanoplasty page, nanoplasty now offered site-wide, keratin lasts about 6 months](2026-10-26-nanoplasty.md) | Impressions and clicks for the nanoplasty cluster (~7,000 searches/mo NZ) on /services/nanoplasty/, plus the keratin page. Re-check 2026-11-09 and 2026-11-26 |
 | 2026-09-26 | [Keratin page rebuild, Service + Breadcrumb schema on all service pages, generated hero images](2026-09-26-keratin-page.md) | Keratin service page top 20 for "keratin treatment auckland" and first keratin clicks by 2026-11-26. Re-check 2026-10-26 and 2026-11-26 |

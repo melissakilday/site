@@ -53,7 +53,7 @@ export const business = {
   logo: 'https://hairbymelissa.co.nz/images/logo.png',
   ogImage: 'https://hairbymelissa.co.nz/images/og-image.jpg',
 
-  priceRange: '$40-$250',
+  priceRange: '$40-$280',
 } as const;
 
 // openingHoursSpecification ready for JSON-LD.
