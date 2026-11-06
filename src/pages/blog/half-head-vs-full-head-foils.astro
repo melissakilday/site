@@ -1,0 +1,142 @@
+---
+import BlogPostLayout from '../../components/BlogPostLayout.astro';
+
+const faqs = [
+  {
+    question: "What is a half head of foils?",
+    answer: "A half head places foils through the top and sides of your hair, where colour shows when you wear it down. That's about 50 to 60% of your hair. The underneath stays your natural colour."
+  },
+  {
+    question: "How much is a full head of foils in NZ?",
+    answer: "Published prices at NZ salons run from about $150 to $340. A full head of foils at Hair By Melissa in Kaukapakapa is $280 and takes 2.5 to 3 hours."
+  },
+  {
+    question: "How long do foils take?",
+    answer: "At Hair By Melissa, partial foils take 1 to 1.5 hours, a half head 2 to 2.5 hours and a full head 2.5 to 3 hours."
+  },
+  {
+    question: "Will half head foils show if I tie my hair up?",
+    answer: "They can. A half head leaves the underneath natural, so the darker hair shows more in a ponytail or updo. If you often wear your hair up, a full head gives you colour all the way through."
+  },
+  {
+    question: "How often do I need to redo foils?",
+    answer: "Half head and full head foils are usually redone every 6 to 8 weeks. Partial foils are usually every 4 to 6 weeks."
+  }
+];
+---
+
+<BlogPostLayout
+  title="Half Head vs Full Head Foils: Cost & Guide"
+  description="Half head foils cover the top and sides, full head goes all the way through. Prices, times and how to choose, from a Kaukapakapa hairdresser."
+  keywords="half head vs full head foils, half head foils price, full head foils price, what is half head foils, half head of foils nz, how long do foils take"
+  slug="half-head-vs-full-head-foils"
+  h1="Half Head vs Full Head Foils: Price and How to Choose"
+  crumb="Half Head vs Full Head Foils"
+  category="Colour Insights"
+  readTime="4 min read"
+  publishDate="2026-11-06"
+  displayDate="6 November 2026"
+  intro="A half head of foils lightens the top and sides of your hair, which is what most people see. A full head adds foils underneath as well, so the colour goes all the way through. At Hair By Melissa in Kaukapakapa, a half head is $200 and a full head is $280."
+  quickAnswer="Choose a half head for brightness and softer regrowth, especially if it's your first time with foils. Choose a full head if you're going much lighter or you often wear your hair up."
+  imageAlt="Illustration: a hairdresser placing neat rows of foils through the top of a client's hair"
+  faqs={faqs}
+  ctaHeading="Not sure how many foils you need?"
+  ctaText="Melissa can look at your hair and tell you straight. Book online or call 0274 799 320."
+  related={[
+    { href: "/services/half-head-highlights/", title: "Half Head of Highlights", text: "The service page, with what's included and how it's done." },
+    { href: "/services/full-head-highlights/", title: "Full Head of Highlights", text: "Colour all the way through, at $280." },
+    { href: "/blog/balayage-cost-nz/", title: "How Much Does Balayage Cost in NZ?", text: "Considering a softer, hand-painted option instead?" }
+  ]}
+>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Half head, full head and partial foils compared</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse border border-gray-200 text-left text-gray-700">
+        <caption class="sr-only">Partial, half head and full head foils at Hair By Melissa: coverage, price, time and upkeep</caption>
+        <thead>
+          <tr class="bg-gray-50">
+            <th scope="col" class="border border-gray-200 p-3 font-semibold"><span class="sr-only">Compare</span></th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">Partial</th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">Half head</th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">Full head</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Where the foils go</th>
+            <td class="border border-gray-200 p-3 align-top">Around your face and crown</td>
+            <td class="border border-gray-200 p-3 align-top">Top, crown and sides</td>
+            <td class="border border-gray-200 p-3 align-top">Everywhere, including underneath</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Share of your hair</th>
+            <td class="border border-gray-200 p-3 align-top">About 20 to 30%</td>
+            <td class="border border-gray-200 p-3 align-top">About 50 to 60%</td>
+            <td class="border border-gray-200 p-3 align-top">100%</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Price</th>
+            <td class="border border-gray-200 p-3 align-top">$150</td>
+            <td class="border border-gray-200 p-3 align-top">$200</td>
+            <td class="border border-gray-200 p-3 align-top">$280</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Time</th>
+            <td class="border border-gray-200 p-3 align-top">1 to 1.5 hours</td>
+            <td class="border border-gray-200 p-3 align-top">2 to 2.5 hours</td>
+            <td class="border border-gray-200 p-3 align-top">2.5 to 3 hours</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Usually redone</th>
+            <td class="border border-gray-200 p-3 align-top">Every 4 to 6 weeks</td>
+            <td class="border border-gray-200 p-3 align-top">Every 6 to 8 weeks</td>
+            <td class="border border-gray-200 p-3 align-top">Every 6 to 8 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">How much are foils in NZ?</h2>
+    <p class="text-gray-700 mb-6">
+      Seven NZ salon price lists checked in November 2026 put half head foils at about $125 to $270, and a full head at about $150 to $340. That's a wide spread. Salons differ on stylist level and on what's included, so it pays to ask what the price covers.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">When a half head is enough</h2>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>It's your first time having foils.</li>
+      <li>You want brightness where it shows when your hair is down.</li>
+      <li>You'd like softer regrowth. The darker hair underneath helps it blend.</li>
+      <li>You want less time in the chair.</li>
+    </ul>
+    <p class="text-gray-700 mb-6">
+      <a href="/services/half-head-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">See the half head service</a>.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">When to go for a full head</h2>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>You're going noticeably lighter.</li>
+      <li>You want as much dimension as possible.</li>
+      <li>You often wear your hair up, so the underneath shows.</li>
+    </ul>
+    <p class="text-gray-700 mb-6">
+      <a href="/services/full-head-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">See the full head service</a>.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">When partial foils make more sense</h2>
+    <p class="text-gray-700 mb-6">
+      <a href="/services/partial-foils/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Partial foils</a> brighten the pieces around your face and crown. They suit you if you only want a lift, or you're keeping up between bigger colour appointments. They're also good for <a href="/blog/grey-blending-vs-grey-coverage/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">blending grey around your hairline</a>.
+    </p>
+  </section>
+
+  <p class="text-sm text-gray-600">
+    NZ price ranges are from published salon price lists, checked 6 November 2026. They may have changed since.
+  </p>
+</BlogPostLayout>

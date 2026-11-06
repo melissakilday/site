@@ -66,20 +66,20 @@ const hairCareServices = [
     name: "Keratin Treatments",
     price: "$180",
     description: "Professional smoothing treatment perfect for frizz control in humid conditions",
-    benefit: "Reduces styling time by 50% and provides about 6 months of smooth, manageable hair",
+    benefit: "Reduces daily styling time and provides about 6 months of smooth, manageable hair",
     ideal: "Perfect for busy rural lifestyles and humidity control"
   },
   {
-    name: "Deep Conditioning Treatments",
-    price: "$40-60",
-    description: "Intensive moisture restoration for damaged or dry hair",
-    benefit: "Repairs damage from environmental factors and chemical processing",
-    ideal: "Essential for hair exposed to rural dust, sun, and agricultural environments"
+    name: "UV Protection Treatment",
+    price: "$40",
+    description: "A short treatment to help protect hair from sun exposure",
+    benefit: "Helps protect your hair and colour from UV damage",
+    ideal: "Suits hair exposed to sun on rural and coastal properties"
   },
   {
     name: "Hair Health Consultations",
     price: "Free with service",
-    description: "Professional assessment of hair condition and personalized care recommendations",
+    description: "Professional assessment of hair condition and personalised care recommendations",
     benefit: "Identifies problems early and creates custom treatment plans",
     ideal: "Recommended for all new clients and seasonal hair care planning"
   }
@@ -102,7 +102,7 @@ const hairCareServices = [
         <ol class="flex items-center space-x-2 text-sm">
           <li><a href="/" class="text-gray-600 hover:text-salon-darkblue">Home</a></li>
           <li class="text-gray-400">/</li>
-          <li><a href="/blog" class="text-gray-600 hover:text-salon-darkblue">Blog</a></li>
+          <li><a href="/blog/" class="text-gray-600 hover:text-salon-darkblue">Blog</a></li>
           <li class="text-gray-400">/</li>
           <li class="text-gray-900 font-medium">Hair Care</li>
         </ol>
@@ -117,13 +117,13 @@ const hairCareServices = [
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+          <a href="/booking/" class="btn-primary inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Book Hair Assessment
           </a>
-          <a href="/services/keratin-treatments" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+          <a href="/services/keratin-treatments/" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
             Learn About Keratin Treatments
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -158,7 +158,7 @@ const hairCareServices = [
                 <h3 class="text-xl font-bold mb-3">{post.title}</h3>
                 <p class="text-gray-600 mb-4">{post.excerpt}</p>
                 <a 
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.slug}/`}
                   class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
                 >
                   Read Full Article
@@ -182,7 +182,7 @@ const hairCareServices = [
         
         <div class="prose prose-lg max-w-none text-gray-700 mb-12">
           <p class="text-xl mb-6">
-            Living in rural North Auckland presents unique challenges for hair care. From the agricultural dust of Kaukapakapa to the coastal humidity affecting Helensville, Wainui, and Waitoki, our local environment requires specialized knowledge and adapted techniques to maintain healthy, beautiful hair year-round.
+            Living in rural North Auckland presents unique challenges for hair care. From the agricultural dust of Kaukapakapa to the coastal humidity affecting Helensville, Wainui, and Waitoki, our local environment requires specialised knowledge and adapted techniques to maintain healthy, beautiful hair year-round.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Understanding North Auckland's Hair Care Challenges</h3>
@@ -196,7 +196,7 @@ const hairCareServices = [
           
           <h3 class="text-2xl font-semibold mb-4">The Keratin Solution for Local Conditions</h3>
           <p class="mb-6">
-            Keratin treatments have become our most popular service for good reason – they address many of the hair challenges specific to our area. The treatment creates a protective barrier that resists humidity absorption, making it perfect for managing frizz in coastal conditions. It also provides protection against environmental pollutants and reduces the daily styling stress that can damage hair over time.
+            Keratin treatments suit our area for good reason – they address many of the hair challenges specific to our area. The treatment creates a protective barrier that resists humidity absorption, making it perfect for managing frizz in coastal conditions. It also provides protection against environmental pollutants and reduces the daily styling stress that can damage hair over time.
           </p>
           
           <p class="mb-6">
@@ -223,7 +223,7 @@ const hairCareServices = [
       <div class="max-w-4xl mx-auto">
         <h2 class="text-4xl font-bold mb-8 text-center">Professional Hair Care Services</h2>
         <p class="text-xl text-gray-600 text-center mb-12">
-          Specialized treatments designed for North Auckland's unique environmental challenges.
+          Specialised treatments designed for North Auckland's unique environmental challenges.
         </p>
         
         <div class="space-y-8">
@@ -249,7 +249,7 @@ const hairCareServices = [
         </div>
         
         <div class="text-center mt-12">
-          <a href="/services" class="btn-primary inline-flex items-center">
+          <a href="/services/" class="btn-primary inline-flex items-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
@@ -282,7 +282,7 @@ const hairCareServices = [
           </p>
           
           <p class="mb-6">
-            Professional treatments can be scheduled monthly or seasonally, depending on hair condition and environmental exposure. Our Kaukapakapa location makes it convenient to combine salon visits with other rural errands, maximizing the efficiency of your time.
+            Professional treatments can be scheduled monthly or seasonally, depending on hair condition and environmental exposure. Our Kaukapakapa location makes it convenient to combine salon visits with other rural errands, maximising the efficiency of your time.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Seasonal Hair Care Adjustments</h3>
@@ -295,7 +295,7 @@ const hairCareServices = [
           </p>
           
           <p class="mb-6">
-            <strong>Autumn Recovery:</strong> After a summer of sun and activity, autumn is the perfect time for restorative treatments. Consider this season for major color services or corrective treatments that will prepare hair for the quieter winter months.
+            <strong>Autumn Recovery:</strong> After a summer of sun and activity, autumn is the perfect time for restorative treatments. Consider this season for major colour services or corrective treatments that will prepare hair for the quieter winter months.
           </p>
           
           <p class="mb-6">
@@ -308,7 +308,7 @@ const hairCareServices = [
           </p>
           
           <p class="mb-6">
-            We recommend professional treatments every 6-8 weeks for maintenance, with seasonal intensive treatments for preparation and recovery. Emergency appointments are always available for damage from unexpected environmental exposure or special occasion styling needs.
+            We recommend professional treatments every 6-8 weeks for maintenance, with seasonal intensive treatments for preparation and recovery.
           </p>
           
           <h3 class="text-2xl font-semibold mb-4">Hair Care Product Selection for Rural Life</h3>
@@ -317,7 +317,7 @@ const hairCareServices = [
           </p>
           
           <p class="mb-6">
-            We provide personalized product recommendations based on your specific rural lifestyle, hair type, and professional treatments received. Our goal is to create a realistic, effective routine that fits seamlessly into country living while maintaining beautiful, healthy hair.
+            We provide personalised product recommendations based on your specific rural lifestyle, hair type, and professional treatments received. Our goal is to create a realistic, effective routine that fits seamlessly into country living while maintaining beautiful, healthy hair.
           </p>
         </div>
       </div>
@@ -334,13 +334,13 @@ const hairCareServices = [
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/booking" class="bg-white text-purple-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+          <a href="/booking/" class="bg-white text-purple-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Book Hair Care Consultation
           </a>
-          <a href="/services/keratin-treatments" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-purple-600 transition">
+          <a href="/services/keratin-treatments/" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-purple-600 transition">
             Explore Keratin Treatments
           </a>
         </div>

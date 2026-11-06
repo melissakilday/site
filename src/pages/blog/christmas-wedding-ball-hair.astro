@@ -1,0 +1,121 @@
+---
+import BlogPostLayout from '../../components/BlogPostLayout.astro';
+
+const faqs = [
+  {
+    question: "How far ahead should I book wedding hair?",
+    answer: "NZ wedding stylist Brooke Mann suggests booking your stylist at least six months before the wedding. It's worth asking early."
+  },
+  {
+    question: "When should I get my hair coloured before a wedding or event?",
+    answer: "About two weeks out is a good rule. It gives your colour time to settle and leaves room to adjust anything. If you only need your greys touched up, about a week before may be enough."
+  },
+  {
+    question: "How long does a blow wave last?",
+    answer: "Most blow waves last 3 to 5 days with proper care, so you can have it done the day before your event, or on the day if your appointment fits."
+  },
+  {
+    question: "Does Melissa do bridal hair?",
+    answer: "Bridal styling is by request only. Call Melissa on 0274 799 320 to talk about your date before you plan around it."
+  },
+  {
+    question: "Is Hair By Melissa open over Christmas?",
+    answer: "Melissa isn't closing over the Christmas period. Check the booking page for the exact days and times you'd like."
+  }
+];
+---
+
+<BlogPostLayout
+  title="Christmas & Wedding Hair: When to Book"
+  description="When to book colour, cuts and blow waves before Christmas, a wedding or a school ball, with a simple timeline from a Kaukapakapa hairdresser."
+  keywords="christmas hair, christmas party hair, wedding hair auckland, mother of the bride hair, school ball hair, when to colour hair before wedding"
+  slug="christmas-wedding-ball-hair"
+  h1="Christmas, Wedding and School Ball Hair: When to Book"
+  crumb="Christmas and Event Hair"
+  category="Seasonal Care"
+  readTime="4 min read"
+  publishDate="2026-11-06"
+  displayDate="6 November 2026"
+  intro="The best time to book event hair is earlier than you think. Get your colour done about two weeks before the day, then have a blow wave the day before or on the day. Melissa isn't closing over Christmas, so you don't need to squeeze everything in before a shutdown."
+  quickAnswer="Book colour about two weeks ahead, a grey touch-up about a week ahead, and a blow wave for the day before or the day itself. For weddings, talk to your stylist months in advance."
+  imageAlt="Illustration: a soft updo with a red flower, seen from behind, at a summer wedding in a New Zealand garden"
+  faqs={faqs}
+  ctaHeading="Got something coming up?"
+  ctaText="Book your colour first, then your blow wave, and you're set."
+  related={[
+    { href: "/services/blow-wave/", title: "Blow Wave in Kaukapakapa", text: "A polished finish for $50, and it lasts 3 to 5 days." },
+    { href: "/services/womens-cut-finish/", title: "Women's Cut & Finish", text: "A fresh shape and a blow-dry finish for $70." },
+    { href: "/blog/half-head-vs-full-head-foils/", title: "Half Head vs Full Head Foils", text: "Planning a colour change? Start here." }
+  ]}
+>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">A simple timeline for event hair</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse border border-gray-200 text-left text-gray-700">
+        <caption class="sr-only">When to book each hair appointment before an event</caption>
+        <thead>
+          <tr class="bg-gray-50">
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">When</th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">What to book</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Six months or more out</th>
+            <td class="border border-gray-200 p-3 align-top">Weddings: talk to Melissa</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">About two weeks out</th>
+            <td class="border border-gray-200 p-3 align-top">Colour: balayage, foils or tint</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">About a week out</th>
+            <td class="border border-gray-200 p-3 align-top">Grey or regrowth touch-up, if that's all you need</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">The day before, or on the day</th>
+            <td class="border border-gray-200 p-3 align-top">Blow wave</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Christmas parties and family photos</h2>
+    <p class="text-gray-700 mb-6">
+      December gets busy, so pick your date now. If you're colouring, leave about two weeks before the party or the family photos. A <a href="/services/half-head-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">half head of foils</a> is $200 and a good way to brighten up for summer. A <a href="/services/womens-cut-finish/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">women's cut and finish</a> is $70 and a <a href="/services/blow-wave/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">blow wave</a> is $50. A blow wave usually lasts 3 to 5 days, so one appointment can carry you through a busy run of events.
+    </p>
+    <p class="text-gray-700 mb-6">
+      Melissa is open Sundays from 9am to 5pm, which is handy when weekdays are taken up with end-of-year work and school events.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Wedding hair, including mother of the bride</h2>
+    <p class="text-gray-700 mb-6">
+      NZ wedding stylist Brooke Mann advises booking your stylist at least six months out, and having your final colour about two weeks before the day.
+    </p>
+    <p class="text-gray-700 mb-6">
+      At Hair By Melissa, bridal styling is by request only, so call <a href="tel:+64274799320" class="text-salon-darkblue underline hover:text-[#0F7A9C]">0274 799 320</a> before you plan around it. Colour, cuts and blow waves for the mother of the bride and guests can be booked online as normal.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">School ball hair</h2>
+    <p class="text-gray-700 mb-6">
+      Ball dates vary from school to school, so check yours and book as soon as you know it. A blow wave on the day or the day before is usually all that's needed. If your teen wants colour, the same two-week rule applies.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Keratin or nanoplasty before an event</h2>
+    <p class="text-gray-700 mb-6">
+      Smoothing is great before a big event if you leave enough time. <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Keratin</a> needs 72 hours with no washing, no tying up and no clips, and you should wait at least two weeks after keratin before colouring. <a href="/services/nanoplasty/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Nanoplasty</a> can be washed straight away, so it's easier to fit in.
+    </p>
+  </section>
+
+  <p class="text-sm text-gray-600">
+    Source: <a href="https://www.nzherald.co.nz/viva/culture/wedding-hairstylist-brooke-mann-shares-her-bridal-hair-tips/H4ZTF4WRR4RJXVLCZG7CO5N2GM/" rel="noopener" class="underline">Viva, NZ Herald</a>.
+  </p>
+</BlogPostLayout>

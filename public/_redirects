@@ -1,4 +1,7 @@
 /sitemap.xml /sitemap-index.xml 301!
+# Retire the Netlify mirror
+https://shiny-sopapillas-7f9fd9.netlify.app/* https://hairbymelissa.co.nz/:splat 301!
+
 # Domain Consolidation - Force apex domain for SEO authority consolidation
 # Redirect www subdomain to apex domain (301 permanent redirects)
 https://www.hairbymelissa.co.nz/* https://hairbymelissa.co.nz/:splat 301!

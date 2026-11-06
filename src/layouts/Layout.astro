@@ -18,8 +18,8 @@ export interface Props {
 
 const {
   title,
-  description = 'Premium hairdresser in Kaukapakapa, Auckland. Expert hair coloring, keratin treatments, balayage & highlights. Serving Kaukapakapa, Helensville, Wainui & Waitoki. Book your transformation today!',
-  keywords = 'hairdresser kaukapakapa, hair salon kaukapakapa, hair coloring auckland north, keratin treatment kaukapakapa, balayage helensville, highlights wainui, haircut waitoki, melissa hair salon, hair stylist north auckland',
+  description = 'Premium hairdresser in Kaukapakapa, Auckland. Expert hair colouring, keratin treatments, balayage & highlights. Serving Kaukapakapa, Helensville, Wainui & Waitoki. Book your transformation today!',
+  keywords = 'hairdresser kaukapakapa, hair salon kaukapakapa, hair colouring auckland north, keratin treatment kaukapakapa, balayage helensville, highlights wainui, haircut waitoki, melissa hair salon, hair stylist north auckland',
   ogImage = business.ogImage,
   canonicalURL = new URL(Astro.url.pathname, 'https://hairbymelissa.co.nz').toString(),
   pageType = 'website',
@@ -118,7 +118,7 @@ const localBusinessSchema = {
         "itemOffered": {
           "@type": ["Service", "HealthAndBeautyBusiness"],
           "serviceType": "Keratin Hair Treatment",
-          "name": "Keratin Treatments",
+          "name": "Keratin Treatment",
           "description": "Formaldehyde-free keratin smoothing treatment that reduces frizz for about 6 months. $180, about 2–3 hours.",
           "category": "Hair Treatment",
           "duration": "PT2H30M",
@@ -165,12 +165,12 @@ const localBusinessSchema = {
         "@id": "https://hairbymelissa.co.nz/services/balayage#offer", 
         "itemOffered": {
           "@type": ["Service", "HealthAndBeautyBusiness"],
-          "serviceType": "Balayage Hair Coloring",
+          "serviceType": "Balayage Hair Colouring",
           "name": "Balayage",
-          "description": "Hand-painted highlighting technique that creates naturally sun-kissed hair with softer, less noticeable regrowth. Low-maintenance color option.",
-          "category": "Hair Coloring",
+          "description": "Hand-painted highlighting technique that creates naturally sun-kissed hair with softer, less noticeable regrowth. Low-maintenance colour option.",
+          "category": "Hair Colouring",
           "duration": "PT3H30M",
-          "serviceOutput": "Natural-looking dimensional color with soft regrowth"
+          "serviceOutput": "Natural-looking dimensional colour with soft regrowth"
         },
         "price": "280",
         "priceCurrency": "NZD",
@@ -182,7 +182,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/balayage"
+        "url": "https://hairbymelissa.co.nz/services/balayage/"
       },
       {
         "@type": "Offer",
@@ -192,7 +192,7 @@ const localBusinessSchema = {
           "serviceType": "Hair Highlighting",
           "name": "Full Head of Highlights",
           "description": "Complete transformation with highlights applied throughout entire head for maximum impact and dimension. Includes custom toner and styling.",
-          "category": "Hair Coloring",
+          "category": "Hair Colouring",
           "duration": "PT2H45M",
           "serviceOutput": "Maximum dimension and brightness throughout entire head"
         },
@@ -206,7 +206,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/full-head-highlights"
+        "url": "https://hairbymelissa.co.nz/services/full-head-highlights/"
       },
       {
         "@type": "Offer",
@@ -216,7 +216,7 @@ const localBusinessSchema = {
           "serviceType": "Hair Highlighting",
           "name": "Half Head of Highlights",
           "description": "Highlights applied to top and sides of hair for natural sun-kissed look. Perfect for creating dimension that grows out beautifully.",
-          "category": "Hair Coloring",
+          "category": "Hair Colouring",
           "duration": "PT2H15M",
           "serviceOutput": "Natural dimension through top and sides with seamless blend"
         },
@@ -230,7 +230,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/half-head-highlights"
+        "url": "https://hairbymelissa.co.nz/services/half-head-highlights/"
       },
       {
         "@type": "Offer",
@@ -239,7 +239,7 @@ const localBusinessSchema = {
           "@type": ["Service", "HealthAndBeautyBusiness"],
           "serviceType": "Hair Cutting and Styling",
           "name": "Women's Cut & Finish",
-          "description": "Personalized haircut service including consultation, relaxing shampoo, precision cut, and professional styling tailored to your face shape and lifestyle.",
+          "description": "Personalised haircut service including consultation, relaxing shampoo, precision cut, and professional styling tailored to your face shape and lifestyle.",
           "category": "Hair Cutting",
           "duration": "PT1H",
           "serviceOutput": "Precision haircut with professional styling"
@@ -254,19 +254,19 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/womens-cut-finish"
+        "url": "https://hairbymelissa.co.nz/services/womens-cut-finish/"
       },
       {
         "@type": "Offer",
         "@id": "https://hairbymelissa.co.nz/services/permanent-tint-all-over#offer",
         "itemOffered": {
           "@type": ["Service", "HealthAndBeautyBusiness"],
-          "serviceType": "Hair Coloring",
-          "name": "Permanent Tint & All Over Color",
-          "description": "Full color application from roots to ends providing rich, vibrant, and even color throughout hair. Includes conditioning treatment.",
-          "category": "Hair Coloring",
+          "serviceType": "Hair Colouring",
+          "name": "Permanent Tint & All Over Colour",
+          "description": "Full colour application from roots to ends providing rich, vibrant, and even colour throughout hair. Includes conditioning treatment.",
+          "category": "Hair Colouring",
           "duration": "PT1H45M",
-          "serviceOutput": "Rich, vibrant, even color from roots to ends"
+          "serviceOutput": "Rich, vibrant, even colour from roots to ends"
         },
         "price": "140",
         "priceCurrency": "NZD",
@@ -278,7 +278,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/permanent-tint-all-over"
+        "url": "https://hairbymelissa.co.nz/services/permanent-tint-all-over/"
       },
       {
         "@type": "Offer",
@@ -287,8 +287,8 @@ const localBusinessSchema = {
           "@type": ["Service", "HealthAndBeautyBusiness"],
           "serviceType": "Hair Highlighting",
           "name": "Partial Foils",
-          "description": "Strategic highlights around face and crown to add dimension and brightness. Perfect for subtle change or low-maintenance color.",
-          "category": "Hair Coloring",
+          "description": "Strategic highlights around face and crown to add dimension and brightness. Perfect for subtle change or low-maintenance colour.",
+          "category": "Hair Colouring",
           "duration": "PT1H15M",
           "serviceOutput": "Face-framing highlights with subtle dimension"
         },
@@ -302,7 +302,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/partial-foils"
+        "url": "https://hairbymelissa.co.nz/services/partial-foils/"
       },
       {
         "@type": "Offer",
@@ -326,7 +326,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/blow-wave"
+        "url": "https://hairbymelissa.co.nz/services/blow-wave/"
       },
       {
         "@type": "Offer",
@@ -335,10 +335,10 @@ const localBusinessSchema = {
           "@type": ["Service", "HealthAndBeautyBusiness"],
           "serviceType": "Hair Toning",
           "name": "Toner",
-          "description": "Professional toning service to neutralize unwanted tones, add depth, or refresh faded color.",
+          "description": "Professional toning service to neutralise unwanted tones, add depth, or refresh faded colour.",
           "category": "Hair Treatment",
           "duration": "PT40M",
-          "serviceOutput": "Refined and perfected hair color with enhanced tone"
+          "serviceOutput": "Refined and perfected hair colour with enhanced tone"
         },
         "price": "40",
         "priceCurrency": "NZD",
@@ -350,19 +350,19 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/toner"
+        "url": "https://hairbymelissa.co.nz/services/toner/"
       },
       {
         "@type": "Offer",
         "@id": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up#offer",
         "itemOffered": {
           "@type": ["Service", "HealthAndBeautyBusiness"],
-          "serviceType": "Hair Coloring",
+          "serviceType": "Hair Colouring",
           "name": "Permanent Tint & Touch Up",
-          "description": "Root touch-up service to refresh existing color and cover gray hair between full color appointments. Perfect for maintenance.",
-          "category": "Hair Coloring",
+          "description": "Root touch-up service to refresh existing colour and cover grey hair between full colour appointments. Perfect for maintenance.",
+          "category": "Hair Colouring",
           "duration": "PT1H15M",
-          "serviceOutput": "Refreshed root color with seamless blend"
+          "serviceOutput": "Refreshed root colour with seamless blend"
         },
         "price": "130",
         "priceCurrency": "NZD",
@@ -374,7 +374,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up"
+        "url": "https://hairbymelissa.co.nz/services/permanent-tint-touch-up/"
       },
       {
         "@type": "Offer",
@@ -398,7 +398,7 @@ const localBusinessSchema = {
         },
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01",
-        "url": "https://hairbymelissa.co.nz/services/uv-protection-treatments"
+        "url": "https://hairbymelissa.co.nz/services/uv-protection-treatments/"
       }
     ]
   },
@@ -407,10 +407,10 @@ const localBusinessSchema = {
     "Nanoplasty",
     "Balayage Technique", 
     "Hair Highlighting",
-    "Hair Coloring",
+    "Hair Colouring",
     "Hair Cutting",
     "Hair Styling",
-    "Color Correction",
+    "Colour Correction",
     "Hair Health",
     "Frizz Management"
   ],
@@ -429,7 +429,7 @@ const localBusinessSchema = {
     "@type": "ReserveAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://hairbymelissa.co.nz/booking",
+      "urlTemplate": "https://hairbymelissa.co.nz/booking/",
       "actionPlatform": [
         "https://schema.org/DesktopWebPlatform",
         "https://schema.org/MobileWebPlatform"
@@ -470,8 +470,6 @@ const websiteSchema = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
-    <link rel="dns-prefetch" href="https://shiny-sopapillas-7f9fd9.netlify.app" />
     
     <!-- ALL Critical CSS Inlined to Eliminate Network Requests -->
     <style>
@@ -701,7 +699,7 @@ const websiteSchema = {
     <!-- Enhanced Local Entity Recognition Schema -->
 
     <!-- Additional SEO Context for AI/LLMs -->
-    <meta name="ai-content-description" content="Hair By Melissa is a premium hair salon located in Kaukapakapa, Auckland, New Zealand. We specialize in professional hair services including keratin treatments ($180), balayage ($280), highlights (from $150), hair coloring, and women's cuts ($50). Our expert hairdresser Melissa serves clients from Kaukapakapa, Helensville, Wainui, Waitoki and Kumeū areas. Book your appointment for a hair transformation today!" />
+    <meta name="ai-content-description" content="Hair By Melissa is a premium hair salon located in Kaukapakapa, Auckland, New Zealand. We specialise in professional hair services including keratin treatments ($180), balayage ($280), highlights (from $150), hair colouring, and women's cuts ($50). Our expert hairdresser Melissa serves clients from Kaukapakapa, Helensville, Wainui, Waitoki and Kumeū areas. Book your appointment for a hair transformation today!" />
     <meta name="service-areas" content="Kaukapakapa, Helensville, Wainui, Waitoki, Kumeū, North Auckland, Rodney District" />
     <meta name="price-range" content="NZD $40-$280" />
     
@@ -715,19 +713,22 @@ const websiteSchema = {
     <!-- All JavaScript inline to prevent separate files -->
     <script>
       // Minimal DOM interaction to avoid reflow + essential navbar functionality
+      // Navbar scroll effect. The white nav text only works over a dark hero,
+      // so pages without one keep the solid nav from the start.
+      const navbar = document.getElementById('navbar');
+      const hasDarkHero = !!document.querySelector('section, article')?.querySelector('[class*="bg-black/"], [class*="from-black/"]');
+      const handleScroll = () => {
+        if (window.scrollY > 10 || !hasDarkHero) {
+          navbar?.classList.add('scrolled');
+        } else {
+          navbar?.classList.remove('scrolled');
+        }
+      };
+      handleScroll();
+      window.addEventListener('scroll', handleScroll);
+
       window.addEventListener('load', function() {
         document.body.style.opacity = '1';
-        
-        // Navbar scroll effect (deferred to prevent reflow)
-        const navbar = document.getElementById('navbar');
-        const handleScroll = () => {
-          if (window.scrollY > 10) {
-            navbar?.classList.add('scrolled');
-          } else {
-            navbar?.classList.remove('scrolled');
-          }
-        };
-        window.addEventListener('scroll', handleScroll);
         
         // Mobile menu toggle (deferred)
         const toggle = document.getElementById('mobile-menu-toggle');

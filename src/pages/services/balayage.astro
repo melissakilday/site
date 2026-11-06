@@ -3,12 +3,13 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import FAQSchema from '../../components/FAQSchema.astro';
 import { serviceFAQs } from '../../data/serviceFAQs';
 import { getService } from '../../data/services';
+import { business } from '../../data/business';
 
 const service = getService('balayage');
 
 const pageTitle = "Balayage North Auckland, $280, 3–4 Hours";
-const pageDescription = "Balayage in North Auckland from $280. Hand-painted, low-maintenance colour by Melissa in Kaukapakapa. Book online.";
-const pageKeywords = "balayage kaukapakapa, hair highlights helensville, ombre hair wainui, hand painted highlights waitoki, hair color north auckland, balayage specialist rodney";
+const pageDescription = "Balayage in Kaukapakapa, North Auckland for $280. Hand-painted, low-maintenance colour with Melissa, 3 to 4 hours. Near Helensville and Kumeū. Book online.";
+const pageKeywords = "balayage north auckland, balayage kaukapakapa, balayage helensville, balayage kumeu, hand painted highlights, balayage cost, balayage price nz";
 
 const faqs = serviceFAQs['balayage'];
 ---
@@ -21,178 +22,139 @@ const faqs = serviceFAQs['balayage'];
   duration={service.duration}
   h1={service.h1}
   serviceName={service.name}
-  image="/images/optimized/color-transformation_800.webp"
+  image="/images/services/balayage-hero-1200.webp"
+  imageSrcset="/images/services/balayage-hero-640.webp 640w, /images/services/balayage-hero-1200.webp 1200w, /images/services/balayage-hero-1600.webp 1600w"
+  imageSizes="100vw"
+  imageWidth={1600}
+  imageHeight={893}
+  imageAlt="Illustration: a hairdresser hand-painting balayage onto long brunette hair"
+  ogImage="https://hairbymelissa.co.nz/images/services/balayage-hero-og.jpg"
+  showCta={false}
 >
-  <h2 class="text-3xl font-bold mb-6">Professional Balayage in Kaukapakapa: Hand-Painted Hair Artistry</h2>
-  
-  <p class="text-gray-700 mb-6">
-    Discover the transformative beauty of balayage at Hair By Melissa, Kaukapakapa's premier destination for this sophisticated French coloring technique. Balayage, meaning "to sweep" in French, is the art of creating sun-kissed, natural-looking highlights through meticulous freehand painting. This revolutionary method has transformed the hair industry by delivering gorgeous, low-maintenance color that grows out beautifully, making it the perfect choice for busy clients throughout North Auckland including Helensville, Wainui, and Waitoki.
+  <p class="text-lg text-gray-700 mb-6">
+    Balayage is hand-painted colour that looks natural and grows out softly, with no hard regrowth line. At Hair By Melissa in Kaukapakapa, North Auckland, it's $280 and takes 3 to 4 hours, one-on-one with Melissa. It's a short drive from Helensville, Waitoki and Wainui, and about 25 minutes up SH16 from Kumeū.
   </p>
 
-  <p class="text-gray-700 mb-6">
-    What sets balayage apart from traditional highlighting is its artistic approach and personalized application. Each balayage is as unique as the person wearing it, carefully crafted to complement your natural features, lifestyle, and personal style. The result is effortlessly chic hair that looks like you were born with naturally sun-kissed locks, enhanced by months of gentle lightening from coastal living.
-  </p>
-
-  <h3 class="text-2xl font-semibold mb-4">Mastering the Art of Balayage: Technique and Expertise</h3>
-  <p class="text-gray-700 mb-6">
-    Unlike the uniform, stripe-like results of traditional foil highlights, balayage involves the skilled hand-painting of color directly onto carefully selected hair sections. This artistic technique creates a graduated, three-dimensional effect that mimics how the sun would naturally lighten your hair over time. The strategic placement considers your hair's natural movement, your face shape, and your personal style to create a completely customized result.
-  </p>
-
-  <p class="text-gray-700 mb-6">
-    The beauty of balayage lies in its versatility – from subtle, barely-there highlights that add gentle dimension to bold, high-contrast statements that make a dramatic impact. Every application is unique, with color placement designed specifically for how you wear your hair, whether you prefer sleek styles, natural texture, or anything in between. This personalized approach ensures your balayage enhances your individual beauty rather than masking it.
-  </p>
-
-  <h3 class="text-2xl font-semibold mb-4">The Transformative Benefits of Professional Balayage</h3>
-  <p class="text-gray-700 mb-4">
-    Choosing balayage means investing in a coloring technique that works with your lifestyle, not against it. Here's why discerning clients throughout North Auckland choose this sophisticated approach to hair color:
-  </p>
-  <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-    <li><strong>Natural Sophistication:</strong> Sun-kissed results that mimic how nature would highlight your hair</li>
-    <li><strong>Graceful Grow-Out:</strong> Soft, seamless transitions with no harsh demarcation lines</li>
-    <li><strong>Time-Saving Maintenance:</strong> Touch-ups needed only 3-4 times per year, perfect for busy schedules</li>
-    <li><strong>Complete Customization:</strong> Placement and intensity tailored to your features and preferences</li>
-    <li><strong>Universal Appeal:</strong> Enhances all hair colors, textures, and lengths beautifully</li>
-    <li><strong>Multi-Dimensional Beauty:</strong> Creates depth, movement, and visual interest</li>
-    <li><strong>Hair Health Focused:</strong> Less damaging than traditional foil highlighting techniques</li>
-    <li><strong>Lifestyle Compatible:</strong> Designed for the modern woman who values both beauty and convenience</li>
-    <li><strong>Coastal Climate Perfect:</strong> Ideal for North Auckland's salt air and variable weather conditions</li>
-  </ul>
-
-  <h3 class="text-2xl font-semibold mb-4">Balayage Variations</h3>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-    <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Classic Balayage</h4>
-      <p class="text-gray-700 text-sm">Traditional sun-kissed highlights with natural placement</p>
+  <dl class="grid grid-cols-2 sm:grid-cols-4 bg-[#F8F9FA] rounded-lg p-6 mb-6">
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Price</dt>
+      <dd class="font-semibold text-salon-darkblue">$280</dd>
     </div>
-    <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Ombré Balayage</h4>
-      <p class="text-gray-700 text-sm">Graduated color from dark roots to light ends</p>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Time</dt>
+      <dd class="font-semibold text-salon-darkblue">3 to 4 hours</dd>
     </div>
-    <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Sombré</h4>
-      <p class="text-gray-700 text-sm">Subtle version with softer transitions</p>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Refresh</dt>
+      <dd class="font-semibold text-salon-darkblue">8 to 12 weeks, or longer</dd>
     </div>
-    <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Face-Framing</h4>
-      <p class="text-gray-700 text-sm">Concentrated brightness around the face</p>
+    <div>
+      <dt class="text-sm uppercase text-gray-600">Open</dt>
+      <dd class="font-semibold text-salon-darkblue">7 days</dd>
     </div>
+  </dl>
+
+  <div class="flex flex-wrap gap-4 mb-10">
+    <a href="/booking/" class="btn-primary inline-flex items-center justify-center">Book balayage</a>
+    <a href={business.phoneHref} class="bg-transparent border-2 border-gray-900 text-gray-900 font-medium py-3 px-6 rounded-md hover:bg-gray-900 hover:text-white transition duration-300 ease-in-out inline-flex items-center justify-center">Call {business.phoneDisplay}</a>
   </div>
 
-  <h3 class="text-2xl font-semibold mb-4">The Balayage Process</h3>
+  <h2 class="text-3xl font-bold mb-6">What is balayage?</h2>
+  <p class="text-gray-700 mb-6">
+    Balayage comes from the French word for "to sweep". Instead of sectioning your hair into foils, Melissa paints the colour on by hand, placing it where the light would naturally catch your hair. The result is soft and dimensional, and it can be as subtle or as bright as you like.
+  </p>
+  <p class="text-gray-700 mb-6">
+    Because there's no solid line of colour at the root, it grows out gently. That's the main reason people choose it over foils, especially if getting to the salon every six weeks doesn't suit your life.
+  </p>
+
+  <h2 class="text-3xl font-bold mb-6">Real balayage results</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
+    <img
+      src="/images/transformations/balayage-brunette-lob-800.webp"
+      srcset="/images/transformations/balayage-brunette-lob-480.webp 480w, /images/transformations/balayage-brunette-lob-800.webp 800w"
+      sizes="(min-width: 640px) 50vw, 100vw"
+      alt="Before and after: shoulder-length brunette hair with soft caramel balayage"
+      width="800"
+      height="1000"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+    />
+    <img
+      src="/images/transformations/blonde-balayage-refresh-800.webp"
+      srcset="/images/transformations/blonde-balayage-refresh-480.webp 480w, /images/transformations/blonde-balayage-refresh-800.webp 800w"
+      sizes="(min-width: 640px) 50vw, 100vw"
+      alt="Before and after: long blonde hair refreshed with brighter, blended balayage"
+      width="800"
+      height="1000"
+      loading="lazy"
+      decoding="async"
+      class="w-full h-auto rounded-lg"
+    />
+  </div>
+  <p class="text-sm text-gray-600 mb-8">Melissa's clients. See more in the <a href="/gallery/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">gallery</a>.</p>
+
+  <h2 class="text-3xl font-bold mb-6">How much does balayage cost?</h2>
+  <p class="text-gray-700 mb-6">
+    Balayage at Hair By Melissa is <strong>$280</strong>. Longer or thicker hair can take more time to process and style, so Melissa will confirm your appointment time at your consultation. For how that compares around the country, read <a href="/blog/balayage-cost-nz/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">how much balayage costs in NZ</a>.
+  </p>
+
+  <h2 class="text-3xl font-bold mb-6">What happens at your appointment</h2>
   <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
-    <li>Detailed consultation to design your custom look</li>
-    <li>Hair sectioning based on desired placement</li>
-    <li>Custom color mixing for your perfect shade</li>
-    <li>Freehand painting of lightener onto selected sections</li>
-    <li>Strategic placement for natural sun-kissed effect</li>
-    <li>Processing in open air for soft transitions</li>
-    <li>Toning to achieve desired warmth or coolness</li>
-    <li>Deep conditioning treatment for shine</li>
-    <li>Professional styling to showcase dimension</li>
+    <li>A chat about the look you want and what suits your hair</li>
+    <li>Colour mixed for your shade</li>
+    <li>Lightener painted on by hand, section by section</li>
+    <li>Processing time for soft transitions</li>
+    <li>Toning to get the warmth or coolness right</li>
+    <li>Finish and styling, so you can see the result properly</li>
   </ol>
-
-  <h3 class="text-2xl font-semibold mb-4">Perfect For Every Hair Type</h3>
   <p class="text-gray-700 mb-6">
-    Balayage works beautifully on all hair types and colors:
+    It's one client at a time, so nobody is waiting for your chair. Bring a book. Three to four hours goes quicker than you'd think.
   </p>
+
+  <h2 class="text-3xl font-bold mb-6">Who does balayage suit?</h2>
   <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-    <li><strong>Brunettes:</strong> Caramel, honey, and golden tones add warmth</li>
-    <li><strong>Blondes:</strong> Platinum and champagne create luminous effects</li>
-    <li><strong>Redheads:</strong> Copper and strawberry enhance natural warmth</li>
-    <li><strong>Black hair:</strong> Subtle bronze or bold contrasts possible</li>
-    <li><strong>Curly hair:</strong> Enhances natural texture and movement</li>
-    <li><strong>Fine hair:</strong> Creates illusion of thickness and dimension</li>
+    <li><strong>Brunettes:</strong> caramel, honey and golden tones add warmth</li>
+    <li><strong>Blondes:</strong> soft, bright pieces without a heavy root line</li>
+    <li><strong>Darker hair:</strong> lighter brown tones that look sun-lightened</li>
+    <li><strong>Curly hair:</strong> colour that follows your natural movement</li>
+    <li><strong>Busy people:</strong> fewer trips to the salon</li>
   </ul>
-
-  <h3 class="text-2xl font-semibold mb-4">The Low-Maintenance Advantage</h3>
-  <div class="bg-[#FFDEE2] bg-opacity-20 rounded-lg p-6 mb-6">
-    <h4 class="font-semibold mb-3">Maintenance Timeline:</h4>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>First touch-up: 3-4 months</li>
-      <li>Toner refresh: Every 6-8 weeks if desired</li>
-      <li>Full balayage refresh: 2-3 times per year</li>
-      <li>Use purple shampoo weekly for blonde tones</li>
-      <li>Deep condition bi-weekly for optimal health</li>
-      <li>Protect from sun and chlorine exposure</li>
-    </ul>
-    <p class="text-gray-700 mt-3">
-      The beauty of balayage is its grow-out – there's no harsh line, so you can go longer between appointments!
-    </p>
-  </div>
-
-  <h3 class="text-2xl font-semibold mb-4">Styling Your Balayage</h3>
   <p class="text-gray-700 mb-6">
-    Balayage looks stunning styled in various ways:
+    Want brighter, more even colour from root to tip? A <a href="/services/full-head-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">full head of foils</a> may suit you better. The <a href="/blog/balayage-vs-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">balayage vs highlights guide</a> compares the two.
   </p>
+
+  <h2 class="text-3xl font-bold mb-6">How long does balayage last?</h2>
+  <p class="text-gray-700 mb-6">
+    There's no fixed date. Balayage grows out softly over several months, so you can come back when you feel ready. If you like to keep the contrast fresh, plan on every 8 to 12 weeks. A <a href="/services/toner/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">toner</a> between visits is a quick way to freshen your shade.
+  </p>
+
+  <h2 class="text-3xl font-bold mb-6">Looking after your balayage</h2>
   <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
-    <li>Beach waves showcase the dimension perfectly</li>
-    <li>Sleek straight styles display color gradation</li>
-    <li>Updos reveal hidden pops of color</li>
-    <li>Braids create beautiful woven color effects</li>
-    <li>Air-dried texture enhances the natural look</li>
+    <li>Use a colour-safe, sulfate-free shampoo and conditioner</li>
+    <li>Use purple shampoo weekly if you have blonde tones</li>
+    <li>Protect your hair from sun and chlorine, especially over summer</li>
   </ul>
+  <p class="text-gray-700 mb-6">
+    The <a href="/blog/hair-color-maintenance/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">colour maintenance guide</a> has more, and a <a href="/services/uv-protection-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">UV protection treatment</a> is a good add-on before summer.
+  </p>
 
-  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-6 mb-8">
-    <p class="text-gray-700 italic">
-      "Balayage isn't just a hair color technique – it's a lifestyle choice. It's for the woman who wants to look effortlessly beautiful, who values her time, and who believes that the best color is the one that looks like it was kissed by the sun itself."
-    </p>
+  <h2 class="text-3xl font-bold mb-6">Coming from Helensville or Kumeū?</h2>
+  <p class="text-gray-700 mb-6">
+    Hair By Melissa is at 12 Magnolia Lane, Kaukapakapa, about 15 minutes from <a href="/locations/helensville/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Helensville</a> and about 25 minutes from <a href="/locations/kumeu/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Kumeū</a>. Parking is free at the door. Balayage takes a good chunk of the day, and Melissa is open Sundays from 9am to 5pm if a weekend suits you better.
+  </p>
+
+  <div class="bg-[#F8F9FA] rounded-lg p-6 mb-8">
+    <h2 class="text-2xl font-bold mb-3">Ready to book?</h2>
+    <p class="text-gray-700 mb-4">$280, 3 to 4 hours, one-on-one with Melissa. Book online any time or call {business.phoneDisplay}.</p>
+    <a href="/booking/" class="btn-primary inline-flex items-center justify-center">Book balayage</a>
   </div>
 
-  <div class="mt-12">
-    <h3 class="text-2xl font-semibold mb-6">Perfect Your Balayage Experience</h3>
-    <p class="text-gray-700 mb-6">
-      Enhance your balayage results with our complementary services and expert guidance:
-    </p>
-    
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h4 class="font-semibold text-gray-900 mb-3">
-          <a href="/services/toner" class="text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-            Professional Toner
-          </a>
-        </h4>
-        <p class="text-sm text-gray-600 mb-4">
-          Perfect your balayage tone and neutralize unwanted brassiness.
-        </p>
-        <a href="/services/toner" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-          Learn More →
-        </a>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h4 class="font-semibold text-gray-900 mb-3">
-          <a href="/blog/balayage-vs-highlights" class="text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-            Balayage vs Highlights
-          </a>
-        </h4>
-        <p class="text-sm text-gray-600 mb-4">
-          Understanding the differences between highlighting techniques.
-        </p>
-        <a href="/blog/balayage-vs-highlights" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-          Compare Options →
-        </a>
-      </div>
-      
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <h4 class="font-semibold text-gray-900 mb-3">
-          <a href="/blog/hair-color-maintenance" class="text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-            Color Maintenance Tips
-          </a>
-        </h4>
-        <p class="text-sm text-gray-600 mb-4">
-          Extend the life of your beautiful balayage with professional care tips.
-        </p>
-        <a href="/blog/hair-color-maintenance" class="text-sm font-medium text-salon-darkblue hover:text-[#0F7A9C] transition-colors">
-          Read Guide →
-        </a>
-      </div>
-    </div>
-  </div>
   <!-- FAQ Schema -->
   <Fragment slot="after">
-    <FAQSchema 
-      faqs={faqs} 
-      pageUrl="https://hairbymelissa.co.nz/services/balayage"
+    <FAQSchema
+      faqs={faqs}
+      pageUrl="https://hairbymelissa.co.nz/services/balayage/"
     />
   </Fragment>
 </ServiceLayout>

@@ -82,11 +82,11 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What's the difference between balayage and highlights?",
-      answer: "Balayage is a freehand painting technique that creates natural, sun-kissed color with softer grow-out, while highlights use foils for more uniform, structured color placement. Balayage typically requires less maintenance and gives a more organic, dimensional result. See our full balayage vs highlights comparison for a detailed breakdown."
+      answer: "Balayage is a freehand painting technique that creates natural, sun-kissed colour with softer grow-out, while highlights use foils for more uniform, structured colour placement. Balayage typically requires less maintenance and gives a more organic, dimensional result. See our full balayage vs highlights comparison for a detailed breakdown."
     },
     {
       question: "How often should I get balayage touch-ups?",
-      answer: "Balayage typically needs refreshing every 8-12 weeks, depending on how fast your hair grows and how much contrast you want to maintain. The beauty of balayage is its natural grow-out, so you can extend time between appointments compared to traditional highlights."
+      answer: "There's no fixed schedule. If you like to keep the contrast fresh, plan on every 8 to 12 weeks. Because balayage grows out softly, you can go longer between appointments than with traditional highlights."
     },
     {
       question: "Can balayage work on dark hair?",
@@ -94,15 +94,23 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How long does a balayage appointment take?",
-      answer: "A full balayage appointment typically takes 2.5-3.5 hours, including consultation, application, processing time, toning, and styling. The exact time depends on your hair length, desired result, and whether additional services are included."
+      answer: "A balayage appointment takes 3 to 4 hours, including consultation, application, processing time, toning and styling. The exact time depends on your hair length, desired result, and whether additional services are included."
     },
     {
       question: "What's the maintenance routine for balayage?",
-      answer: "Use color-safe, sulfate-free shampoo and conditioner, apply purple shampoo weekly if you have blonde tones, deep condition regularly, and protect your hair from sun and chlorine exposure. Quality hair products will help maintain your color vibrancy longer."
+      answer: "Use colour-safe, sulfate-free shampoo and conditioner, apply purple shampoo weekly if you have blonde tones, deep condition regularly, and protect your hair from sun and chlorine exposure. Quality hair products will help maintain your colour vibrancy longer."
     }
   ],
 
   'womens-cut-finish': [
+    {
+      question: "Do you cut kids' hair?",
+      answer: "Yes. Melissa cuts kids' hair at any age, gently and without rushing. Ask about kids' pricing when you book."
+    },
+    {
+      question: "Are you open on Sundays?",
+      answer: "Yes. Hair By Melissa is open Sundays from 9am to 5pm, and open 7 days overall. See the booking page for times that suit you."
+    },
     {
       question: "How often should I get a haircut?",
       answer: "For most hair types, a trim every 6-8 weeks maintains healthy hair and keeps your style looking fresh. If you're growing your hair out, every 10-12 weeks is sufficient. Regular trims prevent split ends and maintain your hair's shape and movement."
@@ -113,11 +121,11 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Can you work with all hair types?",
-      answer: "Yes! Melissa has experience with all hair textures, lengths, and types - from fine straight hair to thick curly hair. Each cut is customized to work with your natural hair characteristics and personal style preferences."
+      answer: "Yes! Melissa has experience with all hair textures, lengths, and types - from fine straight hair to thick curly hair. Each cut is customised to work with your natural hair characteristics and personal style preferences."
     },
     {
       question: "Do you offer style consultations?",
-      answer: "Absolutely! Every cut includes a detailed consultation where we discuss your lifestyle, maintenance preferences, face shape, and hair goals. For major changes, complimentary 15-minute consultations are available to plan your transformation."
+      answer: "Absolutely! Every cut includes a detailed consultation where we discuss your lifestyle, maintenance preferences, face shape, and hair goals. A free hair health consultation comes with any service, which is a good chance to plan a bigger change."
     },
     {
       question: "How should I prepare for my haircut appointment?",
@@ -128,7 +136,7 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   'full-head-highlights': [
     {
       question: "What's the difference between full and half head highlights?",
-      answer: "Full head highlights cover your entire head for maximum brightness and dimension, while half head highlights focus on the top and sides. Full head highlighting provides more dramatic color transformation and uniform lightness throughout all layers."
+      answer: "Full head highlights cover your entire head for maximum brightness and dimension, while half head highlights focus on the top and sides. Full head highlighting provides more dramatic colour transformation and uniform lightness throughout all layers."
     },
     {
       question: "How long do full head highlights take?",
@@ -140,7 +148,7 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "How often should I refresh my highlights?",
-      answer: "Full head highlights typically need refreshing every 6-8 weeks to maintain vibrant color and blend regrowth. We can alternate between full applications and root touch-ups to maintain your look while minimizing hair processing."
+      answer: "Full head highlights typically need refreshing every 6-8 weeks to maintain vibrant colour and blend regrowth. We can alternate between full applications and root touch-ups to maintain your look while minimising hair processing."
     },
     {
       question: "Can I go lighter gradually with highlights?",
@@ -162,20 +170,20 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
       answer: "Half head highlights cover the top sections, crown, and sides of your hair - essentially the areas most visible when your hair is styled. This creates beautiful dimension where it counts most while keeping costs moderate."
     },
     {
-      question: "Are half head highlights good for first-time coloring?",
-      answer: "Absolutely! Half head highlights are perfect for those new to hair coloring, offering significant impact with more manageable maintenance than full head highlighting. It's an excellent way to test how you like lighter hair."
+      question: "Are half head highlights good for first-time colouring?",
+      answer: "Absolutely! Half head highlights are perfect for those new to hair colouring, offering significant impact with more manageable maintenance than full head highlighting. It's an excellent way to test how you like lighter hair."
     },
     {
       question: "How do half head highlights grow out?",
-      answer: "Half head highlights grow out very naturally since the underneath layers remain your natural color. This creates a softer regrowth line and allows you to extend time between touch-ups compared to full head color."
+      answer: "Half head highlights grow out very naturally since the underneath layers remain your natural colour. This creates a softer regrowth line and allows you to extend time between touch-ups compared to full head colour."
     },
     {
       question: "Can half head highlights work with short hair?",
-      answer: "Yes! Half head highlights work beautifully on short hair, focusing color placement around your face and crown where it will be most noticeable and flattering. The technique adapts well to any hair length."
+      answer: "Yes! Half head highlights work beautifully on short hair, focusing colour placement around your face and crown where it will be most noticeable and flattering. The technique adapts well to any hair length."
     },
     {
       question: "What maintenance do half head highlights require?",
-      answer: "Refresh appointments every 6-8 weeks, use color-safe shampoo and conditioner, apply purple shampoo weekly for blonde tones, and protect from sun exposure. The maintenance is more manageable than full head highlighting."
+      answer: "Refresh appointments every 6-8 weeks, use colour-safe shampoo and conditioner, apply purple shampoo weekly for blonde tones, and protect from sun exposure. The maintenance is more manageable than full head highlighting."
     }
   ],
 
@@ -189,27 +197,27 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
       answer: "Partial foil appointments typically take 1-1.5 hours, making them a quicker option than full or half head highlights. This includes consultation, foil placement, processing, and styling."
     },
     {
-      question: "Are partial foils good for covering gray hair?",
-      answer: "Yes! Partial foils are excellent for blending gray hair around your face and hairline. The strategic placement of lighter tones helps camouflage gray regrowth and creates a more youthful appearance."
+      question: "Are partial foils good for covering grey hair?",
+      answer: "Yes! Partial foils are excellent for blending grey hair around your face and hairline. The strategic placement of lighter tones helps camouflage grey regrowth and creates a more youthful appearance."
     },
     {
       question: "How often should I get partial foils redone?",
-      answer: "Partial foils typically need refreshing every 4-6 weeks, depending on your hair growth rate and how much contrast you want to maintain. They're perfect for regular maintenance color."
+      answer: "Partial foils typically need refreshing every 4-6 weeks, depending on your hair growth rate and how much contrast you want to maintain. They're perfect for regular maintenance colour."
     },
     {
-      question: "Can partial foils be done on any hair color?",
-      answer: "Partial foils work on all hair colors but are especially effective on brown and dark blonde hair. We customize the lightener strength and processing time based on your starting color to achieve beautiful, natural-looking results."
+      question: "Can partial foils be done on any hair colour?",
+      answer: "Partial foils work on all hair colours but are especially effective on brown and dark blonde hair. We customise the lightener strength and processing time based on your starting colour to achieve beautiful, natural-looking results."
     }
   ],
 
   'permanent-tint-all-over': [
     {
       question: "What does permanent tint all-over cover?",
-      answer: "Permanent tint all-over provides complete color coverage from roots to ends, perfect for dramatic color changes, covering gray hair completely, or refreshing your overall hair color. It creates uniform, long-lasting color throughout your entire head."
+      answer: "Permanent tint all-over provides complete colour coverage from roots to ends, perfect for dramatic colour changes, covering grey hair completely, or refreshing your overall hair colour. It creates uniform, long-lasting colour throughout your entire head."
     },
     {
-      question: "How long does permanent hair color last?",
-      answer: "Permanent hair color typically lasts 6-8 weeks before needing a root touch-up, while the color on your lengths can last 3-4 months depending on your hair porosity, maintenance routine, and color choice."
+      question: "How long does permanent hair colour last?",
+      answer: "Permanent hair colour typically lasts 6-8 weeks before needing a root touch-up, while the colour on your lengths can last 3-4 months depending on your hair porosity, maintenance routine, and colour choice."
     },
     {
       question: "Can I go lighter with permanent tint?",
@@ -217,41 +225,41 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What's the difference between semi and permanent tint?",
-      answer: "Permanent tint penetrates the hair shaft and lasts until it grows out, while semi-permanent color coats the hair and gradually fades over 4-6 weeks. Permanent tint provides better gray coverage and longer-lasting results."
+      answer: "Permanent tint penetrates the hair shaft and lasts until it grows out, while semi-permanent colour coats the hair and gradually fades over 4-6 weeks. Permanent tint provides better grey coverage and longer-lasting results."
     },
     {
-      question: "How should I care for permanent color?",
-      answer: "Use sulfate-free, color-safe shampoo and conditioner, wash hair less frequently with cool water, apply weekly deep conditioning treatments, and protect from sun exposure. Quality hair products significantly extend color life."
+      question: "How should I care for permanent colour?",
+      answer: "Use sulfate-free, colour-safe shampoo and conditioner, wash hair less frequently with cool water, apply weekly deep conditioning treatments, and protect from sun exposure. Quality hair products significantly extend colour life."
     }
   ],
 
   'permanent-tint-touch-up': [
     {
       question: "How often do I need root touch-ups?",
-      answer: "Most clients need root touch-ups every 4-6 weeks, depending on hair growth rate and gray coverage needs. Those with faster-growing hair or more gray may need touch-ups every 3-4 weeks."
+      answer: "Most clients need root touch-ups every 4-6 weeks, depending on hair growth rate and grey coverage needs. Those with faster-growing hair or more grey may need touch-ups every 3-4 weeks."
     },
     {
       question: "What areas does a touch-up cover?",
-      answer: "Root touch-ups focus on new growth, typically covering 1-2 inches from the scalp where your natural color is showing. We carefully match your existing color for seamless blending with previously colored hair."
+      answer: "Root touch-ups focus on new growth, typically covering 1-2 inches from the scalp where your natural colour is showing. We carefully match your existing colour for seamless blending with previously coloured hair."
     },
     {
-      question: "Can touch-ups damage my hair less than full color?",
-      answer: "Yes! Touch-ups are gentler since we only process new growth rather than your entire head of hair. This minimizes chemical exposure to previously colored hair while maintaining perfect color consistency."
+      question: "Can touch-ups damage my hair less than full colour?",
+      answer: "Yes! Touch-ups are gentler since we only process new growth rather than your entire head of hair. This minimises chemical exposure to previously coloured hair while maintaining perfect colour consistency."
     },
     {
       question: "How long does a touch-up appointment take?",
-      answer: "Root touch-up appointments typically take 1-1.5 hours, including consultation, application, processing time, and styling. It's a quicker service than full color applications."
+      answer: "Root touch-up appointments typically take 1-1.5 hours, including consultation, application, processing time, and styling. It's a quicker service than full colour applications."
     },
     {
-      question: "What if my touch-up doesn't match my existing color?",
-      answer: "Professional color matching ensures perfect results every time. If you notice any variation, please contact us within 7 days and we'll make any necessary adjustments at no additional charge."
+      question: "What if my touch-up doesn't match my existing colour?",
+      answer: "Professional colour matching ensures perfect results every time. If you notice any variation, please contact us within 7 days and we'll make any necessary adjustments at no additional charge."
     }
   ],
 
   'toner': [
     {
       question: "What does toner do for my hair?",
-      answer: "Toner refines and perfects your hair color by neutralizing unwanted tones, adding shine, and creating the exact shade you want. It's essential after lightening services to achieve that perfect blonde, brunette, or fashion color."
+      answer: "Toner refines and perfects your hair colour by neutralising unwanted tones, adding shine, and creating the exact shade you want. It's essential after lightening services to achieve that perfect blonde, brunette, or fashion colour."
     },
     {
       question: "How long does toner last?",
@@ -259,34 +267,38 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Do I need toner after highlights?",
-      answer: "Most highlighting services benefit from toner to achieve the desired shade and remove any unwanted yellow or orange tones. Toner is what transforms brassy highlights into beautiful, salon-perfect color."
+      answer: "Most highlighting services benefit from toner to achieve the desired shade and remove any unwanted yellow or orange tones. Toner is what transforms brassy highlights into beautiful, salon-perfect colour."
     },
     {
       question: "Can toner make my hair darker?",
-      answer: "Yes! Toner can be used to make highlighted hair slightly darker, add depth, or create more natural-looking color. It's perfect for adjusting color that's too light or bright after lightening services."
+      answer: "Yes! Toner can be used to make highlighted hair slightly darker, add depth, or create more natural-looking colour. It's perfect for adjusting colour that's too light or bright after lightening services."
     },
     {
       question: "How often should I get toner applied?",
-      answer: "Most clients need toner refreshed every 4-6 weeks to maintain their desired shade. If you use purple shampoo at home and your color fades evenly, you may be able to extend this to 6-8 weeks."
+      answer: "Most clients need toner refreshed every 4-6 weeks to maintain their desired shade. If you use purple shampoo at home and your colour fades evenly, you may be able to extend this to 6-8 weeks."
     }
   ],
 
   'blow-wave': [
+    {
+      question: "What is a blow wave?",
+      answer: "A blow wave is a wash and salon blow dry that uses round brushes to add smoothness, volume and shape. At Hair By Melissa it's $50, takes about 45 to 60 minutes and usually lasts 3 to 5 days."
+    },
     {
       question: "How long does a blow wave last?",
       answer: "A professional blow wave typically lasts 3-5 days with proper care, depending on your hair type and lifestyle. Using dry shampoo, sleeping on silk pillowcases, and avoiding humidity help extend the style."
     },
     {
       question: "What's the difference between a blow dry and blow wave?",
-      answer: "A blow wave is a specialized styling technique that creates volume, movement, and shape using round brushes and professional techniques. It's more than just drying your hair - it's creating a polished, long-lasting style."
+      answer: "A blow wave is a specialised styling technique that creates volume, movement, and shape using round brushes and professional techniques. It's more than just drying your hair - it's creating a polished, long-lasting style."
     },
     {
       question: "Can you do blow waves on all hair types?",
-      answer: "Yes! Blow waves can be adapted for all hair lengths and textures, from fine straight hair to thick curly hair. We customize the technique and products used based on your hair's unique characteristics."
+      answer: "Yes! Blow waves can be adapted for all hair lengths and textures, from fine straight hair to thick curly hair. We customise the technique and products used based on your hair's unique characteristics."
     },
     {
       question: "What products do you use for blow waves?",
-      answer: "We use professional-grade heat protectants, volumizing mousses, smoothing serums, and finishing sprays selected specifically for your hair type and desired style. All products are chosen to enhance your hair's natural beauty."
+      answer: "We use professional-grade heat protectants, volumising mousses, smoothing serums, and finishing sprays selected specifically for your hair type and desired style. All products are chosen to enhance your hair's natural beauty."
     },
     {
       question: "Should I wash my hair before a blow wave appointment?",
@@ -297,15 +309,15 @@ export const serviceFAQs: Record<string, FAQItem[]> = {
   'uv-protection-treatments': [
     {
       question: "Why does my hair need UV protection?",
-      answer: "UV rays can fade hair color, weaken hair proteins, cause dryness and brittleness, and lead to split ends. UV protection treatments create a barrier that shields your hair from sun damage while maintaining color vibrancy."
+      answer: "UV rays can fade hair colour, weaken hair proteins, cause dryness and brittleness, and lead to split ends. UV protection treatments create a barrier that shields your hair from sun damage while maintaining colour vibrancy."
     },
     {
       question: "How long do UV protection treatments last?",
       answer: "UV protection treatments typically last 4-6 weeks, depending on sun exposure, swimming frequency, and hair washing routine. Regular reapplication ensures continuous protection during high UV exposure periods."
     },
     {
-      question: "Are UV treatments necessary for colored hair?",
-      answer: "Absolutely! Color-treated hair is more vulnerable to UV damage, which can cause rapid fading, color shifts, and dryness. UV protection treatments are essential for maintaining your color investment and hair health."
+      question: "Are UV treatments necessary for coloured hair?",
+      answer: "Absolutely! Colour-treated hair is more vulnerable to UV damage, which can cause rapid fading, colour shifts, and dryness. UV protection treatments are essential for maintaining your colour investment and hair health."
     },
     {
       question: "Can UV treatments protect against chlorine damage too?",

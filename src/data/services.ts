@@ -96,7 +96,7 @@ export const services: Service[] = [
     price: '$50',
     priceValue: 50,
     duration: '45-60 minutes',
-    h1: 'Blow Wave in Kaukapakapa, North Auckland',
+    h1: 'Blow Wave and Blow Dry in Kaukapakapa, North Auckland',
   },
   {
     slug: 'toner',

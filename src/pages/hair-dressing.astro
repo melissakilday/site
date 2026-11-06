@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
 import { services, getService } from '../data/services';
 
-const pageTitle = "Hairdressing Services & Prices, Kaukapakapa";
+const pageTitle = "Hairdressing Prices, Kaukapakapa";
 const pageDescription = "Hairdressing in Kaukapakapa from $40 — cuts, colour, balayage and keratin at Melissa's home salon. Book online or call today.";
-const pageKeywords = "hair dressing, hairdressing kaukapakapa, hairdressing prices, hair styling techniques, hair coloring methods, hair treatments, hair care guide, salon services north auckland";
+const pageKeywords = "hair dressing, hairdressing kaukapakapa, hairdressing prices, hair styling techniques, hair colouring methods, hair treatments, hair care guide, salon services north auckland";
 
 // Comprehensive sections for pillar content
 const hairDressingTopics = [
@@ -14,21 +14,21 @@ const hairDressingTopics = [
     title: "Hair Cutting Techniques",
     icon: "scissors",
     description: "Master the art of precision cutting",
-    subtopics: ["Layer Cutting", "Graduation", "Texturizing", "Point Cutting", "Razor Cutting"]
+    subtopics: ["Layer Cutting", "Graduation", "Texturising", "Point Cutting", "Razor Cutting"]
   },
   {
     id: "coloring-methods",
-    title: "Hair Coloring Methods",
+    title: "Hair Colouring Methods",
     icon: "palette",
-    description: "Explore modern coloring techniques",
-    subtopics: ["Balayage", "Highlights", "Color Correction", "Fashion Colors", "Grey Coverage"]
+    description: "Explore modern colouring techniques",
+    subtopics: ["Balayage", "Highlights", "Colour Correction", "Fashion Colours", "Grey Coverage"]
   },
   {
     id: "styling-treatments",
     title: "Styling & Treatments",
     icon: "sparkles",
     description: "Transform hair with treatments",
-    subtopics: ["Keratin Treatments", "Deep Conditioning", "Scalp Treatments", "Hair Botox", "Olaplex"]
+    subtopics: ["Keratin Treatments", "Nanoplasty", "UV Protection"]
   },
   {
     id: "hair-care",
@@ -49,7 +49,7 @@ const faqSchema = {
       "name": "What is professional hair dressing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Professional hair dressing encompasses the art and science of cutting, coloring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health."
+        "text": "Professional hair dressing encompasses the art and science of cutting, colouring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health."
       }
     },
     {
@@ -57,7 +57,7 @@ const faqSchema = {
       "name": "How often should I visit a hair dresser?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most people should visit a hair dresser every 6-8 weeks for maintenance. However, this varies based on hair type, style, and whether you have color treatments that need touching up every 4-6 weeks."
+        "text": "Most people should visit a hair dresser every 6-8 weeks for maintenance. However, this varies based on hair type, style, and whether you have colour treatments that need touching up every 4-6 weeks."
       }
     },
     {
@@ -65,7 +65,7 @@ const faqSchema = {
       "name": "What's the difference between hair dressing and hair styling?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hair dressing is the broader profession encompassing cutting, coloring, and chemical treatments, while hair styling specifically refers to arranging hair into a particular look using tools and products."
+        "text": "Hair dressing is the broader profession encompassing cutting, colouring, and chemical treatments, while hair styling specifically refers to arranging hair into a particular look using tools and products."
       }
     }
   ]
@@ -86,7 +86,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       "position": 2,
       "name": "Hairdressing Services & Prices",
-      "item": "https://hairbymelissa.co.nz/hair-dressing"
+      "item": "https://hairbymelissa.co.nz/hair-dressing/"
     }
   ]
 };
@@ -117,7 +117,7 @@ const breadcrumbSchema = {
           Hairdressing services & prices, <span class="gradient-text">Kaukapakapa</span>
         </h1>
         <p class="text-xl text-gray-700 mb-8">
-          Hair By Melissa is a home salon in Kaukapakapa, serving Helensville, Wainui, Waitoki and Kumeū. Cuts, colour, balayage and keratin treatments from $40, with real prices below and one stylist for every appointment.
+          Hair By Melissa is a home salon in <a href="/locations/kaukapakapa/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Kaukapakapa</a>, serving Helensville, Wainui, Waitoki and Kumeū. Cuts, colour, balayage and keratin treatments from $40, with real prices below and one stylist for every appointment.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -153,7 +153,7 @@ const breadcrumbSchema = {
             <svg class="w-5 h-5 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
             </svg>
-            Coloring
+            Colouring
           </a>
           <a href="#styling-treatments" class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md hover:shadow-lg transition">
             <svg class="w-5 h-5 mr-2 text-salon-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -305,7 +305,7 @@ const breadcrumbSchema = {
               <p class="text-gray-700 text-sm">Builds weight and shape, from classic bobs to asymmetrical styles.</p>
             </div>
             <div class="bg-white p-5 rounded-lg">
-              <h4 class="text-lg font-semibold mb-1">Texturizing</h4>
+              <h4 class="text-lg font-semibold mb-1">Texturising</h4>
               <p class="text-gray-700 text-sm">Removes bulk for modern, lived-in movement.</p>
             </div>
           </div>
@@ -326,11 +326,11 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- Coloring Methods Section -->
+  <!-- Colouring Methods Section -->
   <section id="coloring-methods" class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6">Hair Coloring Methods</h2>
+        <h2 class="text-3xl font-bold mb-6">Hair Colouring Methods</h2>
 
         <div class="prose prose-lg max-w-none">
           <p class="text-gray-700 mb-6">
@@ -346,19 +346,19 @@ const breadcrumbSchema = {
 
             <div class="bg-gray-50 p-6 rounded-lg">
               <h4 class="text-xl font-semibold mb-2 text-salon-darkblue">Foil Highlights</h4>
-              <p class="text-gray-700">Precise placement for maximum lift and contrast.</p>
+              <p class="text-gray-700">Precise placement for maximum lift and contrast, from <a href="/services/partial-foils/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">partial foils</a>.</p>
               <p class="mt-2 font-semibold">From {getService('partial-foils').price}</p>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg">
               <h4 class="text-xl font-semibold mb-2 text-salon-darkblue">All-Over Colour</h4>
-              <p class="text-gray-700">Complete colour transformation or grey coverage from roots to ends.</p>
+              <p class="text-gray-700">Complete colour transformation or grey coverage from roots to ends, kept fresh with a <a href="/services/permanent-tint-touch-up/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">root touch-up</a>.</p>
               <p class="mt-2 font-semibold">From {getService('permanent-tint-all-over').price}</p>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg">
               <h4 class="text-xl font-semibold mb-2 text-salon-darkblue">Toner</h4>
-              <p class="text-gray-700">Neutralises brassiness and refreshes tone between colour appointments.</p>
+              <p class="text-gray-700"><a href="/services/toner/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Toner</a> neutralises brassiness and refreshes tone between colour appointments.</p>
               <p class="mt-2 font-semibold">From {getService('toner').price}</p>
             </div>
           </div>
@@ -375,7 +375,7 @@ const breadcrumbSchema = {
             <span class="text-sm text-gray-600">Learn More →</span>
           </a>
           <a href="/services/permanent-tint-all-over/" class="text-center p-4 bg-gray-50 rounded-lg shadow hover:shadow-lg transition">
-            <span class="block font-semibold text-salon-darkblue">Full Color</span>
+            <span class="block font-semibold text-salon-darkblue">Full Colour</span>
             <span class="text-sm text-gray-600">Learn More →</span>
           </a>
         </div>
@@ -410,7 +410,7 @@ const breadcrumbSchema = {
             </div>
             <div class="border-l-4 border-[#D3E4FD] pl-6">
               <h4 class="text-lg font-semibold mb-2">UV Protection Treatment</h4>
-              <p class="text-gray-700 text-sm">Protects colour and condition from sun exposure.</p>
+              <p class="text-gray-700 text-sm">Protects colour and condition from sun exposure. <a href="/services/uv-protection-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">See UV protection</a>.</p>
             </div>
           </div>
         </div>
@@ -452,7 +452,7 @@ const breadcrumbSchema = {
           <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-xl font-semibold mb-3">What is professional hair dressing?</h3>
             <p class="text-gray-700">
-              Professional hair dressing encompasses the art and science of cutting, coloring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health.
+              Professional hair dressing encompasses the art and science of cutting, colouring, styling, and treating hair. It combines technical expertise with creative vision to enhance appearance and maintain hair health.
             </p>
           </div>
 
@@ -466,7 +466,7 @@ const breadcrumbSchema = {
           <div class="bg-white rounded-lg shadow-md p-6">
             <h3 class="text-xl font-semibold mb-3">What's the difference between hair dressing and hair styling?</h3>
             <p class="text-gray-700">
-              Hair dressing is the broader profession encompassing cutting, coloring, chemical treatments, and overall hair care. Hair styling specifically refers to arranging hair into a particular look using tools and products.
+              Hair dressing is the broader profession encompassing cutting, colouring, chemical treatments, and overall hair care. Hair styling specifically refers to arranging hair into a particular look using tools and products.
             </p>
           </div>
         </div>

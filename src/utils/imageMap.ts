@@ -40,11 +40,11 @@ export const imageMap: Record<string, ImageInfo> = {
     height: 1200
   },
   
-  // Service images - Balayage and Color
+  // Service images - Balayage and Colour
   'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png': {
     original: 'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d45dc7a0157964d24379.png',
     local: '/images/optimized/balayage-transformation',
-    alt: 'Beautiful balayage hair color transformation by Hair By Melissa',
+    alt: 'Beautiful balayage hair colour transformation by Hair By Melissa',
     category: 'service',
     width: 800,
     height: 600
@@ -91,7 +91,7 @@ export const imageMap: Record<string, ImageInfo> = {
   'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20c16aa3c857.png': {
     original: 'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56db95d20c16aa3c857.png',
     local: '/images/optimized/natural-balayage',
-    alt: 'Natural sun-kissed balayage hair color',
+    alt: 'Natural sun-kissed balayage hair colour',
     category: 'gallery',
     width: 600,
     height: 800
@@ -119,7 +119,7 @@ export const imageMap: Record<string, ImageInfo> = {
   'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56dc7a0158170d2446c.png': {
     original: 'https://storage.googleapis.com/msgsndr/BLeUCGmXOpptWsB7PyZu/media/67f8d56dc7a0158170d2446c.png',
     local: '/images/optimized/color-transformation',
-    alt: 'Vibrant hair color transformation result',
+    alt: 'Vibrant hair colour transformation result',
     category: 'service',
     width: 600,
     height: 800

@@ -1,0 +1,130 @@
+---
+// BlogPostLayout.astro - shared shell for newer blog posts: header, quick answer,
+// byline, cover image, body slot, FAQ accordion + FAQPage JSON-LD, CTA and related
+// links. Markup mirrors src/pages/blog/keratin-aftercare.astro.
+import Layout from '../layouts/Layout.astro';
+import BlogArticleSchema from './BlogArticleSchema.astro';
+import FAQSchema from './FAQSchema.astro';
+
+export interface Props {
+  /** Page title without the site suffix, 42 characters or fewer */
+  title: string;
+  description: string;
+  keywords: string;
+  slug: string;
+  h1: string;
+  crumb: string;
+  category: string;
+  readTime: string;
+  publishDate: string;
+  displayDate: string;
+  quickAnswer: string;
+  intro: string;
+  imageAlt: string;
+  faqs: { question: string; answer: string }[];
+  ctaHeading: string;
+  ctaText: string;
+  related: { href: string; title: string; text: string }[];
+}
+
+const {
+  title, description, keywords, slug, h1, crumb, category, readTime, publishDate,
+  displayDate, quickAnswer, intro, imageAlt, faqs, ctaHeading, ctaText, related,
+} = Astro.props;
+
+const base = `/images/blog/${slug}`;
+const pageUrl = `https://hairbymelissa.co.nz/blog/${slug}/`;
+---
+
+<Layout title={title} description={description} keywords={keywords} ogImage={`https://hairbymelissa.co.nz${base}-og.jpg`} pageType="article">
+  <article class="pt-32 pb-16">
+    <header class="container-custom mb-12">
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-gray-600 hover:text-salon-darkblue">Home</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/blog/" class="text-gray-600 hover:text-salon-darkblue">Blog</a></li>
+          <li class="text-gray-400">/</li>
+          <li class="text-gray-900 font-medium">{crumb}</li>
+        </ol>
+      </nav>
+
+      <div class="max-w-4xl">
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <span class="bg-[#D3E4FD] text-salon-darkblue px-3 py-1 rounded-full text-sm font-medium">{category}</span>
+          <span class="text-gray-500 text-sm">{readTime}</span>
+          <span class="text-gray-500 text-sm">By Melissa</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">{h1}</h1>
+
+        <p class="text-gray-700 mb-6">{intro}</p>
+
+        <div class="bg-[#D3E4FD] bg-opacity-40 border-l-4 border-salon-darkblue p-6 rounded-lg mb-6">
+          <p class="text-gray-800 mb-0"><strong>Quick answer:</strong> {quickAnswer}</p>
+        </div>
+
+        <p class="text-sm text-gray-600 mb-6">
+          By Melissa, owner and stylist at Hair By Melissa, Kaukapakapa &middot; Updated <time datetime={publishDate}>{displayDate}</time>
+        </p>
+
+        <img
+          src={`${base}-1200.webp`}
+          srcset={`${base}-640.webp 640w, ${base}-1200.webp 1200w, ${base}-1600.webp 1600w`}
+          sizes="(min-width: 900px) 896px, 100vw"
+          alt={imageAlt}
+          width="1200"
+          height="670"
+          fetchpriority="high"
+          decoding="async"
+          class="w-full h-auto rounded-lg"
+        />
+      </div>
+    </header>
+
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <slot />
+
+          <FAQSchema faqs={faqs} pageUrl={pageUrl} />
+
+          <section class="bg-gradient-to-r from-[#1EAEDB] to-[#0891B2] p-8 rounded-lg text-white text-center mt-12">
+            <h2 class="text-2xl font-bold mb-3 text-white">{ctaHeading}</h2>
+            <p class="mb-6">{ctaText}</p>
+            <a href="/booking/" class="bg-white text-salon-darkblue font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-block no-underline">Book online</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-10">Keep reading</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {related.map((item) => (
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-xl font-bold mb-3">
+              <a href={item.href} class="hover:text-salon-darkblue transition-colors">{item.title}</a>
+            </h3>
+            <p class="text-gray-600">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BlogArticleSchema
+    title={title}
+    description={description}
+    keywords={keywords}
+    publishDate={publishDate}
+    readTime={readTime}
+    category={category}
+    author="Melissa"
+    slug={slug}
+    featuredImage={`https://hairbymelissa.co.nz${base}-og.jpg`}
+    modifiedDate={publishDate}
+  />
+</Layout>

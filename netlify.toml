@@ -14,6 +14,13 @@
   status = 301
   force = true
 
+# Retire the Netlify mirror: send everything to the canonical domain
+[[redirects]]
+  from = "https://shiny-sopapillas-7f9fd9.netlify.app/*"
+  to = "https://hairbymelissa.co.nz/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "https://www.hairbymelissa.co.nz/*"
   to = "https://hairbymelissa.co.nz/:splat"

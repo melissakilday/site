@@ -5,8 +5,8 @@ import GoogleReviewsWidget from '../../components/GoogleReviewsWidget.astro';
 import { locationFAQs } from '../../data/locationFAQs';
 
 const pageTitle = "Hairdresser in Kaukapakapa Village, NZ";
-const pageDescription = "Hair By Melissa's main salon in Kaukapakapa village. Expert keratin, balayage, and cuts in a peaceful rural setting.";
-const pageKeywords = "hair salon kaukapakapa, hairdresser kaukapakapa, hair coloring kaukapakapa, keratin treatment kaukapakapa, magnolia lane hair salon, rural hair salon auckland, kaukapakapa village salon";
+const pageDescription = "Hairdresser in Kaukapakapa, North Auckland. Cuts $70, foils from $150, balayage $280, keratin $180. Open 7 days including Sundays, free parking. Book online.";
+const pageKeywords = "hair salon kaukapakapa, hairdresser kaukapakapa, hair colouring kaukapakapa, keratin treatment kaukapakapa, magnolia lane hair salon, rural hair salon auckland, kaukapakapa village salon";
 
 const faqs = locationFAQs['kaukapakapa'];
 
@@ -28,7 +28,7 @@ const kaukapakapaFAQ = {
       "name": "Why choose a hair salon in Kaukapakapa village?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our Kaukapakapa location offers unique advantages: free parking, a peaceful rural setting, stable climate for consistent hair treatments, and personalized service in a welcoming village community atmosphere."
+        "text": "Our Kaukapakapa location offers unique advantages: free parking, a peaceful rural setting, stable climate for consistent hair treatments, and personalised service in a welcoming village community atmosphere."
       }
     },
     {
@@ -36,7 +36,7 @@ const kaukapakapaFAQ = {
       "name": "What makes Kaukapakapa ideal for hair treatments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Kaukapakapa's inland location provides a stable environment for hair treatments, away from coastal humidity and salt air. This ensures more consistent results for keratin treatments and color services, while our rural setting offers a relaxing appointment experience."
+        "text": "Kaukapakapa's inland location provides a stable environment for hair treatments, away from coastal humidity and salt air. This ensures more consistent results for keratin treatments and colour services, while our rural setting offers a relaxing appointment experience."
       }
     },
     {
@@ -74,7 +74,7 @@ const mainLocationServices = [
     name: "Balayage",
     slug: "balayage",
     price: "$280",
-    description: "Hand-painted color technique in peaceful, professional setting",
+    description: "Hand-painted colour technique in peaceful, professional setting",
     duration: "3-4 hours", 
     advantage: "Relaxed environment allows for detailed, artistic work",
     popular: true
@@ -83,7 +83,7 @@ const mainLocationServices = [
     name: "Women's Cut & Finish",
     slug: "womens-cut-finish",
     price: "$70",
-    description: "Personalized cuts designed for your lifestyle",
+    description: "Personalised cuts designed for your lifestyle",
     duration: "45-60 min",
     advantage: "Unhurried consultation in peaceful setting",
     popular: true
@@ -92,9 +92,9 @@ const mainLocationServices = [
     name: "Full Head Highlights",
     slug: "full-head-highlights",
     price: "$280",
-    description: "Complete color transformation with expert technique",
+    description: "Complete colour transformation with expert technique",
     duration: "2.5-3 hours",
-    advantage: "Stable conditions perfect for precise color work", 
+    advantage: "Stable conditions perfect for precise colour work", 
     popular: false
   }
 ];
@@ -140,7 +140,7 @@ const localLandmarks = [
         <ol class="flex items-center space-x-2 text-sm">
           <li><a href="/" class="text-gray-600 hover:text-salon-darkblue">Home</a></li>
           <li class="text-gray-400">/</li>
-          <li><a href="/locations" class="text-gray-600 hover:text-salon-darkblue">Locations</a></li>
+          <li><a href="/locations/" class="text-gray-600 hover:text-salon-darkblue">Locations</a></li>
           <li class="text-gray-400">/</li>
           <li class="text-gray-900 font-medium">Kaukapakapa</li>
         </ol>
@@ -151,11 +151,11 @@ const localLandmarks = [
           Your <span class="gradient-text">hairdresser</span> in Kaukapakapa village
         </h1>
         <p class="text-xl text-gray-700 mb-8">
-          Welcome to Hair By Melissa, a hairdresser and home salon in the heart of Kaukapakapa village. Experience premium hair care in a peaceful rural setting with expert services, free parking, and personalized attention that only a village salon can provide.
+          Hair By Melissa is a home salon on Magnolia Lane in Kaukapakapa, with one stylist, one client at a time and free parking at the door. A cut and finish is $70, foils start at $150, <a href="/services/balayage/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">balayage</a> is $280 and <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin</a> is $180. Open 7 days, including Sundays from 9am to 5pm.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+          <a href="/booking/" class="btn-primary inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
@@ -185,7 +185,7 @@ const localLandmarks = [
           
           <h3 class="text-2xl font-semibold mb-4">The Character of Kaukapakapa Village</h3>
           <p class="mb-6">
-            Kaukapakapa retains the authentic character of rural New Zealand, where neighbors know each other and local businesses are genuinely part of the community fabric. The village sits gracefully along State Highway 16, making it easily accessible while maintaining its peaceful, unhurried atmosphere. This small but vibrant community of approximately 1,000 residents represents a diverse mix of long-established farming families, lifestyle block owners, and professionals who have chosen rural living while maintaining connections to Auckland's urban centers.
+            Kaukapakapa retains the authentic character of rural New Zealand, where neighbors know each other and local businesses are genuinely part of the community fabric. The village sits gracefully along State Highway 16, making it easily accessible while maintaining its peaceful, unhurried atmosphere. This small but vibrant community of approximately 1,000 residents represents a diverse mix of long-established farming families, lifestyle block owners, and professionals who have chosen rural living while maintaining connections to Auckland's urban centres.
           </p>
           
           <p class="mb-6">
@@ -194,11 +194,11 @@ const localLandmarks = [
           
           <h3 class="text-2xl font-semibold mb-4">Historic Kaukapakapa: A Village with Heritage</h3>
           <p class="mb-6">
-            The name Kaukapakapa has deep Māori origins, translating roughly to "to gather together," which perfectly captures the community spirit that defines this village today. The area's European settlement began in the mid-1800s, driven by the kauri timber industry and later developing into the agricultural community we know today.
+            The area's European settlement began in the mid-1800s, driven by the kauri timber industry and later developing into the agricultural community we know today.
           </p>
           
           <p class="mb-6">
-            The historic Kaukapakapa Railway Station, built in 1881, serves as a tangible link to the village's past when the railway was essential for transporting goods to Auckland markets. Today, this heritage railway station houses the Kaukapakapa Pioneer Village, a living museum that showcases the area's rich history. The preservation of these historical elements reflects the community's respect for tradition and quality – values that resonate throughout our salon philosophy.
+            The historic Kaukapakapa Railway Station serves as a tangible link to the village's past when the railway was essential for transporting goods to Auckland markets. Today, this heritage railway station houses the Kaukapakapa Pioneer Village, a living museum that showcases the area's rich history. The preservation of these historical elements reflects the community's respect for tradition and quality – values that resonate throughout our salon philosophy.
           </p>
           
           <p class="mb-6">
@@ -207,11 +207,11 @@ const localLandmarks = [
           
           <h3 class="text-2xl font-semibold mb-4">The Ideal Environment for Hair Treatments</h3>
           <p class="mb-6">
-            Kaukapakapa's inland location provides significant advantages for professional hair care services. Unlike coastal areas where salt air and high humidity can interfere with chemical processes, our village location offers a stable environment that enhances the effectiveness and longevity of treatments like keratin, coloring, and highlighting services.
+            Kaukapakapa's inland location provides significant advantages for professional hair care services. Unlike coastal areas where salt air and high humidity can interfere with chemical processes, our village location offers a stable environment that enhances the effectiveness and longevity of treatments like keratin, colouring, and highlighting services.
           </p>
           
           <p class="mb-6">
-            The consistent climate conditions in Kaukapakapa allow for more predictable results in hair treatments. Without the variables of coastal humidity fluctuations or salt air exposure, hair coloring develops more evenly, keratin treatments bond more effectively, and styling results last longer. This environmental stability means our clients can trust that their hair treatments will perform as expected, maintaining their look between appointments.
+            The consistent climate conditions in Kaukapakapa allow for more predictable results in hair treatments. Without the variables of coastal humidity fluctuations or salt air exposure, hair colouring develops more evenly, keratin treatments bond more effectively, and styling results last longer. This environmental stability means our clients can trust that their hair treatments will perform as expected, maintaining their look between appointments.
           </p>
           
           <p class="mb-6">
@@ -237,7 +237,7 @@ const localLandmarks = [
           </p>
           
           <p class="mb-6">
-            The village's position also makes it convenient for clients who need to combine their salon visit with other activities. Kumeu, with its wineries and shopping, is just 15 minutes further down SH16. Many clients plan their hair appointments as part of a day trip that might include wine tasting, rural shopping, or visits to other North Auckland attractions.
+            The village's position also makes it convenient for clients who need to combine their salon visit with other activities. Kumeū, with its wineries and shopping, is about 25 minutes down SH16.
           </p>
           
           <p class="mb-6">
@@ -259,7 +259,7 @@ const localLandmarks = [
           
           <h3 class="text-2xl font-semibold mb-4">Seasonal Beauty in Rural Kaukapakapa</h3>
           <p class="mb-6">
-            Each season brings its own character to Kaukapakapa, influencing both the community's rhythm and our clients' hair care needs. Spring arrives with paddocks full of newborn lambs and calves, creating a sense of renewal that often inspires clients to try new colors or styles. The fresh growth of rural life mirrors the desire for fresh looks and seasonal hair changes.
+            Each season brings its own character to Kaukapakapa, influencing both the community's rhythm and our clients' hair care needs. Spring arrives with paddocks full of newborn lambs and calves, creating a sense of renewal that often inspires clients to try new colours or styles. The fresh growth of rural life mirrors the desire for fresh looks and seasonal hair changes.
           </p>
           
           <p class="mb-6">
@@ -267,7 +267,7 @@ const localLandmarks = [
           </p>
           
           <p class="mb-6">
-            Autumn brings harvest activities and preparing for winter, both agriculturally and personally. Many clients choose this season for major color changes or conditioning treatments that will carry them through the cooler months. The stable autumn weather in Kaukapakapa provides ideal conditions for color services and <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin treatments</a>.
+            Autumn brings harvest activities and preparing for winter, both agriculturally and personally. Many clients choose this season for major colour changes or conditioning treatments that will carry them through the cooler months. The stable autumn weather in Kaukapakapa provides ideal conditions for colour services and <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin treatments</a>.
           </p>
           
           <p class="mb-6">
@@ -280,11 +280,11 @@ const localLandmarks = [
           </p>
           
           <p class="mb-6">
-            These relationships extend beyond the salon chair. We know which clients have horses and need helmet-friendly styles, who works in dusty farm environments and requires low-maintenance color, and whose lifestyle changes might call for new approaches to their hair care. This intimate knowledge allows us to provide truly personalized service that anticipates needs and exceeds expectations.
+            These relationships extend beyond the salon chair. We know which clients have horses and need helmet-friendly styles, who works in dusty farm environments and requires low-maintenance colour, and whose lifestyle changes might call for new approaches to their hair care. This intimate knowledge allows us to provide truly personalised service that anticipates needs and exceeds expectations.
           </p>
           
           <p class="mb-6">
-            The village setting also creates a supportive environment where clients feel comfortable trying new looks or discussing hair concerns. The trust that develops in a small community translates to confidence in trying new techniques, colors, or styles, knowing that their stylist understands their lifestyle and preferences completely.
+            The village setting also creates a supportive environment where clients feel comfortable trying new looks or discussing hair concerns. The trust that develops in a small community translates to confidence in trying new techniques, colours, or styles, knowing that their stylist understands their lifestyle and preferences completely.
           </p>
         </div>
       </div>
@@ -551,48 +551,13 @@ const localLandmarks = [
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-white">
+  <!-- Guides -->
+  <section class="py-16 bg-gray-50">
     <div class="container-custom">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8 text-center">Frequently Asked Questions - Kaukapakapa</h2>
-        
-        <div class="space-y-6">
-          <div class="bg-gray-50 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">Where exactly is Hair By Melissa located in Kaukapakapa?</h3>
-            <p class="text-gray-700">
-              We're located on Magnolia Lane in the heart of Kaukapakapa village. Our salon is easily accessible from State Highway 16, with clear signage and free parking available directly outside our premises.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">Why choose a village salon over an urban location?</h3>
-            <p class="text-gray-700">
-              Our Kaukapakapa location offers unique advantages: free parking, a peaceful environment perfect for relaxation, stable climate conditions for optimal treatment results, unhurried service, and genuine community connections. You'll experience personalized care that urban chain salons simply cannot provide.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">What makes Kaukapakapa ideal for hair treatments?</h3>
-            <p class="text-gray-700">
-              Kaukapakapa's inland location provides stable environmental conditions away from coastal humidity and salt air. This consistency enhances the effectiveness of keratin treatments, ensures more even color development, and helps styling results last longer between appointments.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">How does the rural setting benefit the salon experience?</h3>
-            <p class="text-gray-700">
-              The peaceful rural environment allows you to truly disconnect from daily stress and enjoy your appointment. Many clients tell us the scenic drive to our village location becomes part of their self-care routine, and the unhurried pace means we can provide thorough consultations and detailed service.
-            </p>
-          </div>
-          
-          <div class="bg-gray-50 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold mb-3">Is Hair By Melissa involved in the local Kaukapakapa community?</h3>
-            <p class="text-gray-700">
-              Absolutely! We're proud to be part of the Kaukapakapa village community. We support local events, understand the needs of rural residents, and have built genuine relationships with local businesses and families. Being locally owned and operated means we're truly invested in our community's success.
-            </p>
-          </div>
-        </div>
+      <div class="max-w-4xl mx-auto text-gray-700">
+        <h2 class="text-4xl font-bold mb-6 text-gray-900">Helpful guides from the salon</h2>
+        <p class="mb-4">Planning a colour change? Read <a href="/blog/balayage-cost-nz/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">how much balayage costs in NZ</a> or <a href="/blog/half-head-vs-full-head-foils/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">half head vs full head foils</a>.</p>
+        <p class="mb-4">Getting ready for the warmer months? The <a href="/blog/summer-hair-care-nz/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">summer hair care guide</a> covers sun, salt and chlorine.</p>
       </div>
     </div>
   </section>
@@ -607,13 +572,13 @@ const localLandmarks = [
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/booking" class="bg-white text-green-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+          <a href="/booking/" class="bg-white text-green-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Book Your Village Experience
           </a>
-          <a href="/contact" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-green-600 transition">
+          <a href="/contact/" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-green-600 transition">
             Get Directions & Contact
           </a>
         </div>
@@ -630,6 +595,6 @@ const localLandmarks = [
   <!-- FAQ Schema -->
   <FAQSchema
     faqs={faqs} 
-    pageUrl="https://hairbymelissa.co.nz/locations/kaukapakapa"
+    pageUrl="https://hairbymelissa.co.nz/locations/kaukapakapa/"
   />
 </Layout>

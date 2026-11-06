@@ -12,21 +12,23 @@ Created 2026-09-18 from repo facts + Search Console. Items marked **UNVERIFIED**
 - Phone: **CONFIRMED 2026-09-18: 0274 799 320 (tel:+64274799320).** Site corrected 2026-09-18; historically the repo showed five different numbers: 027 520 1613 (footer/contact/faq/locations), +64-21-XXX-XXXX (placeholder in JSON-LD on every page), tel:+19175551234 (US number on booking page Call Now), 021 044 2277 (/keratin), 021 752 611 (terms). Working assumption until confirmed: 027 520 1613 (most widely shown).
 - Hours: **CONFIRMED from Google Business Profile 2026-09-18: Mon–Fri 9am–1:30pm, Sat 2–5pm, Sun 9am–5pm (open 7 days).** Site corrected 2026-09-18 (schema, footer, booking, contact all match). Search Console shows a #1 ranking for "hair salons open sunday near me", so hours accuracy matters.
 
-## Services and prices (from /services, homepage, JSON-LD; individual service pages wrongly say "Contact for pricing")
+## Services and prices (source of truth: src/data/services.ts; updated 2026-11-06)
 | Service | Price | Duration |
 |---|---|---|
-| Keratin treatment | $180 | 2–3 h |
-| Women's cut & finish | $50 | 45–60 min |
-| Partial foils | $90 | 1–1.5 h |
-| Half head highlights | $140 | 2–2.5 h |
-| Full head highlights | $180 | 2.5–3 h |
-| Permanent tint touch-up | $90 | 1–1.5 h |
+| Balayage | $280 | 3–4 h |
+| Full head foils | $280 | 2.5–3 h |
+| Half head foils | $200 | 2–2.5 h |
+| Partial foils | $150 | 1–1.5 h |
+| Permanent tint touch-up | $130 | 1–1.5 h |
 | Permanent tint all-over | $140 | 1.5–2 h |
-| Balayage | $230 | 3–4 h |
+| Keratin treatment | $180 | 2–3 h, lasts about 6 months, 72-hour wash wait, formaldehyde-free |
+| Nanoplasty | from $200 by length | about 3.5 h, lasts 3–6 months, wash straight away, formaldehyde-free |
+| Women's cut & finish | $70 | 45–60 min |
+| Blow wave | $50 | 45–60 min, lasts 3–5 days |
 | Toner | $40 | 30–45 min |
-| Blow wave | $50 | 45–60 min |
-| UV protection treatment | $40 (meta only) | — |
-Prices used as shown on /services (owner did not object 2026-09-18). /keratin promo page removed with a 301.
+| UV protection treatment | $40 | typically lasts 4–6 weeks |
+
+Bridal styling: on request only. Free hair health consultation with any service (owner confirmed 2026-11-06). Kids' cuts at any age, price still unknown. Grey blending offered (no separate price; uses touch-up, tint or foil services). Not closing over Christmas (2026). **Do not claim "ammonia-free"** (owner can't confirm it, 2026-11-05). Not offered: colour gloss, deep conditioning as a paid service, styling tutorials, winter packages, protective styling, mobile services.
 
 ## Service area
 Google Business Profile service area (confirmed by owner 2026-09-18): Kaukapakapa, Helensville, Wainui, Waitoki, Makarau, Kumeū. Site has location pages for the first four only. Kaukapakapa (salon), Helensville (15 min via SH16), Wainui (20 min), Waitoki (10 min). Rodney / North Auckland. Clients travel to the salon. The /locations hub claims "mobile services" — contradicted everywhere else; treat as false unless confirmed.
@@ -41,7 +43,7 @@ Premium boutique service in a peaceful rural setting; one stylist, full attentio
 - **No verified proof in the repo.** JSON-LD claims AggregateRating 5.0 from 47 reviews with no source; only two reviews in schema. Ten testimonials across pages reuse first names (Sarah ×4, Emma ×3, Jessica ×2) with differing surnames/locations — pattern of placeholder copy. TestimonialCard shows a decorative "Verified Client Review" badge with no verification.
 - Trust badges: "5+ years", "7-day satisfaction guarantee" (also in Terms), "premium products" (no brand named), "certified professional" (no body named).
 - Footer links Instagram (hair_by_melissa_nz) since 2026-09-18; Facebook page URL still unconfirmed, so no Facebook link or sameAs.
-- **Google Business Profile (confirmed 2026-09-18):** 5.0 rating from 1 review. Link: https://share.google/8GVUyoirDJwTIXnxO. Instagram: https://www.instagram.com/hair_by_melissa_nz/. Facebook page: "Hair By Melissa A - Kaukapakapa". Do not claim any review count above 1. Still unsupplied: product brands, qualifications.
+- **Google Business Profile:** 5.0 rating from 5 reviews (2026-11-06). Link: https://share.google/8GVUyoirDJwTIXnxO. Instagram: https://www.instagram.com/hair_by_melissa_nz/. Facebook page: "Hair By Melissa A - Kaukapakapa". Do not claim a review count above the current figure. Still unsupplied: product brands, qualifications.
 
 ## Primary conversion action
 "Book Now" → /booking (LeadConnector widget). Secondary: tap-to-call. Blog readers of the keratin post are mostly non-local; for them the goal is a soft path to /services/keratin-treatments/ and brand recall, not a hard sell.

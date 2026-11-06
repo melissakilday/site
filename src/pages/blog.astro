@@ -17,14 +17,14 @@ const blogCategories = [
   {
     id: "styling-guides",
     title: "Styling Guides",
-    description: "Step-by-step tutorials for achieving salon-quality styles at home",
+    description: "Practical guides for achieving salon-quality styles at home",
     icon: "sparkles",
     color: "from-purple-500 to-indigo-400"
   },
   {
     id: "color-insights",
-    title: "Color Insights",
-    description: "Expert advice on hair coloring, maintenance, and trends",
+    title: "Colour Insights",
+    description: "Expert advice on hair colouring, maintenance, and trends",
     icon: "palette",
     color: "from-blue-500 to-teal-400"
   },
@@ -53,11 +53,11 @@ const featuredPosts = [
     id: "balayage-vs-highlights",
     title: "Balayage vs Highlights: Which is Right for You?",
     excerpt: "Confused between balayage and traditional highlights? Our expert guide breaks down the differences, costs, maintenance, and which technique suits your lifestyle best.",
-    category: "Color Insights",
+    category: "Colour Insights",
     readTime: "8 min read",
     date: "2025-01-18",
     featured: true,
-    keywords: ["balayage vs highlights", "hair coloring options", "which highlighting technique"]
+    keywords: ["balayage vs highlights", "hair colouring options", "which highlighting technique"]
   },
   {
     id: "winter-hair-care",
@@ -73,6 +73,46 @@ const featuredPosts = [
 
 const recentPosts = [
   {
+    id: "balayage-cost-nz",
+    title: "How Much Does Balayage Cost in NZ?",
+    excerpt: "What Auckland salons charge, what changes the price and what to check is included before you book.",
+    category: "Colour Insights",
+    readTime: "5 min read",
+    date: "2026-11-06"
+  },
+  {
+    id: "half-head-vs-full-head-foils",
+    title: "Half Head vs Full Head Foils: Price and How to Choose",
+    excerpt: "Partial, half head or full head? Prices, times and how much of your head you really need done.",
+    category: "Colour Insights",
+    readTime: "4 min read",
+    date: "2026-11-06"
+  },
+  {
+    id: "summer-hair-care-nz",
+    title: "Summer Hair Care in North Auckland",
+    excerpt: "How to protect your hair and colour from sun, salt water and chlorine this summer.",
+    category: "Seasonal Care",
+    readTime: "5 min read",
+    date: "2026-11-06"
+  },
+  {
+    id: "christmas-wedding-ball-hair",
+    title: "Christmas, Wedding and School Ball Hair: When to Book",
+    excerpt: "A simple timeline for colour, cuts and blow waves before your big day.",
+    category: "Seasonal Care",
+    readTime: "4 min read",
+    date: "2026-11-06"
+  },
+  {
+    id: "grey-blending-vs-grey-coverage",
+    title: "Grey Blending vs Grey Coverage: Which Suits You?",
+    excerpt: "Hide your grey or soften it? The difference, the upkeep and the cost.",
+    category: "Colour Insights",
+    readTime: "4 min read",
+    date: "2026-11-06"
+  },
+  {
     id: "frizzy-hair-solutions",
     title: "5 Professional Solutions for Frizzy Hair",
     excerpt: "From humidity control to the right products, discover professional techniques to tame frizzy hair permanently.",
@@ -82,9 +122,9 @@ const recentPosts = [
   },
   {
     id: "hair-color-maintenance",
-    title: "How to Make Your Hair Color Last Longer",
-    excerpt: "Extend the life of your color with these expert tips for color-treated hair maintenance.",
-    category: "Color Insights",
+    title: "How to Make Your Hair Colour Last Longer",
+    excerpt: "Extend the life of your colour with these expert tips for colour-treated hair maintenance.",
+    category: "Colour Insights",
     readTime: "7 min read",
     date: "2025-01-10"
   },
@@ -99,7 +139,7 @@ const recentPosts = [
   {
     id: "hair-health-signs",
     title: "7 Signs Your Hair Needs Professional Attention",
-    excerpt: "Learn to recognize when your hair needs expert care and which treatments can restore its health.",
+    excerpt: "Learn to recognise when your hair needs expert care and which treatments can restore its health.",
     category: "Hair Care Tips",
     readTime: "5 min read",
     date: "2025-01-05"
@@ -111,8 +151,8 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
   "name": "Hair By Melissa Blog",
-  "description": "Professional hair care advice and styling tips from Kaukapakapa's premier hair salon",
-  "url": "https://hairbymelissa.co.nz/blog",
+  "description": "Hair care advice and styling tips from a Kaukapakapa hair salon",
+  "url": "https://hairbymelissa.co.nz/blog/",
   "author": {
     "@type": "Person",
     "name": "Melissa",
@@ -231,7 +271,7 @@ const blogSchema = {
             </div>
             <div class={`${index === 0 ? 'p-8' : 'p-6'}`}>
               <h3 class={`${index === 0 ? 'text-2xl' : 'text-xl'} font-bold mb-3 leading-tight`}>
-                <a href={`/blog/${post.id}`} class="hover:text-salon-darkblue transition-colors">
+                <a href={`/blog/${post.id}/`} class="hover:text-salon-darkblue transition-colors">
                   {post.title}
                 </a>
               </h3>
@@ -239,7 +279,7 @@ const blogSchema = {
                 {post.excerpt}
               </p>
               <a 
-                href={`/blog/${post.id}`} 
+                href={`/blog/${post.id}/`} 
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Read full article
@@ -260,7 +300,7 @@ const blogSchema = {
       <div class="text-center mb-12">
         <h2 class="text-4xl font-bold mb-4">Explore Topics</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Dive deeper into specific areas of hair care with our organized content categories.
+          Dive deeper into specific areas of hair care with our organised content categories.
         </p>
       </div>
       
@@ -295,7 +335,7 @@ const blogSchema = {
               <h3 class="text-xl font-bold mb-2">{category.title}</h3>
               <p class="text-gray-600 mb-4">{category.description}</p>
               <a 
-                href={`/blog/category/${category.id}`} 
+                href={`/blog/category/${category.id}/`} 
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Browse articles
@@ -341,7 +381,7 @@ const blogSchema = {
                 </div>
               </div>
               <h3 class="text-xl font-bold mb-3 leading-tight">
-                <a href={`/blog/${post.id}`} class="hover:text-salon-darkblue transition-colors">
+                <a href={`/blog/${post.id}/`} class="hover:text-salon-darkblue transition-colors">
                   {post.title}
                 </a>
               </h3>
@@ -349,7 +389,7 @@ const blogSchema = {
                 {post.excerpt}
               </p>
               <a 
-                href={`/blog/${post.id}`} 
+                href={`/blog/${post.id}/`} 
                 class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
               >
                 Read more
@@ -380,7 +420,7 @@ const blogSchema = {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <h3 class="font-semibold mb-2">Expert Consultation</h3>
-            <p class="text-gray-600">Personalized advice for your hair type</p>
+            <p class="text-gray-600">Personalised advice for your hair type</p>
           </div>
           
           <div class="bg-white p-6 rounded-lg shadow">
@@ -402,13 +442,13 @@ const blogSchema = {
         </div>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+          <a href="/booking/" class="btn-primary inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Book Your Appointment
           </a>
-          <a href="/services" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+          <a href="/services/" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
             View Our Services
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

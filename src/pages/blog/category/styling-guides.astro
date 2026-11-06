@@ -1,9 +1,9 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 
-const pageTitle = "Hair Styling Guides & Tutorials";
-const pageDescription = "Hair styling guides from a Kaukapakapa hairdresser. Learn styling techniques, trends, and tutorials for North Auckland's lifestyle.";
-const pageKeywords = "hair styling guides kaukapakapa, professional styling tutorials, hair styling techniques north auckland, styling tips rural auckland, hair trends tutorials";
+const pageTitle = "Hair Styling Guides & Tips";
+const pageDescription = "Hair styling guides from a Kaukapakapa hairdresser. Learn styling techniques, trends, and tips for North Auckland's lifestyle.";
+const pageKeywords = "hair styling guides kaukapakapa, blow wave kaukapakapa, hair styling techniques north auckland, styling tips rural auckland, hair trends";
 
 // Styling guide posts data
 const stylingPosts = [
@@ -49,27 +49,19 @@ const stylingEssentials = [
 // Styling services offered
 const stylingServices = [
   {
-    name: "Professional Blow-Dry & Style",
-    price: "$60-80",
-    description: "Expert styling for special occasions or weekly maintenance",
-    duration: "45-60 minutes",
-    includes: "Wash, condition, blow-dry, and professional styling",
-    ideal: "Perfect for events, date nights, or treating yourself"
-  },
-  {
-    name: "Styling Consultation & Tutorial",
+    name: "Blow Wave",
     price: "$50",
-    description: "Learn professional techniques for your hair type and lifestyle",
-    duration: "60 minutes",
-    includes: "Personal styling lesson, product recommendations, take-home tips",
-    ideal: "Great for mastering at-home styling or trying new looks"
+    description: "A salon blow-dry for special occasions or weekly maintenance",
+    duration: "45-60 minutes",
+    includes: "Blow-dry styling",
+    ideal: "Perfect for events, date nights, or treating yourself"
   },
   {
     name: "Bridal & Event Styling",
     price: "On request",
-    description: "Special occasion styling with trial run available",
-    duration: "90-120 minutes",
-    includes: "Trial styling, day-of service, hair accessories placement",
+    description: "Special occasion styling, by request only",
+    duration: "Talk to Melissa",
+    includes: "Call Melissa on 0274 799 320 to talk about your date",
     ideal: "Wedding days, formal events, photography sessions"
   }
 ];
@@ -91,7 +83,7 @@ const stylingServices = [
         <ol class="flex items-center space-x-2 text-sm">
           <li><a href="/" class="text-gray-600 hover:text-salon-darkblue">Home</a></li>
           <li class="text-gray-400">/</li>
-          <li><a href="/blog" class="text-gray-600 hover:text-salon-darkblue">Blog</a></li>
+          <li><a href="/blog/" class="text-gray-600 hover:text-salon-darkblue">Blog</a></li>
           <li class="text-gray-400">/</li>
           <li class="text-gray-900 font-medium">Styling Guides</li>
         </ol>
@@ -102,17 +94,17 @@ const stylingServices = [
           Professional <span class="gradient-text">Styling Guides</span>
         </h1>
         <p class="text-xl text-gray-700 mb-8">
-          Master professional hair styling techniques with expert tutorials from Hair By Melissa. Learn salon-quality styling methods, time-saving techniques, and styles perfect for North Auckland's rural and coastal lifestyle.
+          Learn professional hair styling techniques with guides from Hair By Melissa. Find salon-quality styling methods, time-saving techniques, and styles perfect for North Auckland's rural and coastal lifestyle.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/booking" class="btn-primary inline-flex items-center justify-center">
+          <a href="/booking/" class="btn-primary inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
             </svg>
             Book Styling Session
           </a>
-          <a href="/services/blow-wave" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
+          <a href="/services/blow-wave/" class="bg-white text-gray-800 font-medium py-3 px-6 rounded-md shadow hover:shadow-lg transition inline-flex items-center justify-center">
             Learn About Blow-Dry Services
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -127,7 +119,7 @@ const stylingServices = [
   <section class="py-16 bg-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold mb-8">Latest Styling Tutorials</h2>
+        <h2 class="text-4xl font-bold mb-8">Latest Styling Guides</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {stylingPosts.map((post) => (
@@ -147,10 +139,10 @@ const stylingServices = [
                 <h3 class="text-xl font-bold mb-3">{post.title}</h3>
                 <p class="text-gray-600 mb-4">{post.excerpt}</p>
                 <a 
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.slug}/`}
                   class="inline-flex items-center text-salon-darkblue font-medium hover:underline"
                 >
-                  Read Tutorial
+                  Read Guide
                   <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -282,10 +274,6 @@ const stylingServices = [
             While home styling skills are valuable, certain occasions and techniques benefit from professional expertise. Complex updos, precision cutting, and chemical treatments should be left to professionals. However, daily styling, touch-ups, and maintenance styling can be successfully managed at home with proper guidance.
           </p>
           
-          <p class="mb-6">
-            We recommend professional styling lessons to master techniques specific to your hair type and lifestyle. These sessions teach you to achieve salon-quality results at home while identifying when professional services would be most beneficial.
-          </p>
-          
           <h3 class="text-2xl font-semibold mb-4">Maintenance and Longevity</h3>
           <p class="mb-6">
             Extending style longevity reduces daily styling time and heat damage. Techniques include proper nighttime protection, strategic touch-up methods, and understanding which styles translate well from day to night or casual to formal settings.
@@ -335,7 +323,7 @@ const stylingServices = [
         </div>
         
         <div class="text-center mt-12">
-          <a href="/services" class="btn-primary inline-flex items-center">
+          <a href="/services/" class="btn-primary inline-flex items-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
             </svg>
@@ -350,26 +338,26 @@ const stylingServices = [
   <section class="py-16 bg-gradient-to-br from-pink-500 to-purple-500 text-white">
     <div class="container-custom">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-6">Master Professional Styling Techniques</h2>
+        <h2 class="text-4xl font-bold mb-6">Book Your Next Blow Wave</h2>
         <p class="text-xl mb-8">
-          Book a styling consultation at Hair By Melissa in Kaukapakapa and learn professional techniques perfect for your hair type and North Auckland lifestyle. From daily styling shortcuts to special occasion looks, we'll teach you salon-quality techniques.
+          Book a blow wave at Hair By Melissa in Kaukapakapa. From everyday polish to special occasion looks, we'll style your hair to suit you and your North Auckland lifestyle.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/booking" class="bg-white text-pink-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
+          <a href="/booking/" class="bg-white text-pink-600 font-semibold py-3 px-8 rounded-md hover:bg-gray-100 transition inline-flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
             </svg>
-            Book Styling Tutorial
+            Book a Blow Wave
           </a>
-          <a href="/services/blow-wave" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-pink-600 transition">
-            Learn About Professional Styling
+          <a href="/services/blow-wave/" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-pink-600 transition">
+            See the Blow Wave Service
           </a>
         </div>
         
         <div class="mt-8 text-center">
           <p class="text-lg">
-            💫 Professional Styling Tutorials | 🏆 Expert Techniques | 🌿 Rural Lifestyle Adapted
+            Blow Wave $50 | Free hair health consultation with any service
           </p>
         </div>
       </div>

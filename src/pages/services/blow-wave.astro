@@ -6,8 +6,8 @@ import { getService } from '../../data/services';
 
 const service = getService('blow-wave');
 
-const pageTitle = "Blow Wave Kaukapakapa, $50, North Auckland";
-const pageDescription = "Professional blow wave in Kaukapakapa, North Auckland. $50, about 45-60 minutes with Melissa. Smooth, voluminous styling, free parking, book online.";
+const pageTitle = "Blow Wave & Blow Dry $50, Kaukapakapa";
+const pageDescription = "Blow wave and blow dry in Kaukapakapa, North Auckland. $50, about 45 to 60 minutes with Melissa. Lasts 3 to 5 days. Open Sundays, free parking.";
 
 const faqs = serviceFAQs['blow-wave'];
 ---
@@ -19,52 +19,67 @@ const faqs = serviceFAQs['blow-wave'];
   duration={service.duration}
   h1={service.h1}
   serviceName={service.name}
-  image="/images/optimized/blonde-balayage_800.webp"
+  image="/images/services/blow-wave-hero-1200.webp"
+  imageSrcset="/images/services/blow-wave-hero-640.webp 640w, /images/services/blow-wave-hero-1200.webp 1200w, /images/services/blow-wave-hero-1600.webp 1600w"
+  imageSizes="100vw"
+  imageWidth={1600}
+  imageHeight={893}
+  imageAlt="Illustration: a hairdresser finishing a smooth blow wave with a round brush"
+  ogImage="https://hairbymelissa.co.nz/images/services/blow-wave-hero-og.jpg"
 >
+  <h2 class="text-3xl font-bold mb-6">What is a blow wave?</h2>
+
+  <p class="text-gray-700 mb-6">
+    A blow wave is a wash and salon blow dry that uses round brushes to add smoothness, volume and shape. It's more than drying your hair. At Hair By Melissa in Kaukapakapa it's $50, takes about 45 to 60 minutes and usually lasts 3 to 5 days. You'll see "blow wave", "blow dry" and "blow out" used for much the same thing.
+  </p>
+  <p class="text-gray-700 mb-6">
+    Got an event coming up? Read <a href="/blog/christmas-wedding-ball-hair/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">when to book Christmas, wedding and ball hair</a>.
+  </p>
+
   <h2 class="text-3xl font-bold mb-6">Professional Styling for Every Occasion</h2>
   
   <p class="text-gray-700 mb-6">
     Transform your look instantly with our professional blow wave service. More than just a blow-dry, this is a complete styling experience that creates smooth, voluminous hair with incredible movement and shine. Perfect for special events, important meetings, or whenever you want to feel your absolute best.
   </p>
 
-  <h3 class="text-2xl font-semibold mb-4">The Art of the Perfect Blow Wave</h3>
+  <h2 class="text-2xl font-semibold mb-4">How a blow wave lasts</h2>
   <p class="text-gray-700 mb-6">
-    A professional blow wave is a skilled technique that combines the right products, tools, and expertise to create a style that lasts. Using professional-grade blow dryers, round brushes, and styling products, Melissa creates customized looks that enhance your hair's natural beauty while delivering the polish and sophistication you desire.
+    Melissa uses round brushes and the right products for your hair, so your style holds for days.
   </p>
 
-  <h3 class="text-2xl font-semibold mb-4">Benefits of Professional Blow Waves</h3>
+  <h2 class="text-2xl font-semibold mb-4">Benefits of Professional Blow Waves</h2>
   <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
     <li>Long-lasting style that holds for days</li>
     <li>Incredible volume and body</li>
     <li>Smooth, frizz-free finish</li>
     <li>Enhances hair's natural shine</li>
-    <li>Customized to your face shape and style</li>
+    <li>Customised to your face shape and style</li>
     <li>Special occasion ready</li>
     <li>Protects hair with professional products</li>
     <li>Relaxing, pampering experience</li>
   </ul>
 
-  <h3 class="text-2xl font-semibold mb-4">Popular Blow Wave Styles</h3>
+  <h2 class="text-2xl font-semibold mb-4">Popular Blow Wave Styles</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
     <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Sleek & Straight</h4>
+      <h3 class="font-semibold mb-2">Sleek & Straight</h3>
       <p class="text-gray-700 text-sm">Mirror-like shine with poker-straight perfection</p>
     </div>
     <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Voluminous Waves</h4>
+      <h3 class="font-semibold mb-2">Voluminous Waves</h3>
       <p class="text-gray-700 text-sm">Big, bouncy hair with lasting body</p>
     </div>
     <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Hollywood Glamour</h4>
+      <h3 class="font-semibold mb-2">Hollywood Glamour</h3>
       <p class="text-gray-700 text-sm">Classic waves reminiscent of old Hollywood</p>
     </div>
     <div class="bg-[#F8F9FA] rounded-lg p-4">
-      <h4 class="font-semibold mb-2">Beachy Texture</h4>
+      <h3 class="font-semibold mb-2">Beachy Texture</h3>
       <p class="text-gray-700 text-sm">Effortless, tousled waves with movement</p>
     </div>
   </div>
 
-  <h3 class="text-2xl font-semibold mb-4">The Blow Wave Process</h3>
+  <h2 class="text-2xl font-semibold mb-4">The Blow Wave Process</h2>
   <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
     <li>Consultation to determine desired style</li>
     <li>Luxurious shampoo with scalp massage</li>
@@ -77,7 +92,7 @@ const faqs = serviceFAQs['blow-wave'];
     <li>Final touches and styling tips</li>
   </ol>
 
-  <h3 class="text-2xl font-semibold mb-4">Perfect For</h3>
+  <h2 class="text-2xl font-semibold mb-4">Perfect For</h2>
   <p class="text-gray-700 mb-6">
     Our blow wave service is ideal for:
   </p>
@@ -88,26 +103,25 @@ const faqs = serviceFAQs['blow-wave'];
     <li>Date nights and romantic dinners</li>
     <li>Whenever you want to feel pampered</li>
     <li>Those struggling with at-home styling</li>
-    <li>Anyone wanting to learn new styling techniques</li>
   </ul>
 
-  <h3 class="text-2xl font-semibold mb-4">Product Knowledge</h3>
+  <h2 class="text-2xl font-semibold mb-4">Product Knowledge</h2>
   <p class="text-gray-700 mb-6">
     We use only premium styling products selected for your hair type:
   </p>
   <div class="bg-[#F8F9FA] rounded-lg p-6 mb-6">
     <ul class="list-disc list-inside text-gray-700 space-y-2">
       <li><strong>Heat Protection:</strong> Guards against thermal damage</li>
-      <li><strong>Volumizing Mousse:</strong> Creates lift and body</li>
+      <li><strong>Volumising Mousse:</strong> Creates lift and body</li>
       <li><strong>Smoothing Serum:</strong> Eliminates frizz and adds shine</li>
-      <li><strong>Texturizing Spray:</strong> Adds grip and movement</li>
+      <li><strong>Texturising Spray:</strong> Adds grip and movement</li>
       <li><strong>Finishing Spray:</strong> Locks in style without stiffness</li>
     </ul>
   </div>
 
-  <h3 class="text-2xl font-semibold mb-4">Make Your Style Last</h3>
+  <h2 class="text-2xl font-semibold mb-4">Make Your Style Last</h2>
   <div class="bg-[#FFDEE2] bg-opacity-20 rounded-lg p-6 mb-6">
-    <h4 class="font-semibold mb-3">Extend Your Blow Wave:</h4>
+    <h3 class="font-semibold mb-3">Extend Your Blow Wave:</h3>
     <ul class="list-disc list-inside text-gray-700 space-y-2">
       <li>Sleep on a silk pillowcase to reduce friction</li>
       <li>Use dry shampoo to refresh roots</li>
@@ -121,22 +135,16 @@ const faqs = serviceFAQs['blow-wave'];
     </p>
   </div>
 
-  <h3 class="text-2xl font-semibold mb-4">More Than Just Styling</h3>
+  <h2 class="text-2xl font-semibold mb-4">More Than Just Styling</h2>
   <p class="text-gray-700 mb-6">
     A professional blow wave is an investment in how you feel. There's something transformative about having perfectly styled hair – it boosts confidence, saves time in your daily routine, and ensures you look polished for any occasion. Melissa's expertise means you'll leave not just with beautiful hair, but with styling tips you can use at home.
   </p>
-
-  <div class="bg-[#D3E4FD] bg-opacity-20 rounded-lg p-6">
-    <p class="text-gray-700 italic">
-      "A great blow wave is like the perfect accessory – it completes your look and makes everything else fall into place. It's amazing how something as simple as beautifully styled hair can make you feel like you can conquer the world."
-    </p>
-  </div>
 
   <!-- FAQ Schema -->
   <Fragment slot="after">
     <FAQSchema
       faqs={faqs}
-      pageUrl="https://hairbymelissa.co.nz/services/blow-wave"
+      pageUrl="https://hairbymelissa.co.nz/services/blow-wave/"
     />
   </Fragment>
 </ServiceLayout>

@@ -1,0 +1,108 @@
+---
+import BlogPostLayout from '../../components/BlogPostLayout.astro';
+
+const faqs = [
+  {
+    question: "How do I protect my hair from the sun?",
+    answer: "Wear a hat when you can, especially in the middle of the day. Keep your hair conditioned, and consider a salon UV protection treatment. At Hair By Melissa it's $40 and typically lasts 4 to 6 weeks."
+  },
+  {
+    question: "Does salt water damage hair?",
+    answer: "It can dry your hair out and leave it more porous, and it can dull or fade coloured hair. Rinse with fresh water as soon as you can after a swim."
+  },
+  {
+    question: "Why does blonde hair go green in the pool?",
+    answer: "It's usually copper in the pool water rather than the chlorine itself. Wetting your hair with clean water first and wearing a swim cap both help."
+  },
+  {
+    question: "Can I swim after a keratin treatment?",
+    answer: "Not for the first 72 hours. Keep your hair dry for those three days, and that includes the beach and the pool."
+  },
+  {
+    question: "Does a UV hair treatment work on coloured hair?",
+    answer: "Yes. It's designed to help shield your hair from the sun and keep your colour looking vibrant, so it's a good add-on after balayage, foils or tint."
+  }
+];
+---
+
+<BlogPostLayout
+  title="Summer Hair Care in North Auckland"
+  description="Sun, salt water and chlorine all dry hair and fade colour. How to protect your hair this summer, from a Kaukapakapa hairdresser near the west coast."
+  keywords="summer hair care nz, uv protection hair, beach hair, swimmers hair, sun damaged hair, chlorine hair, protect hair from sun nz"
+  slug="summer-hair-care-nz"
+  h1="Summer Hair Care in North Auckland: Sun, Salt and Chlorine"
+  crumb="Summer Hair Care"
+  category="Seasonal Care"
+  readTime="5 min read"
+  publishDate="2026-11-06"
+  displayDate="6 November 2026"
+  intro="Summer in North Auckland is hard on hair. Strong sun, salt water at Muriwai and chlorine in the pool all leave hair drier, and they can fade your colour. A few simple habits protect most of it, and a UV treatment gives extra cover."
+  quickAnswer="Wear a hat, wet your hair with clean water before you swim, rinse straight after, and keep it conditioned. If you have coloured hair, a $40 UV protection treatment gives you extra cover for about 4 to 6 weeks."
+  imageAlt="Illustration: a woman in a straw hat with long sun-lightened hair walking along a black sand west coast beach"
+  faqs={faqs}
+  ctaHeading="Get your hair ready for summer"
+  ctaText="Add a UV protection treatment to your next colour or cut, or ask Melissa what your hair needs. Open Sundays too."
+  related={[
+    { href: "/services/uv-protection-treatments/", title: "UV Protection Treatments", text: "What the treatment does and who it suits." },
+    { href: "/blog/hair-color-maintenance/", title: "Hair Colour Maintenance", text: "How to keep your colour looking fresh between visits." },
+    { href: "/blog/keratin-aftercare/", title: "Keratin Aftercare", text: "Getting smoothed before the holidays? Read this first." }
+  ]}
+>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Why New Zealand sun is so hard on hair</h2>
+    <p class="text-gray-700 mb-6">
+      New Zealand's summer UV is strong. NIWA says New Zealand's maximum summer UV index is generally about 12, and it treats 10 or more as extreme. Hair sitting in that sun for weeks gets drier, and coloured hair can lose its tone.
+    </p>
+    <p class="text-gray-700 mb-6">
+      A hat is the simplest fix. If you're out in the garden, on the farm or at the beach through the middle of the day, tie your hair up and cover it.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">What salt water does to your hair</h2>
+    <p class="text-gray-700 mb-6">
+      Salt water leaves hair dry and more porous, and that can dull or fade colour. If you're a regular at Muriwai or Bethells, rinse with fresh water as soon as you can, even if it's only a bottle of water at the car. Then use a good conditioner when you get home.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">How to protect your hair from chlorine</h2>
+    <p class="text-gray-700 mb-4">
+      Chlorine strips natural oils, which can leave hair brittle. For swimmers, these four habits make the biggest difference:
+    </p>
+    <ol class="list-decimal list-inside text-gray-700 mb-6 space-y-2">
+      <li>Wet your hair with clean water before you get in.</li>
+      <li>Put on some conditioner or a mask first.</li>
+      <li>Wear a swim cap if you're swimming often.</li>
+      <li>Rinse straight after, then shampoo and condition.</li>
+    </ol>
+    <p class="text-gray-700 mb-6">
+      If blonde hair picks up a green tinge, that's usually copper in the water rather than the chlorine. Melissa can have a look and tell you the best way to fix it.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Looking after coloured hair in summer</h2>
+    <p class="text-gray-700 mb-6">
+      Balayage, foils and tint all feel the sun. Use a colour-safe shampoo and conditioner, and keep heat styling down when your hair is already dry from the beach. If your blonde turns brassy by January, a $40 <a href="/services/toner/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">toner</a> can freshen it without a full colour appointment.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Is a UV protection treatment worth it?</h2>
+    <p class="text-gray-700 mb-6">
+      It's worth it if you're outdoors a lot or you've just spent money on colour. A <a href="/services/uv-protection-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">UV protection treatment</a> at Hair By Melissa is $40. It helps protect your hair from the sun and keeps your colour looking fresh, and it typically lasts 4 to 6 weeks. You could plan one before Christmas and another later in summer.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Thinking about keratin before the holidays?</h2>
+    <p class="text-gray-700 mb-6">
+      A <a href="/services/keratin-treatments/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin treatment</a> calms frizz for about six months, which is handy in humid weather. Just time it well. You'll need to keep your hair dry for 72 hours, so no swimming, and the <a href="/blog/keratin-aftercare/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">keratin aftercare guide</a> covers the rest. If you'd rather wash the same day, have a look at <a href="/services/nanoplasty/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">nanoplasty</a>.
+    </p>
+  </section>
+
+  <p class="text-sm text-gray-600">
+    Sources: <a href="https://niwa.co.nz/atmosphere/uv-and-ozone/uv-index-information" rel="noopener" class="underline">NIWA UV index information</a>; <a href="https://www.uab.edu/news/news-you-can-use/how-to-protect-skin-and-hair-from-chlorine-and-salt-water" rel="noopener" class="underline">University of Alabama at Birmingham</a>; <a href="https://newsroom.clevelandclinic.org/2024/06/17/does-pool-water-affect-your-skin-and-hair" rel="noopener" class="underline">Cleveland Clinic</a>.
+  </p>
+</BlogPostLayout>

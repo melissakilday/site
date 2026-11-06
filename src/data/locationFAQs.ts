@@ -8,7 +8,7 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What are your opening hours in Kaukapakapa?",
-      answer: "We're open Tuesday through Friday 9am-5pm, and Saturdays 9am-3pm. We operate by appointment only to ensure each client receives personalized attention in our boutique salon setting."
+      answer: "We're open 7 days: Monday to Friday 9am to 1:30pm, Saturday 2pm to 5pm and Sunday 9am to 5pm. It's by appointment, so each client gets one-on-one attention."
     },
     {
       question: "Is parking available at the Kaukapakapa salon?",
@@ -16,7 +16,7 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What services are available at the Kaukapakapa location?",
-      answer: "Our Kaukapakapa salon offers the complete range of professional hair services including keratin treatments, balayage, highlights, permanent color, cuts, styling, and specialized treatments. All services are performed by Melissa personally."
+      answer: "Our Kaukapakapa salon offers the complete range of professional hair services including keratin treatments, balayage, highlights, permanent colour, cuts, styling, and specialised treatments. All services are performed by Melissa personally."
     },
     {
       question: "How do I book an appointment in Kaukapakapa?",
@@ -27,11 +27,11 @@ export const locationFAQs: Record<string, FAQItem[]> = {
   'helensville': [
     {
       question: "Is there a hair salon in Helensville?",
-      answer: "Hair By Melissa serves Helensville residents from our salon in nearby Kaukapakapa, just a short 15-minute drive from Helensville center. We're the closest professional hair salon offering expert keratin treatments, balayage, and full coloring services."
+      answer: "Hair By Melissa serves Helensville residents from our salon in nearby Kaukapakapa, just a short 15-minute drive from Helensville centre. We're the closest professional hair salon offering expert keratin treatments, balayage, and full colouring services."
     },
     {
       question: "How far is Hair By Melissa from Helensville?",
-      answer: "We're located just 15 minutes from Helensville center in nearby Kaukapakapa. The scenic drive through rural Auckland makes for a relaxing start to your salon experience, and we provide detailed directions with your appointment confirmation."
+      answer: "We're located just 15 minutes from Helensville centre in nearby Kaukapakapa. The scenic drive through rural Auckland makes for a relaxing start to your salon experience, and we provide detailed directions with your appointment confirmation."
     },
     {
       question: "Do you offer services specifically for Helensville clients?",
@@ -43,14 +43,14 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Do many Helensville residents visit your salon?",
-      answer: "Yes! We have a wonderful community of regular clients from Helensville who appreciate our personalized service and expertise. Many have been visiting us for years and love the peaceful rural salon atmosphere away from busier urban areas."
+      answer: "Yes! We have a wonderful community of regular clients from Helensville who appreciate our personalised service and expertise. Many have been visiting us for years and love the peaceful rural salon atmosphere away from busier urban areas."
     }
   ],
 
   'wainui': [
     {
       question: "Do you serve clients from Wainui Village?",
-      answer: "Yes! Hair By Melissa proudly serves Wainui Village residents from our Kaukapakapa salon, just a short 20-minute drive away. Many Wainui clients appreciate our rural location and personalized service approach."
+      answer: "Yes! Hair By Melissa proudly serves Wainui Village residents from our Kaukapakapa salon, just a short 20-minute drive away. Many Wainui clients appreciate our rural location and personalised service approach."
     },
     {
       question: "How long does it take to get to Hair By Melissa from Wainui Village?",
@@ -58,15 +58,15 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Are there any hair salons in Wainui Village?",
-      answer: "Hair By Melissa in nearby Kaukapakapa is the closest professional full-service hair salon to Wainui Village, offering comprehensive coloring, cutting, and treatment services with over 5 years of professional expertise."
+      answer: "Hair By Melissa in nearby Kaukapakapa is the closest professional full-service hair salon to Wainui Village, offering comprehensive colouring, cutting, and treatment services with over 5 years of professional expertise."
     },
     {
       question: "What services do Wainui Village clients typically book?",
-      answer: "Our Wainui Village clients love our keratin treatments for managing humidity effects, balayage for natural sun-kissed looks, and regular cuts and colors. Many appreciate the rural salon atmosphere that complements their village lifestyle."
+      answer: "Our Wainui Village clients love our keratin treatments for managing humidity effects, balayage for natural sun-kissed looks, and regular cuts and colours. Many appreciate the rural salon atmosphere that complements their village lifestyle."
     },
     {
       question: "Is the drive from Wainui Village worth it for hair services?",
-      answer: "Absolutely! Our Wainui Village clients consistently tell us the short scenic drive is part of the relaxing experience. Combined with our personalized service and expertise, it makes for a perfect hair care destination."
+      answer: "Absolutely! Our Wainui Village clients consistently tell us the short scenic drive is part of the relaxing experience. Combined with our personalised service and expertise, it makes for a perfect hair care destination."
     }
   ],
 
@@ -81,7 +81,7 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "What services do Kumeū clients usually book?",
-      answer: "Balayage and keratin treatments are popular with Kumeū clients, along with highlights and a cut and finish. Keratin is a common choice for taming humidity on the drive back down SH16, and balayage suits clients who want low-maintenance colour between visits."
+      answer: "Balayage, keratin, highlights and a cut and finish are all worth the drive. Keratin calms frizz for about six months, and balayage suits clients who want low-maintenance colour between visits."
     }
   ],
 
@@ -92,7 +92,7 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Do you have regular clients from Waitoki?",
-      answer: "Yes! We have many loyal clients from Waitoki who appreciate our close location and personalized approach. The short drive through beautiful rural scenery makes for a perfect start to your salon experience."
+      answer: "Yes. Waitoki is about 10 minutes from the salon in Kaukapakapa, and parking is free at the door."
     },
     {
       question: "What makes Hair By Melissa convenient for Waitoki residents?",
@@ -100,11 +100,11 @@ export const locationFAQs: Record<string, FAQItem[]> = {
     },
     {
       question: "Are there any hair salons closer to Waitoki?",
-      answer: "Hair By Melissa is the closest full-service professional hair salon to Waitoki, offering complete coloring, cutting, and treatment services. Our proximity, expertise, and rural salon atmosphere make us the preferred choice for Waitoki residents."
+      answer: "Hair By Melissa is the closest full-service professional hair salon to Waitoki, offering complete colouring, cutting, and treatment services. Our proximity, expertise, and rural salon atmosphere make us the preferred choice for Waitoki residents."
     },
     {
       question: "What services are popular with Waitoki clients?",
-      answer: "Our Waitoki clients particularly love our keratin treatments, natural-looking highlights, and regular maintenance cuts and colors. Many also appreciate our expertise in working with all hair types and textures."
+      answer: "Our Waitoki clients particularly love our keratin treatments, natural-looking highlights, and regular maintenance cuts and colours. Many also appreciate our expertise in working with all hair types and textures."
     }
   ]
 };

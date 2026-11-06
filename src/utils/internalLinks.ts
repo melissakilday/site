@@ -19,14 +19,14 @@ export const serviceLinks = {
     },
     {
       title: "Winter Hair Care",
-      url: "/blog/winter-hair-care",
+      url: "/blog/winter-hair-care/",
       description: "Protect your hair during harsh winter months",
       category: "blog" as const
     },
     {
       title: "Hair Health Signs",
-      url: "/blog/hair-health-signs",
-      description: "Recognize when your hair needs professional treatment",
+      url: "/blog/hair-health-signs/",
+      description: "Recognise when your hair needs professional treatment",
       category: "blog" as const
     }
   ],
@@ -34,19 +34,19 @@ export const serviceLinks = {
   highlights: [
     {
       title: "Balayage vs Highlights",
-      url: "/blog/balayage-vs-highlights",
+      url: "/blog/balayage-vs-highlights/",
       description: "Compare highlighting techniques to find your perfect look",
       category: "blog" as const
     },
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
-      description: "Keep your color vibrant with professional tips",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
+      description: "Keep your colour vibrant with professional tips",
       category: "blog" as const
     },
     {
       title: "Balayage Service",
-      url: "/services/balayage",
+      url: "/services/balayage/",
       description: "Hand-painted highlights for natural sun-kissed hair",
       category: "service" as const
     }
@@ -55,19 +55,19 @@ export const serviceLinks = {
   balayage: [
     {
       title: "Balayage vs Highlights",
-      url: "/blog/balayage-vs-highlights",
+      url: "/blog/balayage-vs-highlights/",
       description: "Understanding different highlighting techniques",
       category: "blog" as const
     },
     {
       title: "Full Head Highlights",
-      url: "/services/full-head-highlights",
+      url: "/services/full-head-highlights/",
       description: "Complete transformation with all-over highlights",
       category: "service" as const
     },
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
       description: "Extend the life of your beautiful balayage",
       category: "blog" as const
     }
@@ -76,19 +76,19 @@ export const serviceLinks = {
   cut: [
     {
       title: "Blow Dry Techniques",
-      url: "/blog/blow-dry-techniques",
+      url: "/blog/blow-dry-techniques/",
       description: "Professional styling tips for salon-quality results",
       category: "blog" as const
     },
     {
       title: "Hair Health Signs",
-      url: "/blog/hair-health-signs",
+      url: "/blog/hair-health-signs/",
       description: "When your hair needs a professional trim",
       category: "blog" as const
     },
     {
       title: "Blow Wave Service",
-      url: "/services/blow-wave",
+      url: "/services/blow-wave/",
       description: "Professional styling for special occasions",
       category: "service" as const
     }
@@ -96,21 +96,21 @@ export const serviceLinks = {
   
   color: [
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
-      description: "Keep your color looking fresh between appointments",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
+      description: "Keep your colour looking fresh between appointments",
       category: "blog" as const
     },
     {
       title: "Frizzy Hair Solutions",
-      url: "/blog/frizzy-hair-solutions",
-      description: "Combat frizz after coloring treatments",
+      url: "/blog/frizzy-hair-solutions/",
+      description: "Combat frizz after colouring treatments",
       category: "blog" as const
     },
     {
       title: "Toner Service",
-      url: "/services/toner",
-      description: "Perfect your color with professional toning",
+      url: "/services/toner/",
+      description: "Perfect your colour with professional toning",
       category: "service" as const
     }
   ]
@@ -121,19 +121,19 @@ export const locationLinks = {
   kaukapakapa: [
     {
       title: "All Hair Services",
-      url: "/services",
+      url: "/services/",
       description: "Complete range of services at our main salon",
       category: "service" as const
     },
     {
       title: "Book Appointment",
-      url: "/booking",
+      url: "/booking/",
       description: "Schedule your visit to our Kaukapakapa salon",
       category: "page" as const
     },
     {
       title: "Gallery",
-      url: "/gallery",
+      url: "/gallery/",
       description: "See transformations from our main salon",
       category: "page" as const
     }
@@ -142,19 +142,19 @@ export const locationLinks = {
   mobile: [
     {
       title: "Helensville Services",
-      url: "/locations/helensville",
+      url: "/locations/helensville/",
       description: "Mobile hair services in Helensville area",
       category: "location" as const
     },
     {
       title: "Wainui Services",
-      url: "/locations/wainui",
+      url: "/locations/wainui/",
       description: "Professional hair care in Wainui",
       category: "location" as const
     },
     {
       title: "Waitoki Services",
-      url: "/locations/waitoki",
+      url: "/locations/waitoki/",
       description: "Quality hair services in Waitoki",
       category: "location" as const
     }
@@ -166,19 +166,19 @@ export const blogLinks = {
   hairCare: [
     {
       title: "Hair Health Signs",
-      url: "/blog/hair-health-signs",
-      description: "Recognize when your hair needs attention",
+      url: "/blog/hair-health-signs/",
+      description: "Recognise when your hair needs attention",
       category: "blog" as const
     },
     {
       title: "Frizzy Hair Solutions",
-      url: "/blog/frizzy-hair-solutions",
+      url: "/blog/frizzy-hair-solutions/",
       description: "Professional treatments for unmanageable hair",
       category: "blog" as const
     },
     {
       title: "Winter Hair Care",
-      url: "/blog/winter-hair-care",
+      url: "/blog/winter-hair-care/",
       description: "Protect your hair in harsh weather",
       category: "blog" as const
     }
@@ -186,15 +186,15 @@ export const blogLinks = {
   
   colorInsights: [
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
-      description: "Expert tips for lasting color results",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
+      description: "Expert tips for lasting colour results",
       category: "blog" as const
     },
     {
       title: "Balayage vs Highlights",
-      url: "/blog/balayage-vs-highlights",
-      description: "Choose the right coloring technique",
+      url: "/blog/balayage-vs-highlights/",
+      description: "Choose the right colouring technique",
       category: "blog" as const
     }
   ],
@@ -202,7 +202,7 @@ export const blogLinks = {
   stylingGuides: [
     {
       title: "Blow Dry Techniques",
-      url: "/blog/blow-dry-techniques",
+      url: "/blog/blow-dry-techniques/",
       description: "Master professional styling at home",
       category: "blog" as const
     }
@@ -211,7 +211,7 @@ export const blogLinks = {
   seasonalTips: [
     {
       title: "Winter Hair Care",
-      url: "/blog/winter-hair-care",
+      url: "/blog/winter-hair-care/",
       description: "Seasonal hair protection strategies",
       category: "blog" as const
     }
@@ -227,32 +227,32 @@ export const homepageLinks = [
     category: "service" as const
   },
   {
-    title: "Balayage Coloring",
-    url: "/services/balayage",
+    title: "Balayage Colouring",
+    url: "/services/balayage/",
     description: "Natural sun-kissed highlights technique",
     category: "service" as const
   },
   {
     title: "Our Service Areas",
-    url: "/locations",
+    url: "/locations/",
     description: "Salon and mobile services across North Auckland",
     category: "location" as const
   },
   {
     title: "Hair Care Tips",
-    url: "/blog/category/hair-care",
+    url: "/blog/category/hair-care/",
     description: "Professional advice for healthy hair",
     category: "blog" as const
   },
   {
     title: "About Melissa",
-    url: "/about",
+    url: "/about/",
     description: "Meet your professional hair stylist",
     category: "page" as const
   },
   {
     title: "View Our Work",
-    url: "/gallery",
+    url: "/gallery/",
     description: "See stunning hair transformations",
     category: "page" as const
   }
@@ -311,13 +311,13 @@ export const serviceRelationships = {
   "balayage": [
     {
       title: "Toner Application",
-      url: "/services/toner",
+      url: "/services/toner/",
       description: "Perfect your balayage with professional toning",
       category: "service" as const
     },
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
       description: "Keep your balayage looking fresh",
       category: "blog" as const
     }
@@ -326,13 +326,13 @@ export const serviceRelationships = {
   "full-head-highlights": [
     {
       title: "Toner Service",
-      url: "/services/toner",
+      url: "/services/toner/",
       description: "Achieve the perfect tone for your highlights",
       category: "service" as const
     },
     {
       title: "Blow Wave Styling",
-      url: "/services/blow-wave",
+      url: "/services/blow-wave/",
       description: "Style your new highlights professionally",
       category: "service" as const
     }
@@ -341,13 +341,13 @@ export const serviceRelationships = {
   "womens-cut-finish": [
     {
       title: "Blow Dry Techniques",
-      url: "/blog/blow-dry-techniques",
+      url: "/blog/blow-dry-techniques/",
       description: "Maintain your cut with professional styling tips",
       category: "blog" as const
     },
     {
       title: "Hair Health Signs",
-      url: "/blog/hair-health-signs",
+      url: "/blog/hair-health-signs/",
       description: "Know when your hair needs a trim",
       category: "blog" as const
     }
@@ -355,9 +355,9 @@ export const serviceRelationships = {
   
   "uv-protection-treatments": [
     {
-      title: "Hair Color Maintenance",
-      url: "/blog/hair-color-maintenance",
-      description: "Protect your color investment from sun damage",
+      title: "Hair Colour Maintenance",
+      url: "/blog/hair-color-maintenance/",
+      description: "Protect your colour investment from sun damage",
       category: "blog" as const
     },
     {
@@ -368,8 +368,8 @@ export const serviceRelationships = {
     },
     {
       title: "Beach Hair Care",
-      url: "/locations/wainui",
-      description: "Specialized services for coastal living",
+      url: "/locations/wainui/",
+      description: "Specialised services for coastal living",
       category: "location" as const
     }
   ]

@@ -1,0 +1,133 @@
+---
+import BlogPostLayout from '../../components/BlogPostLayout.astro';
+
+const faqs = [
+  {
+    question: "Does grey blending cover all my grey?",
+    answer: "No, and that's the idea. Blending softens your grey so it sits in with the rest of your hair. Wella puts demi-permanent colour at up to 70% coverage, compared with up to 100% for permanent colour."
+  },
+  {
+    question: "How often do I need a root touch-up for grey hair?",
+    answer: "Most people with permanent colour need a touch-up every 4 to 6 weeks. If you have a lot of grey, it can be sooner."
+  },
+  {
+    question: "How often does grey blending need redoing?",
+    answer: "L'Oréal Professionnel suggests about every 6 to 8 weeks. That's usually a little longer than full coverage, because the regrowth line is softer."
+  },
+  {
+    question: "Can I switch from grey coverage to grey blending?",
+    answer: "Often, yes. Melissa will look at your hair and existing colour, then talk you through what's realistic and how to get there."
+  },
+  {
+    question: "How much does grey blending cost?",
+    answer: "It depends on the service your hair needs. At Hair By Melissa, a permanent tint touch-up is $130, an all-over tint is $140 and foils start at $150. Melissa will tell you which suits before she starts."
+  }
+];
+---
+
+<BlogPostLayout
+  title="Grey Blending vs Grey Coverage"
+  description="Grey coverage hides grey, grey blending softens it. The difference, how often each needs redoing and what it costs, from a Kaukapakapa hairdresser."
+  keywords="grey blending, grey blending vs grey coverage, grey hair blending, grey coverage, root touch up, grey hair highlights nz"
+  slug="grey-blending-vs-grey-coverage"
+  h1="Grey Blending vs Grey Coverage: Which Suits You?"
+  crumb="Grey Blending vs Coverage"
+  category="Colour Insights"
+  readTime="4 min read"
+  publishDate="2026-11-06"
+  displayDate="6 November 2026"
+  intro="Grey coverage hides your grey with permanent colour, giving one even shade. Grey blending keeps some of your grey and softens it with highlights, lowlights or demi-permanent colour, so regrowth is less obvious. Melissa does both at her Kaukapakapa salon in North Auckland."
+  quickAnswer="Pick coverage if you want your grey gone and don't mind a touch-up every 4 to 6 weeks. Pick blending if you'd like a softer look, less obvious regrowth and a little longer between visits."
+  imageAlt="Illustration: a woman with softly blended silver and brown hair, seen from behind, in a bright salon"
+  faqs={faqs}
+  ctaHeading="Not sure which way to go?"
+  ctaText="Melissa can look at your grey and your current colour, then tell you what she'd do. A free hair health consultation comes with any service."
+  related={[
+    { href: "/services/permanent-tint-touch-up/", title: "Permanent Tint Touch-Up", text: "Regrowth colour for $130." },
+    { href: "/services/permanent-tint-all-over/", title: "All Over Colour", text: "One even shade from roots to ends, for $140." },
+    { href: "/services/partial-foils/", title: "Partial Foils", text: "A good way to soften grey around your face." }
+  ]}
+>
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Grey blending and grey coverage compared</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full border-collapse border border-gray-200 text-left text-gray-700">
+        <caption class="sr-only">Grey coverage compared with grey blending</caption>
+        <thead>
+          <tr class="bg-gray-50">
+            <th scope="col" class="border border-gray-200 p-3 font-semibold"><span class="sr-only">Compare</span></th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">Grey coverage</th>
+            <th scope="col" class="border border-gray-200 p-3 font-semibold">Grey blending</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">The look</th>
+            <td class="border border-gray-200 p-3 align-top">One even, solid colour</td>
+            <td class="border border-gray-200 p-3 align-top">Soft and multi-tonal, with some grey still there</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">How it's done</th>
+            <td class="border border-gray-200 p-3 align-top">Permanent colour</td>
+            <td class="border border-gray-200 p-3 align-top">Highlights, lowlights or demi-permanent colour</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Grey covered</th>
+            <td class="border border-gray-200 p-3 align-top">Up to 100%</td>
+            <td class="border border-gray-200 p-3 align-top">Up to about 70% with demi colour</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Regrowth</th>
+            <td class="border border-gray-200 p-3 align-top">A clearer line</td>
+            <td class="border border-gray-200 p-3 align-top">A softer line</td>
+          </tr>
+          <tr>
+            <th scope="row" class="border border-gray-200 p-3 font-semibold align-top">Usually redone</th>
+            <td class="border border-gray-200 p-3 align-top">Every 4 to 6 weeks</td>
+            <td class="border border-gray-200 p-3 align-top">Every 6 to 8 weeks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">What is grey coverage?</h2>
+    <p class="text-gray-700 mb-6">
+      Grey coverage uses permanent colour to hide your grey completely. It's the right choice if you want one solid colour and don't want to see any grey at all. The trade-off is upkeep. Your regrowth shows as a line, so most people come in every 4 to 6 weeks for a <a href="/services/permanent-tint-touch-up/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">root touch-up</a>, which covers the new 1 to 2 inches.
+    </p>
+    <p class="text-gray-700 mb-6">
+      At Hair By Melissa, a touch-up is $130 and an <a href="/services/permanent-tint-all-over/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">all-over tint</a> is $140.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">What is grey blending?</h2>
+    <p class="text-gray-700 mb-6">
+      Grey blending works with your grey rather than hiding it. Fine highlights and lowlights, or a demi-permanent colour, soften the contrast between your grey and the rest of your hair. As it grows out, there's no hard line at the root. That's why many people find it easier to live with.
+    </p>
+    <p class="text-gray-700 mb-6">
+      Foils are one way to do it. <a href="/services/partial-foils/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">Partial foils</a> ($150) work well around your face and hairline, where grey tends to show first. A <a href="/services/half-head-highlights/" class="text-salon-darkblue underline hover:text-[#0F7A9C]">half head</a> ($200) goes further, and the darker hair underneath helps your regrowth blend.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-6">Which one suits you?</h2>
+    <p class="text-gray-700 mb-4"><strong>Coverage may suit you if:</strong></p>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>You want no visible grey.</li>
+      <li>You like one solid colour.</li>
+      <li>Regular touch-ups fit your routine.</li>
+    </ul>
+    <p class="text-gray-700 mb-4"><strong>Blending may suit you if:</strong></p>
+    <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+      <li>You're happy to keep some grey.</li>
+      <li>You're tired of a regrowth line every few weeks.</li>
+      <li>You'd like to ease out of all-over colour.</li>
+    </ul>
+  </section>
+
+  <p class="text-sm text-gray-600">
+    Sources: <a href="https://us.lorealprofessionnel.com/hair-mag/gray-blending-vs-gray-coverage" rel="noopener" class="underline">L'Oréal Professionnel</a>; <a href="https://www.wella.com/professional/en-FI/blog/hair-colour/how-to-get-rid-of-grey-hair" rel="noopener" class="underline">Wella Professionals</a>.
+  </p>
+</BlogPostLayout>
